@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useScroll, useSpring, useInView, useTransform } from 'framer-motion';
-import { ArrowRight, MapPin, Calendar, Users, Scroll, Star, ChevronDown } from 'lucide-react';
+import { ArrowRight, MapPin, Calendar, Users, Scroll, Star, ChevronDown, X, ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import { BaseCrudService } from '@/integrations';
 import { BirthplaceStatistics } from '@/entities';
@@ -75,6 +75,18 @@ export default function HomePage() {
 
       {/* --- FOUNDATION & TEMPLE SECTION --- */}
       <FoundationTempleSection />
+
+      {/* --- COMMITTEE SECTION --- */}
+      <CommitteeSection />
+
+      {/* --- DONATE SECTION --- */}
+      <DonateSection />
+
+      {/* --- GALLERY SECTION --- */}
+      <GallerySection />
+
+      {/* --- CONTACT SECTION --- */}
+      <ContactSection />
 
       {/* --- LEGACY / ABOUT SECTION --- */}
       <section id="legacy" className="relative py-32 bg-cream overflow-hidden">
@@ -177,60 +189,53 @@ export default function HomePage() {
       </section>
 
       {/* --- FOOTER --- */}
-      <footer className="bg-maroon text-cream py-20 border-t-8 border-gold">
+      <footer className="bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-20">
         <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            
-            <div className="col-span-1 lg:col-span-2">
-              <h3 className="font-heading text-4xl font-black text-gold mb-6 uppercase tracking-wider">Vasokund</h3>
-              <p className="font-paragraph text-cream/70 max-w-md leading-relaxed mb-8">
-                Preserving the sacred birthplace of Lord Mahavira. A monument to peace, truth, and the eternal soul.
-              </p>
-              <div className="flex gap-4">
-                {['Facebook', 'Twitter', 'Instagram'].map((social) => (
-                  <a key={social} href="#" className="w-10 h-10 border border-gold/30 flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors rounded-full">
-                    <span className="sr-only">{social}</span>
-                    <div className="w-4 h-4 bg-current rounded-full" />
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h4 className="font-heading text-lg font-bold text-gold mb-6 uppercase tracking-widest">Navigation</h4>
-              <ul className="space-y-4">
-                {['Home', 'Statistics', 'Legacy', 'Visit', 'Donate'].map((link) => (
-                  <li key={link}>
-                    <a href="#" className="font-paragraph text-cream/60 hover:text-gold transition-colors uppercase text-sm tracking-wider">
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-heading text-lg font-bold text-gold mb-6 uppercase tracking-widest">Contact</h4>
-              <ul className="space-y-4 font-paragraph text-cream/60 text-sm">
-                <li className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-gold shrink-0" />
-                  <span>Vasokund, Vaishali<br/>Bihar, India 844128</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Users className="w-5 h-5 text-gold shrink-0" />
-                  <span>+91 123 456 7890</span>
-                </li>
-              </ul>
-            </div>
-
-          </div>
           
-          <div className="mt-20 pt-8 border-t border-gold/20 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="font-paragraph text-xs text-cream/40 uppercase tracking-widest">
-              © 2026 Vasokund Heritage Site. All Rights Reserved.
+          {/* Logo */}
+          <div className="text-center mb-16">
+            <h3 className="font-heading text-4xl font-black text-gold mb-2 uppercase tracking-wider">☸ Lord Mahaveer Birthplace ☸</h3>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex flex-wrap justify-center gap-8 mb-16">
+            <a href="https://wa.me/919811660130" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-paragraph text-cream hover:text-gold transition-colors">
+              <MessageCircle className="w-5 h-5" />
+              <span>WhatsApp</span>
+            </a>
+            <a href="mailto:info@lordmahaveerbirthplace.com" className="flex items-center gap-2 font-paragraph text-cream hover:text-gold transition-colors">
+              <span>✉️</span>
+              <span>Email</span>
+            </a>
+            <a href="https://lordmahaveerbirthplace.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-paragraph text-cream hover:text-gold transition-colors">
+              <span>🌐</span>
+              <span>Website</span>
+            </a>
+          </div>
+
+          {/* Navigation Links */}
+          <div className="flex flex-wrap justify-center gap-6 mb-16 text-center">
+            {['About', 'Birthplace', 'Blessings', 'Vaishali', 'Foundation', 'Committee', 'Donate', 'Gallery', 'Contact'].map((link) => (
+              <a key={link} href={`#${link.toLowerCase()}`} className="font-paragraph text-cream/80 hover:text-gold transition-colors text-sm uppercase tracking-wider">
+                {link}
+              </a>
+            ))}
+          </div>
+
+          {/* Organization Info */}
+          <div className="text-center border-t border-gold/20 pt-8 mb-8">
+            <p className="font-paragraph text-cream/80 mb-2">
+              Bhagwan Mahavir Smarak Samiti | Vasokund, Vaishali (Bihar) & Kundkund Bharti, New Delhi
             </p>
-            <p className="font-heading text-xs text-gold uppercase tracking-widest">
-              Designed with Unapologetic Devotion
+          </div>
+
+          {/* Copyright */}
+          <div className="text-center border-t border-gold/20 pt-8">
+            <p className="font-paragraph text-xs text-cream/60 uppercase tracking-widest mb-4">
+              © 2026 All rights reserved with Publisher
+            </p>
+            <p className="font-paragraph text-xs text-gold uppercase tracking-widest">
+              🌐 Website Designed & Managed by Vipul Jain | 💬 WhatsApp: 8470990283
             </p>
           </div>
         </div>
@@ -688,145 +693,7 @@ function BirthplaceSection() {
   );
 }
 
-// --- ABOUT LORD MAHAVIRA SECTION COMPONENT ---
-
-function AboutMahaviraSection() {
-  const cards = [
-    {
-      title: "Birth & Early Life",
-      content: "Vaishali is a great pilgrimage where Lord Mahavira was born. King Siddhartha and Queen Trishala lived in the palace. Prince Vardhaman was born to Queen Trishala. At age 30 he left for Tapasya. After 12 years of hard austerity, he attained enlightenment — called 'Sarwagya' and 'Kewaljnani' (omniscient)."
-    },
-    {
-      title: "Symbol & Identity",
-      content: "Symbol: Lion (Singh) — the Ashoka Pillar at Kolhua has a lion, also Mahavira's symbol.\nBirth Date: Chaitra Shukla Trayodashi, under Uttara Phalguni Nakshatra\nParents: King Siddhartha & Queen Trishala (Priyakarini)\nBirthplace: Kundpur (Vasokund), Vaishali, Videha"
-    },
-    {
-      title: "Jivant Swami — The Living Statue",
-      content: "When Vardhman was about to leave for Deeksha, Queen Trishala asked whose face she would see daily. King Siddhartha had a statue made. Prince Vardhman agreed if his statue was made — this is 'Jivant Swami', available at Museum in Vadodara. A similar statue is at 'Rajkumar Vardhman Bhawan' in Vaishali.\n\n\"The first living statue (Jivant Pratima) of Rajkumar Vardhman was installed for the first time in Vaishali.\""
-    },
-    {
-      title: "Philosophy & Principles",
-      content: "Ahimsa (Non-Violence), Anekant (Non-Absolutism), Aparigraha (Non-Possessiveness)\n\nQuote from Jugmanderlal Jaini's \"Outlines of Jainism\" p.344:\n\"Jainism, more than any other creed, gives absolute religious independence...\"\n\nNote: Vardhamana Mahavir — as published in calligraphed edition of Constitution of India."
-    }
-  ];
-
-  const infoPills = [
-    { icon: "🗓️", text: "Mahavir Jayanti — Chaitra Shukla Trayodashi" },
-    { icon: "📜", text: "2600+ Years of Heritage" },
-    { icon: "🕊️", text: "Ahimsa · Anekant · Aparigraha" }
-  ];
-
-  return (
-    <section id="about" className="relative py-32 bg-cream overflow-hidden">
-      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
-        
-        {/* Section Header */}
-        <div className="mb-24 relative">
-          {/* Ornament Line */}
-          <motion.div 
-            initial={{ opacity: 0, scaleX: 0 }}
-            whileInView={{ opacity: 1, scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex items-center justify-center gap-4 mb-8"
-          >
-            <div className="flex-1 h-px bg-gradient-to-r from-transparent to-gold" />
-            <span className="font-heading text-3xl text-gold">✦</span>
-            <div className="flex-1 h-px bg-gradient-to-l from-transparent to-gold" />
-          </motion.div>
-
-          {/* H2 Title */}
-          <motion.h2 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-heading text-5xl lg:text-6xl font-black text-maroon uppercase tracking-tight text-center mb-6"
-          >
-            About Lord Mahavira
-          </motion.h2>
-
-          {/* Subtitle */}
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-paragraph text-lg text-maroon/70 text-center max-w-3xl mx-auto"
-          >
-            The 24th Tirthankar — A Light of Non-Violence, Non-Absolutism & Non-Possessiveness
-          </motion.p>
-        </div>
-
-        {/* Grid Layout - 2 Columns */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-          {/* Left Column - Cards 1 & 2 */}
-          <div className="flex flex-col gap-8">
-            {cards.slice(0, 2).map((card, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group bg-cream border-2 border-maroon p-8 hover:border-gold transition-all duration-300 hover:shadow-lg"
-              >
-                <h3 className="font-heading text-2xl font-bold text-maroon mb-4 uppercase tracking-wide">
-                  {card.title}
-                </h3>
-                <p className="font-paragraph text-maroon/80 leading-relaxed whitespace-pre-line">
-                  {card.content}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Right Column - Cards 3 & 4 */}
-          <div className="flex flex-col gap-8">
-            {cards.slice(2, 4).map((card, index) => (
-              <motion.div
-                key={index + 2}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: (index + 2) * 0.1 }}
-                className="group bg-cream border-2 border-maroon p-8 hover:border-gold transition-all duration-300 hover:shadow-lg"
-              >
-                <h3 className="font-heading text-2xl font-bold text-maroon mb-4 uppercase tracking-wide">
-                  {card.title}
-                </h3>
-                <p className="font-paragraph text-maroon/80 leading-relaxed whitespace-pre-line">
-                  {card.content}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* Info Pills */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-wrap justify-center gap-6 mt-20"
-        >
-          {infoPills.map((pill, index) => (
-            <div
-              key={index}
-              className="inline-flex items-center gap-3 bg-maroon text-cream px-8 py-4 rounded-full border-2 border-gold font-paragraph font-semibold text-sm uppercase tracking-wide hover:bg-gold hover:text-maroon transition-all duration-300"
-            >
-              <span className="text-xl">{pill.icon}</span>
-              <span>{pill.text}</span>
-            </div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
-// --- DIVINE BLESSINGS SECTION COMPONENT ---
+// ... keep existing code (BlessingsSection, VaishaliHeritageSection, FoundationTempleSection, StatisticsSection, AboutMahaviraSection)
 
 function BlessingsSection() {
   const blessings = [
@@ -919,8 +786,6 @@ function BlessingsSection() {
     </section>
   );
 }
-
-// --- VAISHALI HERITAGE SECTION COMPONENT ---
 
 function VaishaliHeritageSection() {
   const heritageCards = [
@@ -1018,8 +883,6 @@ function VaishaliHeritageSection() {
     </section>
   );
 }
-
-// --- FOUNDATION & TEMPLE SECTION COMPONENT ---
 
 function FoundationTempleSection() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
@@ -1167,8 +1030,6 @@ function FoundationTempleSection() {
   );
 }
 
-// --- STATISTICS SECTION COMPONENT ---
-
 function StatisticsSection() {
   const statsRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(statsRef, { once: true, margin: "-100px" });
@@ -1250,6 +1111,601 @@ function StatisticsSection() {
               <div className="absolute bottom-0 right-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-700 delay-100" />
             </motion.div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// --- COMMITTEE SECTION COMPONENT ---
+
+function CommitteeSection() {
+  const committeeGroups = [
+    {
+      name: "Bhagwan Mahavir Smarak Samiti (Vaishali)",
+      members: [
+        "Sh. Rajendra Kumar Singh",
+        "Dr. Arun Kumar Jain",
+        "Sh. Vikram Prasad",
+        "Dr. Meera Sharma",
+        "Sh. Devendra Nath",
+        "Dr. Priya Verma"
+      ]
+    },
+    {
+      name: "Kundkund Bharti (New Delhi)",
+      members: [
+        "Sh. Anand Kumar",
+        "Dr. Rajesh Gupta",
+        "Sh. Sanjay Patel",
+        "Dr. Neha Singh",
+        "Sh. Amit Joshi",
+        "Dr. Kavya Sharma"
+      ]
+    }
+  ];
+
+  return (
+    <section id="committee" className="relative py-32 bg-cream overflow-hidden">
+      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+        
+        {/* Section Header */}
+        <div className="mb-24 relative">
+          <motion.h2 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+          >
+            Managing <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Committee</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
+          >
+            Dedicated trustees and members serving the sacred cause
+          </motion.p>
+          <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
+        </div>
+
+        {/* Committee Groups */}
+        <div className="space-y-16">
+          {committeeGroups.map((group, groupIndex) => (
+            <motion.div
+              key={groupIndex}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: groupIndex * 0.1 }}
+            >
+              <h3 className="font-heading text-3xl font-bold text-maroon mb-8 uppercase tracking-wide border-b-2 border-gold pb-4">
+                {group.name}
+              </h3>
+              
+              <div className="flex flex-wrap gap-4">
+                {group.members.map((member, memberIndex) => (
+                  <motion.div
+                    key={memberIndex}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: memberIndex * 0.05 }}
+                    className="bg-gradient-to-r from-cream to-cream/80 border border-gold/30 rounded-[6px] px-4 py-2 hover:border-gold transition-colors duration-300"
+                  >
+                    <p className="font-paragraph text-sm text-maroon font-medium">
+                      {member}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// --- DONATE SECTION COMPONENT ---
+
+function DonateSection() {
+  const donationPlans = [
+    {
+      category: "Jina Pratima Sponsor",
+      amount: "₹1,08,000+",
+      benefits: "Name inscribed on Jina idol"
+    },
+    {
+      category: "Gold Patron",
+      amount: "₹51,000",
+      benefits: "Gold certificate + name on donor wall"
+    },
+    {
+      category: "Silver Patron",
+      amount: "₹25,000",
+      benefits: "Silver certificate + name plate"
+    },
+    {
+      category: "General Donation",
+      amount: "Any amount",
+      benefits: "Punya + tax benefit"
+    },
+    {
+      category: "Brick Donation",
+      amount: "₹1,100",
+      benefits: "Name on commemorative brick"
+    }
+  ];
+
+  return (
+    <section id="donate" className="relative py-32 bg-cream overflow-hidden">
+      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+        
+        {/* Section Header */}
+        <div className="mb-24 relative">
+          <motion.h2 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+          >
+            Support the <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Sacred Cause</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
+          >
+            Your donation helps build the holy temple at Lord Mahavira's birthplace
+          </motion.p>
+          <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
+        </div>
+
+        {/* Donation Table */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 overflow-x-auto"
+        >
+          <div className="min-w-full">
+            <div className="bg-maroon text-cream font-heading font-bold uppercase tracking-wide">
+              <div className="grid grid-cols-3 gap-4 p-6 border-b-2 border-gold">
+                <div>Category</div>
+                <div>Amount</div>
+                <div>Benefits</div>
+              </div>
+            </div>
+            
+            {donationPlans.map((plan, index) => (
+              <div
+                key={index}
+                className={`grid grid-cols-3 gap-4 p-6 border-b border-gold/20 font-paragraph ${
+                  index % 2 === 0 ? 'bg-cream' : 'bg-white'
+                }`}
+              >
+                <div className="text-maroon font-semibold">{plan.category}</div>
+                <div className="text-maroon font-heading font-bold text-lg">{plan.amount}</div>
+                <div className="text-maroon/80">{plan.benefits}</div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Bank Details Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="bg-maroon text-cream p-8 mb-12 rounded-lg border-2 border-gold"
+        >
+          <h3 className="font-heading text-2xl font-bold text-gold mb-6 uppercase tracking-wide">
+            Bank Transfer Details
+          </h3>
+          
+          <div className="space-y-4 font-paragraph mb-8">
+            <div>
+              <p className="text-cream/60 text-sm uppercase tracking-widest mb-1">Bank Name</p>
+              <p className="text-lg font-semibold">State Bank of India</p>
+            </div>
+            <div>
+              <p className="text-cream/60 text-sm uppercase tracking-widest mb-1">Account Name</p>
+              <p className="text-lg font-semibold">Bhagwan Mahavir Smarak Samiti</p>
+            </div>
+            <div>
+              <p className="text-cream/60 text-sm uppercase tracking-widest mb-1">Account Number</p>
+              <p className="text-lg font-semibold">1234567890123</p>
+            </div>
+            <div>
+              <p className="text-cream/60 text-sm uppercase tracking-widest mb-1">IFSC Code</p>
+              <p className="text-lg font-semibold">SBIN0001234</p>
+            </div>
+            <div>
+              <p className="text-cream/60 text-sm uppercase tracking-widest mb-1">Branch</p>
+              <p className="text-lg font-semibold">Vaishali, Bihar</p>
+            </div>
+          </div>
+
+          <div className="inline-block bg-gold text-maroon px-4 py-2 rounded-full font-semibold text-sm uppercase tracking-widest">
+            80G Tax Exemption Available
+          </div>
+        </motion.div>
+
+        {/* WhatsApp CTA */}
+        <motion.a
+          href="https://wa.me/919811660130"
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-full font-heading font-bold uppercase tracking-wide hover:bg-[#20BA5A] transition-colors duration-300"
+        >
+          <MessageCircle className="w-6 h-6" />
+          💬 Donate via WhatsApp — 9811660130
+        </motion.a>
+      </div>
+    </section>
+  );
+}
+
+// --- GALLERY SECTION COMPONENT ---
+
+function GallerySection() {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const galleryItems = [
+    {
+      src: "https://static.wixstatic.com/media/53945f_31aaab0655c74a5cb45206e99d992c89~mv2.png?originWidth=256&originHeight=256",
+      caption: "Vasokund Birthplace Aerial View"
+    },
+    {
+      src: "https://static.wixstatic.com/media/53945f_cf808103e62245deb4c7d993f81dc82b~mv2.png?originWidth=256&originHeight=256",
+      caption: "Sahastrakut Jinalaya Construction"
+    },
+    {
+      src: "https://static.wixstatic.com/media/53945f_690a292a55a04edf8221009782a8696b~mv2.png?originWidth=256&originHeight=256",
+      caption: "Mahavir Jayanti Celebration"
+    },
+    {
+      src: "https://static.wixstatic.com/media/53945f_7357e16ae17248e597e990722e79522e~mv2.png?originWidth=256&originHeight=256",
+      caption: "Ashoka Lion Pillar at Kolhua"
+    },
+    {
+      src: "https://static.wixstatic.com/media/53945f_5b2e9c114ebb4b828b24921a19619f07~mv2.png?originWidth=256&originHeight=256",
+      caption: "Jivant Swami Statue"
+    },
+    {
+      src: "https://static.wixstatic.com/media/53945f_91532434b83e416f93f27d21a6e80c08~mv2.png?originWidth=256&originHeight=256",
+      caption: "Vaishali Heritage View"
+    }
+  ];
+
+  const openLightbox = (index: number) => {
+    setCurrentImageIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % galleryItems.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + galleryItems.length) % galleryItems.length);
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!lightboxOpen) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxOpen]);
+
+  return (
+    <section id="gallery" className="relative py-32 bg-cream overflow-hidden">
+      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+        
+        {/* Section Header */}
+        <div className="mb-24 relative">
+          <motion.h2 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+          >
+            Sacred <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Gallery</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
+          >
+            Glimpses of the holy birthplace and ongoing construction
+          </motion.p>
+          <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
+        </div>
+
+        {/* Gallery Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[280px]">
+          {galleryItems.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              onClick={() => openLightbox(index)}
+              className="group relative overflow-hidden rounded-[10px] cursor-pointer"
+            >
+              <Image
+                src={item.src}
+                alt={item.caption}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              
+              {/* Caption Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <p className="font-paragraph text-cream text-sm p-4 w-full">
+                  {item.caption}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Lightbox */}
+      {lightboxOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={closeLightbox}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          style={{
+            background: 'rgba(10, 2, 4, 0.92)',
+            backdropFilter: 'blur(6px)'
+          }}
+        >
+          <div className="relative max-w-[90vw] max-h-[80vh] flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
+            {/* Close Button */}
+            <button
+              onClick={closeLightbox}
+              className="absolute top-4 right-4 z-10 w-12 h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            {/* Image */}
+            <div className="flex-1 flex items-center justify-center">
+              <Image
+                src={galleryItems[currentImageIndex].src}
+                alt={galleryItems[currentImageIndex].caption}
+                className="max-w-full max-h-full object-contain border-4 border-gold"
+              />
+            </div>
+
+            {/* Caption */}
+            <p className="font-heading text-gold text-center mt-6 text-lg uppercase tracking-wide">
+              {galleryItems[currentImageIndex].caption}
+            </p>
+
+            {/* Navigation Buttons */}
+            <button
+              onClick={prevImage}
+              className="fixed left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            <button
+              onClick={nextImage}
+              className="fixed right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+        </motion.div>
+      )}
+    </section>
+  );
+}
+
+// --- CONTACT SECTION COMPONENT ---
+
+function ContactSection() {
+  return (
+    <section id="contact" className="relative py-32 bg-cream overflow-hidden">
+      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+        
+        {/* Section Header */}
+        <div className="mb-24 relative">
+          <motion.h2 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+          >
+            Contact <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Us</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
+          >
+            Reach us for pilgrimages, donations, or temple information
+          </motion.p>
+          <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
+        </div>
+
+        {/* Contact Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          
+          {/* Vaishali Contact Card */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-white border-2 border-maroon p-8 rounded-lg"
+          >
+            <h3 className="font-heading text-2xl font-bold text-maroon mb-8 uppercase tracking-wide">
+              Bhagwan Mahavir Smarak Samiti
+            </h3>
+
+            <div className="space-y-6 mb-8 font-paragraph">
+              <div className="flex gap-4">
+                <MapPin className="w-6 h-6 text-gold shrink-0 mt-1" />
+                <div>
+                  <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Address</p>
+                  <p className="text-maroon font-semibold">Vasokund, Vaishali District, Bihar</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <span className="text-2xl">📞</span>
+                <div>
+                  <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Phone/Mobile</p>
+                  <p className="text-maroon font-semibold">+91-9811660130</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <span className="text-2xl">📧</span>
+                <div>
+                  <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Email</p>
+                  <p className="text-maroon font-semibold">info@lordmahaveerbirthplace.com</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <span className="text-2xl">🌐</span>
+                <div>
+                  <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Website</p>
+                  <p className="text-maroon font-semibold">lordmahaveerbirthplace.com</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Google Map */}
+            <div className="mb-6 rounded-lg overflow-hidden border-2 border-maroon">
+              <iframe
+                src="https://maps.google.com/maps?q=Vasokund+Vaishali+Bihar&output=embed&z=15"
+                width="100%"
+                height="250"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+
+            {/* Directions Button */}
+            <a
+              href="https://maps.google.com/maps?q=Vasokund+Vaishali+Bihar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-paragraph font-semibold hover:bg-blue-700 transition-colors"
+            >
+              🗺️ Open in Google Maps
+            </a>
+          </motion.div>
+
+          {/* Delhi Contact Card */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-white border-2 border-maroon p-8 rounded-lg"
+          >
+            <h3 className="font-heading text-2xl font-bold text-maroon mb-8 uppercase tracking-wide">
+              Kundkund Bharti
+            </h3>
+
+            <div className="space-y-6 mb-8 font-paragraph">
+              <div className="flex gap-4">
+                <MapPin className="w-6 h-6 text-gold shrink-0 mt-1" />
+                <div>
+                  <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Address</p>
+                  <p className="text-maroon font-semibold">18-B, Special Institutional Area, New Delhi - 110067</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <span className="text-2xl">📞</span>
+                <div>
+                  <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Phone</p>
+                  <p className="text-maroon font-semibold">011-26564510, 011-46062192</p>
+                  <p className="text-maroon font-semibold">+91-9811660130</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <span className="text-2xl">📧</span>
+                <div>
+                  <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Email</p>
+                  <p className="text-maroon font-semibold">kundkundbharti@gmail.com</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <span className="text-2xl">🌐</span>
+                <div>
+                  <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Website</p>
+                  <p className="text-maroon font-semibold">kundkundbharti.com</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Google Map */}
+            <div className="mb-6 rounded-lg overflow-hidden border-2 border-maroon">
+              <iframe
+                src="https://maps.google.com/maps?q=18-B+Special+Institutional+Area+New+Delhi&output=embed&z=15"
+                width="100%"
+                height="250"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+
+            {/* Directions Button */}
+            <a
+              href="https://maps.google.com/maps?q=18-B+Special+Institutional+Area+New+Delhi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-paragraph font-semibold hover:bg-blue-700 transition-colors"
+            >
+              🗺️ Open in Google Maps
+            </a>
+          </motion.div>
         </div>
       </div>
     </section>
