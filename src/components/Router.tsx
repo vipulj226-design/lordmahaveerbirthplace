@@ -3,12 +3,14 @@ import { createBrowserRouter, RouterProvider, Navigate, Outlet } from 'react-rou
 import { ScrollToTop } from '@/lib/scroll-to-top';
 import ErrorPage from '@/integrations/errorHandlers/ErrorPage';
 import HomePage from '@/components/pages/HomePage';
+import ScrollProgressBar from '@/components/ScrollProgressBar';
 
-// Layout component that includes ScrollToTop
+// Layout component that includes ScrollToTop and ScrollProgressBar
 function Layout() {
   return (
     <>
       <ScrollToTop />
+      <ScrollProgressBar />
       <Outlet />
     </>
   );
