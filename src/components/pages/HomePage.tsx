@@ -52,7 +52,7 @@ export default function HomePage() {
   const statsY = useTransform(scrollYProgress, [0.1, 0.3], [100, 0]);
 
   return (
-    <div className="min-h-screen bg-cream text-maroon selection:bg-maroon selection:text-gold overflow-x-hidden">
+    <div className="min-h-screen bg-neutral text-primary selection:bg-primary selection:text-accent overflow-x-hidden">
       
       {/* --- HEADER --- */}
       <Header />
@@ -92,21 +92,21 @@ export default function HomePage() {
       <ContactSection />
 
       {/* --- LEGACY / ABOUT SECTION --- */}
-      <section id="legacy" className="relative py-32 bg-cream overflow-hidden">
-        <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+      <section id="legacy" className="relative section-padding bg-neutral overflow-hidden">
+        <div className="section-container">
           
           {/* Section Header */}
-          <div className="mb-24 relative">
+          <div className="section-header">
             <motion.h2 
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+              className="section-title"
             >
               The Unapologetic<br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Truth</span>
+              <span className="gradient-accent-text">Truth</span>
             </motion.h2>
-            <div className="absolute -top-12 -left-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
+            <div className="absolute -top-12 -left-12 w-64 h-64 bg-accent-light rounded-full blur-3xl -z-0" />
           </div>
 
           {/* Content Grid */}
@@ -115,16 +115,16 @@ export default function HomePage() {
             {/* Sticky Image Column */}
             <div className="lg:col-span-5 relative">
               <div className="sticky top-32">
-                <div className="relative aspect-[3/4] w-full overflow-hidden border-4 border-maroon bg-maroon">
+                <div className="relative aspect-[3/4] w-full overflow-hidden border-4 border-primary bg-primary">
                   <Image 
                     src="https://static.wixstatic.com/media/53945f_d0d06ffee96845a5826851cf03f30364~mv2.png?originWidth=640&originHeight=896" 
                     alt="Ancient Jain Statue Representation" 
                     className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 border border-gold/30 m-4 pointer-events-none" />
+                  <div className="absolute inset-0 border border-accent-light m-4 pointer-events-none" />
                   
                   {/* Floating Badge */}
-                  <div className="absolute bottom-8 -right-8 bg-gold text-maroon p-6 font-heading font-bold text-xl shadow-xl border-2 border-maroon hidden lg:block">
+                  <div className="absolute bottom-8 -right-8 bg-accent text-primary p-6 font-heading font-bold text-xl shadow-xl border-2 border-primary hidden lg:block">
                     <span className="block text-4xl font-black mb-1">24</span>
                     Tirthankara
                   </div>
@@ -144,10 +144,10 @@ export default function HomePage() {
                 className="group"
               >
                 <div className="flex items-baseline gap-4 mb-6">
-                  <span className="font-heading text-6xl font-black text-gold/40 group-hover:text-gold transition-colors">01</span>
-                  <h3 className="font-heading text-3xl font-bold text-maroon">A Revolution of Spirit</h3>
+                  <span className="font-heading text-6xl font-black text-accent-lighter group-hover:text-accent transition-colors">01</span>
+                  <h3 className="heading-h3 text-primary">A Revolution of Spirit</h3>
                 </div>
-                <p className="font-paragraph text-lg text-maroon/80 leading-relaxed pl-20 border-l-2 border-maroon/20 group-hover:border-gold transition-colors">
+                <p className="paragraph-lg text-primary-muted pl-20 border-l-2 border-primary-lighter group-hover:border-accent transition-colors">
                   In an era of ritual complexity, Lord Mahavira introduced a radical simplicity. Born in 599 BCE at Vasokund, his life was a bold declaration that spiritual liberation is the birthright of every soul, not just the chosen few.
                 </p>
               </motion.div>
@@ -161,10 +161,10 @@ export default function HomePage() {
                 className="group"
               >
                 <div className="flex items-baseline gap-4 mb-6">
-                  <span className="font-heading text-6xl font-black text-gold/40 group-hover:text-gold transition-colors">02</span>
-                  <h3 className="font-heading text-3xl font-bold text-maroon">Ahimsa: The Ultimate Strength</h3>
+                  <span className="font-heading text-6xl font-black text-accent-lighter group-hover:text-accent transition-colors">02</span>
+                  <h3 className="heading-h3 text-primary">Ahimsa: The Ultimate Strength</h3>
                 </div>
-                <p className="font-paragraph text-lg text-maroon/80 leading-relaxed pl-20 border-l-2 border-maroon/20 group-hover:border-gold transition-colors">
+                <p className="paragraph-lg text-primary-muted pl-20 border-l-2 border-primary-lighter group-hover:border-accent transition-colors">
                   Non-violence is not passivity; it is the highest form of bravery. Mahavira's teachings at Vaishali challenged the very foundations of violence in thought, word, and deed, establishing a legacy that echoes through millennia.
                 </p>
               </motion.div>
@@ -178,10 +178,10 @@ export default function HomePage() {
                 className="group"
               >
                 <div className="flex items-baseline gap-4 mb-6">
-                  <span className="font-heading text-6xl font-black text-gold/40 group-hover:text-gold transition-colors">03</span>
-                  <h3 className="font-heading text-3xl font-bold text-maroon">The Eternal Truth</h3>
+                  <span className="font-heading text-6xl font-black text-accent-lighter group-hover:text-accent transition-colors">03</span>
+                  <h3 className="heading-h3 text-primary">The Eternal Truth</h3>
                 </div>
-                <p className="font-paragraph text-lg text-maroon/80 leading-relaxed pl-20 border-l-2 border-maroon/20 group-hover:border-gold transition-colors">
+                <p className="paragraph-lg text-primary-muted pl-20 border-l-2 border-primary-lighter group-hover:border-accent transition-colors">
                   Anekantavada—the multiplicity of views. In a polarized world, Mahavira's wisdom from Vasokund teaches us to see the truth in others' perspectives, fostering a harmony that is desperately needed today.
                 </p>
               </motion.div>
@@ -192,25 +192,25 @@ export default function HomePage() {
       </section>
 
       {/* --- FOOTER --- */}
-      <footer className="bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-20">
-        <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+      <footer className="bg-gradient-to-r from-primary via-[#1A0306] to-primary text-neutral section-padding">
+        <div className="section-container">
           
           {/* Logo */}
           <div className="text-center mb-16">
-            <h3 className="font-heading text-4xl font-black text-gold mb-2 uppercase tracking-wider">☸ Lord Mahaveer Birthplace ☸</h3>
+            <h3 className="heading-h4 text-accent mb-2 uppercase tracking-wider">☸ Lord Mahaveer Birthplace ☸</h3>
           </div>
 
           {/* Social Links */}
           <div className="flex flex-wrap justify-center gap-8 mb-16">
-            <a href="https://wa.me/919811660130" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-paragraph text-cream hover:text-gold transition-colors">
+            <a href="https://wa.me/919811660130" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-paragraph text-neutral hover:text-accent transition-colors">
               <MessageCircle className="w-5 h-5" />
               <span>WhatsApp</span>
             </a>
-            <a href="mailto:info@lordmahaveerbirthplace.com" className="flex items-center gap-2 font-paragraph text-cream hover:text-gold transition-colors">
+            <a href="mailto:info@lordmahaveerbirthplace.com" className="flex items-center gap-2 font-paragraph text-neutral hover:text-accent transition-colors">
               <span>✉️</span>
               <span>Email</span>
             </a>
-            <a href="https://lordmahaveerbirthplace.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-paragraph text-cream hover:text-gold transition-colors">
+            <a href="https://lordmahaveerbirthplace.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-paragraph text-neutral hover:text-accent transition-colors">
               <span>🌐</span>
               <span>Website</span>
             </a>
@@ -219,25 +219,25 @@ export default function HomePage() {
           {/* Navigation Links */}
           <div className="flex flex-wrap justify-center gap-6 mb-16 text-center">
             {['About', 'Birthplace', 'Blessings', 'Vaishali', 'Foundation', 'Committee', 'Donate', 'Gallery', 'Contact'].map((link) => (
-              <a key={link} href={`#${link.toLowerCase()}`} className="font-paragraph text-cream/80 hover:text-gold transition-colors text-sm uppercase tracking-wider">
+              <a key={link} href={`#${link.toLowerCase()}`} className="font-paragraph text-neutral-light hover:text-accent transition-colors text-sm uppercase tracking-wider">
                 {link}
               </a>
             ))}
           </div>
 
           {/* Organization Info */}
-          <div className="text-center border-t border-gold/20 pt-8 mb-8">
-            <p className="font-paragraph text-cream/80 mb-2">
+          <div className="text-center border-t border-accent-light pt-8 mb-8">
+            <p className="font-paragraph text-neutral-light mb-2">
               Bhagwan Mahavir Smarak Samiti | Vasokund, Vaishali (Bihar) & Kundkund Bharti, New Delhi
             </p>
           </div>
 
           {/* Copyright */}
-          <div className="text-center border-t border-gold/20 pt-8">
-            <p className="font-paragraph text-xs text-cream/60 uppercase tracking-widest mb-4">
+          <div className="text-center border-t border-accent-light pt-8">
+            <p className="font-paragraph text-xs text-neutral-light uppercase tracking-widest mb-4">
               © 2026 All rights reserved with Publisher
             </p>
-            <p className="font-paragraph text-xs text-gold uppercase tracking-widest">
+            <p className="font-paragraph text-xs text-accent uppercase tracking-widest">
               🌐 Website Designed & Managed by Vipul Jain | 💬 WhatsApp: 8470990283
             </p>
           </div>
@@ -484,30 +484,31 @@ function BirthplaceSection() {
   }, []);
 
   return (
-    <section id="birthplace" ref={sectionRef} className="relative py-32 bg-cream overflow-hidden">
-      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+    <section 
+      id="birthplace" ref={sectionRef} className="relative section-padding bg-neutral overflow-hidden">
+      <div className="section-container">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="section-header">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+            className="section-title"
           >
             The Sacred <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Birthplace</span>
+            <span className="gradient-accent-text">Birthplace</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
+            className="section-subtitle"
           >
             Vasokund (Kundpur) — The Holy Land of Vaishali
           </motion.p>
-          <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
+          <div className="absolute -top-12 -right-12 w-64 h-64 bg-accent-light rounded-full blur-3xl -z-0" />
         </div>
 
         {/* Two-Column Grid Layout */}
@@ -519,37 +520,37 @@ function BirthplaceSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="group bg-cream border-2 border-maroon p-10 hover:border-gold transition-all duration-300"
+            className="card-interactive"
           >
-            <h3 className="font-heading text-3xl lg:text-4xl font-bold text-maroon mb-8 uppercase tracking-wide">
+            <h3 className="heading-h3 text-primary mb-8 uppercase tracking-wide">
               Why Vaishali is the Birthplace
             </h3>
 
             {/* Explanatory Paragraphs */}
             <div className="space-y-6 mb-10">
-              <p className="font-paragraph text-lg text-maroon/80 leading-relaxed">
+              <p className="paragraph-lg text-primary-muted">
                 Ancient texts confirm Kundpur/Vasokund in Vaishali district as the birthplace of Lord Mahavira, the 24th Tirthankar of Jainism.
               </p>
-              <p className="font-paragraph text-lg text-maroon/80 leading-relaxed">
+              <p className="paragraph-lg text-primary-muted">
                 Vaishali was the first republic in the world, home of democratic ideals and spiritual enlightenment. This sacred land witnessed the birth of one of humanity's greatest spiritual leaders.
               </p>
-              <p className="font-paragraph text-lg text-maroon/80 leading-relaxed">
+              <p className="paragraph-lg text-primary-muted">
                 Archaeological Survey of India findings at Kolhua, including the famous Lion Pillar of Ashoka, provide concrete evidence of the historical significance of this region.
               </p>
-              <p className="font-paragraph text-lg text-maroon/80 leading-relaxed">
+              <p className="paragraph-lg text-primary-muted">
                 AIIMS excavation reports further confirm the archaeological and historical authenticity of the site, validating centuries of spiritual tradition.
               </p>
-              <p className="font-paragraph text-lg text-maroon/80 leading-relaxed">
+              <p className="paragraph-lg text-primary-muted">
                 Jain Agam texts, including the Kalpa Sutra and Acharanga Sutra, provide detailed references to Vaishali as the birthplace, establishing its place in sacred literature.
               </p>
             </div>
 
             {/* Quote Box with Left Gold Border */}
-            <div className="relative pl-8 py-8 border-l-4 border-gold bg-gold/5">
-              <p className="font-heading text-xl italic text-maroon font-semibold leading-relaxed">
+            <div className="card-accent">
+              <p className="font-heading text-xl italic text-primary font-semibold leading-relaxed">
                 "Kshtriyakund is another name for Vaishali itself"
               </p>
-              <p className="font-paragraph text-sm text-maroon/60 mt-4 uppercase tracking-widest">
+              <p className="paragraph-sm text-primary-light mt-4 uppercase tracking-widest">
                 — Ancient Geography Reference
               </p>
             </div>
@@ -564,42 +565,42 @@ function BirthplaceSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="group bg-cream border-2 border-maroon p-10 hover:border-gold transition-all duration-300"
+              className="card-interactive"
             >
-              <h4 className="font-heading text-2xl font-bold text-maroon mb-8 uppercase tracking-wide">
+              <h4 className="heading-h4 text-primary mb-8 uppercase tracking-wide">
                 Key Facts
               </h4>
               
               <div className="space-y-6">
                 <div className="flex gap-4">
-                  <MapPin className="w-6 h-6 text-gold shrink-0 mt-1" />
+                  <MapPin className="icon-md text-accent shrink-0 mt-1" />
                   <div>
-                    <p className="font-heading font-bold text-maroon uppercase text-sm tracking-widest mb-1">Location</p>
-                    <p className="font-paragraph text-maroon/80">Vasokund, Vaishali District, Bihar — 35 km from Patna</p>
+                    <p className="heading-h5 text-primary uppercase text-sm tracking-widest mb-1">Location</p>
+                    <p className="paragraph-base text-primary-muted">Vasokund, Vaishali District, Bihar — 35 km from Patna</p>
                   </div>
                 </div>
 
                 <div className="flex gap-4">
-                  <Scroll className="w-6 h-6 text-gold shrink-0 mt-1" />
+                  <Scroll className="icon-md text-accent shrink-0 mt-1" />
                   <div>
-                    <p className="font-heading font-bold text-maroon uppercase text-sm tracking-widest mb-1">Current Structure</p>
-                    <p className="font-paragraph text-maroon/80">Sahastrakut Jinalaya (under construction)</p>
+                    <p className="heading-h5 text-primary uppercase text-sm tracking-widest mb-1">Current Structure</p>
+                    <p className="paragraph-base text-primary-muted">Sahastrakut Jinalaya (under construction)</p>
                   </div>
                 </div>
 
                 <div className="flex gap-4">
-                  <Calendar className="w-6 h-6 text-gold shrink-0 mt-1" />
+                  <Calendar className="icon-md text-accent shrink-0 mt-1" />
                   <div>
-                    <p className="font-heading font-bold text-maroon uppercase text-sm tracking-widest mb-1">Historical Name</p>
-                    <p className="font-paragraph text-maroon/80">Kundpur / Kshtriyakund</p>
+                    <p className="heading-h5 text-primary uppercase text-sm tracking-widest mb-1">Historical Name</p>
+                    <p className="paragraph-base text-primary-muted">Kundpur / Kshtriyakund</p>
                   </div>
                 </div>
 
                 <div className="flex gap-4">
-                  <Star className="w-6 h-6 text-gold shrink-0 mt-1" />
+                  <Star className="icon-md text-accent shrink-0 mt-1" />
                   <div>
-                    <p className="font-heading font-bold text-maroon uppercase text-sm tracking-widest mb-1">Archaeological Evidence</p>
-                    <p className="font-paragraph text-maroon/80">Lion Pillar of Ashoka at Kolhua</p>
+                    <p className="heading-h5 text-primary uppercase text-sm tracking-widest mb-1">Archaeological Evidence</p>
+                    <p className="paragraph-base text-primary-muted">Lion Pillar of Ashoka at Kolhua</p>
                   </div>
                 </div>
               </div>
@@ -611,28 +612,28 @@ function BirthplaceSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="group bg-cream border-2 border-maroon p-10 hover:border-gold transition-all duration-300"
+              className="card-interactive"
             >
-              <h4 className="font-heading text-2xl font-bold text-maroon mb-8 uppercase tracking-wide">
+              <h4 className="heading-h4 text-primary mb-8 uppercase tracking-wide">
                 Development Plan
               </h4>
               
               <ul className="space-y-4">
                 <li className="flex gap-4">
-                  <div className="w-2 h-2 bg-gold rounded-full mt-3 shrink-0" />
-                  <p className="font-paragraph text-maroon/80">Grand Jain Temple (Sahastrakut Jinalaya) being constructed</p>
+                  <div className="w-2 h-2 bg-accent rounded-full mt-3 shrink-0" />
+                  <p className="paragraph-base text-primary-muted">Grand Jain Temple (Sahastrakut Jinalaya) being constructed</p>
                 </li>
                 <li className="flex gap-4">
-                  <div className="w-2 h-2 bg-gold rounded-full mt-3 shrink-0" />
-                  <p className="font-paragraph text-maroon/80">Museum, Dharamshala, Library planned</p>
+                  <div className="w-2 h-2 bg-accent rounded-full mt-3 shrink-0" />
+                  <p className="paragraph-base text-primary-muted">Museum, Dharamshala, Library planned</p>
                 </li>
                 <li className="flex gap-4">
-                  <div className="w-2 h-2 bg-gold rounded-full mt-3 shrink-0" />
-                  <p className="font-paragraph text-maroon/80">International pilgrimage center vision</p>
+                  <div className="w-2 h-2 bg-accent rounded-full mt-3 shrink-0" />
+                  <p className="paragraph-base text-primary-muted">International pilgrimage center vision</p>
                 </li>
                 <li className="flex gap-4">
-                  <div className="w-2 h-2 bg-gold rounded-full mt-3 shrink-0" />
-                  <p className="font-paragraph text-maroon/80">Bhagwan Mahavir Smarak Samiti overseeing development</p>
+                  <div className="w-2 h-2 bg-accent rounded-full mt-3 shrink-0" />
+                  <p className="paragraph-base text-primary-muted">Bhagwan Mahavir Smarak Samiti overseeing development</p>
                 </li>
               </ul>
             </motion.div>
@@ -643,7 +644,7 @@ function BirthplaceSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {isLoading ? (
             <div className="col-span-full text-center py-12">
-              <p className="font-paragraph text-maroon/60">Loading statistics...</p>
+              <p className="paragraph-base text-primary-light">Loading statistics...</p>
             </div>
           ) : statistics.length > 0 ? (
             statistics.map((stat, index) => (
@@ -653,7 +654,7 @@ function BirthplaceSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative bg-cream border-2 border-maroon p-8 hover:border-gold transition-colors duration-300"
+                className="card-interactive"
               >
                 {/* Icon */}
                 {stat.icon && (
@@ -667,19 +668,19 @@ function BirthplaceSection() {
                 )}
 
                 {/* Value */}
-                <div className="font-heading text-5xl lg:text-6xl font-black text-maroon mb-2 flex items-baseline">
+                <div className="font-heading text-5xl lg:text-6xl font-black text-primary mb-2 flex items-baseline">
                   {stat.statisticValue}
-                  {stat.unit && <span className="text-2xl text-gold ml-2">{stat.unit}</span>}
+                  {stat.unit && <span className="text-2xl text-accent ml-2">{stat.unit}</span>}
                 </div>
 
                 {/* Label */}
-                <h3 className="font-heading text-xl font-bold text-maroon uppercase tracking-widest mb-4">
+                <h3 className="heading-h5 text-primary uppercase tracking-widest mb-4">
                   {stat.label}
                 </h3>
 
                 {/* Description */}
                 {stat.description && (
-                  <p className="font-paragraph text-sm text-maroon/70 leading-relaxed">
+                  <p className="paragraph-sm text-primary-light leading-relaxed">
                     {stat.description}
                   </p>
                 )}
@@ -687,7 +688,7 @@ function BirthplaceSection() {
             ))
           ) : (
             <div className="col-span-full text-center py-12">
-              <p className="font-paragraph text-maroon/60">No statistics available</p>
+              <p className="paragraph-base text-primary-light">No statistics available</p>
             </div>
           )}
         </div>
@@ -721,30 +722,30 @@ function BlessingsSection() {
   ];
 
   return (
-    <section id="blessings" className="relative py-32 bg-cream overflow-hidden">
-      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+    <section id="blessings" className="relative section-padding bg-neutral overflow-hidden">
+      <div className="section-container">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="section-header">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+            className="section-title"
           >
             Divine <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Blessings</span>
+            <span className="gradient-accent-text">Blessings</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
+            className="section-subtitle"
           >
             Sacred blessings from revered Acharyas and saints
           </motion.p>
-          <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
+          <div className="absolute -top-12 -right-12 w-64 h-64 bg-accent-light rounded-full blur-3xl -z-0" />
         </div>
 
         {/* Blessing Cards */}
@@ -756,7 +757,7 @@ function BlessingsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group flex flex-col md:flex-row gap-8 bg-white border-l-4 border-gold2 p-8 hover:translate-y-[-3px] transition-transform duration-300"
+              className="group flex flex-col md:flex-row gap-8 bg-white border-l-4 border-accent-alt p-8 hover:translate-y-[-3px] transition-transform duration-300"
             >
               {/* Left: Acharya Photo */}
               <div className="md:w-[180px] flex-shrink-0">
@@ -772,13 +773,13 @@ function BlessingsSection() {
 
               {/* Right: Blessing Text */}
               <div className="flex-1 flex flex-col justify-center">
-                <h3 className="font-heading text-2xl font-bold text-maroon mb-2 uppercase tracking-wide">
+                <h3 className="heading-h4 text-primary mb-2 uppercase tracking-wide">
                   {blessing.name}
                 </h3>
-                <p className="font-paragraph text-sm text-maroon/60 uppercase tracking-widest mb-6">
+                <p className="paragraph-sm text-primary-light uppercase tracking-widest mb-6">
                   {blessing.role}
                 </p>
-                <p className="font-paragraph text-lg text-maroon/80 leading-relaxed italic">
+                <p className="paragraph-lg text-primary-muted italic">
                   "{blessing.blessing}"
                 </p>
               </div>
@@ -814,30 +815,30 @@ function VaishaliHeritageSection() {
   ];
 
   return (
-    <section id="vaishali" className="relative py-32 bg-cream overflow-hidden">
-      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+    <section id="vaishali" className="relative section-padding bg-neutral overflow-hidden">
+      <div className="section-container">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="section-header">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+            className="section-title"
           >
             Vaishali — <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">The First Republic</span>
+            <span className="gradient-accent-text">The First Republic</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
+            className="section-subtitle"
           >
             World's oldest democratic republic and birthplace of Lord Mahavira
           </motion.p>
-          <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
+          <div className="absolute -top-12 -right-12 w-64 h-64 bg-accent-light rounded-full blur-3xl -z-0" />
         </div>
 
         {/* 3-Column Grid */}
@@ -849,12 +850,12 @@ function VaishaliHeritageSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-cream border-2 border-maroon p-8 hover:border-gold transition-all duration-300"
+              className="card-interactive"
             >
-              <h3 className="font-heading text-2xl font-bold text-maroon mb-6 uppercase tracking-wide">
+              <h3 className="heading-h4 text-primary mb-6 uppercase tracking-wide">
                 {card.title}
               </h3>
-              <p className="font-paragraph text-maroon/80 leading-relaxed whitespace-pre-line">
+              <p className="paragraph-lg text-primary-muted whitespace-pre-line">
                 {card.content}
               </p>
             </motion.div>
@@ -874,7 +875,7 @@ function VaishaliHeritageSection() {
             return (
               <div
                 key={index}
-                className="inline-flex items-center gap-3 bg-maroon text-cream px-6 py-3 rounded-full border-2 border-gold font-paragraph font-semibold text-sm uppercase tracking-wide hover:bg-gold hover:text-maroon transition-all duration-300"
+                className="inline-flex items-center gap-3 bg-primary text-neutral px-6 py-3 rounded-full border-2 border-accent font-paragraph font-semibold text-sm uppercase tracking-wide hover:bg-accent hover:text-primary transition-all duration-300"
               >
                 <IconComponent className="w-5 h-5" />
                 <span>{pill.text}</span>
@@ -914,30 +915,30 @@ function FoundationTempleSection() {
   };
 
   return (
-    <section id="foundation" className="relative py-32 bg-cream overflow-hidden">
-      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+    <section id="foundation" className="relative section-padding bg-neutral overflow-hidden">
+      <div className="section-container">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="section-header">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+            className="section-title"
           >
             Temple Construction <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">& Foundation</span>
+            <span className="gradient-accent-text">& Foundation</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
+            className="section-subtitle"
           >
             Building the Sahastrakut Jinalaya — A Grand Jain Temple
           </motion.p>
-          <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
+          <div className="absolute -top-12 -right-12 w-64 h-64 bg-accent-light rounded-full blur-3xl -z-0" />
         </div>
 
         {/* 2-Column Grid */}
@@ -949,31 +950,31 @@ function FoundationTempleSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="group bg-cream border-2 border-maroon p-10 hover:border-gold transition-all duration-300"
+            className="card-interactive"
           >
-            <h3 className="font-heading text-3xl lg:text-4xl font-bold text-maroon mb-8 uppercase tracking-wide">
+            <h3 className="heading-h3 text-primary mb-8 uppercase tracking-wide">
               Sahastrakut Jinalaya
             </h3>
 
             <div className="space-y-6">
-              <p className="font-paragraph text-lg text-maroon/80 leading-relaxed">
+              <p className="paragraph-lg text-primary-muted">
                 A magnificent temple being constructed at Vasokund, featuring traditional Jain architecture with profound spiritual significance.
               </p>
               
-              <div className="bg-gold/5 border-l-4 border-gold p-6">
-                <p className="font-heading font-bold text-maroon uppercase text-sm tracking-widest mb-2">
+              <div className="card-accent">
+                <p className="heading-h5 text-primary uppercase text-sm tracking-widest mb-2">
                   1008 Jina Images
                 </p>
-                <p className="font-paragraph text-maroon/80">
+                <p className="paragraph-base text-primary-muted">
                   The temple will house 1008 Tirthankar images arranged in sacred patterns, representing the cosmic order and spiritual completeness in Jain philosophy.
                 </p>
               </div>
 
               <div>
-                <p className="font-heading font-bold text-maroon uppercase text-sm tracking-widest mb-2">
+                <p className="heading-h5 text-primary uppercase text-sm tracking-widest mb-2">
                   Construction Timeline
                 </p>
-                <p className="font-paragraph text-maroon/80">
+                <p className="paragraph-base text-primary-muted">
                   Ongoing construction with major milestones achieved. The project progresses in phases, each bringing the vision of a grand spiritual center closer to reality.
                 </p>
               </div>
@@ -991,13 +992,13 @@ function FoundationTempleSection() {
             {accordionItems.map((item, index) => (
               <div
                 key={index}
-                className="border-2 border-maroon overflow-hidden hover:border-gold transition-colors duration-300"
+                className="border-2 border-primary overflow-hidden hover:border-accent transition-colors duration-300"
               >
                 <button
                   onClick={() => toggleAccordion(index)}
-                  className="w-full flex items-center justify-between p-6 bg-cream hover:bg-gold/5 transition-colors duration-300 cursor-pointer"
+                  className="w-full flex items-center justify-between p-6 bg-neutral hover:bg-accent-light transition-colors duration-300 cursor-pointer"
                 >
-                  <h4 className="font-heading font-bold text-maroon text-lg uppercase tracking-wide text-left">
+                  <h4 className="heading-h5 text-primary uppercase tracking-wide text-left">
                     {item.question}
                   </h4>
                   <motion.div
@@ -1005,7 +1006,7 @@ function FoundationTempleSection() {
                     transition={{ duration: 0.3 }}
                     className="flex-shrink-0 ml-4"
                   >
-                    <ChevronDown className="w-6 h-6 text-gold" />
+                    <ChevronDown className="icon-md text-accent" />
                   </motion.div>
                 </button>
 
@@ -1018,8 +1019,8 @@ function FoundationTempleSection() {
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden"
                 >
-                  <div className="p-6 bg-gold/5 border-t-2 border-maroon">
-                    <p className="font-paragraph text-maroon/80 leading-relaxed">
+                  <div className="p-6 bg-accent-lighter border-t-2 border-primary">
+                    <p className="paragraph-lg text-primary-muted">
                       {item.answer}
                     </p>
                   </div>
@@ -1045,28 +1046,28 @@ function StatisticsSection() {
   ];
 
   return (
-    <section id="statistics" ref={statsRef} className="relative bg-maroon py-32 overflow-hidden">
+    <section id="statistics" ref={statsRef} className="relative bg-primary section-padding overflow-hidden">
       {/* Background Texture */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(#C5A55A_1px,transparent_1px)] [background-size:16px_16px]" />
       </div>
 
-      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 relative z-10">
+      <div className="section-container relative z-10">
         
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-gold/30 pb-8">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-accent-light pb-8">
           <motion.h2 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-5xl lg:text-7xl font-black text-cream uppercase tracking-tight"
+            className="heading-h2 text-neutral"
           >
-            By The <span className="text-gold">Numbers</span>
+            By The <span className="text-accent">Numbers</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="font-paragraph text-gold/80 text-right max-w-md mt-6 md:mt-0"
+            className="paragraph-lg text-neutral-light text-right max-w-md mt-6 md:mt-0"
           >
             Quantifying a legacy that transcends time. The impact of Lord Mahavira measured in centuries and souls.
           </motion.p>
@@ -1079,39 +1080,39 @@ function StatisticsSection() {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="group relative bg-maroon-900 border border-gold/20 p-8 hover:bg-maroon-800 transition-colors duration-500"
+              className="group relative bg-primary-dark border border-accent-light p-8 hover:bg-primary-dark transition-colors duration-500"
             >
               {/* Hover Effect Background */}
-              <div className="absolute inset-0 bg-gold/5 scale-y-0 group-hover:scale-y-100 origin-bottom transition-transform duration-500 ease-out" />
+              <div className="absolute inset-0 bg-accent-light scale-y-0 group-hover:scale-y-100 origin-bottom transition-transform duration-500 ease-out" />
               
               <div className="relative z-10">
                 <div className="flex justify-between items-start mb-8">
-                  <stat.icon className="w-8 h-8 text-gold opacity-50 group-hover:opacity-100 transition-opacity" />
-                  <div className="w-2 h-2 bg-gold rounded-full" />
+                  <stat.icon className="icon-lg text-accent opacity-50 group-hover:opacity-100 transition-opacity" />
+                  <div className="w-2 h-2 bg-accent rounded-full" />
                 </div>
 
-                <div className="font-heading text-6xl lg:text-7xl font-black text-cream mb-2 flex items-baseline">
+                <div className="heading-h2 text-neutral mb-2 flex items-baseline">
                   {isInView ? (
                     <CountUp end={stat.value} duration={2.5} delay={index * 0.1} />
                   ) : (
                     "0"
                   )}
-                  <span className="text-3xl text-gold ml-1">{stat.unit}</span>
+                  <span className="text-3xl text-accent ml-1">{stat.unit}</span>
                 </div>
 
-                <div className="h-px w-full bg-gold/20 my-6 group-hover:bg-gold/50 transition-colors" />
+                <div className="h-px w-full bg-accent-light my-6 group-hover:bg-accent transition-colors" />
 
-                <h3 className="font-heading text-xl font-bold text-gold uppercase tracking-widest mb-1">
+                <h3 className="heading-h5 text-accent uppercase tracking-widest mb-1">
                   {stat.label}
                 </h3>
-                <p className="font-paragraph text-sm text-cream/60 uppercase tracking-wider">
+                <p className="paragraph-sm text-neutral-light uppercase tracking-wider">
                   {stat.description}
                 </p>
               </div>
 
               {/* Corner Accents */}
-              <div className="absolute top-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-700 delay-100" />
-              <div className="absolute bottom-0 right-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-700 delay-100" />
+              <div className="absolute top-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-700 delay-100" />
+              <div className="absolute bottom-0 right-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-700 delay-100" />
             </motion.div>
           ))}
         </div>
@@ -1149,30 +1150,30 @@ function CommitteeSection() {
   ];
 
   return (
-    <section id="committee" className="relative py-32 bg-cream overflow-hidden">
-      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+    <section id="committee" className="relative section-padding bg-neutral overflow-hidden">
+      <div className="section-container">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="section-header">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+            className="section-title"
           >
             Managing <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Committee</span>
+            <span className="gradient-accent-text">Committee</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
+            className="section-subtitle"
           >
             Dedicated trustees and members serving the sacred cause
           </motion.p>
-          <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
+          <div className="absolute -top-12 -right-12 w-64 h-64 bg-accent-light rounded-full blur-3xl -z-0" />
         </div>
 
         {/* Committee Groups */}
@@ -1185,7 +1186,7 @@ function CommitteeSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: groupIndex * 0.1 }}
             >
-              <h3 className="font-heading text-3xl font-bold text-maroon mb-8 uppercase tracking-wide border-b-2 border-gold pb-4">
+              <h3 className="heading-h3 text-primary mb-8 uppercase tracking-wide border-b-2 border-accent pb-4">
                 {group.name}
               </h3>
               
@@ -1197,9 +1198,9 @@ function CommitteeSection() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: memberIndex * 0.05 }}
-                    className="bg-gradient-to-r from-cream to-cream/80 border border-gold/30 rounded-[6px] px-4 py-2 hover:border-gold transition-colors duration-300"
+                    className="bg-gradient-to-r from-neutral to-neutral/80 border border-accent-light rounded-[6px] px-4 py-2 hover:border-accent transition-colors duration-300"
                   >
-                    <p className="font-paragraph text-sm text-maroon font-medium">
+                    <p className="paragraph-sm text-primary font-medium">
                       {member}
                     </p>
                   </motion.div>
@@ -1245,30 +1246,30 @@ function DonateSection() {
   ];
 
   return (
-    <section id="donate" className="relative py-32 bg-cream overflow-hidden">
-      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+    <section id="donate" className="relative section-padding bg-neutral overflow-hidden">
+      <div className="section-container">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="section-header">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+            className="section-title"
           >
             Support the <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Sacred Cause</span>
+            <span className="gradient-accent-text">Sacred Cause</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
+            className="section-subtitle"
           >
             Your donation helps build the holy temple at Lord Mahavira's birthplace
           </motion.p>
-          <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
+          <div className="absolute -top-12 -right-12 w-64 h-64 bg-accent-light rounded-full blur-3xl -z-0" />
         </div>
 
         {/* Donation Table */}
@@ -1280,8 +1281,8 @@ function DonateSection() {
           className="mb-16 overflow-x-auto"
         >
           <div className="min-w-full">
-            <div className="bg-maroon text-cream font-heading font-bold uppercase tracking-wide">
-              <div className="grid grid-cols-3 gap-4 p-6 border-b-2 border-gold">
+            <div className="bg-primary text-neutral font-heading font-bold uppercase tracking-wide">
+              <div className="grid grid-cols-3 gap-4 p-6 border-b-2 border-accent">
                 <div>Category</div>
                 <div>Amount</div>
                 <div>Benefits</div>
@@ -1291,13 +1292,13 @@ function DonateSection() {
             {donationPlans.map((plan, index) => (
               <div
                 key={index}
-                className={`grid grid-cols-3 gap-4 p-6 border-b border-gold/20 font-paragraph ${
-                  index % 2 === 0 ? 'bg-cream' : 'bg-white'
+                className={`grid grid-cols-3 gap-4 p-6 border-b border-accent-light font-paragraph ${
+                  index % 2 === 0 ? 'bg-neutral' : 'bg-white'
                 }`}
               >
-                <div className="text-maroon font-semibold">{plan.category}</div>
-                <div className="text-maroon font-heading font-bold text-lg">{plan.amount}</div>
-                <div className="text-maroon/80">{plan.benefits}</div>
+                <div className="text-primary font-semibold">{plan.category}</div>
+                <div className="text-primary font-heading font-bold text-lg">{plan.amount}</div>
+                <div className="text-primary-muted">{plan.benefits}</div>
               </div>
             ))}
           </div>
@@ -1309,36 +1310,36 @@ function DonateSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="bg-maroon text-cream p-8 mb-12 rounded-lg border-2 border-gold"
+          className="card-dark mb-12 rounded-lg border-2 border-accent"
         >
-          <h3 className="font-heading text-2xl font-bold text-gold mb-6 uppercase tracking-wide">
+          <h3 className="heading-h4 text-accent mb-6 uppercase tracking-wide">
             Bank Transfer Details
           </h3>
           
           <div className="space-y-4 font-paragraph mb-8">
             <div>
-              <p className="text-cream/60 text-sm uppercase tracking-widest mb-1">Bank Name</p>
-              <p className="text-lg font-semibold">State Bank of India</p>
+              <p className="text-neutral-light text-sm uppercase tracking-widest mb-1">Bank Name</p>
+              <p className="text-lg font-semibold text-neutral">State Bank of India</p>
             </div>
             <div>
-              <p className="text-cream/60 text-sm uppercase tracking-widest mb-1">Account Name</p>
-              <p className="text-lg font-semibold">Bhagwan Mahavir Smarak Samiti</p>
+              <p className="text-neutral-light text-sm uppercase tracking-widest mb-1">Account Name</p>
+              <p className="text-lg font-semibold text-neutral">Bhagwan Mahavir Smarak Samiti</p>
             </div>
             <div>
-              <p className="text-cream/60 text-sm uppercase tracking-widest mb-1">Account Number</p>
-              <p className="text-lg font-semibold">1234567890123</p>
+              <p className="text-neutral-light text-sm uppercase tracking-widest mb-1">Account Number</p>
+              <p className="text-lg font-semibold text-neutral">1234567890123</p>
             </div>
             <div>
-              <p className="text-cream/60 text-sm uppercase tracking-widest mb-1">IFSC Code</p>
-              <p className="text-lg font-semibold">SBIN0001234</p>
+              <p className="text-neutral-light text-sm uppercase tracking-widest mb-1">IFSC Code</p>
+              <p className="text-lg font-semibold text-neutral">SBIN0001234</p>
             </div>
             <div>
-              <p className="text-cream/60 text-sm uppercase tracking-widest mb-1">Branch</p>
-              <p className="text-lg font-semibold">Vaishali, Bihar</p>
+              <p className="text-neutral-light text-sm uppercase tracking-widest mb-1">Branch</p>
+              <p className="text-lg font-semibold text-neutral">Vaishali, Bihar</p>
             </div>
           </div>
 
-          <div className="inline-block bg-gold text-maroon px-4 py-2 rounded-full font-semibold text-sm uppercase tracking-widest">
+          <div className="inline-block bg-accent text-primary px-4 py-2 rounded-full font-semibold text-sm uppercase tracking-widest">
             80G Tax Exemption Available
           </div>
         </motion.div>
