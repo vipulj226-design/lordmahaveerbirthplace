@@ -2,6 +2,8 @@ import React, { useEffect, useState, useRef } from 'react';
 import { motion, useScroll, useSpring, useInView, useTransform } from 'framer-motion';
 import { ArrowRight, MapPin, Calendar, Users, Scroll, Star } from 'lucide-react';
 import { Image } from '@/components/ui/image';
+import { BaseCrudService } from '@/integrations';
+import { BirthplaceStatistics } from '@/entities';
 
 // HPI 1.7-G
 
@@ -308,6 +310,9 @@ export default function HomePage() {
         </motion.div>
       </section>
 
+      {/* --- BIRTHPLACE SECTION --- */}
+      <BirthplaceSection />
+
       {/* --- STATISTICS SECTION --- */}
       <StatisticsSection />
 
@@ -471,6 +476,103 @@ export default function HomePage() {
         </div>
       </footer>
     </div>
+  );
+}
+
+// --- BIRTHPLACE SECTION COMPONENT ---
+
+function BirthplaceSection() {
+  const [statistics, setStatistics] = useState<BirthplaceStatistics[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const fetchStatistics = async () => {
+      try {
+        const result = await BaseCrudService.getAll<BirthplaceStatistics>('birthplacestatistics');
+        setStatistics(result.items);
+      } catch (error) {
+        console.error('Error fetching birthplace statistics:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchStatistics();
+  }, []);
+
+  return (
+    <section id="birthplace" ref={sectionRef} className="relative py-32 bg-cream overflow-hidden">
+      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+        
+        {/* Section Header */}
+        <div className="mb-24 relative">
+          <motion.h2 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+          >
+            The Sacred <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Birthplace</span>
+          </motion.h2>
+          <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
+        </div>
+
+        {/* Statistics Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {isLoading ? (
+            <div className="col-span-full text-center py-12">
+              <p className="font-paragraph text-maroon/60">Loading statistics...</p>
+            </div>
+          ) : statistics.length > 0 ? (
+            statistics.map((stat, index) => (
+              <motion.div
+                key={stat._id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group relative bg-cream border-2 border-maroon p-8 hover:border-gold transition-colors duration-300"
+              >
+                {/* Icon */}
+                {stat.icon && (
+                  <div className="mb-6 h-16 w-16 flex items-center justify-center">
+                    <Image 
+                      src={stat.icon} 
+                      alt={stat.label || 'Statistic icon'}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                )}
+
+                {/* Value */}
+                <div className="font-heading text-5xl lg:text-6xl font-black text-maroon mb-2 flex items-baseline">
+                  {stat.statisticValue}
+                  {stat.unit && <span className="text-2xl text-gold ml-2">{stat.unit}</span>}
+                </div>
+
+                {/* Label */}
+                <h3 className="font-heading text-xl font-bold text-maroon uppercase tracking-widest mb-4">
+                  {stat.label}
+                </h3>
+
+                {/* Description */}
+                {stat.description && (
+                  <p className="font-paragraph text-sm text-maroon/70 leading-relaxed">
+                    {stat.description}
+                  </p>
+                )}
+              </motion.div>
+            ))
+          ) : (
+            <div className="col-span-full text-center py-12">
+              <p className="font-paragraph text-maroon/60">No statistics available</p>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
   );
 }
 
