@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useScroll, useSpring, useInView, useTransform } from 'framer-motion';
-import { ArrowRight, MapPin, Calendar, Users, Scroll, Star } from 'lucide-react';
+import { ArrowRight, MapPin, Calendar, Users, Scroll, Star, ChevronDown } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import { BaseCrudService } from '@/integrations';
 import { BirthplaceStatistics } from '@/entities';
@@ -69,6 +69,12 @@ export default function HomePage() {
 
       {/* --- DIVINE BLESSINGS SECTION --- */}
       <BlessingsSection />
+
+      {/* --- VAISHALI HERITAGE SECTION --- */}
+      <VaishaliHeritageSection />
+
+      {/* --- FOUNDATION & TEMPLE SECTION --- */}
+      <FoundationTempleSection />
 
       {/* --- LEGACY / ABOUT SECTION --- */}
       <section id="legacy" className="relative py-32 bg-cream overflow-hidden">
@@ -908,6 +914,253 @@ function BlessingsSection() {
               </div>
             </motion.div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// --- VAISHALI HERITAGE SECTION COMPONENT ---
+
+function VaishaliHeritageSection() {
+  const heritageCards = [
+    {
+      title: "Historical Significance",
+      content: "Vaishali was the world's first republic. Licchavi clan ruled democratically. Lord Mahavira and Lord Buddha both have connections to Vaishali."
+    },
+    {
+      title: "Archaeological Sites",
+      content: "Kolhua: Ashoka Pillar with Lion Capital\nAbhishek Pushkarini (Coronation Tank)\nRaja Vishal ka Garh\nBawan Pokhar Temple"
+    },
+    {
+      title: "Jain Connection",
+      content: "Lord Mahavira born here (599 BCE)\nVasokund/Kundpur = exact birthplace\nLicchavi Kshatriya clan was Mahavira's family\nMultiple visits by Lord Buddha to Vaishali also documented"
+    }
+  ];
+
+  const locationPills = [
+    { icon: MapPin, text: "Vaishali District, Bihar" },
+    { icon: Calendar, text: "2600+ Years of Heritage" },
+    { icon: Scroll, text: "World's First Republic" },
+    { icon: Star, text: "Birthplace of Mahavira" }
+  ];
+
+  return (
+    <section id="vaishali" className="relative py-32 bg-cream overflow-hidden">
+      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+        
+        {/* Section Header */}
+        <div className="mb-24 relative">
+          <motion.h2 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+          >
+            Vaishali — <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">The First Republic</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
+          >
+            World's oldest democratic republic and birthplace of Lord Mahavira
+          </motion.p>
+          <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
+        </div>
+
+        {/* 3-Column Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          {heritageCards.map((card, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group bg-cream border-2 border-maroon p-8 hover:border-gold transition-all duration-300"
+            >
+              <h3 className="font-heading text-2xl font-bold text-maroon mb-6 uppercase tracking-wide">
+                {card.title}
+              </h3>
+              <p className="font-paragraph text-maroon/80 leading-relaxed whitespace-pre-line">
+                {card.content}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Location Highlight Pills */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-wrap justify-center gap-4"
+        >
+          {locationPills.map((pill, index) => {
+            const IconComponent = pill.icon;
+            return (
+              <div
+                key={index}
+                className="inline-flex items-center gap-3 bg-maroon text-cream px-6 py-3 rounded-full border-2 border-gold font-paragraph font-semibold text-sm uppercase tracking-wide hover:bg-gold hover:text-maroon transition-all duration-300"
+              >
+                <IconComponent className="w-5 h-5" />
+                <span>{pill.text}</span>
+              </div>
+            );
+          })}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+// --- FOUNDATION & TEMPLE SECTION COMPONENT ---
+
+function FoundationTempleSection() {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
+  const accordionItems = [
+    {
+      question: "What is Sahastrakut Jinalaya?",
+      answer: "A magnificent temple featuring 1008 Tirthankar images arranged in a sacred pattern. Sahastrakut means 1000 Jina images arrangement, representing the cosmic order of Jainism."
+    },
+    {
+      question: "Who is overseeing construction?",
+      answer: "Bhagwan Mahavir Smarak Samiti, a registered society dedicated to preserving and developing the sacred birthplace of Lord Mahavira."
+    },
+    {
+      question: "When will it be complete?",
+      answer: "Ongoing construction with major milestones achieved. The project progresses in phases with continuous development and spiritual significance."
+    },
+    {
+      question: "What other facilities are planned?",
+      answer: "Museum, Dharamshala (guest house), Library, Gardens, and other facilities to create a comprehensive pilgrimage and learning center."
+    }
+  ];
+
+  const toggleAccordion = (index: number) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
+  return (
+    <section id="foundation" className="relative py-32 bg-cream overflow-hidden">
+      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+        
+        {/* Section Header */}
+        <div className="mb-24 relative">
+          <motion.h2 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+          >
+            Temple Construction <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">& Foundation</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
+          >
+            Building the Sahastrakut Jinalaya — A Grand Jain Temple
+          </motion.p>
+          <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
+        </div>
+
+        {/* 2-Column Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          
+          {/* LEFT: Content Card */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="group bg-cream border-2 border-maroon p-10 hover:border-gold transition-all duration-300"
+          >
+            <h3 className="font-heading text-3xl lg:text-4xl font-bold text-maroon mb-8 uppercase tracking-wide">
+              Sahastrakut Jinalaya
+            </h3>
+
+            <div className="space-y-6">
+              <p className="font-paragraph text-lg text-maroon/80 leading-relaxed">
+                A magnificent temple being constructed at Vasokund, featuring traditional Jain architecture with profound spiritual significance.
+              </p>
+              
+              <div className="bg-gold/5 border-l-4 border-gold p-6">
+                <p className="font-heading font-bold text-maroon uppercase text-sm tracking-widest mb-2">
+                  1008 Jina Images
+                </p>
+                <p className="font-paragraph text-maroon/80">
+                  The temple will house 1008 Tirthankar images arranged in sacred patterns, representing the cosmic order and spiritual completeness in Jain philosophy.
+                </p>
+              </div>
+
+              <div>
+                <p className="font-heading font-bold text-maroon uppercase text-sm tracking-widest mb-2">
+                  Construction Timeline
+                </p>
+                <p className="font-paragraph text-maroon/80">
+                  Ongoing construction with major milestones achieved. The project progresses in phases, each bringing the vision of a grand spiritual center closer to reality.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* RIGHT: Accordion */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-4"
+          >
+            {accordionItems.map((item, index) => (
+              <div
+                key={index}
+                className="border-2 border-maroon overflow-hidden hover:border-gold transition-colors duration-300"
+              >
+                <button
+                  onClick={() => toggleAccordion(index)}
+                  className="w-full flex items-center justify-between p-6 bg-cream hover:bg-gold/5 transition-colors duration-300 cursor-pointer"
+                >
+                  <h4 className="font-heading font-bold text-maroon text-lg uppercase tracking-wide text-left">
+                    {item.question}
+                  </h4>
+                  <motion.div
+                    animate={{ rotate: expandedIndex === index ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="flex-shrink-0 ml-4"
+                  >
+                    <ChevronDown className="w-6 h-6 text-gold" />
+                  </motion.div>
+                </button>
+
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{
+                    height: expandedIndex === index ? "auto" : 0,
+                    opacity: expandedIndex === index ? 1 : 0
+                  }}
+                  transition={{ duration: 0.3 }}
+                  className="overflow-hidden"
+                >
+                  <div className="p-6 bg-gold/5 border-t-2 border-maroon">
+                    <p className="font-paragraph text-maroon/80 leading-relaxed">
+                      {item.answer}
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
