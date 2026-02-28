@@ -41,7 +41,6 @@ const CountUp = ({ end, duration, delay }: { end: number; duration: number; dela
 // --- MAIN COMPONENT ---
 
 export default function HomePage() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -50,95 +49,7 @@ export default function HomePage() {
   });
 
   // Parallax Transforms
-  const heroTextY = useTransform(scrollYProgress, [0, 0.2], [0, 100]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const statsY = useTransform(scrollYProgress, [0.1, 0.3], [100, 0]);
-
-  // Particle Animation Logic (Preserved & Optimized)
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    
-    // Initial resize
-    handleResize();
-
-    const particles: Array<{
-      x: number;
-      y: number;
-      vx: number;
-      vy: number;
-      size: number;
-      opacity: number;
-    }> = [];
-
-    // Create particles - Increased density for "Bold" feel
-    const particleCount = window.innerWidth < 768 ? 40 : 100;
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.8, // Slightly faster
-        vy: (Math.random() - 0.5) * 0.8,
-        size: Math.random() * 3 + 1, // Larger variation
-        opacity: Math.random() * 0.5 + 0.3
-      });
-    }
-
-    let animationFrameId: number;
-
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      particles.forEach((particle, i) => {
-        particle.x += particle.vx;
-        particle.y += particle.vy;
-
-        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
-        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
-
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        // Using Gold color from palette
-        ctx.fillStyle = `rgba(197, 165, 90, ${particle.opacity})`;
-        ctx.fill();
-
-        // Draw connections
-        particles.forEach((otherParticle, j) => {
-          if (i === j) return;
-          const dx = particle.x - otherParticle.x;
-          const dy = particle.y - otherParticle.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < 150) {
-            ctx.beginPath();
-            ctx.moveTo(particle.x, particle.y);
-            ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.strokeStyle = `rgba(197, 165, 90, ${0.2 * (1 - distance / 150)})`;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
-        });
-      });
-
-      animationFrameId = requestAnimationFrame(animate);
-    };
-
-    animate();
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      cancelAnimationFrame(animationFrameId);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   return (
     <div className="min-h-screen bg-cream text-maroon selection:bg-maroon selection:text-gold overflow-x-hidden">
@@ -147,126 +58,8 @@ export default function HomePage() {
       <Header />
 
       {/* --- HERO SECTION --- */}
-      <section id="home" className="relative w-full min-h-screen flex flex-col justify-center overflow-hidden pt-32 md:pt-20">
-        {/* Background Canvas */}
-        <canvas
-          ref={canvasRef}
-          className="absolute inset-0 w-full h-full opacity-60 pointer-events-none"
-        />
-        
-        {/* Decorative Grid Lines */}
-        <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
-          <div className="w-full max-w-[120rem] mx-auto h-full border-x border-maroon/5 grid grid-cols-12 gap-4 px-4">
-            {[...Array(12)].map((_, i) => (
-              <div key={i} className="h-full border-r border-maroon/5 hidden md:block col-span-1" />
-            ))}
-          </div>
-        </div>
+      <HeroSection />
 
-        {/* Main Content */}
-        <div className="relative z-10 w-full max-w-[120rem] mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-12 gap-4 lg:gap-8 items-center">
-            
-            {/* Left Column: Massive Typography */}
-            <motion.div 
-              style={{ y: heroTextY, opacity: heroOpacity }}
-              className="col-span-12 lg:col-span-8 relative"
-            >
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="flex items-center gap-4 mb-6"
-              >
-                <div className="h-[1px] w-12 bg-maroon" />
-                <span className="font-paragraph font-bold text-maroon uppercase tracking-[0.3em] text-sm">
-                  The 24th Tirthankara
-                </span>
-              </motion.div>
-
-              <h1 className="font-heading text-[15vw] lg:text-[11rem] leading-[0.85] font-black text-maroon tracking-tighter mix-blend-multiply">
-                <motion.span
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 1, delay: 0.2 }}
-                  className="block"
-                >
-                  LORD
-                </motion.span>
-                <motion.span
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 1, delay: 0.4 }}
-                  className="block text-transparent bg-clip-text bg-gradient-to-b from-maroon to-maroon/80 ml-[10vw] lg:ml-32"
-                >
-                  MAHAVIRA
-                </motion.span>
-              </h1>
-            </motion.div>
-
-            {/* Right Column: Info Card & Stamp */}
-            <div className="col-span-12 lg:col-span-4 flex flex-col justify-end h-full mt-12 lg:mt-0">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                className="relative bg-cream border-2 border-maroon p-8 lg:p-12 shadow-[12px_12px_0px_0px_rgba(107,15,26,1)]"
-              >
-                <div className="absolute -top-6 -right-6 w-24 h-24 bg-gold rounded-full flex items-center justify-center animate-spin-slow">
-                  <svg viewBox="0 0 100 100" className="w-full h-full p-2 fill-maroon">
-                    <path id="curve" d="M 50 50 m -37 0 a 37 37 0 1 1 74 0 a 37 37 0 1 1 -74 0" fill="transparent"/>
-                    <text fontSize="13" fontWeight="bold" letterSpacing="2">
-                      <textPath href="#curve">
-                        BIRTHPLACE • VASOKUND •
-                      </textPath>
-                    </text>
-                  </svg>
-                </div>
-
-                <h2 className="font-heading text-3xl font-bold text-maroon mb-4">
-                  Sacred Origins
-                </h2>
-                <p className="font-paragraph text-maroon/80 leading-relaxed mb-8">
-                  Stand on the ground where divinity took form. Vasokund is not just a location; it is the genesis of non-violence and truth.
-                </p>
-                
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center gap-3 text-maroon font-bold uppercase tracking-wider text-sm">
-                    <MapPin className="w-5 h-5 text-gold" />
-                    Vaishali, Bihar
-                  </div>
-                  <div className="flex items-center gap-3 text-maroon font-bold uppercase tracking-wider text-sm">
-                    <Calendar className="w-5 h-5 text-gold" />
-                    599 BCE
-                  </div>
-                </div>
-
-                <button className="mt-8 w-full bg-maroon text-gold py-4 font-heading font-bold uppercase tracking-widest hover:bg-maroon/90 transition-all flex items-center justify-center gap-2 group">
-                  Explore The Site
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
-        >
-          <span className="font-heading text-xs font-bold text-maroon uppercase tracking-[0.3em]">Scroll</span>
-          <div className="w-[1px] h-16 bg-maroon/20 overflow-hidden">
-            <motion.div 
-              animate={{ y: [-64, 64] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-              className="w-full h-1/2 bg-maroon"
-            />
-          </div>
-        </motion.div>
-      </section>
 
       {/* --- BIRTHPLACE SECTION --- */}
       <BirthplaceSection />
@@ -434,6 +227,220 @@ export default function HomePage() {
         </div>
       </footer>
     </div>
+  );
+}
+
+// --- HERO SECTION COMPONENT ---
+
+function HeroSection() {
+  const particlesRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = particlesRef.current;
+    if (!container) return;
+
+    // Create 28 particles
+    const particleCount = 28;
+    const colors = ['#C5A55A', '#FDF6EC']; // gold3 and cream
+
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      const size = Math.random() * 5 + 2; // 2-7px
+      const left = Math.random() * 100;
+      const top = Math.random() * 100;
+      const duration = Math.random() * 12 + 6; // 6-18s
+      const delay = Math.random() * 8; // 0-8s
+      const color = colors[Math.floor(Math.random() * colors.length)];
+
+      particle.style.cssText = `
+        position: absolute;
+        width: ${size}px;
+        height: ${size}px;
+        background-color: ${color};
+        border-radius: 50%;
+        left: ${left}%;
+        bottom: -${size}px;
+        opacity: 0;
+        animation: floatUp ${duration}s linear ${delay}s infinite;
+        pointer-events: none;
+      `;
+
+      container.appendChild(particle);
+    }
+
+    // Add keyframes animation
+    if (!document.getElementById('floatUp-keyframes')) {
+      const style = document.createElement('style');
+      style.id = 'floatUp-keyframes';
+      style.textContent = `
+        @keyframes floatUp {
+          0% {
+            bottom: -10px;
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            bottom: 100vh;
+            opacity: 0;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    return () => {
+      container.innerHTML = '';
+    };
+  }, []);
+
+  return (
+    <section 
+      id="hero" 
+      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden"
+      style={{
+        background: 'linear-gradient(135deg, #6B0F1A, #3D0A10, #6B0F1A)',
+        paddingTop: '120px',
+        paddingBottom: '80px',
+        paddingLeft: '24px',
+        paddingRight: '24px',
+      }}
+    >
+      {/* Background Image Pseudo-element */}
+      <div 
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{
+          backgroundImage: 'url(https://static.wixstatic.com/media/53945f_f8e8fb0321184ed5890214db2b1c00db~mv2.png?originWidth=576&originHeight=384)',
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          opacity: 0.45,
+        }}
+      />
+
+      {/* Radial Gradient Vignette Overlay */}
+      <div 
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.6) 100%)',
+        }}
+      />
+
+      {/* Particles Container */}
+      <div 
+        ref={particlesRef}
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{ width: '100%', height: '100%' }}
+      />
+
+      {/* Main Content */}
+      <motion.div 
+        className="relative z-20 w-full max-w-[100rem] mx-auto text-center"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2 }}
+      >
+        {/* Ornament Text */}
+        <motion.div 
+          className="mb-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2, delay: 0.2 }}
+        >
+          <span 
+            className="font-heading text-[2.5rem] tracking-[0.75em] font-black"
+            style={{ color: '#C5A55A' }}
+          >
+            ✦  ✦  ✦
+          </span>
+        </motion.div>
+
+        {/* H1 Title with Gradient */}
+        <motion.h1 
+          className="font-heading font-black tracking-tight mb-6"
+          style={{
+            fontSize: 'clamp(2rem, 5vw, 3.8rem)',
+            backgroundImage: 'linear-gradient(to right, #C5A55A, #FDF6EC, #D4AF37)',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            color: 'transparent',
+          }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 0.4 }}
+        >
+          Birthplace of Tirthankar Lord Mahavira
+        </motion.h1>
+
+        {/* Subtitle (Italic) */}
+        <motion.p 
+          className="font-heading italic text-2xl mb-4 tracking-wide"
+          style={{ color: '#C5A55A' }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2, delay: 0.6 }}
+        >
+          Jai Jinendra — जय जिनेंद्र
+        </motion.p>
+
+        {/* Sub2 Text */}
+        <motion.p 
+          className="font-paragraph mb-12 tracking-[0.125em] uppercase text-sm"
+          style={{ color: 'rgba(253, 246, 236, 0.7)' }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2, delay: 0.8 }}
+        >
+          VASOKUND · VAISHALI · BIHAR · INDIA
+        </motion.p>
+
+        {/* Hero Image Box */}
+        <motion.div 
+          className="mx-auto mb-12 max-w-[600px]"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, delay: 1 }}
+          style={{
+            borderRadius: '12px',
+            border: '3px solid #C5A55A',
+            boxShadow: '0 0 30px rgba(197, 165, 90, 0.6)',
+            overflow: 'hidden',
+          }}
+        >
+          <Image 
+            src="https://static.wixstatic.com/media/53945f_8b054f3958224ef7be0343afc4b0c449~mv2.png?originWidth=576&originHeight=384"
+            alt="Sahastrakut Jinalaya"
+            className="w-full h-auto object-cover"
+            width={600}
+          />
+        </motion.div>
+
+        {/* CTA Button */}
+        <motion.a 
+          href="#about"
+          className="inline-block font-heading font-bold tracking-wide uppercase"
+          style={{
+            backgroundImage: 'linear-gradient(to right, #D4AF37, #C5A55A)',
+            color: '#1a1a1a',
+            padding: '14px 40px',
+            borderRadius: '50px',
+            textDecoration: 'none',
+            fontSize: '1rem',
+            fontWeight: 700,
+          }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 1.2 }}
+          whileHover={{ y: -2, boxShadow: '0 10px 30px rgba(197, 165, 90, 0.5)' }}
+        >
+          🏛️ पवित्र धरोहर देखें — Explore Heritage
+        </motion.a>
+      </motion.div>
+    </section>
   );
 }
 
