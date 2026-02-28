@@ -481,7 +481,145 @@ function BirthplaceSection() {
             The Sacred <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Birthplace</span>
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
+          >
+            Vasokund (Kundpur) — The Holy Land of Vaishali
+          </motion.p>
           <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
+        </div>
+
+        {/* Two-Column Grid Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24">
+          
+          {/* LEFT COLUMN - Large Content Card */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="group bg-cream border-2 border-maroon p-10 hover:border-gold transition-all duration-300"
+          >
+            <h3 className="font-heading text-3xl lg:text-4xl font-bold text-maroon mb-8 uppercase tracking-wide">
+              Why Vaishali is the Birthplace
+            </h3>
+
+            {/* Explanatory Paragraphs */}
+            <div className="space-y-6 mb-10">
+              <p className="font-paragraph text-lg text-maroon/80 leading-relaxed">
+                Ancient texts confirm Kundpur/Vasokund in Vaishali district as the birthplace of Lord Mahavira, the 24th Tirthankar of Jainism.
+              </p>
+              <p className="font-paragraph text-lg text-maroon/80 leading-relaxed">
+                Vaishali was the first republic in the world, home of democratic ideals and spiritual enlightenment. This sacred land witnessed the birth of one of humanity's greatest spiritual leaders.
+              </p>
+              <p className="font-paragraph text-lg text-maroon/80 leading-relaxed">
+                Archaeological Survey of India findings at Kolhua, including the famous Lion Pillar of Ashoka, provide concrete evidence of the historical significance of this region.
+              </p>
+              <p className="font-paragraph text-lg text-maroon/80 leading-relaxed">
+                AIIMS excavation reports further confirm the archaeological and historical authenticity of the site, validating centuries of spiritual tradition.
+              </p>
+              <p className="font-paragraph text-lg text-maroon/80 leading-relaxed">
+                Jain Agam texts, including the Kalpa Sutra and Acharanga Sutra, provide detailed references to Vaishali as the birthplace, establishing its place in sacred literature.
+              </p>
+            </div>
+
+            {/* Quote Box with Left Gold Border */}
+            <div className="relative pl-8 py-8 border-l-4 border-gold bg-gold/5">
+              <p className="font-heading text-xl italic text-maroon font-semibold leading-relaxed">
+                "Kshtriyakund is another name for Vaishali itself"
+              </p>
+              <p className="font-paragraph text-sm text-maroon/60 mt-4 uppercase tracking-widest">
+                — Ancient Geography Reference
+              </p>
+            </div>
+          </motion.div>
+
+          {/* RIGHT COLUMN - Two Stacked Cards */}
+          <div className="flex flex-col gap-8">
+            
+            {/* Card 1: Key Facts */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="group bg-cream border-2 border-maroon p-10 hover:border-gold transition-all duration-300"
+            >
+              <h4 className="font-heading text-2xl font-bold text-maroon mb-8 uppercase tracking-wide">
+                Key Facts
+              </h4>
+              
+              <div className="space-y-6">
+                <div className="flex gap-4">
+                  <MapPin className="w-6 h-6 text-gold shrink-0 mt-1" />
+                  <div>
+                    <p className="font-heading font-bold text-maroon uppercase text-sm tracking-widest mb-1">Location</p>
+                    <p className="font-paragraph text-maroon/80">Vasokund, Vaishali District, Bihar — 35 km from Patna</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <Scroll className="w-6 h-6 text-gold shrink-0 mt-1" />
+                  <div>
+                    <p className="font-heading font-bold text-maroon uppercase text-sm tracking-widest mb-1">Current Structure</p>
+                    <p className="font-paragraph text-maroon/80">Sahastrakut Jinalaya (under construction)</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <Calendar className="w-6 h-6 text-gold shrink-0 mt-1" />
+                  <div>
+                    <p className="font-heading font-bold text-maroon uppercase text-sm tracking-widest mb-1">Historical Name</p>
+                    <p className="font-paragraph text-maroon/80">Kundpur / Kshtriyakund</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <Star className="w-6 h-6 text-gold shrink-0 mt-1" />
+                  <div>
+                    <p className="font-heading font-bold text-maroon uppercase text-sm tracking-widest mb-1">Archaeological Evidence</p>
+                    <p className="font-paragraph text-maroon/80">Lion Pillar of Ashoka at Kolhua</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Card 2: Development Plan */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="group bg-cream border-2 border-maroon p-10 hover:border-gold transition-all duration-300"
+            >
+              <h4 className="font-heading text-2xl font-bold text-maroon mb-8 uppercase tracking-wide">
+                Development Plan
+              </h4>
+              
+              <ul className="space-y-4">
+                <li className="flex gap-4">
+                  <div className="w-2 h-2 bg-gold rounded-full mt-3 shrink-0" />
+                  <p className="font-paragraph text-maroon/80">Grand Jain Temple (Sahastrakut Jinalaya) being constructed</p>
+                </li>
+                <li className="flex gap-4">
+                  <div className="w-2 h-2 bg-gold rounded-full mt-3 shrink-0" />
+                  <p className="font-paragraph text-maroon/80">Museum, Dharamshala, Library planned</p>
+                </li>
+                <li className="flex gap-4">
+                  <div className="w-2 h-2 bg-gold rounded-full mt-3 shrink-0" />
+                  <p className="font-paragraph text-maroon/80">International pilgrimage center vision</p>
+                </li>
+                <li className="flex gap-4">
+                  <div className="w-2 h-2 bg-gold rounded-full mt-3 shrink-0" />
+                  <p className="font-paragraph text-maroon/80">Bhagwan Mahavir Smarak Samiti overseeing development</p>
+                </li>
+              </ul>
+            </motion.div>
+          </div>
         </div>
 
         {/* Statistics Grid */}
