@@ -4,6 +4,7 @@ import { ArrowRight, MapPin, Calendar, Users, Scroll, Star } from 'lucide-react'
 import { Image } from '@/components/ui/image';
 import { BaseCrudService } from '@/integrations';
 import { BirthplaceStatistics } from '@/entities';
+import Header from '@/components/Header';
 
 // HPI 1.7-G
 
@@ -142,54 +143,11 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-cream text-maroon selection:bg-maroon selection:text-gold overflow-x-hidden">
       
-      {/* --- NAVIGATION --- */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-md border-b border-maroon/10">
-        <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 h-20 flex justify-between items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex items-center gap-3"
-          >
-            <div className="w-8 h-8 bg-maroon flex items-center justify-center">
-              <span className="text-gold font-heading font-bold text-lg">V</span>
-            </div>
-            <span className="font-heading text-2xl font-black text-maroon tracking-widest uppercase">
-              Vasokund
-            </span>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="hidden md:flex gap-12 items-center"
-          >
-            {['Home', 'Statistics', 'Legacy'].map((item, i) => (
-              <a 
-                key={item}
-                href={`#${item.toLowerCase()}`} 
-                className="relative group font-paragraph text-sm font-bold text-maroon uppercase tracking-[0.2em] hover:text-gold transition-colors"
-              >
-                {item}
-                <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full" />
-              </a>
-            ))}
-            <button className="bg-maroon text-gold px-6 py-2 font-heading font-bold text-sm uppercase tracking-wider hover:bg-maroon/90 transition-colors border border-maroon hover:border-gold">
-              Visit Now
-            </button>
-          </motion.div>
-        </div>
-
-        {/* Scroll Progress Bar */}
-        <motion.div
-          className="absolute bottom-0 left-0 h-1 bg-gold origin-left z-50"
-          style={{ scaleX, width: '100%' }}
-        />
-      </nav>
+      {/* --- HEADER --- */}
+      <Header />
 
       {/* --- HERO SECTION --- */}
-      <section id="home" className="relative w-full min-h-screen flex flex-col justify-center overflow-hidden pt-20">
+      <section id="home" className="relative w-full min-h-screen flex flex-col justify-center overflow-hidden pt-32 md:pt-20">
         {/* Background Canvas */}
         <canvas
           ref={canvasRef}
