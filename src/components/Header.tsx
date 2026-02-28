@@ -8,6 +8,7 @@ const navigationLinks = [
   { label: 'Foundation', href: '#foundation' },
   { label: 'Committee', href: '#committee' },
   { label: 'Donate', href: '#donate' },
+  { label: 'Events', href: '#events' },
   { label: 'Gallery', href: '#gallery' },
   { label: 'Contact', href: '#contact' },
 ];
