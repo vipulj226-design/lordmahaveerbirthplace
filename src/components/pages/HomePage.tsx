@@ -67,6 +67,9 @@ export default function HomePage() {
       {/* --- STATISTICS SECTION --- */}
       <StatisticsSection />
 
+      {/* --- DIVINE BLESSINGS SECTION --- */}
+      <BlessingsSection />
+
       {/* --- LEGACY / ABOUT SECTION --- */}
       <section id="legacy" className="relative py-32 bg-cream overflow-hidden">
         <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
@@ -812,6 +815,100 @@ function AboutMahaviraSection() {
             </div>
           ))}
         </motion.div>
+      </div>
+    </section>
+  );
+}
+
+// --- DIVINE BLESSINGS SECTION COMPONENT ---
+
+function BlessingsSection() {
+  const blessings = [
+    {
+      name: "Acharya Shri Mahendra Kumar",
+      role: "Spiritual Guide & Scholar",
+      blessing: "May the sacred birthplace of Lord Mahavira illuminate the path of all seekers. The blessings of Vasokund flow through generations, guiding souls toward enlightenment and inner peace.",
+      photo: "https://static.wixstatic.com/media/53945f_d948e271bba94e4ba877baa929c12c64~mv2.png?originWidth=128&originHeight=192"
+    },
+    {
+      name: "Revered Saint Anand Sagar",
+      role: "Keeper of Jain Traditions",
+      blessing: "Mahavira's teachings of Ahimsa and Anekant resonate from this sacred soil. May pilgrims who visit Vasokund find solace, wisdom, and the eternal truth that transcends all boundaries.",
+      photo: "https://static.wixstatic.com/media/53945f_b112330555724bcdb4f9035d0439cba5~mv2.png?originWidth=128&originHeight=192"
+    },
+    {
+      name: "Acharya Shri Devendra Nath",
+      role: "Benediction for Devotees",
+      blessing: "In this blessed land where the 24th Tirthankar was born, may every soul find liberation from the cycle of karma. The divine grace of Vasokund protects all who seek truth with sincere hearts.",
+      photo: "https://static.wixstatic.com/media/53945f_19bd1c3ce04e4d48ac861254e95d2b9b~mv2.png?originWidth=128&originHeight=192"
+    }
+  ];
+
+  return (
+    <section id="blessings" className="relative py-32 bg-cream overflow-hidden">
+      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+        
+        {/* Section Header */}
+        <div className="mb-24 relative">
+          <motion.h2 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+          >
+            Divine <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Blessings</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
+          >
+            Sacred blessings from revered Acharyas and saints
+          </motion.p>
+          <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
+        </div>
+
+        {/* Blessing Cards */}
+        <div className="space-y-8">
+          {blessings.map((blessing, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="group flex flex-col md:flex-row gap-8 bg-white border-l-4 border-gold2 p-8 hover:translate-y-[-3px] transition-transform duration-300"
+            >
+              {/* Left: Acharya Photo */}
+              <div className="md:w-[180px] flex-shrink-0">
+                <div className="w-full md:w-[180px] h-[220px] overflow-hidden rounded-lg">
+                  <Image
+                    src={blessing.photo}
+                    alt={blessing.name}
+                    className="w-full h-full object-cover object-top"
+                    width={180}
+                  />
+                </div>
+              </div>
+
+              {/* Right: Blessing Text */}
+              <div className="flex-1 flex flex-col justify-center">
+                <h3 className="font-heading text-2xl font-bold text-maroon mb-2 uppercase tracking-wide">
+                  {blessing.name}
+                </h3>
+                <p className="font-paragraph text-sm text-maroon/60 uppercase tracking-widest mb-6">
+                  {blessing.role}
+                </p>
+                <p className="font-paragraph text-lg text-maroon/80 leading-relaxed italic">
+                  "{blessing.blessing}"
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
