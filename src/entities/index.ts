@@ -66,3 +66,26 @@ export interface NavigationItems {
   /** @wixFieldType url */
   url?: string;
 }
+
+
+/**
+ * Collection ID: upcomingevents
+ * Interface for UpcomingEvents
+ */
+export interface UpcomingEvents {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType text */
+  eventName?: string;
+  /** @wixFieldType date */
+  eventDate?: Date | string;
+  /** @wixFieldType time */
+  eventTime?: any;
+  /** @wixFieldType text */
+  eventLocation?: string;
+  /** @wixFieldType text */
+  eventDescription?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  eventImage?: string;
+}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useScroll, useSpring, useInView, useTransform } from 'framer-motion';
-import { ArrowRight, MapPin, Calendar, Users, Scroll, Star, ChevronDown, X, ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
+import { ArrowRight, MapPin, Calendar, Users, Scroll, Star, ChevronDown, X, ChevronLeft, ChevronRight, MessageCircle, Clock } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import { BaseCrudService } from '@/integrations';
 import { BirthplaceStatistics } from '@/entities';
@@ -81,6 +81,9 @@ export default function HomePage() {
 
       {/* --- DONATE SECTION --- */}
       <DonateSection />
+
+      {/* --- UPCOMING EVENTS SECTION --- */}
+      <UpcomingEventsSection />
 
       {/* --- GALLERY SECTION --- */}
       <GallerySection />
@@ -1529,6 +1532,162 @@ function GallerySection() {
           </div>
         </motion.div>
       )}
+    </section>
+  );
+}
+
+// --- UPCOMING EVENTS SECTION COMPONENT ---
+
+function UpcomingEventsSection() {
+  const [events, setEvents] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const result = await BaseCrudService.getAll<any>('upcomingevents');
+        setEvents(result.items);
+      } catch (error) {
+        console.error('Error fetching upcoming events:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchEvents();
+  }, []);
+
+  const formatDate = (date: any) => {
+    if (!date) return '';
+    const d = new Date(date);
+    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  };
+
+  const formatTime = (time: any) => {
+    if (!time) return '';
+    return time;
+  };
+
+  return (
+    <section id="events" ref={sectionRef} className="relative py-32 bg-cream overflow-hidden">
+      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+        
+        {/* Section Header */}
+        <div className="mb-24 relative">
+          <motion.h2 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+          >
+            Upcoming <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Events</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
+          >
+            Join us for sacred celebrations and spiritual gatherings at the birthplace of Lord Mahavira
+          </motion.p>
+          <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
+        </div>
+
+        {/* Events Grid */}
+        {isLoading ? (
+          <div className="text-center py-16">
+            <p className="font-paragraph text-maroon/60">Loading events...</p>
+          </div>
+        ) : events.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {events.map((event, index) => (
+              <motion.div
+                key={event._id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group bg-white border-2 border-maroon overflow-hidden hover:border-gold transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px]"
+              >
+                {/* Event Image */}
+                {event.eventImage && (
+                  <div className="relative h-48 overflow-hidden bg-maroon/10">
+                    <Image
+                      src={event.eventImage}
+                      alt={event.eventName || 'Event'}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  </div>
+                )}
+
+                {/* Event Content */}
+                <div className="p-8">
+                  {/* Event Name */}
+                  <h3 className="font-heading text-2xl font-bold text-maroon mb-6 uppercase tracking-wide line-clamp-2">
+                    {event.eventName}
+                  </h3>
+
+                  {/* Event Details */}
+                  <div className="space-y-4 mb-8">
+                    {/* Date */}
+                    {event.eventDate && (
+                      <div className="flex items-start gap-3">
+                        <Calendar className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+                        <div>
+                          <p className="font-paragraph text-sm text-maroon/60 uppercase tracking-widest mb-1">Date</p>
+                          <p className="font-paragraph font-semibold text-maroon">{formatDate(event.eventDate)}</p>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Time */}
+                    {event.eventTime && (
+                      <div className="flex items-start gap-3">
+                        <Clock className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+                        <div>
+                          <p className="font-paragraph text-sm text-maroon/60 uppercase tracking-widest mb-1">Time</p>
+                          <p className="font-paragraph font-semibold text-maroon">{formatTime(event.eventTime)}</p>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Location */}
+                    {event.eventLocation && (
+                      <div className="flex items-start gap-3">
+                        <MapPin className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+                        <div>
+                          <p className="font-paragraph text-sm text-maroon/60 uppercase tracking-widest mb-1">Location</p>
+                          <p className="font-paragraph font-semibold text-maroon">{event.eventLocation}</p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Event Description */}
+                  {event.eventDescription && (
+                    <p className="font-paragraph text-maroon/80 leading-relaxed mb-8 line-clamp-3">
+                      {event.eventDescription}
+                    </p>
+                  )}
+
+                  {/* Learn More Button */}
+                  <button className="w-full bg-gradient-to-r from-gold to-gold2 text-maroon font-heading font-bold py-3 px-4 rounded-lg uppercase tracking-wide hover:shadow-lg transition-all duration-300 hover:scale-105">
+                    Learn More
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-16">
+            <p className="font-paragraph text-maroon/60 text-lg">No upcoming events at this time. Please check back soon.</p>
+          </div>
+        )}
+      </div>
     </section>
   );
 }
