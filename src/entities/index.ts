@@ -1,0 +1,68 @@
+/**
+ * Auto-generated entity types
+ * Contains all CMS collection interfaces in a single file 
+ */
+
+/**
+ * Collection ID: birthplacestatistics
+ * Interface for BirthplaceStatistics
+ */
+export interface BirthplaceStatistics {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType number */
+  statisticValue?: number;
+  /** @wixFieldType text */
+  label?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  icon?: string;
+  /** @wixFieldType text */
+  unit?: string;
+  /** @wixFieldType text */
+  description?: string;
+}
+
+
+/**
+ * Collection ID: herosectioncontent
+ * Interface for HeroSectionContent
+ */
+export interface HeroSectionContent {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType text */
+  title?: string;
+  /** @wixFieldType text */
+  subtitle?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  backgroundImage?: string;
+  /** @wixFieldType text */
+  shortDescription?: string;
+  /** @wixFieldType text */
+  ctaText?: string;
+  /** @wixFieldType url */
+  ctaUrl?: string;
+}
+
+
+/**
+ * Collection ID: navigationitems
+ * Interface for NavigationItems
+ */
+export interface NavigationItems {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType text */
+  label?: string;
+  /** @wixFieldType text */
+  sectionAnchorId?: string;
+  /** @wixFieldType number */
+  order?: number;
+  /** @wixFieldType boolean */
+  isActive?: boolean;
+  /** @wixFieldType url */
+  url?: string;
+}
