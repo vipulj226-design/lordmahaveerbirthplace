@@ -541,6 +541,144 @@ function BirthplaceSection() {
   );
 }
 
+// --- ABOUT LORD MAHAVIRA SECTION COMPONENT ---
+
+function AboutMahaviraSection() {
+  const cards = [
+    {
+      title: "Birth & Early Life",
+      content: "Vaishali is a great pilgrimage where Lord Mahavira was born. King Siddhartha and Queen Trishala lived in the palace. Prince Vardhaman was born to Queen Trishala. At age 30 he left for Tapasya. After 12 years of hard austerity, he attained enlightenment — called 'Sarwagya' and 'Kewaljnani' (omniscient)."
+    },
+    {
+      title: "Symbol & Identity",
+      content: "Symbol: Lion (Singh) — the Ashoka Pillar at Kolhua has a lion, also Mahavira's symbol.\nBirth Date: Chaitra Shukla Trayodashi, under Uttara Phalguni Nakshatra\nParents: King Siddhartha & Queen Trishala (Priyakarini)\nBirthplace: Kundpur (Vasokund), Vaishali, Videha"
+    },
+    {
+      title: "Jivant Swami — The Living Statue",
+      content: "When Vardhman was about to leave for Deeksha, Queen Trishala asked whose face she would see daily. King Siddhartha had a statue made. Prince Vardhman agreed if his statue was made — this is 'Jivant Swami', available at Museum in Vadodara. A similar statue is at 'Rajkumar Vardhman Bhawan' in Vaishali.\n\n\"The first living statue (Jivant Pratima) of Rajkumar Vardhman was installed for the first time in Vaishali.\""
+    },
+    {
+      title: "Philosophy & Principles",
+      content: "Ahimsa (Non-Violence), Anekant (Non-Absolutism), Aparigraha (Non-Possessiveness)\n\nQuote from Jugmanderlal Jaini's \"Outlines of Jainism\" p.344:\n\"Jainism, more than any other creed, gives absolute religious independence...\"\n\nNote: Vardhamana Mahavir — as published in calligraphed edition of Constitution of India."
+    }
+  ];
+
+  const infoPills = [
+    { icon: "🗓️", text: "Mahavir Jayanti — Chaitra Shukla Trayodashi" },
+    { icon: "📜", text: "2600+ Years of Heritage" },
+    { icon: "🕊️", text: "Ahimsa · Anekant · Aparigraha" }
+  ];
+
+  return (
+    <section id="about" className="relative py-32 bg-cream overflow-hidden">
+      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+        
+        {/* Section Header */}
+        <div className="mb-24 relative">
+          {/* Ornament Line */}
+          <motion.div 
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex items-center justify-center gap-4 mb-8"
+          >
+            <div className="flex-1 h-px bg-gradient-to-r from-transparent to-gold" />
+            <span className="font-heading text-3xl text-gold">✦</span>
+            <div className="flex-1 h-px bg-gradient-to-l from-transparent to-gold" />
+          </motion.div>
+
+          {/* H2 Title */}
+          <motion.h2 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-heading text-5xl lg:text-6xl font-black text-maroon uppercase tracking-tight text-center mb-6"
+          >
+            About Lord Mahavira
+          </motion.h2>
+
+          {/* Subtitle */}
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="font-paragraph text-lg text-maroon/70 text-center max-w-3xl mx-auto"
+          >
+            The 24th Tirthankar — A Light of Non-Violence, Non-Absolutism & Non-Possessiveness
+          </motion.p>
+        </div>
+
+        {/* Grid Layout - 2 Columns */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          {/* Left Column - Cards 1 & 2 */}
+          <div className="flex flex-col gap-8">
+            {cards.slice(0, 2).map((card, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group bg-cream border-2 border-maroon p-8 hover:border-gold transition-all duration-300 hover:shadow-lg"
+              >
+                <h3 className="font-heading text-2xl font-bold text-maroon mb-4 uppercase tracking-wide">
+                  {card.title}
+                </h3>
+                <p className="font-paragraph text-maroon/80 leading-relaxed whitespace-pre-line">
+                  {card.content}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Right Column - Cards 3 & 4 */}
+          <div className="flex flex-col gap-8">
+            {cards.slice(2, 4).map((card, index) => (
+              <motion.div
+                key={index + 2}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: (index + 2) * 0.1 }}
+                className="group bg-cream border-2 border-maroon p-8 hover:border-gold transition-all duration-300 hover:shadow-lg"
+              >
+                <h3 className="font-heading text-2xl font-bold text-maroon mb-4 uppercase tracking-wide">
+                  {card.title}
+                </h3>
+                <p className="font-paragraph text-maroon/80 leading-relaxed whitespace-pre-line">
+                  {card.content}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Info Pills */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="flex flex-wrap justify-center gap-6 mt-20"
+        >
+          {infoPills.map((pill, index) => (
+            <div
+              key={index}
+              className="inline-flex items-center gap-3 bg-maroon text-cream px-8 py-4 rounded-full border-2 border-gold font-paragraph font-semibold text-sm uppercase tracking-wide hover:bg-gold hover:text-maroon transition-all duration-300"
+            >
+              <span className="text-xl">{pill.icon}</span>
+              <span>{pill.text}</span>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 // --- STATISTICS SECTION COMPONENT ---
 
 function StatisticsSection() {
