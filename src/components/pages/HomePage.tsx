@@ -1182,33 +1182,88 @@ function AboutUsSection() {
   );
 }
 
-// --- COMMITTEE SECTION COMPONENT ---
+// --- COMMITTEE SECTION COMPONENT (Gallery) ---
 
 function CommitteeSection() {
-  const committeeGroups = [
-    {
-      name: "Bhagwan Mahavir Smarak Samiti (Vaishali)",
-      members: [
-        "Sh. Rajendra Kumar Singh",
-        "Dr. Arun Kumar Jain",
-        "Sh. Vikram Prasad",
-        "Dr. Meera Sharma",
-        "Sh. Devendra Nath",
-        "Dr. Priya Verma"
-      ]
-    },
-    {
-      name: "Kundkund Bharti (New Delhi)",
-      members: [
-        "Sh. Anand Kumar",
-        "Dr. Rajesh Gupta",
-        "Sh. Sanjay Patel",
-        "Dr. Neha Singh",
-        "Sh. Amit Joshi",
-        "Dr. Kavya Sharma"
-      ]
-    }
-  ];
+  const [committeeGallery, setCommitteeGallery] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const fetchGallery = async () => {
+      try {
+        // Placeholder gallery items - user will upload their own photos
+        const placeholderItems = [
+          {
+            _id: '1',
+            title: 'Committee Meeting',
+            image: 'https://static.wixstatic.com/media/53945f_0d3d3515dcf14f28ac3c9d51404ea1d5~mv2.png?originWidth=384&originHeight=256'
+          },
+          {
+            _id: '2',
+            title: 'Temple Development',
+            image: 'https://static.wixstatic.com/media/53945f_504283790ae349d0b66fefa156b9f797~mv2.png?originWidth=384&originHeight=256'
+          },
+          {
+            _id: '3',
+            title: 'Community Event',
+            image: 'https://static.wixstatic.com/media/53945f_1a0ab99aa4dd421d9a60a75086f4781d~mv2.png?originWidth=384&originHeight=256'
+          },
+          {
+            _id: '4',
+            title: 'Spiritual Gathering',
+            image: 'https://static.wixstatic.com/media/53945f_d929e455534a47409b05adb7aa30c29a~mv2.png?originWidth=384&originHeight=256'
+          },
+          {
+            _id: '5',
+            title: 'Construction Progress',
+            image: 'https://static.wixstatic.com/media/53945f_94e17710107345cf8ae2be1c2b1fce88~mv2.png?originWidth=384&originHeight=256'
+          },
+          {
+            _id: '6',
+            title: 'Sacred Ceremonies',
+            image: 'https://static.wixstatic.com/media/53945f_3dd6b18fa4c74403b71baac854ae73c4~mv2.png?originWidth=384&originHeight=256'
+          }
+        ];
+        setCommitteeGallery(placeholderItems);
+      } catch (error) {
+        console.error('Error fetching gallery:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchGallery();
+  }, []);
+
+  const openLightbox = (index: number) => {
+    setCurrentImageIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % committeeGallery.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + committeeGallery.length) % committeeGallery.length);
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!lightboxOpen) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxOpen, committeeGallery.length]);
 
   return (
     <section id="committee" className="relative py-32 bg-cream overflow-hidden">
@@ -1222,8 +1277,8 @@ function CommitteeSection() {
             viewport={{ once: true }}
             className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
           >
-            Managing <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Committee</span>
+            Committee <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Gallery</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -1232,45 +1287,103 @@ function CommitteeSection() {
             transition={{ delay: 0.2 }}
             className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
           >
-            Dedicated trustees and members serving the sacred cause
+            Moments from committee meetings, events, and sacred gatherings
           </motion.p>
           <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
         </div>
 
-        {/* Committee Groups */}
-        <div className="space-y-16">
-          {committeeGroups.map((group, groupIndex) => (
-            <motion.div
-              key={groupIndex}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: groupIndex * 0.1 }}
-            >
-              <h3 className="font-heading text-3xl font-bold text-maroon mb-8 uppercase tracking-wide border-b-2 border-gold pb-4">
-                {group.name}
-              </h3>
-              
-              <div className="flex flex-wrap gap-4">
-                {group.members.map((member, memberIndex) => (
-                  <motion.div
-                    key={memberIndex}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: memberIndex * 0.05 }}
-                    className="bg-gradient-to-r from-cream to-cream/80 border border-gold/30 rounded-[6px] px-4 py-2 hover:border-gold transition-colors duration-300"
-                  >
-                    <p className="font-paragraph text-sm text-maroon font-medium">
-                      {member}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        {/* Gallery Grid */}
+        {isLoading ? (
+          <div className="text-center py-16">
+            <p className="font-paragraph text-maroon/60">Loading gallery...</p>
+          </div>
+        ) : committeeGallery.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
+            {committeeGallery.map((item, index) => (
+              <motion.div
+                key={item._id}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                onClick={() => openLightbox(index)}
+                className="group relative overflow-hidden rounded-[12px] cursor-pointer border-2 border-maroon hover:border-gold transition-all duration-300"
+              >
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                
+                {/* Caption Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <p className="font-heading text-cream text-lg font-bold p-6 w-full uppercase tracking-wide">
+                    {item.title}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-16">
+            <p className="font-paragraph text-maroon/60 text-lg">No gallery items yet. Check back soon!</p>
+          </div>
+        )}
       </div>
+
+      {/* Lightbox */}
+      {lightboxOpen && committeeGallery.length > 0 && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={closeLightbox}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          style={{
+            background: 'rgba(10, 2, 4, 0.92)',
+            backdropFilter: 'blur(6px)'
+          }}
+        >
+          <div className="relative max-w-[90vw] max-h-[80vh] flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
+            {/* Close Button */}
+            <button
+              onClick={closeLightbox}
+              className="absolute top-4 right-4 z-10 w-12 h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            {/* Image */}
+            <div className="flex-1 flex items-center justify-center">
+              <Image
+                src={committeeGallery[currentImageIndex].image}
+                alt={committeeGallery[currentImageIndex].title}
+                className="max-w-full max-h-full object-contain border-4 border-gold"
+              />
+            </div>
+
+            {/* Caption */}
+            <p className="font-heading text-gold text-center mt-6 text-lg uppercase tracking-wide">
+              {committeeGallery[currentImageIndex].title}
+            </p>
+
+            {/* Navigation Buttons */}
+            <button
+              onClick={prevImage}
+              className="fixed left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            <button
+              onClick={nextImage}
+              className="fixed right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+        </motion.div>
+      )}
     </section>
   );
 }
