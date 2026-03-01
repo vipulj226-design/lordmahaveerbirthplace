@@ -48,23 +48,20 @@ export default function Header() {
       </nav>
 
       {/* Mobile Navigation */}
-      <div className="md:hidden flex flex-col">
-        {/* Mobile Grid Navigation */}
-        <div className="grid gap-0 grid-cols-3 sm:grid-cols-4 border-t border-gold/15">
-          {navigationLinks.map((link, index) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="flex flex-col items-center justify-center min-h-[56px] sm:min-h-[52px] text-xs sm:text-sm uppercase font-paragraph text-maroon transition-colors duration-200 border-r border-gold/15 hover:bg-maroon hover:text-gold"
-              style={{
-                borderRight: (index + 1) % 4 !== 0 && window.innerWidth >= 640 ? '1px solid rgba(197, 165, 90, 0.15)' : (index + 1) % 3 !== 0 && window.innerWidth < 640 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
-              }}
-            >
-              {link.label}
-            </a>
+      <nav className="md:hidden flex justify-center items-center px-4 py-3 overflow-x-auto">
+        <ul className="flex gap-2 whitespace-nowrap">
+          {navigationLinks.map((link) => (
+            <li key={link.href}>
+              <a
+                href={link.href}
+                className="px-3 py-1 text-xs uppercase font-paragraph rounded transition-colors duration-200 text-maroon hover:bg-maroon hover:text-gold"
+              >
+                {link.label}
+              </a>
+            </li>
           ))}
-        </div>
-      </div>
+        </ul>
+      </nav>
     </header>
   );
 }
