@@ -790,18 +790,7 @@ function BlessingsSection() {
               transition={{ duration: 0.6, delay: index * 0.05 }}
               className="group bg-white border-l-4 border-gold2 overflow-hidden hover:translate-y-[-3px] transition-transform duration-300"
             >
-              <div className="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-6 p-8">
-                {/* Acharya Image */}
-                {blessing.image && (
-                  <div className="flex-shrink-0">
-                    <Image
-                      src={blessing.image}
-                      alt={blessing.name}
-                      className="w-full h-48 object-cover rounded-lg border-2 border-gold/30"
-                    />
-                  </div>
-                )}
-
+              <div className="p-8">
                 {/* Content */}
                 <div>
                   {/* Acharya Name and Dates */}
