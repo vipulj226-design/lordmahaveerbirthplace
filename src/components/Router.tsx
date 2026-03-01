@@ -4,13 +4,11 @@ import { ScrollToTop } from '@/lib/scroll-to-top';
 import ErrorPage from '@/integrations/errorHandlers/ErrorPage';
 import HomePage from '@/components/pages/HomePage';
 import ScrollProgressBar from '@/components/ScrollProgressBar';
-import Header from '@/components/Header';
 
-// Layout component that includes Header, ScrollToTop and ScrollProgressBar
+// Layout component that includes ScrollToTop and ScrollProgressBar
 function Layout() {
   return (
     <>
-      <Header />
       <ScrollToTop />
       <ScrollProgressBar />
       <Outlet />
