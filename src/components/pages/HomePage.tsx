@@ -705,48 +705,56 @@ function BlessingsSection() {
     {
       name: "Parampujya Shwetpicchhacharya Shri Vidyanandji Muniraj",
       dates: "(Born: 22 April 1925 — Devlokgaman: 22 September 2019)",
+      image: "https://static.wixstatic.com/media/53945f_ec462564133b4e80a302aa05a0c90887~mv2.png?originWidth=384&originHeight=384",
       blessing: "\"Lord Mahavira was born at Vasokund (Kundpur). My Holy blessings are there to build Vardhman's magnificent temple at Vasokund (Kundpur) in Vaishali. This should have been completed much earlier. It is my holy desire and feeling that this work is now completed without any obstacles.\"",
       achievements: "उनके निर्देशन में सम्पन्न महत्त्वपूर्ण कार्य (31 कार्य): भगवान् महावीर का 2500वाँ निर्वाण महोत्सव, श्रवणबेलगोला महामस्तकाभिषेक, गोम्मटेश्वर प्रतिमाओं का निर्माण, बावनगजा जीर्णोद्धार, सम्मेदशिखर आन्दोलन, जैन अल्पसंख्यक घोषणा आन्दोलन, जैन ध्वज व प्रतीक निर्माण, कुन्दकुन्द भारती की स्थापना, प्राकृत शोध संस्थान, तथा 100+ पुस्तकों का प्रकाशन आदि।"
     },
     {
       name: "Parampujya Aacharya Shri Vidyasagar Muniraj",
       dates: "",
+      image: "https://static.wixstatic.com/media/53945f_0ffb1236e6ae46f685a0a02c0aff1c9d~mv2.png?originWidth=384&originHeight=384",
       blessing: "\"The construction work of a temple (Jinalaya) of Lord Mahavira at the Birth-Place of Lord Mahavira at Vasokund (Kundpur) in Vaishali is in progress. This temple at Vaishali shall become the model epicentre of spreading the Principles of Lord Mahavira. It is my Holy Blessing that it may lead to the welfare of all the creatures.\"",
       achievements: ""
     },
     {
       name: "Parampujya Aacharya Shri Vardhman Sagar Muniraj",
       dates: "",
+      image: "https://static.wixstatic.com/media/53945f_ce03f5dee53f4134b590bf01b2c82e1c~mv2.png?originWidth=384&originHeight=384",
       blessing: "\"I realized that the lifestyle of Lord Mahavira and his principles like Brotherhood, Non-Violence, Tolerance, Secularism, Celibacy, etc. are embedded in the hearts of the people of Vaishali. I Bless all the citizens of Vaishali who have preserved these principles of Vardhman Mahavira and the events related to His Birth in their local folk songs & melodies and also retained His Birth Place as Uncultivated land even more than 2600 years after His Birth.\"",
       achievements: ""
     },
     {
       name: "Parampujya Aacharya Shri Shrutsagar Muniraj",
       dates: "",
+      image: "https://static.wixstatic.com/media/53945f_611b7a06d8b24450a30c12c323200291~mv2.png?originWidth=384&originHeight=384",
       blessing: "\"Tirthankar Mahavira is a pillar of light from where the Rays of Non-Violence, Anekant (Non-Absolutism), Aparigraha (Non-Possessiveness) have enlightened the world. I give my Holy Blessing for this superb temple (Jinalaya) at Bhagwan Mahavir Birth Place Vasokund, Vaishali where construction is going on.\"",
       achievements: ""
     },
     {
       name: "Parampujya Aacharya Shri Vishudhsagar Muniraj",
       dates: "",
+      image: "https://static.wixstatic.com/media/53945f_8e54460515ec4825a072bf6eebfdb10e~mv2.png?originWidth=384&originHeight=384",
       blessing: "\"From the study of the entire Jainagam texts and from the research of modern scholars, historians and archaeologists, it has been known that Lord Mahavir Swami was born in Videha Desh, Vaishali, Kundapur (Bharatvarshe Videha Kundapuram) of Bharat Kshetra. I have my blessings for the completion of the construction work of the grand Jinalaya at this historic birthplace.\"",
       achievements: ""
     },
     {
       name: "Bhattarak Charukirti",
       dates: "— Guidance",
+      image: "https://static.wixstatic.com/media/53945f_5bb65b84b9904da89f8ed4313edf0ecc~mv2.png?originWidth=384&originHeight=384",
       blessing: "\"Vardhman Mahavir knew very well that every work is inspired by someone, and hence it is important to make that person look forward for development. The knowledge given by Him about the perspective of an individual and the society/community is very essential. My Holy Blessings are there for early completion of the construction work of this beautiful temple in Vaishali.\"",
       achievements: ""
     },
     {
       name: "Dr. Virendra D. Heggade",
       dates: "— Guidance (Param Shiromani Sanrakshak)",
+      image: "https://static.wixstatic.com/media/53945f_d80881a0ba7243d8b1118389d87aa75a~mv2.png?originWidth=384&originHeight=384",
       blessing: "\"Lord Mahavira does not represent any particular community, religion or society but He is established as a pride and glory of the whole mankind. Lord Mahavira's immense kindness not only towards human beings but also for speechless creatures was invaluable. He abolished exploitation and stress in the world by means of Non-Violence, Non-Possessiveness and Non-Absolutism. My best wishes are there for the construction of this Grand Temple at the Birth Place of Lord Mahavira in Vasokund, Vaishali at fast pace.\"",
       achievements: ""
     },
     {
       name: "Acharya Mahashraman (Terapanth)",
       dates: "— 23 March 2017",
+      image: "https://static.wixstatic.com/media/53945f_869e0542cc66483aa06de1c00d21f7bd~mv2.png?originWidth=384&originHeight=384",
       blessing: "Acharya Mahashraman along with his Sangh (76 Sadhus and Sadhvis) visited the Birthplace on 23 March 2017. He was welcomed by Digambar Jain Acharya Shri Geetalsagar ji and his Sangh. He expressed happiness and wished for this to become an international centre for Ahimsa and Anekantavad.",
       achievements: ""
     }
@@ -790,6 +798,19 @@ function BlessingsSection() {
               transition={{ duration: 0.6, delay: index * 0.05 }}
               className="group bg-white border-l-4 border-gold2 overflow-hidden hover:translate-y-[-3px] transition-transform duration-300 p-8"
             >
+              {/* Acharya Image */}
+              {blessing.image && (
+                <div className="mb-6 -mx-8 -mt-8 mb-6">
+                  <Image
+                    src={blessing.image}
+                    alt={blessing.name}
+                    width={600}
+                    height={300}
+                    className="w-full h-48 object-cover"
+                  />
+                </div>
+              )}
+
               {/* Acharya Name and Dates */}
               <h3 className="font-heading text-2xl font-bold text-maroon mb-2 uppercase tracking-wide">
                 {blessing.name}
