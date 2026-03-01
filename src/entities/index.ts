@@ -4,6 +4,29 @@
  */
 
 /**
+ * Collection ID: aboutus
+ * Interface for AboutUs
+ */
+export interface AboutUs {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType text */
+  sectionTitle?: string;
+  /** @wixFieldType text */
+  introText?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  statueImage?: string;
+  /** @wixFieldType text */
+  statueDescription?: string;
+  /** @wixFieldType url */
+  learnMoreUrl?: string;
+  /** @wixFieldType date */
+  acquisitionDate?: Date | string;
+}
+
+
+/**
  * Collection ID: birthplacestatistics
  * Interface for BirthplaceStatistics
  */
@@ -21,6 +44,29 @@ export interface BirthplaceStatistics {
   unit?: string;
   /** @wixFieldType text */
   description?: string;
+}
+
+
+/**
+ * Collection ID: committee
+ * Interface for CommitteeMembers
+ */
+export interface CommitteeMembers {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType text */
+  name?: string;
+  /** @wixFieldType text */
+  role?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  memberImage?: string;
+  /** @wixFieldType text */
+  bio?: string;
+  /** @wixFieldType url */
+  linkedInUrl?: string;
+  /** @wixFieldType date */
+  joiningDate?: Date | string;
 }
 
 
@@ -107,6 +153,27 @@ export interface NavigationItems {
   isActive?: boolean;
   /** @wixFieldType url */
   url?: string;
+}
+
+
+/**
+ * Collection ID: spiritualleaders
+ * Interface for SpiritualLeaders
+ */
+export interface SpiritualLeaders {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType text */
+  leaderName?: string;
+  /** @wixFieldType text */
+  leaderTitle?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  leaderImage?: string;
+  /** @wixFieldType text */
+  leaderDescription?: string;
+  /** @wixFieldType number */
+  displayOrder?: number;
 }
 
 

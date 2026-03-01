@@ -7,6 +7,32 @@ import { BirthplaceStatistics } from '@/entities';
 import Header from '@/components/Header';
 import FoundationDevelopment from '@/components/FoundationDevelopment';
 
+// Types for new CMS collections
+interface SpiritualLeader {
+  _id: string;
+  leaderName?: string;
+  leaderTitle?: string;
+  leaderImage?: string;
+  leaderDescription?: string;
+  displayOrder?: number;
+}
+
+interface AboutUsContent {
+  _id: string;
+  sectionTitle?: string;
+  introText?: string;
+  statueImage?: string;
+  statueDescription?: string;
+}
+
+interface CommitteeMember {
+  _id: string;
+  name?: string;
+  role?: string;
+  memberImage?: string;
+  bio?: string;
+}
+
 // HPI 1.7-G
 
 // --- UTILITY COMPONENTS ---
@@ -710,9 +736,9 @@ function BlessingsSection() {
               transition={{ duration: 0.6, delay: index * 0.05 }}
               className="group bg-white border-l-4 border-gold2 overflow-hidden hover:translate-y-[-3px] transition-transform duration-300 p-8"
             >
-              {/* Acharya Image */}
+              {/* Leader Image */}
               {blessing.image && (
-                <div className="mb-6 -mx-8 -mt-8 mb-6">
+                <div className="mb-6 -mx-8 -mt-8">
                   <Image
                     src={blessing.image}
                     alt={blessing.name}
@@ -723,7 +749,7 @@ function BlessingsSection() {
                 </div>
               )}
 
-              {/* Acharya Name and Dates */}
+              {/* Leader Name and Title */}
               <h3 className="font-heading text-2xl font-bold text-maroon mb-2 uppercase tracking-wide">
                 {blessing.name}
               </h3>
@@ -733,18 +759,18 @@ function BlessingsSection() {
                 </p>
               )}
               
-              {/* Blessing Text */}
-              <p className="font-paragraph text-lg text-maroon/80 leading-relaxed italic mb-6">
-                {blessing.blessing}
-              </p>
+              {/* Leader Blessing */}
+              {blessing.blessing && (
+                <p className="font-paragraph text-lg text-maroon/80 leading-relaxed italic mb-6">
+                  {blessing.blessing}
+                </p>
+              )}
 
-              {/* Achievements (if present) */}
+              {/* Achievements */}
               {blessing.achievements && (
-                <div className="mt-6 pt-6 border-t border-gold/20">
-                  <p className="font-paragraph text-sm text-maroon/70 leading-relaxed whitespace-pre-line">
-                    {blessing.achievements}
-                  </p>
-                </div>
+                <p className="font-paragraph text-sm text-maroon/70 leading-relaxed">
+                  {blessing.achievements}
+                </p>
               )}
             </motion.div>
           ))}
