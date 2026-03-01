@@ -5,6 +5,7 @@ import { Image } from '@/components/ui/image';
 import { BaseCrudService } from '@/integrations';
 import { BirthplaceStatistics } from '@/entities';
 import Header from '@/components/Header';
+import FoundationDevelopment from '@/components/FoundationDevelopment';
 
 // HPI 1.7-G
 
@@ -77,6 +78,9 @@ export default function HomePage() {
 
       {/* --- VAISHALI HERITAGE SECTION --- */}
       <VaishaliHeritageSection />
+
+      {/* --- FOUNDATION & DEVELOPMENT SECTION --- */}
+      <FoundationDevelopment />
 
       {/* --- FOUNDATION & TEMPLE SECTION --- */}
       <FoundationTempleSection />

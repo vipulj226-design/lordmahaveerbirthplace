@@ -25,6 +25,27 @@ export interface BirthplaceStatistics {
 
 
 /**
+ * Collection ID: foundationdevelopment
+ * Interface for FoundationDevelopment
+ */
+export interface FoundationDevelopment {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType text */
+  yearPeriod?: string;
+  /** @wixFieldType text */
+  heading?: string;
+  /** @wixFieldType text */
+  content?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  image?: string;
+  /** @wixFieldType text */
+  quote?: string;
+}
+
+
+/**
  * Collection ID: herosectioncontent
  * Interface for HeroSectionContent
  */
