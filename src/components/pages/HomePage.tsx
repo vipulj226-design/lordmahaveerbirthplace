@@ -788,36 +788,31 @@ function BlessingsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.05 }}
-              className="group bg-white border-l-4 border-gold2 overflow-hidden hover:translate-y-[-3px] transition-transform duration-300"
+              className="group bg-white border-l-4 border-gold2 overflow-hidden hover:translate-y-[-3px] transition-transform duration-300 p-8"
             >
-              <div className="p-8">
-                {/* Content */}
-                <div>
-                  {/* Acharya Name and Dates */}
-                  <h3 className="font-heading text-2xl font-bold text-maroon mb-2 uppercase tracking-wide">
-                    {blessing.name}
-                  </h3>
-                  {blessing.dates && (
-                    <p className="font-paragraph text-sm text-maroon/60 uppercase tracking-widest mb-6">
-                      {blessing.dates}
-                    </p>
-                  )}
-                  
-                  {/* Blessing Text */}
-                  <p className="font-paragraph text-lg text-maroon/80 leading-relaxed italic mb-6">
-                    {blessing.blessing}
-                  </p>
+              {/* Acharya Name and Dates */}
+              <h3 className="font-heading text-2xl font-bold text-maroon mb-2 uppercase tracking-wide">
+                {blessing.name}
+              </h3>
+              {blessing.dates && (
+                <p className="font-paragraph text-sm text-maroon/60 uppercase tracking-widest mb-6">
+                  {blessing.dates}
+                </p>
+              )}
+              
+              {/* Blessing Text */}
+              <p className="font-paragraph text-lg text-maroon/80 leading-relaxed italic mb-6">
+                {blessing.blessing}
+              </p>
 
-                  {/* Achievements (if present) */}
-                  {blessing.achievements && (
-                    <div className="mt-6 pt-6 border-t border-gold/20">
-                      <p className="font-paragraph text-sm text-maroon/70 leading-relaxed whitespace-pre-line">
-                        {blessing.achievements}
-                      </p>
-                    </div>
-                  )}
+              {/* Achievements (if present) */}
+              {blessing.achievements && (
+                <div className="mt-6 pt-6 border-t border-gold/20">
+                  <p className="font-paragraph text-sm text-maroon/70 leading-relaxed whitespace-pre-line">
+                    {blessing.achievements}
+                  </p>
                 </div>
-              </div>
+              )}
             </motion.div>
           ))}
         </div>
