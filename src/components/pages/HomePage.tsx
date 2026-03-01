@@ -703,22 +703,52 @@ function BirthplaceSection() {
 function BlessingsSection() {
   const blessings = [
     {
-      name: "Acharya Shri Mahendra Kumar",
-      role: "Spiritual Guide & Scholar",
-      blessing: "May the sacred birthplace of Lord Mahavira illuminate the path of all seekers. The blessings of Vasokund flow through generations, guiding souls toward enlightenment and inner peace.",
-      photo: "https://static.wixstatic.com/media/53945f_d948e271bba94e4ba877baa929c12c64~mv2.png?originWidth=128&originHeight=192"
+      name: "Parampujya Shwetpicchhacharya Shri Vidyanandji Muniraj",
+      dates: "(Born: 22 April 1925 — Devlokgaman: 22 September 2019)",
+      blessing: "\"Lord Mahavira was born at Vasokund (Kundpur). My Holy blessings are there to build Vardhman's magnificent temple at Vasokund (Kundpur) in Vaishali. This should have been completed much earlier. It is my holy desire and feeling that this work is now completed without any obstacles.\"",
+      achievements: "उनके निर्देशन में सम्पन्न महत्त्वपूर्ण कार्य (31 कार्य): भगवान् महावीर का 2500वाँ निर्वाण महोत्सव, श्रवणबेलगोला महामस्तकाभिषेक, गोम्मटेश्वर प्रतिमाओं का निर्माण, बावनगजा जीर्णोद्धार, सम्मेदशिखर आन्दोलन, जैन अल्पसंख्यक घोषणा आन्दोलन, जैन ध्वज व प्रतीक निर्माण, कुन्दकुन्द भारती की स्थापना, प्राकृत शोध संस्थान, तथा 100+ पुस्तकों का प्रकाशन आदि।"
     },
     {
-      name: "Revered Saint Anand Sagar",
-      role: "Keeper of Jain Traditions",
-      blessing: "Mahavira's teachings of Ahimsa and Anekant resonate from this sacred soil. May pilgrims who visit Vasokund find solace, wisdom, and the eternal truth that transcends all boundaries.",
-      photo: "https://static.wixstatic.com/media/53945f_b112330555724bcdb4f9035d0439cba5~mv2.png?originWidth=128&originHeight=192"
+      name: "Parampujya Aacharya Shri Vidyasagar Muniraj",
+      dates: "",
+      blessing: "\"The construction work of a temple (Jinalaya) of Lord Mahavira at the Birth-Place of Lord Mahavira at Vasokund (Kundpur) in Vaishali is in progress. This temple at Vaishali shall become the model epicentre of spreading the Principles of Lord Mahavira. It is my Holy Blessing that it may lead to the welfare of all the creatures.\"",
+      achievements: ""
     },
     {
-      name: "Acharya Shri Devendra Nath",
-      role: "Benediction for Devotees",
-      blessing: "In this blessed land where the 24th Tirthankar was born, may every soul find liberation from the cycle of karma. The divine grace of Vasokund protects all who seek truth with sincere hearts.",
-      photo: "https://static.wixstatic.com/media/53945f_19bd1c3ce04e4d48ac861254e95d2b9b~mv2.png?originWidth=128&originHeight=192"
+      name: "Parampujya Aacharya Shri Vardhman Sagar Muniraj",
+      dates: "",
+      blessing: "\"I realized that the lifestyle of Lord Mahavira and his principles like Brotherhood, Non-Violence, Tolerance, Secularism, Celibacy, etc. are embedded in the hearts of the people of Vaishali. I Bless all the citizens of Vaishali who have preserved these principles of Vardhman Mahavira and the events related to His Birth in their local folk songs & melodies and also retained His Birth Place as Uncultivated land even more than 2600 years after His Birth.\"",
+      achievements: ""
+    },
+    {
+      name: "Parampujya Aacharya Shri Shrutsagar Muniraj",
+      dates: "",
+      blessing: "\"Tirthankar Mahavira is a pillar of light from where the Rays of Non-Violence, Anekant (Non-Absolutism), Aparigraha (Non-Possessiveness) have enlightened the world. I give my Holy Blessing for this superb temple (Jinalaya) at Bhagwan Mahavir Birth Place Vasokund, Vaishali where construction is going on.\"",
+      achievements: ""
+    },
+    {
+      name: "Parampujya Aacharya Shri Vishudhsagar Muniraj",
+      dates: "",
+      blessing: "\"From the study of the entire Jainagam texts and from the research of modern scholars, historians and archaeologists, it has been known that Lord Mahavir Swami was born in Videha Desh, Vaishali, Kundapur (Bharatvarshe Videha Kundapuram) of Bharat Kshetra. I have my blessings for the completion of the construction work of the grand Jinalaya at this historic birthplace.\"",
+      achievements: ""
+    },
+    {
+      name: "Bhattarak Charukirti",
+      dates: "— Guidance",
+      blessing: "\"Vardhman Mahavir knew very well that every work is inspired by someone, and hence it is important to make that person look forward for development. The knowledge given by Him about the perspective of an individual and the society/community is very essential. My Holy Blessings are there for early completion of the construction work of this beautiful temple in Vaishali.\"",
+      achievements: ""
+    },
+    {
+      name: "Dr. Virendra D. Heggade",
+      dates: "— Guidance (Param Shiromani Sanrakshak)",
+      blessing: "\"Lord Mahavira does not represent any particular community, religion or society but He is established as a pride and glory of the whole mankind. Lord Mahavira's immense kindness not only towards human beings but also for speechless creatures was invaluable. He abolished exploitation and stress in the world by means of Non-Violence, Non-Possessiveness and Non-Absolutism. My best wishes are there for the construction of this Grand Temple at the Birth Place of Lord Mahavira in Vasokund, Vaishali at fast pace.\"",
+      achievements: ""
+    },
+    {
+      name: "Acharya Mahashraman (Terapanth)",
+      dates: "— 23 March 2017",
+      blessing: "Acharya Mahashraman along with his Sangh (76 Sadhus and Sadhvis) visited the Birthplace on 23 March 2017. He was welcomed by Digambar Jain Acharya Shri Geetalsagar ji and his Sangh. He expressed happiness and wished for this to become an international centre for Ahimsa and Anekantavad.",
+      achievements: ""
     }
   ];
 
@@ -734,7 +764,7 @@ function BlessingsSection() {
             viewport={{ once: true }}
             className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
           >
-            Divine <br/>
+            🙏 Holy <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Blessings</span>
           </motion.h2>
           <motion.p
@@ -744,7 +774,7 @@ function BlessingsSection() {
             transition={{ delay: 0.2 }}
             className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
           >
-            Sacred blessings from revered Acharyas and saints
+            Mangal Ashirwad — Sacred blessings from revered Acharyas for the temple at the birthplace
           </motion.p>
           <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
         </div>
@@ -757,33 +787,32 @@ function BlessingsSection() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group flex flex-col md:flex-row gap-8 bg-white border-l-4 border-gold2 p-8 hover:translate-y-[-3px] transition-transform duration-300"
+              transition={{ duration: 0.6, delay: index * 0.05 }}
+              className="group bg-white border-l-4 border-gold2 p-8 hover:translate-y-[-3px] transition-transform duration-300"
             >
-              {/* Left: Acharya Photo */}
-              <div className="md:w-[180px] flex-shrink-0">
-                <div className="w-full md:w-[180px] h-[220px] overflow-hidden rounded-lg">
-                  <Image
-                    src={blessing.photo}
-                    alt={blessing.name}
-                    className="w-full h-full object-cover object-top"
-                    width={180}
-                  />
-                </div>
-              </div>
-
-              {/* Right: Blessing Text */}
-              <div className="flex-1 flex flex-col justify-center">
-                <h3 className="font-heading text-2xl font-bold text-maroon mb-2 uppercase tracking-wide">
-                  {blessing.name}
-                </h3>
+              {/* Acharya Name and Dates */}
+              <h3 className="font-heading text-2xl font-bold text-maroon mb-2 uppercase tracking-wide">
+                {blessing.name}
+              </h3>
+              {blessing.dates && (
                 <p className="font-paragraph text-sm text-maroon/60 uppercase tracking-widest mb-6">
-                  {blessing.role}
+                  {blessing.dates}
                 </p>
-                <p className="font-paragraph text-lg text-maroon/80 leading-relaxed italic">
-                  "{blessing.blessing}"
-                </p>
-              </div>
+              )}
+              
+              {/* Blessing Text */}
+              <p className="font-paragraph text-lg text-maroon/80 leading-relaxed italic mb-6">
+                {blessing.blessing}
+              </p>
+
+              {/* Achievements (if present) */}
+              {blessing.achievements && (
+                <div className="mt-6 pt-6 border-t border-gold/20">
+                  <p className="font-paragraph text-sm text-maroon/70 leading-relaxed whitespace-pre-line">
+                    {blessing.achievements}
+                  </p>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
