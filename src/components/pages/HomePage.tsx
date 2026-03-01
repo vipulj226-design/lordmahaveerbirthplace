@@ -1226,40 +1226,9 @@ function CommitteeSection() {
   useEffect(() => {
     const fetchGallery = async () => {
       try {
-        // Placeholder gallery items - user will upload their own photos
-        const placeholderItems = [
-          {
-            _id: '1',
-            title: 'Committee Meeting',
-            image: 'https://static.wixstatic.com/media/53945f_0d3d3515dcf14f28ac3c9d51404ea1d5~mv2.png?originWidth=384&originHeight=256'
-          },
-          {
-            _id: '2',
-            title: 'Temple Development',
-            image: 'https://static.wixstatic.com/media/53945f_504283790ae349d0b66fefa156b9f797~mv2.png?originWidth=384&originHeight=256'
-          },
-          {
-            _id: '3',
-            title: 'Community Event',
-            image: 'https://static.wixstatic.com/media/53945f_1a0ab99aa4dd421d9a60a75086f4781d~mv2.png?originWidth=384&originHeight=256'
-          },
-          {
-            _id: '4',
-            title: 'Spiritual Gathering',
-            image: 'https://static.wixstatic.com/media/53945f_d929e455534a47409b05adb7aa30c29a~mv2.png?originWidth=384&originHeight=256'
-          },
-          {
-            _id: '5',
-            title: 'Construction Progress',
-            image: 'https://static.wixstatic.com/media/53945f_94e17710107345cf8ae2be1c2b1fce88~mv2.png?originWidth=384&originHeight=256'
-          },
-          {
-            _id: '6',
-            title: 'Sacred Ceremonies',
-            image: 'https://static.wixstatic.com/media/53945f_3dd6b18fa4c74403b71baac854ae73c4~mv2.png?originWidth=384&originHeight=256'
-          }
-        ];
-        setCommitteeGallery(placeholderItems);
+        const result = await BaseCrudService.getAll<any>('gallery');
+        const sortedItems = result.items.sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
+        setCommitteeGallery(sortedItems);
       } catch (error) {
         console.error('Error fetching gallery:', error);
       } finally {
