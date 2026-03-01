@@ -1391,31 +1391,27 @@ function CommitteeSection() {
 // --- DONATE SECTION COMPONENT ---
 
 function DonateSection() {
-  const donationPlans = [
+  const bankDetails = [
     {
-      category: "Jina Pratima Sponsor",
-      amount: "₹1,08,000+",
-      benefits: "Name inscribed on Jina idol"
+      bankName: "HDFC Bank",
+      branch: "Green Park Branch, New Delhi",
+      accountNumber: "50100264497212",
+      ifscCode: "HDFC0000586",
+      accountHolder: "Bhagwan Mahavir Smarak Samiti"
     },
     {
-      category: "Gold Patron",
-      amount: "₹51,000",
-      benefits: "Gold certificate + name on donor wall"
+      bankName: "State Bank of India",
+      branch: "JNU Branch, New Delhi",
+      accountNumber: "10596551078",
+      ifscCode: "SBIN0001624",
+      accountHolder: "Bhagwan Mahavir Smarak Samiti"
     },
     {
-      category: "Silver Patron",
-      amount: "₹25,000",
-      benefits: "Silver certificate + name plate"
-    },
-    {
-      category: "General Donation",
-      amount: "Any amount",
-      benefits: "Punya + tax benefit"
-    },
-    {
-      category: "Brick Donation",
-      amount: "₹1,100",
-      benefits: "Name on commemorative brick"
+      bankName: "State Bank of India",
+      branch: "Vaishali, Bihar",
+      accountNumber: "35268043586",
+      ifscCode: "SBIN0017445",
+      accountHolder: "Bhagwan Mahavir Samiti"
     }
   ];
 
@@ -1431,8 +1427,8 @@ function DonateSection() {
             viewport={{ once: true }}
             className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
           >
-            Support the <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Sacred Cause</span>
+            💛 Donation & <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Support</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -1441,81 +1437,93 @@ function DonateSection() {
             transition={{ delay: 0.2 }}
             className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
           >
-            Your donation helps build the holy temple at Lord Mahavira's birthplace
+            Contribute to the sacred construction — Tax exemption under Section 80-G
           </motion.p>
           <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
         </div>
 
-        {/* Donation Table */}
+        {/* Inspirational Quote Section */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16 overflow-x-auto"
+          className="mb-16 bg-gradient-to-r from-maroon to-[#1A0306] text-cream p-12 rounded-lg border-2 border-gold"
         >
-          <div className="min-w-full">
-            <div className="bg-maroon text-cream font-heading font-bold uppercase tracking-wide">
-              <div className="grid grid-cols-3 gap-4 p-6 border-b-2 border-gold">
-                <div>Category</div>
-                <div>Amount</div>
-                <div>Benefits</div>
-              </div>
-            </div>
-            
-            {donationPlans.map((plan, index) => (
-              <div
-                key={index}
-                className={`grid grid-cols-3 gap-4 p-6 border-b border-gold/20 font-paragraph ${
-                  index % 2 === 0 ? 'bg-cream' : 'bg-white'
-                }`}
-              >
-                <div className="text-maroon font-semibold">{plan.category}</div>
-                <div className="text-maroon font-heading font-bold text-lg">{plan.amount}</div>
-                <div className="text-maroon/80">{plan.benefits}</div>
-              </div>
-            ))}
-          </div>
+          <p className="font-heading text-2xl italic text-gold mb-4">
+            🙏 "एक ईंट आपकी, एक मंदिर सबका"
+          </p>
+          <p className="font-paragraph text-lg leading-relaxed mb-6">
+            आपका हर योगदान भगवान महावीर की जन्मभूमि को संवारता है।
+          </p>
+          <p className="font-paragraph text-lg leading-relaxed text-cream/90">
+            "Your every contribution helps build the Grand Temple at the Birthplace of Tirthankar Lord Mahavira."
+          </p>
         </motion.div>
 
-        {/* Bank Details Card */}
+        {/* Bank Details Cards */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="bg-maroon text-cream p-8 mb-12 rounded-lg border-2 border-gold"
+          className="mb-16"
         >
-          <h3 className="font-heading text-2xl font-bold text-gold mb-6 uppercase tracking-wide">
-            Bank Transfer Details
+          <h3 className="font-heading text-3xl font-bold text-maroon mb-8 uppercase tracking-wide">
+            🏦 Bank Details
           </h3>
           
-          <div className="space-y-4 font-paragraph mb-8">
-            <div>
-              <p className="text-cream/60 text-sm uppercase tracking-widest mb-1">Bank Name</p>
-              <p className="text-lg font-semibold">State Bank of India</p>
-            </div>
-            <div>
-              <p className="text-cream/60 text-sm uppercase tracking-widest mb-1">Account Name</p>
-              <p className="text-lg font-semibold">Bhagwan Mahavir Smarak Samiti</p>
-            </div>
-            <div>
-              <p className="text-cream/60 text-sm uppercase tracking-widest mb-1">Account Number</p>
-              <p className="text-lg font-semibold">1234567890123</p>
-            </div>
-            <div>
-              <p className="text-cream/60 text-sm uppercase tracking-widest mb-1">IFSC Code</p>
-              <p className="text-lg font-semibold">SBIN0001234</p>
-            </div>
-            <div>
-              <p className="text-cream/60 text-sm uppercase tracking-widest mb-1">Branch</p>
-              <p className="text-lg font-semibold">Vaishali, Bihar</p>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {bankDetails.map((bank, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white border-2 border-maroon p-8 hover:border-gold transition-all duration-300"
+              >
+                <h4 className="font-heading text-xl font-bold text-maroon mb-6 uppercase tracking-wide">
+                  {bank.bankName}
+                </h4>
+                
+                <div className="space-y-4 font-paragraph">
+                  <div>
+                    <p className="text-maroon/60 text-xs uppercase tracking-widest mb-1">Branch</p>
+                    <p className="text-maroon font-semibold">{bank.branch}</p>
+                  </div>
+                  <div>
+                    <p className="text-maroon/60 text-xs uppercase tracking-widest mb-1">Account Holder</p>
+                    <p className="text-maroon font-semibold">{bank.accountHolder}</p>
+                  </div>
+                  <div>
+                    <p className="text-maroon/60 text-xs uppercase tracking-widest mb-1">Account Number</p>
+                    <p className="text-maroon font-mono font-bold text-lg">{bank.accountNumber}</p>
+                  </div>
+                  <div>
+                    <p className="text-maroon/60 text-xs uppercase tracking-widest mb-1">IFSC Code</p>
+                    <p className="text-maroon font-mono font-bold text-lg">{bank.ifscCode}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
+        </motion.div>
 
-          <div className="inline-block bg-gold text-maroon px-4 py-2 rounded-full font-semibold text-sm uppercase tracking-widest">
-            80G Tax Exemption Available
-          </div>
+        {/* Tax Exemption Note */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="bg-gold/10 border-l-4 border-gold p-8 mb-12 rounded-lg"
+        >
+          <h3 className="font-heading text-2xl font-bold text-maroon mb-4 uppercase tracking-wide">
+            📝 Tax Exemption Note
+          </h3>
+          <p className="font-paragraph text-lg text-maroon/80 leading-relaxed">
+            Donations are exempt from Income Tax under Section 80-G. After making your deposit, please inform the office by telephone and obtain a receipt.
+          </p>
         </motion.div>
 
         {/* WhatsApp CTA */}
@@ -1526,7 +1534,7 @@ function DonateSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
           className="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-full font-heading font-bold uppercase tracking-wide hover:bg-[#20BA5A] transition-colors duration-300"
         >
           <MessageCircle className="w-6 h-6" />
