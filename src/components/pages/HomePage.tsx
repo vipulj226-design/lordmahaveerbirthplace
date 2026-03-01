@@ -3,7 +3,7 @@ import { motion, useScroll, useSpring, useInView, useTransform } from 'framer-mo
 import { ArrowRight, MapPin, Calendar, Users, Scroll, Star, ChevronDown, X, ChevronLeft, ChevronRight, MessageCircle, Clock } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import { BaseCrudService } from '@/integrations';
-import { BirthplaceStatistics } from '@/entities';
+import { BirthplaceStatistics, SpiritualLeaders } from '@/entities';
 import Header from '@/components/Header';
 import FoundationDevelopment from '@/components/FoundationDevelopment';
 
@@ -636,10 +636,29 @@ function BirthplaceSection() {
   );
 }
 
-// ... keep existing code (BlessingsSection, VaishaliHeritageSection, FoundationTempleSection, StatisticsSection, AboutMahaviraSection)
+// ... keep existing code (VaishaliHeritageSection, FoundationTempleSection, StatisticsSection, AboutMahaviraSection)
 
 function BlessingsSection() {
-  const blessings = [
+  const [blessings, setBlessings] = useState<SpiritualLeaders[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchBlessings = async () => {
+      try {
+        const result = await BaseCrudService.getAll<SpiritualLeaders>('spiritualleaders');
+        const sortedBlessings = result.items.sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
+        setBlessings(sortedBlessings);
+      } catch (error) {
+        console.error('Error fetching spiritual leaders:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchBlessings();
+  }, []);
+
+  const staticBlessings = [
     {
       name: "Parampujya Shwetpicchhacharya Shri Vidyanandji Muniraj",
       dates: "(Born: 22 April 1925 — Devlokgaman: 22 September 2019)",
@@ -727,53 +746,56 @@ function BlessingsSection() {
 
         {/* Blessing Cards */}
         <div className="space-y-8">
-          {blessings.map((blessing, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.05 }}
-              className="group bg-white border-l-4 border-gold2 overflow-hidden hover:translate-y-[-3px] transition-transform duration-300 p-8"
-            >
-              {/* Leader Image */}
-              {blessing.image && (
-                <div className="mb-6 -mx-8 -mt-8">
-                  <Image
-                    src={blessing.image}
-                    alt={blessing.name}
-                    width={600}
-                    height={300}
-                    className="w-full h-48 object-cover"
-                  />
-                </div>
-              )}
+          {isLoading ? (
+            <div className="text-center py-16">
+              <p className="font-paragraph text-maroon/60">Loading blessings...</p>
+            </div>
+          ) : blessings.length > 0 ? (
+            blessings.map((blessing, index) => (
+              <motion.div
+                key={blessing._id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.05 }}
+                className="group bg-white border-l-4 border-gold2 overflow-hidden hover:translate-y-[-3px] transition-transform duration-300 p-8"
+              >
+                {/* Leader Image */}
+                {blessing.leaderImage && (
+                  <div className="mb-6 -mx-8 -mt-8">
+                    <Image
+                      src={blessing.leaderImage}
+                      alt={blessing.leaderName || 'Leader'}
+                      width={600}
+                      height={300}
+                      className="w-full h-48 object-cover"
+                    />
+                  </div>
+                )}
 
-              {/* Leader Name and Title */}
-              <h3 className="font-heading text-2xl font-bold text-maroon mb-2 uppercase tracking-wide">
-                {blessing.name}
-              </h3>
-              {blessing.dates && (
-                <p className="font-paragraph text-sm text-maroon/60 uppercase tracking-widest mb-6">
-                  {blessing.dates}
-                </p>
-              )}
-              
-              {/* Leader Blessing */}
-              {blessing.blessing && (
-                <p className="font-paragraph text-lg text-maroon/80 leading-relaxed italic mb-6">
-                  {blessing.blessing}
-                </p>
-              )}
-
-              {/* Achievements */}
-              {blessing.achievements && (
-                <p className="font-paragraph text-sm text-maroon/70 leading-relaxed">
-                  {blessing.achievements}
-                </p>
-              )}
-            </motion.div>
-          ))}
+                {/* Leader Name and Title */}
+                <h3 className="font-heading text-2xl font-bold text-maroon mb-2 uppercase tracking-wide">
+                  {blessing.leaderName}
+                </h3>
+                {blessing.leaderTitle && (
+                  <p className="font-paragraph text-sm text-maroon/60 uppercase tracking-widest mb-6">
+                    {blessing.leaderTitle}
+                  </p>
+                )}
+                
+                {/* Leader Description */}
+                {blessing.leaderDescription && (
+                  <p className="font-paragraph text-lg text-maroon/80 leading-relaxed italic mb-6">
+                    {blessing.leaderDescription}
+                  </p>
+                )}
+              </motion.div>
+            ))
+          ) : (
+            <div className="text-center py-16">
+              <p className="font-paragraph text-maroon/60 text-lg">No spiritual leaders available</p>
+            </div>
+          )}
         </div>
       </div>
     </section>
