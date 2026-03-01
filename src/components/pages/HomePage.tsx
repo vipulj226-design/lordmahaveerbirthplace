@@ -4,7 +4,6 @@ import { ArrowRight, MapPin, Calendar, Users, Scroll, Star, ChevronDown, X, Chev
 import { Image } from '@/components/ui/image';
 import { BaseCrudService } from '@/integrations';
 import { BirthplaceStatistics, SpiritualLeaders } from '@/entities';
-import Header from '@/components/Header';
 import FoundationDevelopment from '@/components/FoundationDevelopment';
 
 // Types for new CMS collections
@@ -84,9 +83,6 @@ export default function HomePage() {
       style={{ scrollPaddingTop: '140px' }}
     >
       
-      {/* --- HEADER --- */}
-      <Header />
-
       {/* --- HERO SECTION --- */}
       <HeroSection />
 
