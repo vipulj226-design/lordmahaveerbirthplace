@@ -1237,28 +1237,28 @@ function AboutUsSection() {
   );
 }
 
-// --- COMMITTEE SECTION COMPONENT (Gallery) ---
+// --- COMMITTEE SECTION COMPONENT ---
 
 function CommitteeSection() {
-  const [committeeGallery, setCommitteeGallery] = useState<any[]>([]);
+  const [committeeMembers, setCommitteeMembers] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
-    const fetchGallery = async () => {
+    const fetchCommittee = async () => {
       try {
-        const result = await BaseCrudService.getAll<any>('gallery');
+        const result = await BaseCrudService.getAll<any>('committee');
         const sortedItems = result.items.sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
-        setCommitteeGallery(sortedItems);
+        setCommitteeMembers(sortedItems);
       } catch (error) {
-        console.error('Error fetching gallery:', error);
+        console.error('Error fetching committee members:', error);
       } finally {
         setIsLoading(false);
       }
     };
 
-    fetchGallery();
+    fetchCommittee();
   }, []);
 
   const openLightbox = (index: number) => {
@@ -1271,11 +1271,11 @@ function CommitteeSection() {
   };
 
   const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % committeeGallery.length);
+    setCurrentImageIndex((prev) => (prev + 1) % committeeMembers.length);
   };
 
   const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + committeeGallery.length) % committeeGallery.length);
+    setCurrentImageIndex((prev) => (prev - 1 + committeeMembers.length) % committeeMembers.length);
   };
 
   useEffect(() => {
@@ -1287,7 +1287,7 @@ function CommitteeSection() {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [lightboxOpen, committeeGallery.length]);
+  }, [lightboxOpen, committeeMembers.length]);
 
   return (
     <section id="committee" className="relative py-32 bg-cream overflow-hidden">
@@ -1316,98 +1316,79 @@ function CommitteeSection() {
           <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
         </div>
 
-        {/* Gallery Grid */}
+        {/* Committee Members Grid */}
         {isLoading ? (
           <div className="text-center py-16">
-            <p className="font-paragraph text-maroon/60">Loading gallery...</p>
+            <p className="font-paragraph text-maroon/60">Loading committee members...</p>
           </div>
-        ) : committeeGallery.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
-            {committeeGallery.map((item, index) => (
+        ) : committeeMembers.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {committeeMembers.map((member, index) => (
               <motion.div
-                key={item._id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                key={member._id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                onClick={() => openLightbox(index)}
-                className="group relative overflow-hidden rounded-[12px] cursor-pointer border-2 border-maroon hover:border-gold transition-all duration-300"
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group bg-white border-2 border-maroon overflow-hidden hover:border-gold transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px]"
               >
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                
-                {/* Caption Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                  <p className="font-heading text-cream text-lg font-bold p-6 w-full uppercase tracking-wide">
-                    {item.title}
-                  </p>
+                {/* Member Image */}
+                {member.memberImage && (
+                  <div className="relative h-64 overflow-hidden bg-maroon/10">
+                    <Image
+                      src={member.memberImage}
+                      alt={member.name || 'Committee Member'}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      width={400}
+                      height={400}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  </div>
+                )}
+
+                {/* Member Content */}
+                <div className="p-8">
+                  {/* Member Name */}
+                  <h3 className="font-heading text-2xl font-bold text-maroon mb-2 uppercase tracking-wide line-clamp-2">
+                    {member.name}
+                  </h3>
+
+                  {/* Member Role */}
+                  {member.role && (
+                    <p className="font-paragraph text-sm text-maroon/60 uppercase tracking-widest mb-6 font-semibold">
+                      {member.role}
+                    </p>
+                  )}
+
+                  {/* Member Bio */}
+                  {member.bio && (
+                    <p className="font-paragraph text-maroon/80 leading-relaxed mb-6 line-clamp-3">
+                      {member.bio}
+                    </p>
+                  )}
+
+                  {/* LinkedIn Link */}
+                  {member.linkedInUrl && (
+                    <a
+                      href={member.linkedInUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-paragraph font-semibold transition-colors"
+                    >
+                      <span>🔗</span>
+                      LinkedIn Profile
+                    </a>
+                  )}
                 </div>
               </motion.div>
             ))}
           </div>
         ) : (
           <div className="text-center py-16">
-            <p className="font-paragraph text-maroon/60 text-lg">No gallery items yet. Check back soon!</p>
+            <p className="font-paragraph text-maroon/60 text-lg">No committee members yet. Check back soon!</p>
           </div>
         )}
       </div>
-
-      {/* Lightbox */}
-      {lightboxOpen && committeeGallery.length > 0 && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={closeLightbox}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          style={{
-            background: 'rgba(10, 2, 4, 0.92)',
-            backdropFilter: 'blur(6px)'
-          }}
-        >
-          <div className="relative max-w-[90vw] max-h-[80vh] flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
-            {/* Close Button */}
-            <button
-              onClick={closeLightbox}
-              className="absolute top-4 right-4 z-10 w-12 h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors"
-            >
-              <X className="w-6 h-6" />
-            </button>
-
-            {/* Image */}
-            <div className="flex-1 flex items-center justify-center">
-              <Image
-                src={committeeGallery[currentImageIndex].image}
-                alt={committeeGallery[currentImageIndex].title}
-                className="max-w-full max-h-full object-contain border-4 border-gold"
-              />
-            </div>
-
-            {/* Caption */}
-            <p className="font-heading text-gold text-center mt-6 text-lg uppercase tracking-wide">
-              {committeeGallery[currentImageIndex].title}
-            </p>
-
-            {/* Navigation Buttons */}
-            <button
-              onClick={prevImage}
-              className="fixed left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-
-            <button
-              onClick={nextImage}
-              className="fixed right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-          </div>
-        </motion.div>
-      )}
     </section>
   );
 }
