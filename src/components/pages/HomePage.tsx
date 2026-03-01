@@ -66,6 +66,9 @@ export default function HomePage() {
       {/* --- BIRTHPLACE SECTION --- */}
       <BirthplaceSection />
 
+      {/* --- ABOUT US SECTION (The Unapologetic Truth) --- */}
+      <AboutUsSection />
+
       {/* --- STATISTICS SECTION --- */}
       <StatisticsSection />
 
@@ -93,105 +96,7 @@ export default function HomePage() {
       {/* --- CONTACT SECTION --- */}
       <ContactSection />
 
-      {/* --- FOOTER --- */}
-      <footer className="bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-20">
-        <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
-          
-          {/* Section Header */}
-          <div className="mb-24 relative">
-            <motion.h2 
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
-            >
-              The Unapologetic<br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Truth</span>
-            </motion.h2>
-            <div className="absolute -top-12 -left-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
-          </div>
 
-          {/* Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
-            
-            {/* Sticky Image Column */}
-            <div className="lg:col-span-5 relative">
-              <div className="sticky top-32">
-                <div className="relative aspect-[3/4] w-full overflow-hidden border-4 border-maroon bg-maroon">
-                  <Image 
-                    src="https://static.wixstatic.com/media/53945f_d0d06ffee96845a5826851cf03f30364~mv2.png?originWidth=640&originHeight=896" 
-                    alt="Ancient Jain Statue Representation" 
-                    className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 border border-gold/30 m-4 pointer-events-none" />
-                  
-                  {/* Floating Badge */}
-                  <div className="absolute bottom-8 -right-8 bg-gold text-maroon p-6 font-heading font-bold text-xl shadow-xl border-2 border-maroon hidden lg:block">
-                    <span className="block text-4xl font-black mb-1">24</span>
-                    Tirthankara
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Scrolling Text Column */}
-            <div className="lg:col-span-7 flex flex-col gap-24 pt-12">
-              
-              {/* Block 1 */}
-              <motion.div 
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6 }}
-                className="group"
-              >
-                <div className="flex items-baseline gap-4 mb-6">
-                  <span className="font-heading text-6xl font-black text-gold/40 group-hover:text-gold transition-colors">01</span>
-                  <h3 className="font-heading text-3xl font-bold text-maroon">A Revolution of Spirit</h3>
-                </div>
-                <p className="font-paragraph text-lg text-maroon/80 leading-relaxed pl-20 border-l-2 border-maroon/20 group-hover:border-gold transition-colors">
-                  In an era of ritual complexity, Lord Mahavira introduced a radical simplicity. Born in 599 BCE at Vasokund, his life was a bold declaration that spiritual liberation is the birthright of every soul, not just the chosen few.
-                </p>
-              </motion.div>
-
-              {/* Block 2 */}
-              <motion.div 
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="group"
-              >
-                <div className="flex items-baseline gap-4 mb-6">
-                  <span className="font-heading text-6xl font-black text-gold/40 group-hover:text-gold transition-colors">02</span>
-                  <h3 className="font-heading text-3xl font-bold text-maroon">Ahimsa: The Ultimate Strength</h3>
-                </div>
-                <p className="font-paragraph text-lg text-maroon/80 leading-relaxed pl-20 border-l-2 border-maroon/20 group-hover:border-gold transition-colors">
-                  Non-violence is not passivity; it is the highest form of bravery. Mahavira's teachings at Vaishali challenged the very foundations of violence in thought, word, and deed, establishing a legacy that echoes through millennia.
-                </p>
-              </motion.div>
-
-              {/* Block 3 */}
-              <motion.div 
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="group"
-              >
-                <div className="flex items-baseline gap-4 mb-6">
-                  <span className="font-heading text-6xl font-black text-gold/40 group-hover:text-gold transition-colors">03</span>
-                  <h3 className="font-heading text-3xl font-bold text-maroon">The Eternal Truth</h3>
-                </div>
-                <p className="font-paragraph text-lg text-maroon/80 leading-relaxed pl-20 border-l-2 border-maroon/20 group-hover:border-gold transition-colors">
-                  Anekantavada—the multiplicity of views. In a polarized world, Mahavira's wisdom from Vasokund teaches us to see the truth in others' perspectives, fostering a harmony that is desperately needed today.
-                </p>
-              </motion.div>
-
-            </div>
-          </div>
-        </div>
-      </footer>
 
       {/* --- FOOTER --- */}
       <footer className="bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-20">
@@ -1166,6 +1071,111 @@ function StatisticsSection() {
               <div className="absolute bottom-0 right-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-700 delay-100" />
             </motion.div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// --- ABOUT US SECTION COMPONENT (The Unapologetic Truth) ---
+
+function AboutUsSection() {
+  return (
+    <section id="about" className="relative bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-32 overflow-hidden">
+      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+        
+        {/* Section Header */}
+        <div className="mb-24 relative">
+          <motion.h2 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+          >
+            The Unapologetic<br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Truth</span>
+          </motion.h2>
+          <div className="absolute -top-12 -left-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
+        </div>
+
+        {/* Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+          
+          {/* Sticky Image Column */}
+          <div className="lg:col-span-5 relative">
+            <div className="sticky top-32">
+              <div className="relative aspect-[3/4] w-full overflow-hidden border-4 border-maroon bg-maroon">
+                <Image 
+                  src="https://static.wixstatic.com/media/53945f_d0d06ffee96845a5826851cf03f30364~mv2.png?originWidth=640&originHeight=896" 
+                  alt="Ancient Jain Statue Representation" 
+                  className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 border border-gold/30 m-4 pointer-events-none" />
+                
+                {/* Floating Badge */}
+                <div className="absolute bottom-8 -right-8 bg-gold text-maroon p-6 font-heading font-bold text-xl shadow-xl border-2 border-maroon hidden lg:block">
+                  <span className="block text-4xl font-black mb-1">24</span>
+                  Tirthankara
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Scrolling Text Column */}
+          <div className="lg:col-span-7 flex flex-col gap-24 pt-12">
+            
+            {/* Block 1 */}
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6 }}
+              className="group"
+            >
+              <div className="flex items-baseline gap-4 mb-6">
+                <span className="font-heading text-6xl font-black text-gold/40 group-hover:text-gold transition-colors">01</span>
+                <h3 className="font-heading text-3xl font-bold text-cream">A Revolution of Spirit</h3>
+              </div>
+              <p className="font-paragraph text-lg text-cream/80 leading-relaxed pl-20 border-l-2 border-cream/20 group-hover:border-gold transition-colors">
+                In an era of ritual complexity, Lord Mahavira introduced a radical simplicity. Born in 599 BCE at Vasokund, his life was a bold declaration that spiritual liberation is the birthright of every soul, not just the chosen few.
+              </p>
+            </motion.div>
+
+            {/* Block 2 */}
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="group"
+            >
+              <div className="flex items-baseline gap-4 mb-6">
+                <span className="font-heading text-6xl font-black text-gold/40 group-hover:text-gold transition-colors">02</span>
+                <h3 className="font-heading text-3xl font-bold text-cream">Ahimsa: The Ultimate Strength</h3>
+              </div>
+              <p className="font-paragraph text-lg text-cream/80 leading-relaxed pl-20 border-l-2 border-cream/20 group-hover:border-gold transition-colors">
+                Non-violence is not passivity; it is the highest form of bravery. Mahavira's teachings at Vaishali challenged the very foundations of violence in thought, word, and deed, establishing a legacy that echoes through millennia.
+              </p>
+            </motion.div>
+
+            {/* Block 3 */}
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="group"
+            >
+              <div className="flex items-baseline gap-4 mb-6">
+                <span className="font-heading text-6xl font-black text-gold/40 group-hover:text-gold transition-colors">03</span>
+                <h3 className="font-heading text-3xl font-bold text-cream">The Eternal Truth</h3>
+              </div>
+              <p className="font-paragraph text-lg text-cream/80 leading-relaxed pl-20 border-l-2 border-cream/20 group-hover:border-gold transition-colors">
+                Anekantavada—the multiplicity of views. In a polarized world, Mahavira's wisdom from Vasokund teaches us to see the truth in others' perspectives, fostering a harmony that is desperately needed today.
+              </p>
+            </motion.div>
+
+          </div>
         </div>
       </div>
     </section>
