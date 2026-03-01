@@ -52,7 +52,10 @@ export default function HomePage() {
   const statsY = useTransform(scrollYProgress, [0.1, 0.3], [100, 0]);
 
   return (
-    <div className="min-h-screen bg-cream text-maroon selection:bg-maroon selection:text-gold overflow-x-hidden">
+    <div 
+      className="min-h-screen bg-cream text-maroon selection:bg-maroon selection:text-gold overflow-x-hidden"
+      style={{ scrollPaddingTop: '140px' }}
+    >
       
       {/* --- HEADER --- */}
       <Header />
