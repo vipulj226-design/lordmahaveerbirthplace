@@ -97,6 +97,9 @@ export default function HomePage() {
       {/* --- GALLERY SECTION --- */}
       <GallerySection />
 
+      {/* --- HOW TO REACH SECTION --- */}
+      <HowToReachSection />
+
       {/* --- CONTACT SECTION --- */}
       <ContactSection />
 
@@ -129,7 +132,7 @@ export default function HomePage() {
 
           {/* Navigation Links */}
           <div className="flex flex-wrap justify-center gap-6 mb-16 text-center">
-            {['About', 'Birthplace', 'Blessings', 'Vaishali', 'Foundation', 'Committee', 'Donate', 'Gallery', 'Contact'].map((link) => (
+            {['About', 'Birthplace', 'Blessings', 'Vaishali', 'Foundation', 'Committee', 'Donate', 'Gallery', 'Events', 'How to Reach', 'Contact'].map((link) => (
               <a key={link} href={`#${link.toLowerCase()}`} className="font-paragraph text-cream/80 hover:text-gold transition-colors text-sm uppercase tracking-wider">
                 {link}
               </a>
@@ -1874,6 +1877,301 @@ function UpcomingEventsSection() {
             <p className="font-paragraph text-maroon/60 text-lg">No upcoming events at this time. Please check back soon.</p>
           </div>
         )}
+      </div>
+    </section>
+  );
+}
+
+// --- HOW TO REACH SECTION COMPONENT ---
+
+function HowToReachSection() {
+  const transportModes = [
+    {
+      icon: "✈️",
+      title: "By Air",
+      details: [
+        "Nearest Airport: Patna International Airport (35 km)",
+        "Flight connections from major Indian cities",
+        "Taxi/cab available from airport"
+      ]
+    },
+    {
+      icon: "🚂",
+      title: "By Train",
+      details: [
+        "Nearest Railway Station: Patna Junction (35 km)",
+        "Well-connected to Delhi, Mumbai, Kolkata",
+        "Local transport available from station"
+      ]
+    },
+    {
+      icon: "🚗",
+      title: "By Road",
+      details: [
+        "National Highway 2 connects to Vaishali",
+        "Taxi/cab services available",
+        "Personal vehicle recommended for flexibility"
+      ]
+    },
+    {
+      icon: "🚌",
+      title: "By Bus",
+      details: [
+        "Regular bus services from Patna",
+        "State transport and private operators",
+        "Journey time: ~1.5 hours from Patna"
+      ]
+    }
+  ];
+
+  const accommodationOptions = [
+    {
+      type: "Dharamshala",
+      description: "Sacred guest houses for pilgrims",
+      amenities: ["Basic facilities", "Spiritual atmosphere", "Affordable rates"]
+    },
+    {
+      type: "Hotels",
+      description: "Comfortable lodging in nearby towns",
+      amenities: ["Modern facilities", "Various price ranges", "Dining options"]
+    },
+    {
+      type: "Ashrams",
+      description: "Spiritual retreats and meditation centers",
+      amenities: ["Yoga & meditation", "Vegetarian meals", "Peaceful environment"]
+    }
+  ];
+
+  return (
+    <section id="how-to-reach" className="relative py-32 bg-cream overflow-hidden">
+      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+        
+        {/* Section Header */}
+        <div className="mb-24 relative">
+          <motion.h2 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+          >
+            How to <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Reach</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
+          >
+            Journey to the sacred birthplace of Lord Mahavira at Vasokund, Vaishali
+          </motion.p>
+          <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
+        </div>
+
+        {/* Transport Modes Grid */}
+        <div className="mb-24">
+          <motion.h3
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-heading text-3xl font-bold text-maroon mb-12 uppercase tracking-wide"
+          >
+            🚀 Transportation Options
+          </motion.h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {transportModes.map((mode, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group bg-white border-2 border-maroon p-8 hover:border-gold transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px]"
+              >
+                <div className="text-5xl mb-4">{mode.icon}</div>
+                <h4 className="font-heading text-2xl font-bold text-maroon mb-6 uppercase tracking-wide">
+                  {mode.title}
+                </h4>
+                <ul className="space-y-3">
+                  {mode.details.map((detail, idx) => (
+                    <li key={idx} className="flex gap-3">
+                      <div className="w-2 h-2 bg-gold rounded-full mt-2 shrink-0" />
+                      <p className="font-paragraph text-maroon/80 text-sm leading-relaxed">
+                        {detail}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Distance & Time Info */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-24 bg-gradient-to-r from-maroon to-[#1A0306] text-cream p-12 rounded-lg border-2 border-gold"
+        >
+          <h3 className="font-heading text-3xl font-bold mb-8 uppercase tracking-wide">
+            📍 Distance & Travel Time from Major Cities
+          </h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { city: "Patna", distance: "35 km", time: "1 hour" },
+              { city: "Delhi", distance: "1000 km", time: "18-20 hours" },
+              { city: "Kolkata", distance: "250 km", time: "5-6 hours" },
+              { city: "Varanasi", distance: "150 km", time: "3-4 hours" }
+            ].map((item, index) => (
+              <div key={index} className="text-center">
+                <p className="font-heading text-2xl font-bold text-gold mb-2 uppercase tracking-wide">
+                  {item.city}
+                </p>
+                <p className="font-paragraph text-cream/80 mb-2">
+                  <span className="font-bold text-gold">{item.distance}</span> away
+                </p>
+                <p className="font-paragraph text-cream/70 text-sm">
+                  ~{item.time} journey
+                </p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Accommodation Options */}
+        <div className="mb-24">
+          <motion.h3
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-heading text-3xl font-bold text-maroon mb-12 uppercase tracking-wide"
+          >
+            🏨 Accommodation Options
+          </motion.h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {accommodationOptions.map((option, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group bg-white border-2 border-maroon p-8 hover:border-gold transition-all duration-300"
+              >
+                <h4 className="font-heading text-2xl font-bold text-maroon mb-3 uppercase tracking-wide">
+                  {option.type}
+                </h4>
+                <p className="font-paragraph text-maroon/80 mb-6 leading-relaxed">
+                  {option.description}
+                </p>
+                <div className="space-y-2">
+                  <p className="font-heading text-sm font-bold text-maroon uppercase tracking-widest mb-3">
+                    Amenities:
+                  </p>
+                  {option.amenities.map((amenity, idx) => (
+                    <div key={idx} className="flex gap-3">
+                      <span className="text-gold">✓</span>
+                      <p className="font-paragraph text-maroon/80 text-sm">
+                        {amenity}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Best Time to Visit */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-gold/10 border-l-4 border-gold p-8 mb-12 rounded-lg"
+        >
+          <h3 className="font-heading text-2xl font-bold text-maroon mb-4 uppercase tracking-wide">
+            📅 Best Time to Visit
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <p className="font-heading font-bold text-maroon uppercase text-sm tracking-widest mb-2">
+                Ideal Season
+              </p>
+              <p className="font-paragraph text-maroon/80 leading-relaxed">
+                October to March — Pleasant weather, cool temperatures, and ideal for pilgrimage. Avoid monsoon (June-September) and extreme summer heat (April-May).
+              </p>
+            </div>
+            <div>
+              <p className="font-heading font-bold text-maroon uppercase text-sm tracking-widest mb-2">
+                Special Events
+              </p>
+              <p className="font-paragraph text-maroon/80 leading-relaxed">
+                Mahavir Jayanti (March/April) — Grand celebrations at the birthplace. Diwali season also sees significant pilgrim gatherings and spiritual events.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Quick Tips */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="bg-white border-2 border-maroon p-8 rounded-lg"
+        >
+          <h3 className="font-heading text-2xl font-bold text-maroon mb-8 uppercase tracking-wide">
+            💡 Pilgrimage Tips
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              "Wear comfortable walking shoes for the sacred site",
+              "Carry water and sun protection during summer",
+              "Dress modestly as a sign of respect",
+              "Book accommodation in advance during peak season",
+              "Hire a local guide for historical insights",
+              "Respect the spiritual sanctity of the birthplace",
+              "Plan 2-3 days for a meaningful pilgrimage",
+              "Contact us in advance for group pilgrimages"
+            ].map((tip, index) => (
+              <div key={index} className="flex gap-4">
+                <span className="text-2xl">✨</span>
+                <p className="font-paragraph text-maroon/80 leading-relaxed">
+                  {tip}
+                </p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Contact for Arrangements */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-16 text-center"
+        >
+          <p className="font-paragraph text-lg text-maroon/80 mb-6">
+            Need help planning your pilgrimage? Contact us for personalized arrangements.
+          </p>
+          <a
+            href="https://wa.me/919811660130"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-full font-heading font-bold uppercase tracking-wide hover:bg-[#20BA5A] transition-colors duration-300"
+          >
+            <MessageCircle className="w-6 h-6" />
+            📞 WhatsApp — 9811660130
+          </a>
+        </motion.div>
       </div>
     </section>
   );
