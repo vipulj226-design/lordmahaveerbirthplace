@@ -46,27 +46,6 @@ export interface FoundationDevelopment {
 
 
 /**
- * Collection ID: gallery
- * Interface for Gallery
- */
-export interface Gallery {
-  _id: string;
-  _createdDate?: Date;
-  _updatedDate?: Date;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
-  image?: string;
-  /** @wixFieldType text */
-  caption?: string;
-  /** @wixFieldType number */
-  displayOrder?: number;
-  /** @wixFieldType text */
-  description?: string;
-  /** @wixFieldType datetime */
-  dateAdded?: Date | string;
-}
-
-
-/**
  * Collection ID: herosectioncontent
  * Interface for HeroSectionContent
  */
