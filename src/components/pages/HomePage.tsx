@@ -60,7 +60,6 @@ export default function HomePage() {
       {/* --- HERO SECTION --- */}
       <HeroSection />
 
-
       {/* --- BIRTHPLACE SECTION --- */}
       <BirthplaceSection />
 
@@ -91,8 +90,8 @@ export default function HomePage() {
       {/* --- CONTACT SECTION --- */}
       <ContactSection />
 
-      {/* --- LEGACY / ABOUT SECTION --- */}
-      <section id="legacy" className="relative py-32 bg-cream overflow-hidden">
+      {/* --- ABOUT / LEGACY SECTION --- */}
+      <section id="about" className="relative py-32 bg-cream overflow-hidden">
         <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
           
           {/* Section Header */}
@@ -190,6 +189,36 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* --- BIRTHPLACE SECTION --- */}
+      <BirthplaceSection />
+
+      {/* --- STATISTICS SECTION --- */}
+      <StatisticsSection />
+
+      {/* --- DIVINE BLESSINGS SECTION --- */}
+      <BlessingsSection />
+
+      {/* --- VAISHALI HERITAGE SECTION --- */}
+      <VaishaliHeritageSection />
+
+      {/* --- FOUNDATION & TEMPLE SECTION --- */}
+      <FoundationTempleSection />
+
+      {/* --- COMMITTEE SECTION --- */}
+      <CommitteeSection />
+
+      {/* --- DONATE SECTION --- */}
+      <DonateSection />
+
+      {/* --- UPCOMING EVENTS SECTION --- */}
+      <UpcomingEventsSection />
+
+      {/* --- GALLERY SECTION --- */}
+      <GallerySection />
+
+      {/* --- CONTACT SECTION --- */}
+      <ContactSection />
 
       {/* --- FOOTER --- */}
       <footer className="bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-20">
