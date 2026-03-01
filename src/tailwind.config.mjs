@@ -34,17 +34,7 @@ export default {
                 foreground: '#000000',
                 'secondary-foreground': '#000000',
                 'primary-foreground': '#FDF6EC',
-                primary: '#6B0F1A',
-                neutral: '#FDF6EC',
-                'neutral-light': 'rgba(253, 246, 236, 0.6)',
-                'neutral-muted': 'rgba(253, 246, 236, 0.8)',
-                'accent-alt': '#D4AF37',
-                'accent-light': 'rgba(197, 165, 90, 0.1)',
-                'accent-lighter': 'rgba(197, 165, 90, 0.05)',
-                'primary-muted': 'rgba(107, 15, 26, 0.8)',
-                'primary-light': 'rgba(107, 15, 26, 0.6)',
-                'primary-lighter': 'rgba(107, 15, 26, 0.4)',
-                'primary-dark': '#3D0A10'
+                primary: '#6B0F1A'
             },
         },
     },
