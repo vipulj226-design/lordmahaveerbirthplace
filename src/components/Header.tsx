@@ -68,14 +68,14 @@ export default function Header() {
       {/* Mobile Navigation */}
       <div className="md:hidden flex flex-col">
         {/* Mobile Logo */}
-        <div className="flex items-center justify-center gap-1 py-1 px-2 border-b border-[rgba(197,165,90,0.15)]">
+        <div className="flex items-center justify-center gap-0.5 py-0.5 px-2 border-b border-[rgba(197,165,90,0.15)]">
           <Image
             src="https://static.wixstatic.com/media/53945f_871cd988c2c84607ba185313bfc4a532~mv2.png?originWidth=128&originHeight=128"
             alt="Lord Mahaveer Birthplace Logo"
-            width={12}
-            height={12}
+            width={8}
+            height={8}
           />
-          <span className="font-heading text-[0.55rem] font-bold text-maroon text-center leading-tight">
+          <span className="font-heading text-[0.45rem] font-bold text-maroon text-center leading-tight">
             ☸ Lord
             <span style={{ color: '#D4AF37' }}>Mahaveer</span> Birthplace
           </span>
@@ -93,7 +93,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="flex flex-col items-center justify-center min-h-[40px] text-[0.55rem] uppercase font-paragraph text-maroon transition-colors duration-200"
+              className="flex flex-col items-center justify-center min-h-[32px] text-[0.45rem] uppercase font-paragraph text-maroon transition-colors duration-200"
               style={{
                 borderRight: (index + 1) % 5 !== 0 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
                 borderBottom: index < 5 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
