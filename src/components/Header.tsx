@@ -1,5 +1,3 @@
-import { Image } from '@/components/ui/image';
-
 const navigationLinks = [
   { label: 'About', href: '#about' },
   { label: 'Birthplace', href: '#birthplace' },
@@ -24,21 +22,7 @@ export default function Header() {
       }}
     >
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex justify-between items-center px-6 py-2 max-w-[1400px] mx-auto">
-        {/* Logo Section */}
-        <div className="flex items-center gap-1.5">
-          <Image
-            src="https://static.wixstatic.com/media/53945f_2e826a49018c4608a83b51af29559333~mv2.png?originWidth=128&originHeight=128"
-            alt="Lord Mahaveer Birthplace Logo"
-            width={18}
-            height={18}
-          />
-          <span className="font-heading text-[0.9rem] font-bold text-maroon">
-            ☸ Lord
-            <span style={{ color: '#D4AF37' }}>Mahaveer</span> Birthplace
-          </span>
-        </div>
-
+      <nav className="hidden md:flex justify-center items-center px-6 py-2 max-w-[1400px] mx-auto">
         {/* Navigation Links */}
         <ul className="flex gap-0.5">
           {navigationLinks.map((link) => (
@@ -67,20 +51,6 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       <div className="md:hidden flex flex-col">
-        {/* Mobile Logo */}
-        <div className="flex items-center justify-center gap-0.5 py-0.5 px-2 border-b border-[rgba(197,165,90,0.15)]">
-          <Image
-            src="https://static.wixstatic.com/media/53945f_871cd988c2c84607ba185313bfc4a532~mv2.png?originWidth=128&originHeight=128"
-            alt="Lord Mahaveer Birthplace Logo"
-            width={8}
-            height={8}
-          />
-          <span className="font-heading text-[0.45rem] font-bold text-maroon text-center leading-tight">
-            ☸ Lord
-            <span style={{ color: '#D4AF37' }}>Mahaveer</span> Birthplace
-          </span>
-        </div>
-
         {/* Mobile Grid Navigation */}
         <div
           className="grid gap-0"
