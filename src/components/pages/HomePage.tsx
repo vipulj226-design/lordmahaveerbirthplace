@@ -369,10 +369,12 @@ function HeroSection() {
           }}
         >
           <Image 
-            src="https://static.wixstatic.com/media/53945f_8b054f3958224ef7be0343afc4b0c449~mv2.png?originWidth=576&originHeight=384"
+            src="https://static.wixstatic.com/media/53945f_1c0e3a112b6a457184730b5a82e10ad7~mv2.png?originWidth=576&originHeight=384"
             alt="Sahastrakut Jinalaya"
             className="w-full h-auto object-cover"
             width={600}
+            originWidth={576}
+            originHeight={384}
           />
         </motion.div>
 
