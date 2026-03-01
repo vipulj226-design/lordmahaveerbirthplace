@@ -68,14 +68,14 @@ export default function Header() {
       {/* Mobile Navigation */}
       <div className="md:hidden flex flex-col">
         {/* Mobile Logo */}
-        <div className="flex items-center justify-center gap-1.5 py-2 border-b border-[rgba(197,165,90,0.15)]">
+        <div className="flex items-center justify-center gap-1 py-1 px-2 border-b border-[rgba(197,165,90,0.15)]">
           <Image
             src="https://static.wixstatic.com/media/53945f_871cd988c2c84607ba185313bfc4a532~mv2.png?originWidth=128&originHeight=128"
             alt="Lord Mahaveer Birthplace Logo"
-            width={16}
-            height={16}
+            width={12}
+            height={12}
           />
-          <span className="font-heading text-[0.7rem] font-bold text-maroon text-center">
+          <span className="font-heading text-[0.55rem] font-bold text-maroon text-center leading-tight">
             ☸ Lord
             <span style={{ color: '#D4AF37' }}>Mahaveer</span> Birthplace
           </span>
