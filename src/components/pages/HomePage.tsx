@@ -768,8 +768,8 @@ function BlessingsSection() {
                       src={blessing.leaderImage}
                       alt={blessing.leaderName || 'Leader'}
                       width={600}
-                      height={300}
-                      className="w-full h-48 object-cover"
+                      height={400}
+                      className="w-full h-auto object-contain"
                     />
                   </div>
                 )}
