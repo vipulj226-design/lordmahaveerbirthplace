@@ -1572,35 +1572,26 @@ function DonateSection() {
 // --- GALLERY SECTION COMPONENT ---
 
 function GallerySection() {
+  const [galleryItems, setGalleryItems] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const galleryItems = [
-    {
-      src: "https://static.wixstatic.com/media/53945f_31aaab0655c74a5cb45206e99d992c89~mv2.png?originWidth=256&originHeight=256",
-      caption: "Vasokund Birthplace Aerial View"
-    },
-    {
-      src: "https://static.wixstatic.com/media/53945f_cf808103e62245deb4c7d993f81dc82b~mv2.png?originWidth=256&originHeight=256",
-      caption: "Sahastrakut Jinalaya Construction"
-    },
-    {
-      src: "https://static.wixstatic.com/media/53945f_690a292a55a04edf8221009782a8696b~mv2.png?originWidth=256&originHeight=256",
-      caption: "Mahavir Jayanti Celebration"
-    },
-    {
-      src: "https://static.wixstatic.com/media/53945f_7357e16ae17248e597e990722e79522e~mv2.png?originWidth=256&originHeight=256",
-      caption: "Ashoka Lion Pillar at Kolhua"
-    },
-    {
-      src: "https://static.wixstatic.com/media/53945f_5b2e9c114ebb4b828b24921a19619f07~mv2.png?originWidth=256&originHeight=256",
-      caption: "Jivant Swami Statue"
-    },
-    {
-      src: "https://static.wixstatic.com/media/53945f_91532434b83e416f93f27d21a6e80c08~mv2.png?originWidth=256&originHeight=256",
-      caption: "Vaishali Heritage View"
-    }
-  ];
+  useEffect(() => {
+    const fetchGallery = async () => {
+      try {
+        const result = await BaseCrudService.getAll<any>('gallery');
+        const sortedItems = result.items.sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
+        setGalleryItems(sortedItems);
+      } catch (error) {
+        console.error('Error fetching gallery:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchGallery();
+  }, []);
 
   const openLightbox = (index: number) => {
     setCurrentImageIndex(index);
@@ -1628,7 +1619,7 @@ function GallerySection() {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [lightboxOpen]);
+  }, [lightboxOpen, galleryItems.length]);
 
   return (
     <section id="gallery" className="relative py-32 bg-cream overflow-hidden">
@@ -1658,36 +1649,46 @@ function GallerySection() {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[280px]">
-          {galleryItems.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              onClick={() => openLightbox(index)}
-              className="group relative overflow-hidden rounded-[10px] cursor-pointer"
-            >
-              <Image
-                src={item.src}
-                alt={item.caption}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-              
-              {/* Caption Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                <p className="font-paragraph text-cream text-sm p-4 w-full">
-                  {item.caption}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        {isLoading ? (
+          <div className="text-center py-16">
+            <p className="font-paragraph text-maroon/60">Loading gallery...</p>
+          </div>
+        ) : galleryItems.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[280px]">
+            {galleryItems.map((item, index) => (
+              <motion.div
+                key={item._id}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                onClick={() => openLightbox(index)}
+                className="group relative overflow-hidden rounded-[10px] cursor-pointer border-2 border-maroon hover:border-gold transition-all duration-300"
+              >
+                <Image
+                  src={item.image}
+                  alt={item.caption || 'Gallery image'}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                
+                {/* Caption Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <p className="font-paragraph text-cream text-sm p-4 w-full">
+                    {item.caption}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-16">
+            <p className="font-paragraph text-maroon/60 text-lg">No gallery items yet. Check back soon!</p>
+          </div>
+        )}
       </div>
 
       {/* Lightbox */}
-      {lightboxOpen && (
+      {lightboxOpen && galleryItems.length > 0 && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -1711,8 +1712,8 @@ function GallerySection() {
             {/* Image */}
             <div className="flex-1 flex items-center justify-center">
               <Image
-                src={galleryItems[currentImageIndex].src}
-                alt={galleryItems[currentImageIndex].caption}
+                src={galleryItems[currentImageIndex].image}
+                alt={galleryItems[currentImageIndex].caption || 'Gallery image'}
                 className="max-w-full max-h-full object-contain border-4 border-gold"
               />
             </div>
