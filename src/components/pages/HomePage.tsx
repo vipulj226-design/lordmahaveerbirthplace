@@ -106,8 +106,8 @@ export default function HomePage() {
 
 
       {/* --- FOOTER --- */}
-      <footer className="bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-20">
-        <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+      <footer className="bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-12 sm:py-16 lg:py-20">
+        <div className="w-full max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
           
           {/* Logo */}
           <div className="text-center mb-16">
@@ -232,13 +232,10 @@ function HeroSection() {
   return (
     <section 
       id="hero" 
-      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-12 py-20 sm:py-32 lg:py-40"
       style={{
         background: 'linear-gradient(135deg, #6B0F1A, #3D0A10, #6B0F1A)',
-        paddingTop: '120px',
-        paddingBottom: '80px',
-        paddingLeft: '24px',
-        paddingRight: '24px',
+        paddingTop: 'clamp(120px, 15vw, 140px)',
       }}
     >
       {/* Background Image Pseudo-element */}
@@ -276,13 +273,13 @@ function HeroSection() {
       >
         {/* Ornament Text */}
         <motion.div 
-          className="mb-6"
+          className="mb-4 sm:mb-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.2 }}
         >
           <span 
-            className="font-heading text-[2.5rem] tracking-[0.75em] font-black"
+            className="font-heading text-xl sm:text-3xl lg:text-[2.5rem] tracking-[0.75em] font-black"
             style={{ color: '#C5A55A' }}
           >
             ✦  ✦  ✦
@@ -291,9 +288,9 @@ function HeroSection() {
 
         {/* H1 Title with Gradient */}
         <motion.h1 
-          className="font-heading font-black tracking-tight mb-6"
+          className="font-heading font-black tracking-tight mb-4 sm:mb-6"
           style={{
-            fontSize: 'clamp(2rem, 5vw, 3.8rem)',
+            fontSize: 'clamp(1.5rem, 6vw, 3.8rem)',
             backgroundImage: 'linear-gradient(to right, #C5A55A, #FDF6EC, #D4AF37)',
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
@@ -309,7 +306,7 @@ function HeroSection() {
 
         {/* Subtitle (Italic) */}
         <motion.p 
-          className="font-heading italic text-2xl mb-4 tracking-wide"
+          className="font-heading italic text-lg sm:text-xl lg:text-2xl mb-3 sm:mb-4 tracking-wide"
           style={{ color: '#C5A55A' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -320,7 +317,7 @@ function HeroSection() {
 
         {/* Sub2 Text */}
         <motion.p 
-          className="font-paragraph mb-12 tracking-[0.125em] uppercase text-sm"
+          className="font-paragraph mb-8 sm:mb-12 tracking-[0.125em] uppercase text-xs sm:text-sm"
           style={{ color: 'rgba(253, 246, 236, 0.7)' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -331,7 +328,7 @@ function HeroSection() {
 
         {/* Hero Image Box */}
         <motion.div 
-          className="mx-auto mb-12 max-w-[600px]"
+          className="mx-auto mb-8 sm:mb-12 max-w-[90%] sm:max-w-[600px]"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 1 }}
@@ -353,15 +350,11 @@ function HeroSection() {
         {/* CTA Button */}
         <motion.a 
           href="#about"
-          className="inline-block font-heading font-bold tracking-wide uppercase"
+          className="inline-block font-heading font-bold tracking-wide uppercase text-sm sm:text-base px-6 sm:px-10 py-3 sm:py-4 rounded-full"
           style={{
             backgroundImage: 'linear-gradient(to right, #D4AF37, #C5A55A)',
             color: '#1a1a1a',
-            padding: '14px 40px',
-            borderRadius: '50px',
             textDecoration: 'none',
-            fontSize: '1rem',
-            fontWeight: 700,
           }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -398,16 +391,16 @@ function BirthplaceSection() {
   }, []);
 
   return (
-    <section id="birthplace" ref={sectionRef} className="relative py-32 bg-cream overflow-hidden">
-      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+    <section id="birthplace" ref={sectionRef} className="relative py-16 sm:py-24 lg:py-32 bg-cream overflow-hidden">
+      <div className="w-full max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="mb-12 sm:mb-16 lg:mb-24 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+            className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
           >
             The Sacred <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Birthplace</span>
@@ -554,7 +547,7 @@ function BirthplaceSection() {
         </div>
 
         {/* Statistics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {isLoading ? (
             <div className="col-span-full text-center py-12">
               <p className="font-paragraph text-maroon/60">Loading statistics...</p>
@@ -673,16 +666,16 @@ function BlessingsSection() {
   ];
 
   return (
-    <section id="blessings" className="relative py-32 bg-cream overflow-hidden">
-      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+    <section id="blessings" className="relative py-16 sm:py-24 lg:py-32 bg-cream overflow-hidden">
+      <div className="w-full max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="mb-12 sm:mb-16 lg:mb-24 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+            className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
           >
             🙏 Holy <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Blessings</span>
@@ -778,16 +771,16 @@ function VaishaliHeritageSection() {
   ];
 
   return (
-    <section id="vaishali" className="relative py-32 bg-cream overflow-hidden">
-      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+    <section id="vaishali" className="relative py-16 sm:py-24 lg:py-32 bg-cream overflow-hidden">
+      <div className="w-full max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="mb-12 sm:mb-16 lg:mb-24 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+            className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
           >
             Vaishali — <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">The First Republic</span>
@@ -805,7 +798,7 @@ function VaishaliHeritageSection() {
         </div>
 
         {/* 3-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16 lg:mb-16">
           {heritageCards.map((card, index) => (
             <motion.div
               key={index}
@@ -878,16 +871,16 @@ function FoundationTempleSection() {
   };
 
   return (
-    <section id="foundation" className="relative py-32 bg-cream overflow-hidden">
-      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+    <section id="foundation" className="relative py-16 sm:py-24 lg:py-32 bg-cream overflow-hidden">
+      <div className="w-full max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="mb-12 sm:mb-16 lg:mb-24 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+            className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
           >
             Temple Construction <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">& Foundation</span>
@@ -1009,20 +1002,17 @@ function StatisticsSection() {
   ];
 
   return (
-    <section id="statistics" ref={statsRef} className="relative bg-maroon py-32 overflow-hidden">
-      {/* Background Texture */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[radial-gradient(#C5A55A_1px,transparent_1px)] [background-size:16px_16px]" />
-      </div>
+    <section id="statistics" ref={statsRef} className="relative bg-maroon py-16 sm:py-24 lg:py-32 overflow-hidden">
+      {/* ... keep existing code (background texture) ... */}
 
-      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 relative z-10">
+      <div className="w-full max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-gold/30 pb-8">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 sm:mb-16 lg:mb-20 border-b border-gold/30 pb-6 sm:pb-8">
           <motion.h2 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-5xl lg:text-7xl font-black text-cream uppercase tracking-tight"
+            className="font-heading text-3xl sm:text-4xl lg:text-5xl xl:text-7xl font-black text-cream uppercase tracking-tight"
           >
             By The <span className="text-gold">Numbers</span>
           </motion.h2>
@@ -1030,13 +1020,13 @@ function StatisticsSection() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="font-paragraph text-gold/80 text-right max-w-md mt-6 md:mt-0"
+            className="font-paragraph text-gold/80 text-right max-w-md mt-4 sm:mt-6 md:mt-0 text-sm sm:text-base"
           >
             Quantifying a legacy that transcends time. The impact of Lord Mahavira measured in centuries and souls.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -1054,7 +1044,7 @@ function StatisticsSection() {
                   <div className="w-2 h-2 bg-gold rounded-full" />
                 </div>
 
-                <div className="font-heading text-6xl lg:text-7xl font-black text-cream mb-2 flex items-baseline">
+                <div className="font-heading text-5xl sm:text-6xl lg:text-7xl font-black text-cream mb-2 flex items-baseline">
                   {isInView ? (
                     <CountUp end={stat.value} duration={2.5} delay={index * 0.1} />
                   ) : (
@@ -1088,16 +1078,16 @@ function StatisticsSection() {
 
 function AboutUsSection() {
   return (
-    <section id="about" className="relative bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-32 overflow-hidden">
-      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+    <section id="about" className="relative bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-16 sm:py-24 lg:py-32 overflow-hidden">
+      <div className="w-full max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="mb-12 sm:mb-16 lg:mb-24 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+            className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
           >
             The Unapologetic<br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Truth</span>
@@ -1273,16 +1263,16 @@ function CommitteeSection() {
   }, [lightboxOpen, committeeGallery.length]);
 
   return (
-    <section id="committee" className="relative py-32 bg-cream overflow-hidden">
-      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+    <section id="committee" className="relative py-16 sm:py-24 lg:py-32 bg-cream overflow-hidden">
+      <div className="w-full max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="mb-12 sm:mb-16 lg:mb-24 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+            className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
           >
             Committee <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Gallery</span>
@@ -1305,7 +1295,7 @@ function CommitteeSection() {
             <p className="font-paragraph text-maroon/60">Loading gallery...</p>
           </div>
         ) : committeeGallery.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 auto-rows-[250px] sm:auto-rows-[280px] lg:auto-rows-[300px]">
             {committeeGallery.map((item, index) => (
               <motion.div
                 key={item._id}
@@ -1423,16 +1413,16 @@ function DonateSection() {
   ];
 
   return (
-    <section id="donate" className="relative py-32 bg-cream overflow-hidden">
-      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+    <section id="donate" className="relative py-16 sm:py-24 lg:py-32 bg-cream overflow-hidden">
+      <div className="w-full max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="mb-12 sm:mb-16 lg:mb-24 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+            className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
           >
             💛 Donation & <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Support</span>
@@ -1480,7 +1470,7 @@ function DonateSection() {
             🏦 Bank Details
           </h3>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
             {bankDetails.map((bank, index) => (
               <motion.div
                 key={index}
@@ -1614,16 +1604,16 @@ function GallerySection() {
   }, [lightboxOpen]);
 
   return (
-    <section id="gallery" className="relative py-32 bg-cream overflow-hidden">
-      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+    <section id="gallery" className="relative py-16 sm:py-24 lg:py-32 bg-cream overflow-hidden">
+      <div className="w-full max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="mb-12 sm:mb-16 lg:mb-24 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+            className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
           >
             Sacred <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Gallery</span>
@@ -1641,7 +1631,7 @@ function GallerySection() {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[280px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-4 auto-rows-[240px] sm:auto-rows-[260px] lg:auto-rows-[280px]">
           {galleryItems.map((item, index) => (
             <motion.div
               key={index}
@@ -1760,16 +1750,16 @@ function UpcomingEventsSection() {
   };
 
   return (
-    <section id="events" ref={sectionRef} className="relative py-32 bg-cream overflow-hidden">
-      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+    <section id="events" ref={sectionRef} className="relative py-16 sm:py-24 lg:py-32 bg-cream overflow-hidden">
+      <div className="w-full max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="mb-12 sm:mb-16 lg:mb-24 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+            className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
           >
             Upcoming <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Events</span>
@@ -1792,7 +1782,7 @@ function UpcomingEventsSection() {
             <p className="font-paragraph text-maroon/60">Loading events...</p>
           </div>
         ) : events.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {events.map((event, index) => (
               <motion.div
                 key={event._id}
@@ -1943,16 +1933,16 @@ function HowToReachSection() {
   ];
 
   return (
-    <section id="how-to-reach" className="relative py-32 bg-cream overflow-hidden">
-      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+    <section id="how-to-reach" className="relative py-16 sm:py-24 lg:py-32 bg-cream overflow-hidden">
+      <div className="w-full max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="mb-12 sm:mb-16 lg:mb-24 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+            className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
           >
             How to <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Reach</span>
@@ -1980,7 +1970,7 @@ function HowToReachSection() {
             🚀 Transportation Options
           </motion.h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-6">
             {transportModes.map((mode, index) => (
               <motion.div
                 key={index}
@@ -2021,7 +2011,7 @@ function HowToReachSection() {
             📍 Distance & Travel Time from Major Cities
           </h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {[
               { city: "Patna", distance: "35 km", time: "1 hour" },
               { city: "Delhi", distance: "1000 km", time: "18-20 hours" },
@@ -2054,7 +2044,7 @@ function HowToReachSection() {
             🏨 Accommodation Options
           </motion.h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {accommodationOptions.map((option, index) => (
               <motion.div
                 key={index}
@@ -2181,16 +2171,16 @@ function HowToReachSection() {
 
 function ContactSection() {
   return (
-    <section id="contact" className="relative py-32 bg-cream overflow-hidden">
-      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+    <section id="contact" className="relative py-16 sm:py-24 lg:py-32 bg-cream overflow-hidden">
+      <div className="w-full max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="mb-12 sm:mb-16 lg:mb-24 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+            className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
           >
             Contact <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Us</span>

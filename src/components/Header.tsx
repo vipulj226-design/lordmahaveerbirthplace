@@ -14,10 +14,8 @@ const navigationLinks = [
 export default function Header() {
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-[1000] w-full"
+      className="fixed top-0 left-0 right-0 z-[1000] w-full bg-cream/96 backdrop-blur-[10px]"
       style={{
-        backgroundColor: 'rgba(253, 246, 236, 0.96)',
-        backdropFilter: 'blur(10px)',
         boxShadow: '0 2px 20px rgba(107, 15, 26, 0.1)',
       }}
     >
@@ -52,30 +50,14 @@ export default function Header() {
       {/* Mobile Navigation */}
       <div className="md:hidden flex flex-col">
         {/* Mobile Grid Navigation */}
-        <div
-          className="grid gap-0"
-          style={{
-            gridTemplateColumns: 'repeat(5, 1fr)',
-            borderTop: '1px solid rgba(197, 165, 90, 0.15)',
-          }}
-        >
+        <div className="grid gap-0 grid-cols-3 sm:grid-cols-4 border-t border-gold/15">
           {navigationLinks.map((link, index) => (
             <a
               key={link.href}
               href={link.href}
-              className="flex flex-col items-center justify-center min-h-[48px] text-[0.55rem] uppercase font-paragraph text-maroon transition-colors duration-200"
+              className="flex flex-col items-center justify-center min-h-[56px] sm:min-h-[52px] text-xs sm:text-sm uppercase font-paragraph text-maroon transition-colors duration-200 border-r border-gold/15 hover:bg-maroon hover:text-gold"
               style={{
-                borderRight: (index + 1) % 5 !== 0 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
-                borderBottom: index < 5 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
-                backgroundColor: 'transparent',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#6B0F1A';
-                e.currentTarget.style.color = '#D4AF37';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent';
-                e.currentTarget.style.color = '#6B0F1A';
+                borderRight: (index + 1) % 4 !== 0 && window.innerWidth >= 640 ? '1px solid rgba(197, 165, 90, 0.15)' : (index + 1) % 3 !== 0 && window.innerWidth < 640 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
               }}
             >
               {link.label}
