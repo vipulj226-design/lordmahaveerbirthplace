@@ -14,8 +14,10 @@ const navigationLinks = [
 export default function Header() {
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-[1000] w-full bg-cream/96 backdrop-blur-[10px]"
+      className="fixed top-0 left-0 right-0 z-[1000] w-full"
       style={{
+        backgroundColor: 'rgba(253, 246, 236, 0.96)',
+        backdropFilter: 'blur(10px)',
         boxShadow: '0 2px 20px rgba(107, 15, 26, 0.1)',
       }}
     >
@@ -48,20 +50,39 @@ export default function Header() {
       </nav>
 
       {/* Mobile Navigation */}
-      <nav className="md:hidden flex justify-center items-center px-4 py-3 overflow-x-auto">
-        <ul className="flex gap-2 whitespace-nowrap">
-          {navigationLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="px-3 py-1 text-xs uppercase font-paragraph rounded transition-colors duration-200 text-maroon hover:bg-maroon hover:text-gold"
-              >
-                {link.label}
-              </a>
-            </li>
+      <div className="md:hidden flex flex-col">
+        {/* Mobile Grid Navigation */}
+        <div
+          className="grid gap-0"
+          style={{
+            gridTemplateColumns: 'repeat(5, 1fr)',
+            borderTop: '1px solid rgba(197, 165, 90, 0.15)',
+          }}
+        >
+          {navigationLinks.map((link, index) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="flex flex-col items-center justify-center min-h-[48px] text-[0.55rem] uppercase font-paragraph text-maroon transition-colors duration-200"
+              style={{
+                borderRight: (index + 1) % 5 !== 0 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
+                borderBottom: index < 5 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
+                backgroundColor: 'transparent',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#6B0F1A';
+                e.currentTarget.style.color = '#D4AF37';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.color = '#6B0F1A';
+              }}
+            >
+              {link.label}
+            </a>
           ))}
-        </ul>
-      </nav>
+        </div>
+      </div>
     </header>
   );
 }
