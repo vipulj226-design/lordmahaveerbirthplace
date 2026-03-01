@@ -33,87 +33,104 @@ export default function FoundationDevelopment() {
     fetchBlocks();
   }, []);
 
-  if (isLoading) {
-    return null;
-  }
-
   return (
-    <section id="foundation-development" className="w-full py-20 bg-cream">
-      <div className="max-w-[100rem] mx-auto px-6 md:px-8">
+    <section id="foundation-development" className="relative py-32 bg-cream overflow-hidden">
+      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="mb-24 relative">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-5xl md:text-6xl font-heading font-bold text-maroon mb-4"
+            viewport={{ once: true }}
+            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
           >
-            Foundation & Development
+            Foundation & <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Development</span>
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-lg md:text-xl font-paragraph text-maroon/80 max-w-3xl mx-auto"
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
           >
             A sacred journey — from the first foundation stone in 1956 to the grand Panchkalyanak in 2013
           </motion.p>
+          <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
         </div>
 
         {/* Timeline Blocks */}
-        <div className="space-y-12">
-          {blocks.map((block, index) => (
-            <motion.div
-              key={block._id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 md:gap-12 items-center`}
-            >
-              {/* Image */}
-              <div className="w-full md:w-1/2 flex-shrink-0">
-                {block.image && (
-                  <div className="rounded-lg overflow-hidden shadow-lg">
-                    <Image
-                      src={block.image}
-                      alt={block.heading || 'Foundation & Development'}
-                      width={400}
-                      height={300}
-                      className="w-full h-auto object-cover"
-                    />
-                  </div>
-                )}
-              </div>
-
-              {/* Content */}
-              <div className="w-full md:w-1/2">
-                <div className="bg-white rounded-lg p-8 shadow-md">
-                  {/* Year/Period Badge */}
-                  <div className="inline-block bg-gold/20 text-maroon px-4 py-2 rounded-full mb-4 font-heading font-bold text-sm">
-                    {block.yearPeriod}
-                  </div>
-
-                  {/* Heading */}
-                  <h3 className="text-2xl md:text-3xl font-heading font-bold text-maroon mb-4">
-                    {block.heading}
-                  </h3>
-
-                  {/* Content */}
-                  <p className="font-paragraph text-gray-700 mb-4 leading-relaxed">
-                    {block.content}
-                  </p>
-
-                  {/* Quote (if available) */}
-                  {block.quote && (
-                    <blockquote className="border-l-4 border-gold pl-4 italic text-gray-600 font-paragraph">
-                      "{block.quote}"
-                    </blockquote>
+        {isLoading ? (
+          <div className="text-center py-16">
+            <p className="font-paragraph text-maroon/60">Loading timeline...</p>
+          </div>
+        ) : blocks.length > 0 ? (
+          <div className="space-y-12">
+            {blocks.map((block, index) => (
+              <motion.div
+                key={block._id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center`}
+              >
+                {/* Image */}
+                <div className={index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}>
+                  {block.image && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      className="rounded-[12px] overflow-hidden border-2 border-maroon hover:border-gold transition-colors duration-300"
+                    >
+                      <Image
+                        src={block.image}
+                        alt={block.heading || 'Foundation & Development'}
+                        width={500}
+                        height={400}
+                        className="w-full h-auto object-cover"
+                      />
+                    </motion.div>
                   )}
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+
+                {/* Content */}
+                <div className={index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}>
+                  <div className="bg-cream border-2 border-maroon p-10 hover:border-gold transition-all duration-300">
+                    {/* Year/Period Badge */}
+                    {block.yearPeriod && (
+                      <div className="inline-block bg-gold/20 text-maroon px-6 py-2 rounded-full mb-6 font-heading font-bold text-sm uppercase tracking-widest">
+                        {block.yearPeriod}
+                      </div>
+                    )}
+
+                    {/* Heading */}
+                    <h3 className="font-heading text-3xl lg:text-4xl font-bold text-maroon mb-6 uppercase tracking-wide">
+                      {block.heading}
+                    </h3>
+
+                    {/* Content */}
+                    <p className="font-paragraph text-lg text-maroon/80 mb-6 leading-relaxed">
+                      {block.content}
+                    </p>
+
+                    {/* Quote (if available) */}
+                    {block.quote && (
+                      <blockquote className="border-l-4 border-gold pl-6 py-4 italic text-maroon/80 font-paragraph text-lg">
+                        "{block.quote}"
+                      </blockquote>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-16">
+            <p className="font-paragraph text-maroon/60 text-lg">No timeline data available yet.</p>
+          </div>
+        )}
       </div>
     </section>
   );
