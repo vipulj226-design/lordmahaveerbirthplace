@@ -63,7 +63,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="flex flex-col items-center justify-center min-h-[32px] text-[0.45rem] uppercase font-paragraph text-maroon transition-colors duration-200"
+              className="flex flex-col items-center justify-center min-h-[48px] text-[0.55rem] uppercase font-paragraph text-maroon transition-colors duration-200"
               style={{
                 borderRight: (index + 1) % 5 !== 0 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
                 borderBottom: index < 5 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
