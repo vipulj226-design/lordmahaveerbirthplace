@@ -1990,7 +1990,7 @@ function ContactSection() {
                 <span className="text-2xl">📞</span>
                 <div>
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Phone/Mobile</p>
-                  <p className="text-maroon font-semibold">+91-9811660130</p>
+                  <p className="text-maroon font-semibold">+91-7544003396 , +91-7544003397 , +91-9771682337</p>
                 </div>
               </div>
 
