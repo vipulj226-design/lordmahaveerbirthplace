@@ -3,7 +3,7 @@ import { Image } from '@/components/ui/image';
 const navigationLinks = [
   { label: 'Home', href: '#hero' },
   { label: 'About Birthplace', href: '#about' },
-  { label: "ABlessings", href: '#blessings' },
+  { label: "Acharyas  Blessings", href: '#blessings' },
   { label: 'Foundation', href: '#foundation' },
   { label: 'Committee', href: '#committee' },
   { label: 'Donate', href: '#donate' },
