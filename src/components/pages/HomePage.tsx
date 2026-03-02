@@ -455,11 +455,11 @@ function BirthplaceSection() {
   }, []);
 
   return (
-    <section id="birthplace" ref={sectionRef} className="relative py-12 md:py-32 bg-cream overflow-hidden">
+    <section id="birthplace" ref={sectionRef} className="relative py-8 md:py-32 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-12 md:mb-24 relative">
+        <div className="mb-8 md:mb-24 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -482,7 +482,7 @@ function BirthplaceSection() {
         </div>
 
         {/* Two-Column Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 mb-12 md:mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-12 mb-8 md:mb-24">
           
           {/* LEFT COLUMN - Large Content Card */}
           <motion.div
@@ -749,11 +749,11 @@ function BlessingsSection() {
   ];
 
   return (
-    <section id="blessings" className="relative py-32 bg-cream overflow-hidden">
+    <section id="blessings" className="relative py-16 md:py-32 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="mb-12 md:mb-24 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -857,11 +857,11 @@ function VaishaliHeritageSection() {
   ];
 
   return (
-    <section id="vaishali" className="relative py-32 bg-cream overflow-hidden">
+    <section id="vaishali" className="relative py-16 md:py-32 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="mb-12 md:mb-24 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -884,7 +884,7 @@ function VaishaliHeritageSection() {
         </div>
 
         {/* 3-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
           {heritageCards.map((card, index) => (
             <motion.div
               key={index}
@@ -957,11 +957,11 @@ function FoundationTempleSection() {
   };
 
   return (
-    <section id="foundation" className="relative py-32 bg-cream overflow-hidden">
+    <section id="foundation" className="relative py-16 md:py-32 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="mb-12 md:mb-24 relative">
 
           <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
         </div>
@@ -989,7 +989,7 @@ function StatisticsSection() {
   ];
 
   return (
-    <section id="statistics" ref={statsRef} className="relative bg-maroon py-32 overflow-hidden">
+    <section id="statistics" ref={statsRef} className="relative bg-maroon py-16 md:py-32 overflow-hidden">
       {/* Background Texture */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(#C5A55A_1px,transparent_1px)] [background-size:16px_16px]" />
@@ -997,7 +997,7 @@ function StatisticsSection() {
 
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 relative z-10">
         
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-gold/30 pb-8">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-20 border-b border-gold/30 pb-6 md:pb-8">
           <motion.h2 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -1068,11 +1068,11 @@ function StatisticsSection() {
 
 function AboutUsSection() {
   return (
-    <section id="about" className="relative bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-32 overflow-hidden">
+    <section id="about" className="relative bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-16 md:py-32 overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="mb-12 md:mb-24 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1086,7 +1086,7 @@ function AboutUsSection() {
         </div>
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24">
           
           {/* Sticky Image Column */}
           <div className="lg:col-span-5 relative">
@@ -1109,7 +1109,7 @@ function AboutUsSection() {
           </div>
 
           {/* Scrolling Text Column */}
-          <div className="lg:col-span-7 flex flex-col gap-24 pt-12">
+          <div className="lg:col-span-7 flex flex-col gap-12 md:gap-24 pt-0 md:pt-12">
             
             {/* Block 1 */}
             <motion.div 
@@ -1199,11 +1199,11 @@ function DonateSection() {
   ];
 
   return (
-    <section id="donate" className="relative py-32 bg-cream overflow-hidden">
+    <section id="donate" className="relative py-16 md:py-32 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="mb-12 md:mb-24 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1381,11 +1381,11 @@ function GallerySection() {
   }, [lightboxOpen, galleryItems.length]);
 
   return (
-    <section id="gallery" className="relative py-32 bg-cream overflow-hidden">
+    <section id="gallery" className="relative py-16 md:py-32 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="mb-12 md:mb-24 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1537,11 +1537,11 @@ function UpcomingEventsSection() {
   };
 
   return (
-    <section id="events" ref={sectionRef} className="relative py-32 bg-cream overflow-hidden">
+    <section id="events" ref={sectionRef} className="relative py-16 md:py-32 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="mb-12 md:mb-24 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1720,11 +1720,11 @@ function HowToReachSection() {
   ];
 
   return (
-    <section id="how-to-reach" className="relative py-32 bg-cream overflow-hidden">
+    <section id="how-to-reach" className="relative py-16 md:py-32 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="mb-12 md:mb-24 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1958,11 +1958,11 @@ function HowToReachSection() {
 
 function ContactSection() {
   return (
-    <section id="contact" className="relative py-32 bg-cream overflow-hidden">
+    <section id="contact" className="relative py-16 md:py-32 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="mb-12 md:mb-24 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
