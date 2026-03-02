@@ -34,7 +34,7 @@ export default function FoundationDevelopment() {
   }, []);
 
   return (
-    <section id="foundation-development" className="relative py-32 bg-cream overflow-hidden">
+    <section id="foundation" className="relative py-32 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="mb-24 relative">
