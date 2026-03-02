@@ -459,17 +459,15 @@ function BirthplaceSection() {
           <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
         </div>
 
-        {/* Two-Column Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 mb-16 md:mb-32">
-          
-          {/* LEFT COLUMN - Large Content Card */}
-          <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="group relative bg-gradient-to-br from-cream to-cream/90 border-2 border-gold p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
-            <div className="absolute inset-0 bg-maroon/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-            <div className="relative z-10">
-              <h3 className="font-heading text-3xl lg:text-4xl font-black text-maroon mb-8 uppercase tracking-wide relative z-10">
-                Why Vaishali is the <br class="hidden md:block" /> <span class="text-gold">Birthplace</span>
-              </h3>
-              <div className="space-y-6 mb-10 border-l-4 border-maroon/20 pl-6">
+        {/* Single Column Full-Width Content */}
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="group relative bg-gradient-to-br from-cream to-cream/90 border-2 border-gold p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden mb-16 md:mb-24">
+          <div className="absolute inset-0 bg-maroon/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+          <div className="relative z-10">
+            <h3 className="font-heading text-3xl lg:text-4xl font-black text-maroon mb-8 uppercase tracking-wide relative z-10">
+              Why Vaishali is the <span className="text-gold">Birthplace</span>
+            </h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+              <div className="space-y-6 border-l-4 border-maroon/20 pl-6">
                 <p className="font-paragraph text-lg text-maroon/80 leading-relaxed">
                   Ancient texts confirm Kundpur/Vasokund in Vaishali district as the birthplace of Lord Mahavira, the 24th Tirthankar of Jainism.
                 </p>
@@ -479,32 +477,32 @@ function BirthplaceSection() {
                 <p className="font-paragraph text-lg text-maroon/80 leading-relaxed">
                   Archaeological Survey of India findings at Kolhua, including the famous Lion Pillar of Ashoka, provide concrete evidence of the historical significance of this region.
                 </p>
+              </div>
+              <div className="space-y-6 border-l-4 border-maroon/20 pl-6">
                 <p className="font-paragraph text-lg text-maroon/80 leading-relaxed">
                   AIIMS excavation reports further confirm the archaeological and historical authenticity of the site, validating centuries of spiritual tradition.
                 </p>
                 <p className="font-paragraph text-lg text-maroon/80 leading-relaxed">
                   Jain Agam texts, including the Kalpa Sutra and Acharanga Sutra, provide detailed references to Vaishali as the birthplace, establishing its place in sacred literature.
                 </p>
-              </div>
-              <div className="relative p-8 bg-maroon/5 border-t-4 border-gold group-hover:border-gold2 transition-colors duration-300">
-                <p className="font-heading text-xl italic text-maroon font-semibold leading-relaxed">
-                  "Kshtriyakund is another name for Vaishali itself"
-                </p>
-                <p className="font-paragraph text-sm text-maroon/60 mt-4 uppercase tracking-widest">
-                  — Ancient Geography Reference
-                </p>
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-gold rounded-full flex items-center justify-center text-cream font-bold text-lg shadow-md">
-                  <Star className="w-4 h-4" />
+                <div className="relative p-6 bg-maroon/5 border-t-4 border-gold group-hover:border-gold2 transition-colors duration-300 mt-8">
+                  <p className="font-heading text-lg italic text-maroon font-semibold leading-relaxed">
+                    "Kshtriyakund is another name for Vaishali itself"
+                  </p>
+                  <p className="font-paragraph text-sm text-maroon/60 mt-3 uppercase tracking-widest">
+                    — Ancient Geography Reference
+                  </p>
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-gold rounded-full flex items-center justify-center text-cream font-bold text-lg shadow-md">
+                    <Star className="w-4 h-4" />
+                  </div>
                 </div>
               </div>
             </div>
-          </motion.div>
-
-
-        </div>
+          </div>
+        </motion.div>
 
         {/* Statistics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20 md:mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 md:mb-20">
           {isLoading ? (
             <div className="col-span-full text-center py-12">
               <p className="font-paragraph text-maroon/60">Loading statistics...</p>
@@ -557,7 +555,7 @@ function BirthplaceSection() {
         </div>
 
         {/* Birthplace Confirmation Section */}
-        <div className="pt-20 md:pt-32 border-t-2 border-gold/30">
+        <div className="pt-12 md:pt-20 border-t-2 border-gold/30">
           <motion.h3
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
