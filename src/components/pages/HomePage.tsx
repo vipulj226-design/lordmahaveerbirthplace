@@ -706,8 +706,8 @@ function BirthplaceAboutSection() {
                 <div className="sticky top-32">
                   <div className="relative aspect-[3/4] w-full overflow-hidden border-4 border-maroon bg-maroon">
                     <Image 
-                      src="https://static.wixstatic.com/media/53945f_d0d06ffee96845a5826851cf03f30364~mv2.png?originWidth=640&originHeight=896" 
-                      alt="Ancient Jain Statue Representation" 
+                      src="https://static.wixstatic.com/media/53945f_d72f7a81faef4442b29fee480ccb8c95~mv2.png?originWidth=640&originHeight=896" 
+                      alt="Lord Mahaveera, 24th Tirthankara" 
                       className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 border border-gold/30 m-4 pointer-events-none" />
