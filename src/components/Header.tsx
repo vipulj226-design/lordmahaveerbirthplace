@@ -30,7 +30,7 @@ export default function Header() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="px-2 py-1 text-[0.7rem] uppercase font-paragraph rounded transition-colors duration-200"
+                className="px-2 py-1 text-sm uppercase font-paragraph rounded transition-colors duration-200"
                 style={{
                   color: '#000000',
                 }}
