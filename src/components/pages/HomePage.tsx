@@ -742,7 +742,7 @@ function BirthplaceSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-white border-2 border-maroon p-8 md:p-10 hover:border-gold transition-all duration-300"
+              className="bg-white border-2 border-maroon p-8 md:p-10 hover:border-gold transition-all duration-300 lg:col-span-2"
             >
               <h4 className="font-heading text-2xl font-bold text-maroon mb-6 uppercase tracking-wide">
                 🦁 Ashoka Pillar & Archaeological Finds
@@ -750,30 +750,15 @@ function BirthplaceSection() {
               <p className="font-paragraph text-maroon/80 leading-relaxed mb-4">
                 After the Deekshoupwas, Lord Mahavir ate for the first time (Parna) at Koolgram (now Kolhua). There is a stone pillar with a Lion called the Ashok Stambh.
               </p>
-              <p className="font-paragraph text-maroon/80 leading-relaxed mb-4">
+              <p className="font-paragraph text-maroon/80 leading-relaxed mb-6">
                 The symbol of Lord Mahavir is also a 'Lion'. His ancestors reigned here. This pillar was made by Vajjio & Lichhivi as a memorial to Vardhman Mahavir.
               </p>
-              <p className="font-paragraph text-maroon/80 leading-relaxed">
-                Upon excavation at Raja Vishal ka Garh: Two bulls recovered (symbols of religion, charity, prosperity) and a gold ear-ornament (Kundal) found — belonged to King Chetak's family. Lord Mahavir adorned this ornament during his youth — hence the name Kundalpur.
-              </p>
-            </motion.div>
-
-            {/* Golden Past */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-white border-2 border-maroon p-8 md:p-10 hover:border-gold transition-all duration-300 lg:col-span-2"
-            >
-              <h4 className="font-heading text-2xl font-bold text-maroon mb-6 uppercase tracking-wide">
-                ✨ Golden Past — Archaeological Evidence
-              </h4>
+              
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="bg-gold/5 p-6 rounded-lg border border-gold/20">
                   <p className="font-heading font-bold text-maroon uppercase text-sm tracking-widest mb-3">Two Bulls</p>
                   <p className="font-paragraph text-maroon/80 text-sm leading-relaxed">
-                    Symbols of religion, charity, and prosperity recovered during excavation
+                    Symbols of religion, charity, and prosperity recovered during excavation at Raja Vishal ka Garh
                   </p>
                 </div>
                 <div className="bg-gold/5 p-6 rounded-lg border border-gold/20">
