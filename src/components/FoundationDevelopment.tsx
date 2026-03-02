@@ -12,6 +12,10 @@ interface FoundationDevelopmentBlock {
   content?: string;
   image?: string;
   quote?: string;
+  galleryImage1?: string;
+  galleryImage2?: string;
+  galleryImage3?: string;
+  galleryImage4?: string;
 }
 
 export default function FoundationDevelopment() {
@@ -122,67 +126,33 @@ export default function FoundationDevelopment() {
                       </blockquote>
                     )}
 
-                    {/* Photo Gallery - 4 Photos */}
+                    {/* Photo Gallery - 4 Photos from CMS */}
                     <div className="grid grid-cols-2 gap-4 mt-8">
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        className="rounded-lg overflow-hidden border border-gold/30 hover:border-gold transition-colors duration-300"
-                      >
-                        <Image
-                          src="https://static.wixstatic.com/media/53945f_15e1bad34f1a4265a579282f5a4ceee2~mv2.png?originWidth=192&originHeight=128"
-                          alt="Gallery photo 1"
-                          width={200}
-                          height={180}
-                          className="w-full h-48 object-cover"
-                        />
-                      </motion.div>
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="rounded-lg overflow-hidden border border-gold/30 hover:border-gold transition-colors duration-300"
-                      >
-                        <Image
-                          src="https://static.wixstatic.com/media/53945f_3baefcb26a404cc485ed49ade12a1d3a~mv2.png?originWidth=192&originHeight=128"
-                          alt="Gallery photo 2"
-                          width={200}
-                          height={180}
-                          className="w-full h-48 object-cover"
-                        />
-                      </motion.div>
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        className="rounded-lg overflow-hidden border border-gold/30 hover:border-gold transition-colors duration-300"
-                      >
-                        <Image
-                          src="https://static.wixstatic.com/media/53945f_70a163114a2041d89dce6ece7f1f28f0~mv2.png?originWidth=192&originHeight=128"
-                          alt="Gallery photo 3"
-                          width={200}
-                          height={180}
-                          className="w-full h-48 object-cover"
-                        />
-                      </motion.div>
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3 }}
-                        className="rounded-lg overflow-hidden border border-gold/30 hover:border-gold transition-colors duration-300"
-                      >
-                        <Image
-                          src="https://static.wixstatic.com/media/53945f_311393aab7f04d39b5f0482230868763~mv2.png?originWidth=192&originHeight=128"
-                          alt="Gallery photo 4"
-                          width={200}
-                          height={180}
-                          className="w-full h-48 object-cover"
-                        />
-                      </motion.div>
+                      {[
+                        { image: block.galleryImage1, index: 0 },
+                        { image: block.galleryImage2, index: 1 },
+                        { image: block.galleryImage3, index: 2 },
+                        { image: block.galleryImage4, index: 3 },
+                      ].map(({ image, index }) =>
+                        image ? (
+                          <motion.div
+                            key={index}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                            className="rounded-lg overflow-hidden border border-gold/30 hover:border-gold transition-colors duration-300"
+                          >
+                            <Image
+                              src={`${image}${image.includes('?') ? '&' : '?'}t=${new Date().getTime()}`}
+                              alt={`Gallery photo ${index + 1}`}
+                              width={200}
+                              height={180}
+                              className="w-full h-48 object-cover"
+                            />
+                          </motion.div>
+                        ) : null
+                      )}
                     </div>
                   </div>
                 </div>
