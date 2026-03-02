@@ -22,14 +22,14 @@ export default function Header() {
       }}
     >
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex justify-center items-center px-8 py-4 max-w-[1400px] mx-auto">
+      <nav className="hidden md:flex justify-center items-center px-6 py-2 max-w-[1400px] mx-auto">
         {/* Navigation Links */}
-        <ul className="flex gap-1">
+        <ul className="flex gap-0.5">
           {navigationLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="px-4 py-3 text-base uppercase font-paragraph rounded transition-colors duration-200"
+                className="px-2 py-1 text-sm uppercase font-paragraph rounded transition-colors duration-200"
                 style={{
                   color: '#000000',
                 }}
@@ -63,7 +63,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="flex flex-col items-center justify-center min-h-[64px] text-[0.65rem] uppercase font-paragraph text-maroon transition-colors duration-200"
+              className="flex flex-col items-center justify-center min-h-[48px] text-[0.55rem] uppercase font-paragraph text-maroon transition-colors duration-200"
               style={{
                 borderRight: (index + 1) % 5 !== 0 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
                 borderBottom: index < 5 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
