@@ -78,7 +78,7 @@ export default function CommitteeGallery() {
             >
               {/* Member Image */}
               {member.memberImage && (
-                <div className="relative h-64 overflow-hidden bg-gray-200">
+                <div className="relative w-full aspect-square overflow-hidden bg-gray-200">
                   <Image
                     src={`${member.memberImage}${member.memberImage.includes('?') ? '&' : '?'}t=${new Date().getTime()}`}
                     alt={member.name || 'Committee Member'}
