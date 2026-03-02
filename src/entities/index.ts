@@ -75,27 +75,6 @@ export interface BankDetails {
 
 
 /**
- * Collection ID: birthplacestatistics
- * Interface for BirthplaceStatistics
- */
-export interface BirthplaceStatistics {
-  _id: string;
-  _createdDate?: Date;
-  _updatedDate?: Date;
-  /** @wixFieldType number */
-  statisticValue?: number;
-  /** @wixFieldType text */
-  label?: string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
-  icon?: string;
-  /** @wixFieldType text */
-  unit?: string;
-  /** @wixFieldType text */
-  description?: string;
-}
-
-
-/**
  * Collection ID: blessings
  * Interface for Blessings
  */
