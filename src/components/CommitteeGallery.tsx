@@ -39,7 +39,7 @@ export default function CommitteeGallery() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+            className="font-heading text-6xl font-black text-maroon uppercase tracking-tight relative z-10 lg:text-5xl"
           >
             Our <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Committee</span>
@@ -84,7 +84,6 @@ export default function CommitteeGallery() {
                   </div>
                 )}
 
-                {/* Member Info */}
                 <div className="p-8">
                   <h3 className="font-heading text-2xl font-bold text-maroon mb-2 uppercase tracking-wide">
                     {member.name}
@@ -112,7 +111,8 @@ export default function CommitteeGallery() {
                     </a>
                   )}
                 </div>
-              </motion.div>
+              {/* Member Info */}
+                </motion.div>
             ))}
           </div>
         ) : (
