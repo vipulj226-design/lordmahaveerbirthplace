@@ -29,7 +29,7 @@ export default function Header() {
         <div className="flex-shrink-0">
           <a href="#hero" className="flex items-center">
             <Image
-              src="https://static.wixstatic.com/media/53945f_c4c8144dd34c4ac59690c4eca6987e26~mv2.png"
+              src="https://static.wixstatic.com/media/53945f_69b4da16bb88498db8c1ec0992032bea~mv2.jpg"
               alt="Logo"
               width={60}
               height={60}
@@ -70,7 +70,7 @@ export default function Header() {
         <div className="flex justify-center py-2 border-bottom border-b border-b-[rgba(197,165,90,0.15)]">
           <a href="#hero" className="flex items-center">
             <Image
-              src="https://static.wixstatic.com/media/53945f_c4c8144dd34c4ac59690c4eca6987e26~mv2.png"
+              src="https://static.wixstatic.com/media/53945f_69b4da16bb88498db8c1ec0992032bea~mv2.jpg"
               alt="Logo"
               width={50}
               height={50}
