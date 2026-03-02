@@ -705,11 +705,11 @@ function BirthplaceAboutSection() {
               <div className="lg:col-span-5 relative">
                 <div className="sticky top-32">
                   <div className="relative aspect-[3/4] w-full overflow-hidden border-4 border-maroon bg-maroon">
-                    <Image 
-                      src="https://static.wixstatic.com/media/53945f_d72f7a81faef4442b29fee480ccb8c95~mv2.png?originWidth=640&originHeight=896" 
-                      alt="Lord Mahaveera, 24th Tirthankara" 
+                    <Image
+                      src="https://static.wixstatic.com/media/53945f_6ee3b7c7cea74b6084b2ccf7effa188d~mv2.png"
                       className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:scale-105 transition-transform duration-700"
-                    />
+                      originWidth={286}
+                      originHeight={433} />
                     <div className="absolute inset-0 border border-gold/30 m-4 pointer-events-none" />
                     
                     {/* Floating Badge */}
