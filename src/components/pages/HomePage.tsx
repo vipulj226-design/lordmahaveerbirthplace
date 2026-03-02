@@ -94,8 +94,6 @@ export default function HomePage() {
       <StatisticsSection />
       {/* --- DIVINE BLESSINGS SECTION --- */}
       <BlessingsSection />
-      {/* --- VAISHALI HERITAGE SECTION --- */}
-      <VaishaliHeritageSection />
       {/* --- FOUNDATION & DEVELOPMENT SECTION --- */}
       <FoundationDevelopment />
       {/* --- FOUNDATION & TEMPLE SECTION --- */}
@@ -139,7 +137,7 @@ export default function HomePage() {
 
           {/* Navigation Links */}
           <div className="flex flex-wrap justify-center gap-6 mb-16 text-center">
-            {['About', 'Blessings', 'Vaishali', 'Foundation', 'Committee', 'Donate', 'Gallery', 'Events', 'How to Reach', 'Contact'].map((link) => (
+            {['About', 'Blessings', 'Foundation', 'Committee', 'Donate', 'Gallery', 'Events', 'How to Reach', 'Contact'].map((link) => (
               <a key={link} href={`#${link.toLowerCase()}`} className="font-paragraph text-cream/80 hover:text-gold transition-colors text-sm uppercase tracking-wider">
                 {link}
               </a>
