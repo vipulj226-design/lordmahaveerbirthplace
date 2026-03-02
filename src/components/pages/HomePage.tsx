@@ -101,7 +101,7 @@ export default function HomePage() {
       {/* --- FOUNDATION & DEVELOPMENT SECTION --- */}
       <FoundationDevelopment />
       {/* --- FOUNDATION & TEMPLE SECTION --- */}
-      <FoundationTempleSection />
+
       {/* --- COMMITTEE GALLERY SECTION --- */}
       <CommitteeGallery />
       {/* --- DONATE SECTION --- */}
@@ -908,52 +908,7 @@ function VaishaliHeritageSection() {
   );
 }
 
-function FoundationTempleSection() {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
-  const accordionItems = [
-    {
-      question: "What is Sahastrakut Jinalaya?",
-      answer: "A magnificent temple featuring 1008 Tirthankar images arranged in a sacred pattern. Sahastrakut means 1000 Jina images arrangement, representing the cosmic order of Jainism."
-    },
-    {
-      question: "Who is overseeing construction?",
-      answer: "Bhagwan Mahavir Smarak Samiti, a registered society dedicated to preserving and developing the sacred birthplace of Lord Mahavira."
-    },
-    {
-      question: "When will it be complete?",
-      answer: "Ongoing construction with major milestones achieved. The project progresses in phases with continuous development and spiritual significance."
-    },
-    {
-      question: "What other facilities are planned?",
-      answer: "Museum, Dharamshala (guest house), Library, Gardens, and other facilities to create a comprehensive pilgrimage and learning center."
-    }
-  ];
-
-  const toggleAccordion = (index: number) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
-  };
-
-  return (
-    <section id="foundation" className="relative py-16 md:py-32 bg-cream overflow-hidden">
-      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
-        
-        {/* Section Header */}
-        <div className="mb-12 md:mb-24 relative">
-
-          <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
-        </div>
-
-        {/* 2-Column Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* LEFT: Content Card */}
-          {/* RIGHT: Accordion */}
-
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function StatisticsSection() {
   const statsRef = useRef<HTMLDivElement>(null);
@@ -1990,7 +1945,7 @@ function ContactSection() {
                 <span className="text-2xl">📞</span>
                 <div>
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Phone/Mobile</p>
-                  <p className="text-maroon font-semibold">+91-7544003396 , +91-7544003397 , +91-9771682337</p>
+                  <p className="text-maroon font-semibold">+91-7544003396 , +91-9771682337</p>
                 </div>
               </div>
 
@@ -2059,7 +2014,7 @@ function ContactSection() {
                 <span className="text-2xl">📞</span>
                 <div>
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Phone</p>
-                  <p className="text-maroon font-semibold">011-26564510, 011-46062192</p>
+                  <p className="text-maroon font-semibold">+91-7982277419 , +91-98730277</p>
                   <p className="text-maroon font-semibold">+91-9811660130</p>
                 </div>
               </div>
