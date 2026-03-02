@@ -433,11 +433,11 @@ function BirthplaceSection() {
   }, []);
 
   return (
-    <section id="birthplace" ref={sectionRef} className="relative py-8 md:py-32 bg-cream overflow-hidden">
+    <section id="birthplace" ref={sectionRef} className="relative py-16 md:py-40 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-8 md:mb-24 relative">
+        <div className="mb-16 md:mb-32 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -452,7 +452,7 @@ function BirthplaceSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="font-paragraph text-sm md:text-xl text-maroon/70 mt-4 md:mt-6 max-w-2xl"
+            className="font-paragraph text-sm md:text-xl text-maroon/70 mt-6 md:mt-8 max-w-2xl"
           >
             Vasokund (Kundpur) — The Holy Land of Vaishali
           </motion.p>
@@ -460,7 +460,7 @@ function BirthplaceSection() {
         </div>
 
         {/* Two-Column Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-12 mb-8 md:mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 mb-16 md:mb-32">
           
           {/* LEFT COLUMN - Large Content Card */}
           <motion.div
@@ -508,7 +508,7 @@ function BirthplaceSection() {
         </div>
 
         {/* Statistics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 md:mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20 md:mb-32">
           {isLoading ? (
             <div className="col-span-full text-center py-12">
               <p className="font-paragraph text-maroon/60">Loading statistics...</p>
@@ -561,7 +561,7 @@ function BirthplaceSection() {
         </div>
 
         {/* Birthplace Confirmation Section */}
-        <div className="pt-16 md:pt-24 border-t-2 border-gold/30">
+        <div className="pt-20 md:pt-32 border-t-2 border-gold/30">
           <motion.h3
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -779,11 +779,11 @@ function BlessingsSection() {
   ];
 
   return (
-    <section id="blessings" className="relative py-16 md:py-32 bg-cream overflow-hidden">
+    <section id="blessings" className="relative py-16 md:py-40 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-12 md:mb-24 relative">
+        <div className="mb-16 md:mb-32 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
