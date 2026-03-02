@@ -771,13 +771,13 @@ function BlessingsSection() {
               >
                 {/* Leader Image */}
                 {blessing.leaderImage && (
-                  <div className="mb-6 -mx-8 -mt-8">
+                  <div className="mb-6 flex justify-center">
                     <Image
                       src={blessing.leaderImage}
                       alt={blessing.leaderName || 'Leader'}
-                      width={600}
-                      height={400}
-                      className="w-full h-auto object-contain"
+                      width={280}
+                      height={280}
+                      className="w-64 h-64 object-contain"
                     />
                   </div>
                 )}
