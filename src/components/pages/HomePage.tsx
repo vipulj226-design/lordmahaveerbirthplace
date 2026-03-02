@@ -589,7 +589,7 @@ function BirthplaceSection() {
         </div>
 
         {/* Statistics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 md:mb-24">
           {isLoading ? (
             <div className="col-span-full text-center py-12">
               <p className="font-paragraph text-maroon/60">Loading statistics...</p>
@@ -639,6 +639,158 @@ function BirthplaceSection() {
 
             </div>
           )}
+        </div>
+
+        {/* Birthplace Confirmation Section */}
+        <div className="pt-16 md:pt-24 border-t-2 border-gold/30">
+          <motion.h3
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-heading text-3xl md:text-5xl font-black text-maroon mb-12 uppercase tracking-tight"
+          >
+            Birthplace <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Confirmation</span>
+          </motion.h3>
+
+          {/* Evidence Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+            
+            {/* Hermann Jacobi & Sacred Books */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-white border-2 border-maroon p-8 md:p-10 hover:border-gold transition-all duration-300"
+            >
+              <h4 className="font-heading text-2xl font-bold text-maroon mb-6 uppercase tracking-wide">
+                📚 Hermann Jacobi & Sacred Books
+              </h4>
+              <p className="font-paragraph text-maroon/80 leading-relaxed mb-4">
+                In the "Sacred Books of the East" (Volumes 22 & 45), Hermann Jacobi, one of the greatest authorities on Jainism, states:
+              </p>
+              <div className="bg-gold/10 border-l-4 border-gold p-6 mb-4">
+                <p className="font-paragraph italic text-maroon/90 leading-relaxed">
+                  "The Jainas, both Swetambars and Digambars, believe that Mahavira was the son of King Siddhartha of Kundapur or Kundagrama. Kundagrama is called in the Acharanga Sutra as Samnivesa, a term which the commentator interprets as denoting an encampment place of caravans or processions."
+                </p>
+              </div>
+              <p className="font-paragraph text-maroon/80 leading-relaxed">
+                Mahavira was born in Kundagrama near Vaishali (Basarha in Hajipur sub-division of Muzaffarpur district). Kundagrama is known as Vasokund today.
+              </p>
+            </motion.div>
+
+            {/* Excavated Seals & Brahmi Inscriptions */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-white border-2 border-maroon p-8 md:p-10 hover:border-gold transition-all duration-300"
+            >
+              <h4 className="font-heading text-2xl font-bold text-maroon mb-6 uppercase tracking-wide">
+                🔍 Excavated Seals & Inscriptions
+              </h4>
+              <p className="font-paragraph text-maroon/80 leading-relaxed mb-4">
+                During excavation at Vaishali (1903-04 by Dr. T. Bloch), archaeologists found 12-15 coins with engravings:
+              </p>
+              <ul className="space-y-3 mb-4">
+                <li className="flex gap-3">
+                  <span className="text-gold font-bold">•</span>
+                  <p className="font-paragraph text-maroon/80">Vaishali Nam Kunde</p>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-gold font-bold">•</span>
+                  <p className="font-paragraph text-maroon/80">Vaishalyaddhisthanadhikaran</p>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-gold font-bold">•</span>
+                  <p className="font-paragraph text-maroon/80">Vaishali Nam Kunde-Kumarmattyadhikaran(sya)</p>
+                </li>
+              </ul>
+              <p className="font-paragraph text-maroon/80 leading-relaxed">
+                A special seal in Brahmi script reads: "Vaishali Namakunde Kumaramatyadhikaran(sya)" — proving Prince Vardhman held the position of 'Kumaramatya' (Prime Minister).
+              </p>
+            </motion.div>
+
+            {/* Bihar Government Jain Circuit */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-white border-2 border-maroon p-8 md:p-10 hover:border-gold transition-all duration-300"
+            >
+              <h4 className="font-heading text-2xl font-bold text-maroon mb-6 uppercase tracking-wide">
+                🏛️ Bihar Government Recognition
+              </h4>
+              <p className="font-paragraph text-maroon/80 leading-relaxed mb-4">
+                The tourism department of Bihar Government published a book 'Jain Circuit' in 2003, in which Vasokund in Vaishali is officially mentioned as the birthplace of Lord Mahavir.
+              </p>
+              <div className="bg-gold/10 border-l-4 border-gold p-4">
+                <p className="font-heading font-bold text-maroon text-sm uppercase tracking-widest">
+                  Official Recognition
+                </p>
+                <p className="font-paragraph text-maroon/80 mt-2">
+                  Vasokund, Vaishali — Birthplace of Lord Mahavira (Jain Circuit, 2003)
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Ashoka Pillar & Archaeological Finds */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-white border-2 border-maroon p-8 md:p-10 hover:border-gold transition-all duration-300"
+            >
+              <h4 className="font-heading text-2xl font-bold text-maroon mb-6 uppercase tracking-wide">
+                🦁 Ashoka Pillar & Archaeological Finds
+              </h4>
+              <p className="font-paragraph text-maroon/80 leading-relaxed mb-4">
+                After the Deekshoupwas, Lord Mahavir ate for the first time (Parna) at Koolgram (now Kolhua). There is a stone pillar with a Lion called the Ashok Stambh.
+              </p>
+              <p className="font-paragraph text-maroon/80 leading-relaxed mb-4">
+                The symbol of Lord Mahavir is also a 'Lion'. His ancestors reigned here. This pillar was made by Vajjio & Lichhivi as a memorial to Vardhman Mahavir.
+              </p>
+              <p className="font-paragraph text-maroon/80 leading-relaxed">
+                Upon excavation at Raja Vishal ka Garh: Two bulls recovered (symbols of religion, charity, prosperity) and a gold ear-ornament (Kundal) found — belonged to King Chetak's family. Lord Mahavir adorned this ornament during his youth — hence the name Kundalpur.
+              </p>
+            </motion.div>
+
+            {/* Golden Past */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="bg-white border-2 border-maroon p-8 md:p-10 hover:border-gold transition-all duration-300 lg:col-span-2"
+            >
+              <h4 className="font-heading text-2xl font-bold text-maroon mb-6 uppercase tracking-wide">
+                ✨ Golden Past — Archaeological Evidence
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-gold/5 p-6 rounded-lg border border-gold/20">
+                  <p className="font-heading font-bold text-maroon uppercase text-sm tracking-widest mb-3">Two Bulls</p>
+                  <p className="font-paragraph text-maroon/80 text-sm leading-relaxed">
+                    Symbols of religion, charity, and prosperity recovered during excavation
+                  </p>
+                </div>
+                <div className="bg-gold/5 p-6 rounded-lg border border-gold/20">
+                  <p className="font-heading font-bold text-maroon uppercase text-sm tracking-widest mb-3">Gold Ear-Ornament</p>
+                  <p className="font-paragraph text-maroon/80 text-sm leading-relaxed">
+                    Kundal belonging to King Chetak's family, worn by Lord Mahavir in youth
+                  </p>
+                </div>
+                <div className="bg-gold/5 p-6 rounded-lg border border-gold/20">
+                  <p className="font-heading font-bold text-maroon uppercase text-sm tracking-widest mb-3">Kundalpur</p>
+                  <p className="font-paragraph text-maroon/80 text-sm leading-relaxed">
+                    Named after the sacred ornament worn by Lord Mahavira
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
