@@ -24,9 +24,9 @@ export default function Header() {
       }}
     >
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex justify-between items-center px-6 py-2 max-w-[1400px] mx-auto">
+      <nav className="hidden md:flex justify-center items-center px-6 py-2 max-w-[1400px] mx-auto gap-8">
         {/* Logo */}
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 absolute left-6">
           <a href="#hero" className="flex items-center">
             <Image
               src="https://static.wixstatic.com/media/53945f_69b4da16bb88498db8c1ec0992032bea~mv2.jpg"
@@ -39,12 +39,12 @@ export default function Header() {
         </div>
 
         {/* Navigation Links */}
-        <ul className="flex gap-0.5">
+        <ul className="flex gap-1">
           {navigationLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="px-2 py-1 text-sm uppercase font-paragraph rounded transition-colors duration-200"
+                className="px-3 py-2 text-xs uppercase font-paragraph rounded transition-colors duration-200"
                 style={{
                   color: '#000000',
                 }}
