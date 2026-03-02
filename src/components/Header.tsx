@@ -1,7 +1,7 @@
 const navigationLinks = [
   { label: 'Home', href: '#hero' },
   { label: 'About Birthplace', href: '#about' },
-  { label: 'Blessings', href: '#blessings' },
+  { label: "Acharyas Blessings", href: '#blessings' },
   { label: 'Vaishali', href: '#vaishali' },
   { label: 'Foundation', href: '#foundation' },
   { label: 'Committee', href: '#committee' },
