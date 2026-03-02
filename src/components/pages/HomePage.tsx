@@ -201,9 +201,12 @@ function HeroSection() {
         const result = await BaseCrudService.getAll<any>('herosectioncontent');
         if (result.items.length > 0) {
           setHeroContent(result.items[0]);
+        } else {
+          setHeroContent(null);
         }
       } catch (error) {
         console.error('Error fetching hero content:', error);
+        setHeroContent(null);
       } finally {
         setIsLoading(false);
       }
@@ -275,8 +278,8 @@ function HeroSection() {
     };
   }, []);
 
-  const backgroundImage = heroContent?.backgroundImage ? `${heroContent.backgroundImage}${heroContent.backgroundImage.includes('?') ? '&' : '?'}t=${new Date().getTime()}` : 'https://static.wixstatic.com/media/53945f_f8e8fb0321184ed5890214db2b1c00db~mv2.png?originWidth=576&originHeight=384';
-  const frontImage = heroContent?.backgroundImage ? `${heroContent.backgroundImage}${heroContent.backgroundImage.includes('?') ? '&' : '?'}t=${new Date().getTime()}` : 'https://static.wixstatic.com/media/53945f_8b054f3958224ef7be0343afc4b0c449~mv2.png?originWidth=576&originHeight=384';
+  const backgroundImage = heroContent?.backgroundImage || 'https://static.wixstatic.com/media/53945f_f8e8fb0321184ed5890214db2b1c00db~mv2.png?originWidth=576&originHeight=384';
+  const frontImage = heroContent?.backgroundImage || 'https://static.wixstatic.com/media/53945f_8b054f3958224ef7be0343afc4b0c449~mv2.png?originWidth=576&originHeight=384';
   const title = heroContent?.title || 'Birthplace of Tirthankar Lord Mahavira';
   const subtitle = heroContent?.subtitle || 'Jai Jinendra — जय जिनेंद्र';
   const shortDescription = heroContent?.shortDescription || 'VASOKUND · VAISHALI · BIHAR · INDIA';
