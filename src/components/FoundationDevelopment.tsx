@@ -117,10 +117,73 @@ export default function FoundationDevelopment() {
 
                     {/* Quote (if available) */}
                     {block.quote && (
-                      <blockquote className="border-l-4 border-gold pl-6 py-4 italic text-maroon/80 font-paragraph text-lg">
+                      <blockquote className="border-l-4 border-gold pl-6 py-4 italic text-maroon/80 font-paragraph text-lg mb-8">
                         "{block.quote}"
                       </blockquote>
                     )}
+
+                    {/* Photo Gallery - 4 Photos */}
+                    <div className="grid grid-cols-2 gap-4 mt-8">
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="rounded-lg overflow-hidden border border-gold/30 hover:border-gold transition-colors duration-300"
+                      >
+                        <Image
+                          src="https://static.wixstatic.com/media/53945f_15e1bad34f1a4265a579282f5a4ceee2~mv2.png?originWidth=192&originHeight=128"
+                          alt="Gallery photo 1"
+                          width={200}
+                          height={180}
+                          className="w-full h-48 object-cover"
+                        />
+                      </motion.div>
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="rounded-lg overflow-hidden border border-gold/30 hover:border-gold transition-colors duration-300"
+                      >
+                        <Image
+                          src="https://static.wixstatic.com/media/53945f_3baefcb26a404cc485ed49ade12a1d3a~mv2.png?originWidth=192&originHeight=128"
+                          alt="Gallery photo 2"
+                          width={200}
+                          height={180}
+                          className="w-full h-48 object-cover"
+                        />
+                      </motion.div>
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="rounded-lg overflow-hidden border border-gold/30 hover:border-gold transition-colors duration-300"
+                      >
+                        <Image
+                          src="https://static.wixstatic.com/media/53945f_70a163114a2041d89dce6ece7f1f28f0~mv2.png?originWidth=192&originHeight=128"
+                          alt="Gallery photo 3"
+                          width={200}
+                          height={180}
+                          className="w-full h-48 object-cover"
+                        />
+                      </motion.div>
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.3 }}
+                        className="rounded-lg overflow-hidden border border-gold/30 hover:border-gold transition-colors duration-300"
+                      >
+                        <Image
+                          src="https://static.wixstatic.com/media/53945f_311393aab7f04d39b5f0482230868763~mv2.png?originWidth=192&originHeight=128"
+                          alt="Gallery photo 4"
+                          width={200}
+                          height={180}
+                          className="w-full h-48 object-cover"
+                        />
+                      </motion.div>
+                    </div>
                   </div>
                 </div>
               </motion.div>
