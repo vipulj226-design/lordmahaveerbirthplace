@@ -455,16 +455,16 @@ function BirthplaceSection() {
   }, []);
 
   return (
-    <section id="birthplace" ref={sectionRef} className="relative py-32 bg-cream overflow-hidden">
+    <section id="birthplace" ref={sectionRef} className="relative py-12 md:py-32 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="mb-12 md:mb-24 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+            className="font-heading text-3xl md:text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
           >
             The Sacred <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Birthplace</span>
@@ -474,7 +474,7 @@ function BirthplaceSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
+            className="font-paragraph text-sm md:text-xl text-maroon/70 mt-4 md:mt-6 max-w-2xl"
           >
             Vasokund (Kundpur) — The Holy Land of Vaishali
           </motion.p>
@@ -482,7 +482,7 @@ function BirthplaceSection() {
         </div>
 
         {/* Two-Column Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 mb-12 md:mb-24">
           
           {/* LEFT COLUMN - Large Content Card */}
           <motion.div
@@ -1552,48 +1552,48 @@ function GallerySection() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={closeLightbox}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center p-4 overflow-y-auto"
           style={{
             background: 'rgba(10, 2, 4, 0.92)',
             backdropFilter: 'blur(6px)'
           }}
         >
-          <div className="relative max-w-[90vw] max-h-[80vh] flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
+          <div className="relative w-full flex flex-col items-center my-auto" onClick={(e) => e.stopPropagation()}>
             {/* Close Button */}
             <button
               onClick={closeLightbox}
-              className="absolute top-4 right-4 z-10 w-12 h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors"
+              className="absolute top-0 right-0 z-10 w-10 h-10 md:w-12 md:h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5 md:w-6 md:h-6" />
             </button>
 
-            {/* Image */}
-            <div className="flex-1 flex items-center justify-center">
+            {/* Image Container */}
+            <div className="flex items-center justify-center w-full pt-12 pb-6">
               <Image
                 src={galleryItems[currentImageIndex].image}
                 alt={galleryItems[currentImageIndex].caption || 'Gallery image'}
-                className="max-w-full max-h-full object-contain border-4 border-gold"
+                className="max-w-full max-h-[60vh] object-contain border-4 border-gold"
               />
             </div>
 
             {/* Caption */}
-            <p className="font-heading text-gold text-center mt-6 text-lg uppercase tracking-wide">
+            <p className="font-heading text-gold text-center text-sm md:text-lg uppercase tracking-wide px-4 mb-4">
               {galleryItems[currentImageIndex].caption}
             </p>
 
             {/* Navigation Buttons */}
             <button
               onClick={prevImage}
-              className="fixed left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors"
+              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
             </button>
 
             <button
               onClick={nextImage}
-              className="fixed right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors"
+              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
             </button>
           </div>
         </motion.div>
