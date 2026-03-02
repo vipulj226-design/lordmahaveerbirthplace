@@ -111,8 +111,7 @@ export default function CommitteeGallery() {
                     </a>
                   )}
                 </div>
-              {/* Member Info */}
-                </motion.div>
+              </motion.div>
             ))}
           </div>
         ) : (
