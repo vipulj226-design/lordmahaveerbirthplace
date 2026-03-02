@@ -192,6 +192,25 @@ export default function HomePage() {
 
 function HeroSection() {
   const particlesRef = useRef<HTMLDivElement>(null);
+  const [heroContent, setHeroContent] = useState<any>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchHeroContent = async () => {
+      try {
+        const result = await BaseCrudService.getAll<any>('herosectioncontent');
+        if (result.items.length > 0) {
+          setHeroContent(result.items[0]);
+        }
+      } catch (error) {
+        console.error('Error fetching hero content:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchHeroContent();
+  }, []);
 
   useEffect(() => {
     const container = particlesRef.current;
@@ -256,6 +275,14 @@ function HeroSection() {
     };
   }, []);
 
+  const backgroundImage = heroContent?.backgroundImage || 'https://static.wixstatic.com/media/53945f_f8e8fb0321184ed5890214db2b1c00db~mv2.png?originWidth=576&originHeight=384';
+  const frontImage = heroContent?.backgroundImage || 'https://static.wixstatic.com/media/53945f_8b054f3958224ef7be0343afc4b0c449~mv2.png?originWidth=576&originHeight=384';
+  const title = heroContent?.title || 'Birthplace of Tirthankar Lord Mahavira';
+  const subtitle = heroContent?.subtitle || 'Jai Jinendra — जय जिनेंद्र';
+  const shortDescription = heroContent?.shortDescription || 'VASOKUND · VAISHALI · BIHAR · INDIA';
+  const ctaText = heroContent?.ctaText || '🏛️ पवित्र धरोहर देखें — Explore Heritage';
+  const ctaUrl = heroContent?.ctaUrl || '#about';
+
   return (
     <section 
       id="hero" 
@@ -272,7 +299,7 @@ function HeroSection() {
       <div 
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
-          backgroundImage: 'url(https://static.wixstatic.com/media/53945f_f8e8fb0321184ed5890214db2b1c00db~mv2.png?originWidth=576&originHeight=384)',
+          backgroundImage: `url(${backgroundImage})`,
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           opacity: 0.45,
@@ -331,7 +358,7 @@ function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.4 }}
         >
-          Birthplace of Tirthankar Lord Mahavira
+          {title}
         </motion.h1>
 
         {/* Subtitle (Italic) */}
@@ -342,7 +369,7 @@ function HeroSection() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.6 }}
         >
-          Jai Jinendra — जय जिनेंद्र
+          {subtitle}
         </motion.p>
 
         {/* Sub2 Text */}
@@ -353,7 +380,7 @@ function HeroSection() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.8 }}
         >
-          VASOKUND · VAISHALI · BIHAR · INDIA
+          {shortDescription}
         </motion.p>
 
         {/* Hero Image Box */}
@@ -370,7 +397,7 @@ function HeroSection() {
           }}
         >
           <Image 
-            src="https://static.wixstatic.com/media/53945f_8b054f3958224ef7be0343afc4b0c449~mv2.png?originWidth=576&originHeight=384"
+            src={frontImage}
             alt="Sahastrakut Jinalaya"
             className="w-full h-auto object-cover"
             width={600}
@@ -379,7 +406,7 @@ function HeroSection() {
 
         {/* CTA Button */}
         <motion.a 
-          href="#about"
+          href={ctaUrl}
           className="inline-block font-heading font-bold tracking-wide uppercase"
           style={{
             backgroundImage: 'linear-gradient(to right, #D4AF37, #C5A55A)',
@@ -395,7 +422,7 @@ function HeroSection() {
           transition={{ duration: 1.2, delay: 1.2 }}
           whileHover={{ y: -2, boxShadow: '0 10px 30px rgba(197, 165, 90, 0.5)' }}
         >
-          🏛️ पवित्र धरोहर देखें — Explore Heritage
+          {ctaText}
         </motion.a>
       </motion.div>
     </section>
