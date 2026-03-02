@@ -1208,7 +1208,6 @@ function DonateSection() {
   return (
     <section id="donate" className="relative py-16 md:py-32 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
-        
         {/* Section Header */}
         <div className="mb-12 md:mb-24 relative">
           <motion.h2 
@@ -1231,7 +1230,6 @@ function DonateSection() {
           </motion.p>
           <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
         </div>
-
         {/* Inspirational Quote Section */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -1250,7 +1248,6 @@ function DonateSection() {
             "Your every contribution helps build the Grand Temple at the Birthplace of Tirthankar Lord Mahavira."
           </p>
         </motion.div>
-
         {/* Bank Details Cards */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -1299,7 +1296,6 @@ function DonateSection() {
             ))}
           </div>
         </motion.div>
-
         {/* Tax Exemption Note */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -1315,21 +1311,8 @@ function DonateSection() {
             Donations are exempt from Income Tax under Section 80-G. After making your deposit, please inform the office by telephone and obtain a receipt.
           </p>
         </motion.div>
-
         {/* WhatsApp CTA */}
-        <motion.a
-          href="https://wa.me/919811660130"
-          target="_blank"
-          rel="noopener noreferrer"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-full font-heading font-bold uppercase tracking-wide hover:bg-[#20BA5A] transition-colors duration-300"
-        >
-          <MessageCircle className="w-6 h-6" />
-          💬 Donate via WhatsApp — 9811660130
-        </motion.a>
+
       </div>
     </section>
   );
