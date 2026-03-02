@@ -655,7 +655,7 @@ function BirthplaceSection() {
             ))
           ) : (
             <div className="col-span-full text-center py-12">
-              <p className="font-paragraph text-maroon/60">No statistics available</p>
+
             </div>
           )}
         </div>
