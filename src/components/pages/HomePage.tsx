@@ -696,10 +696,6 @@ function BirthplaceSection() {
               <ul className="space-y-3 mb-4">
                 <li className="flex gap-3">
                   <span className="text-gold font-bold">•</span>
-                  <p className="font-paragraph text-maroon/80">Vaishali Nam Kunde</p>
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-gold font-bold">•</span>
                   <p className="font-paragraph text-maroon/80">Vaishalyaddhisthanadhikaran</p>
                 </li>
                 <li className="flex gap-3">
