@@ -3,7 +3,7 @@ import { motion, useScroll, useSpring, useInView, useTransform } from 'framer-mo
 import { ArrowRight, MapPin, Calendar, Users, Scroll, Star, ChevronDown, X, ChevronLeft, ChevronRight, MessageCircle, Clock } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import { BaseCrudService } from '@/integrations';
-import { BirthplaceStatistics, SpiritualLeaders, TransportModes, AccommodationOptions, AboutUs } from '@/entities';
+import { BirthplaceStatistics, SpiritualLeaders } from '@/entities';
 import Header from '@/components/Header';
 import FoundationDevelopment from '@/components/FoundationDevelopment';
 import CommitteeGallery from '@/components/CommitteeGallery';
@@ -256,8 +256,8 @@ function HeroSection() {
     };
   }, []);
 
-  const backgroundImage = heroContent?.backgroundImage || 'https://static.wixstatic.com/media/53945f_6bee9d16da5e479f992af58ab778677c~mv2.png?originWidth=576&originHeight=576';
-  const frontImage = heroContent?.backgroundImage || 'https://static.wixstatic.com/media/53945f_33f4a8eaa9f44efe9f2a7a434389989d~mv2.png?originWidth=576&originHeight=576';
+  const backgroundImage = heroContent?.backgroundImage || 'https://static.wixstatic.com/media/53945f_f8e8fb0321184ed5890214db2b1c00db~mv2.png?originWidth=576&originHeight=384';
+  const frontImage = heroContent?.backgroundImage || 'https://static.wixstatic.com/media/53945f_8b054f3958224ef7be0343afc4b0c449~mv2.png?originWidth=576&originHeight=384';
   const title = heroContent?.title || 'Birthplace of Tirthankar Lord Mahavira';
   const subtitle = heroContent?.subtitle || 'Jai Jinendra — जय जिनेंद्र';
   const shortDescription = heroContent?.shortDescription || 'VASOKUND · VAISHALI · BIHAR · INDIA';
@@ -1594,84 +1594,62 @@ function UpcomingEventsSection() {
 // --- HOW TO REACH SECTION COMPONENT ---
 
 function HowToReachSection() {
-  const [transportModes, setTransportModes] = useState<TransportModes[]>([]);
-  const [accommodationOptions, setAccommodationOptions] = useState<AccommodationOptions[]>([]);
-  const [isLoadingTransport, setIsLoadingTransport] = useState(true);
-  const [isLoadingAccommodation, setIsLoadingAccommodation] = useState(true);
-
-  useEffect(() => {
-    const fetchTransportModes = async () => {
-      try {
-        const result = await BaseCrudService.getAll<TransportModes>('transportmodes');
-        setTransportModes(result.items);
-      } catch (error) {
-        console.error('Error fetching transport modes:', error);
-      } finally {
-        setIsLoadingTransport(false);
-      }
-    };
-
-    fetchTransportModes();
-  }, []);
-
-  useEffect(() => {
-    const fetchAccommodation = async () => {
-      try {
-        const result = await BaseCrudService.getAll<AccommodationOptions>('accommodationoptions');
-        setAccommodationOptions(result.items);
-      } catch (error) {
-        console.error('Error fetching accommodation options:', error);
-      } finally {
-        setIsLoadingAccommodation(false);
-      }
-    };
-
-    fetchAccommodation();
-  }, []);
-
-  const defaultTransportModes = [
+  const transportModes = [
     {
-      modeName: "By Air",
-      description: "Nearest Airport: Patna International Airport (35 km). Flight connections from major Indian cities. Taxi/cab available from airport",
-      modeImage: "https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png"
+      icon: "✈️",
+      title: "By Air",
+      details: [
+        "Nearest Airport: Patna International Airport (35 km)",
+        "Flight connections from major Indian cities",
+        "Taxi/cab available from airport"
+      ]
     },
     {
-      modeName: "By Train",
-      description: "Nearest Railway Station: Patna Junction (35 km). Well-connected to Delhi, Mumbai, Kolkata. Local transport available from station",
-      modeImage: "https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png"
+      icon: "🚂",
+      title: "By Train",
+      details: [
+        "Nearest Railway Station: Patna Junction (35 km)",
+        "Well-connected to Delhi, Mumbai, Kolkata",
+        "Local transport available from station"
+      ]
     },
     {
-      modeName: "By Road",
-      description: "National Highway 2 connects to Vaishali. Taxi/cab services available. Personal vehicle recommended for flexibility",
-      modeImage: "https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png"
+      icon: "🚗",
+      title: "By Road",
+      details: [
+        "National Highway 2 connects to Vaishali",
+        "Taxi/cab services available",
+        "Personal vehicle recommended for flexibility"
+      ]
     },
     {
-      modeName: "By Bus",
-      description: "Regular bus services from Patna. State transport and private operators. Journey time: ~1.5 hours from Patna",
-      modeImage: "https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png"
+      icon: "🚌",
+      title: "By Bus",
+      details: [
+        "Regular bus services from Patna",
+        "State transport and private operators",
+        "Journey time: ~1.5 hours from Patna"
+      ]
     }
   ];
 
-  const defaultAccommodationOptions = [
+  const accommodationOptions = [
     {
-      name: "Dharamshala",
+      type: "Dharamshala",
       description: "Sacred guest houses for pilgrims",
-      mainImage: "https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png"
+      amenities: ["Basic facilities", "Spiritual atmosphere", "Affordable rates"]
     },
     {
-      name: "Hotels",
+      type: "Hotels",
       description: "Comfortable lodging in nearby towns",
-      mainImage: "https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png"
+      amenities: ["Modern facilities", "Various price ranges", "Dining options"]
     },
     {
-      name: "Ashrams",
+      type: "Ashrams",
       description: "Spiritual retreats and meditation centers",
-      mainImage: "https://static.wixstatic.com/media/12d367_71ebdd7141d041e4be3d91d80d4578dd~mv2.png"
+      amenities: ["Yoga & meditation", "Vegetarian meals", "Peaceful environment"]
     }
   ];
-
-  const displayTransportModes = transportModes.length > 0 ? transportModes : defaultTransportModes;
-  const displayAccommodationOptions = accommodationOptions.length > 0 ? accommodationOptions : defaultAccommodationOptions;
 
   return (
     <section id="how-to-reach" className="relative py-16 md:py-32 bg-cream overflow-hidden">
