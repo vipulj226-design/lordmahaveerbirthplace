@@ -13,7 +13,7 @@ const navigationLinks = [
   { label: 'Contact', href: '#contact' },
 ];
 
-export default function Header() {
+function Header() {
   return (
     <header
       className="fixed top-0 left-0 right-0 z-[1000] w-full"
@@ -88,3 +88,5 @@ export default function Header() {
     </header>
   );
 }
+
+export default Header;
