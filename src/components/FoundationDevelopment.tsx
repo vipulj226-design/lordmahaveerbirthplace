@@ -42,12 +42,13 @@ export default function FoundationDevelopment() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl font-black text-maroon uppercase tracking-tight relative z-10 lg:text-5xl"
+            className="font-heading font-black text-maroon uppercase tracking-tight relative z-10 lg:text-5xl text-5xl"
           >
             Foundation & <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Development</span>
           </motion.h2>
-          <motion.p
+          <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
+        <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -56,8 +57,7 @@ export default function FoundationDevelopment() {
           >
             A sacred journey — from the first foundation stone in 1956 to the grand Panchkalyanak in 2013
           </motion.p>
-          <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
-        </div>
+          </div>
 
         {/* Timeline Blocks */}
         {isLoading ? (
