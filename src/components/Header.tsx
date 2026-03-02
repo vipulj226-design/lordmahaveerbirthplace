@@ -28,13 +28,7 @@ export default function Header() {
         {/* Logo */}
         <div className="flex-shrink-0 absolute left-6">
           <a href="#hero" className="flex items-center">
-            <Image
-              src="https://static.wixstatic.com/media/53945f_69b4da16bb88498db8c1ec0992032bea~mv2.jpg"
-              alt="Logo"
-              width={60}
-              height={60}
-              className="object-contain"
-            />
+
           </a>
         </div>
 
@@ -63,7 +57,6 @@ export default function Header() {
           ))}
         </ul>
       </nav>
-
       {/* Mobile Navigation */}
       <div className="md:hidden flex flex-col">
         {/* Mobile Logo */}
