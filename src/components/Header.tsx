@@ -1,6 +1,6 @@
 const navigationLinks = [
   { label: 'Home', href: '#hero' },
-  { label: 'About', href: '#about' },
+  { label: 'About Birthplace', href: '#about' },
   { label: 'Birthplace', href: '#birthplace' },
   { label: 'Blessings', href: '#blessings' },
   { label: 'Vaishali', href: '#vaishali' },
