@@ -85,7 +85,7 @@ export default function FoundationDevelopment() {
                       className="rounded-[12px] overflow-hidden border-2 border-maroon hover:border-gold transition-colors duration-300"
                     >
                       <Image
-                        src={block.image}
+                        src={`${block.image}${block.image.includes('?') ? '&' : '?'}t=${new Date().getTime()}`}
                         alt={block.heading || 'Foundation & Development'}
                         width={500}
                         height={400}
