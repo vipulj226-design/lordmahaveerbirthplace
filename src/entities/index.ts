@@ -126,16 +126,8 @@ export interface FoundationDevelopment {
   _id: string;
   _createdDate?: Date;
   _updatedDate?: Date;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
-  galleryImage3?: string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
-  galleryImage4?: string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
-  galleryImage2?: string;
   /** @wixFieldType text */
   yearPeriod?: string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
-  galleryImage1?: string;
   /** @wixFieldType text */
   heading?: string;
   /** @wixFieldType text */
