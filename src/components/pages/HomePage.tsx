@@ -88,10 +88,8 @@ export default function HomePage() {
       <Header />
       {/* --- HERO SECTION --- */}
       <HeroSection />
-      {/* --- BIRTHPLACE SECTION --- */}
-      <BirthplaceSection />
-      {/* --- ABOUT US SECTION (The Unapologetic Truth) --- */}
-      <AboutUsSection />
+      {/* --- BIRTHPLACE & ABOUT US SECTION (MERGED) --- */}
+      <BirthplaceAboutSection />
       {/* --- STATISTICS SECTION --- */}
       <StatisticsSection />
       {/* --- DIVINE BLESSINGS SECTION --- */}
@@ -141,7 +139,7 @@ export default function HomePage() {
 
           {/* Navigation Links */}
           <div className="flex flex-wrap justify-center gap-6 mb-16 text-center">
-            {['About', 'Birthplace', 'Blessings', 'Vaishali', 'Foundation', 'Committee', 'Donate', 'Gallery', 'Events', 'How to Reach', 'Contact'].map((link) => (
+            {['About', 'Blessings', 'Vaishali', 'Foundation', 'Committee', 'Donate', 'Gallery', 'Events', 'How to Reach', 'Contact'].map((link) => (
               <a key={link} href={`#${link.toLowerCase()}`} className="font-paragraph text-cream/80 hover:text-gold transition-colors text-sm uppercase tracking-wider">
                 {link}
               </a>
@@ -410,9 +408,9 @@ function HeroSection() {
   );
 }
 
-// --- BIRTHPLACE SECTION COMPONENT ---
+// --- BIRTHPLACE & ABOUT US SECTION (MERGED) ---
 
-function BirthplaceSection() {
+function BirthplaceAboutSection() {
   const [statistics, setStatistics] = useState<BirthplaceStatistics[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -433,7 +431,7 @@ function BirthplaceSection() {
   }, []);
 
   return (
-    <section id="birthplace" ref={sectionRef} className="relative py-16 md:py-40 bg-cream overflow-hidden">
+    <section id="about" ref={sectionRef} className="relative py-16 md:py-40 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
@@ -555,7 +553,7 @@ function BirthplaceSection() {
         </div>
 
         {/* Birthplace Confirmation Section */}
-        <div className="pt-12 md:pt-20 border-t-2 border-gold/30">
+        <div className="pt-12 md:pt-20 border-t-2 border-gold/30 mb-24">
           <motion.h3
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -686,12 +684,110 @@ function BirthplaceSection() {
             </motion.div>
           </div>
         </div>
+
+        {/* The Unapologetic Truth Section */}
+        <div className="relative bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-16 md:py-24 px-8 md:px-12 rounded-lg border-2 border-gold">
+          <div className="absolute inset-0 opacity-5 pointer-events-none">
+            <div className="absolute inset-0 bg-[radial-gradient(#C5A55A_1px,transparent_1px)] [background-size:16px_16px]" />
+          </div>
+
+          <div className="relative z-10">
+            {/* Section Header */}
+            <motion.h2 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="font-heading text-4xl md:text-6xl lg:text-7xl font-black text-cream uppercase tracking-tight mb-16 relative z-10"
+            >
+              The Unapologetic<br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Truth</span>
+            </motion.h2>
+
+            {/* Content Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24">
+              
+              {/* Sticky Image Column */}
+              <div className="lg:col-span-5 relative">
+                <div className="sticky top-32">
+                  <div className="relative aspect-[3/4] w-full overflow-hidden border-4 border-maroon bg-maroon">
+                    <Image 
+                      src="https://static.wixstatic.com/media/53945f_d0d06ffee96845a5826851cf03f30364~mv2.png?originWidth=640&originHeight=896" 
+                      alt="Ancient Jain Statue Representation" 
+                      className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 border border-gold/30 m-4 pointer-events-none" />
+                    
+                    {/* Floating Badge */}
+                    <div className="absolute bottom-8 -right-8 bg-gold text-maroon p-6 font-heading font-bold text-xl shadow-xl border-2 border-maroon hidden lg:block">
+                      <span className="block text-4xl font-black mb-1">24</span>
+                      Tirthankara
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Scrolling Text Column */}
+              <div className="lg:col-span-7 flex flex-col gap-12 md:gap-24 pt-0 md:pt-12">
+                
+                {/* Block 1 */}
+                <motion.div 
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6 }}
+                  className="group"
+                >
+                  <div className="flex items-baseline gap-4 mb-6">
+                    <span className="font-heading text-6xl font-black text-gold/40 group-hover:text-gold transition-colors">01</span>
+                    <h3 className="font-heading text-3xl font-bold text-cream">A Revolution of Spirit</h3>
+                  </div>
+                  <p className="font-paragraph text-lg text-cream/80 leading-relaxed pl-20 border-l-2 border-cream/20 group-hover:border-gold transition-colors">
+                    In an era of ritual complexity, Lord Mahavira introduced a radical simplicity. Born in 599 BCE at Vasokund, his life was a bold declaration that spiritual liberation is the birthright of every soul, not just the chosen few.
+                  </p>
+                </motion.div>
+
+                {/* Block 2 */}
+                <motion.div 
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="group"
+                >
+                  <div className="flex items-baseline gap-4 mb-6">
+                    <span className="font-heading text-6xl font-black text-gold/40 group-hover:text-gold transition-colors">02</span>
+                    <h3 className="font-heading text-3xl font-bold text-cream">Ahimsa: The Ultimate Strength</h3>
+                  </div>
+                  <p className="font-paragraph text-lg text-cream/80 leading-relaxed pl-20 border-l-2 border-cream/20 group-hover:border-gold transition-colors">
+                    Non-violence is not passivity; it is the highest form of bravery. Mahavira's teachings at Vaishali challenged the very foundations of violence in thought, word, and deed, establishing a legacy that echoes through millennia.
+                  </p>
+                </motion.div>
+
+                {/* Block 3 */}
+                <motion.div 
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className="group"
+                >
+                  <div className="flex items-baseline gap-4 mb-6">
+                    <span className="font-heading text-6xl font-black text-gold/40 group-hover:text-gold transition-colors">03</span>
+                    <h3 className="font-heading text-3xl font-bold text-cream">The Eternal Truth</h3>
+                  </div>
+                  <p className="font-paragraph text-lg text-cream/80 leading-relaxed pl-20 border-l-2 border-cream/20 group-hover:border-gold transition-colors">
+                    Anekantavada—the multiplicity of views. In a polarized world, Mahavira's wisdom from Vasokund teaches us to see the truth in others' perspectives, fostering a harmony that is desperately needed today.
+                  </p>
+                </motion.div>
+
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
 }
-
-// ... keep existing code (VaishaliHeritageSection, FoundationTempleSection, StatisticsSection, AboutMahaviraSection)
 
 function BlessingsSection() {
   const [blessings, setBlessings] = useState<SpiritualLeaders[]>([]);
@@ -1147,8 +1243,6 @@ function AboutUsSection() {
     </section>
   );
 }
-
-// ... keep existing code (CommitteeSection removed - now using CommitteeGallery component)
 
 // --- DONATE SECTION COMPONENT ---
 
