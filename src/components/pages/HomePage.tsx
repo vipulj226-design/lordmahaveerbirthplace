@@ -430,11 +430,11 @@ function BirthplaceAboutSection() {
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="relative py-10 md:py-16 bg-cream overflow-hidden">
+    <section id="about" ref={sectionRef} className="relative py-8 md:py-12 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-10 md:mb-16 relative">
+        <div className="mb-6 md:mb-10 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -499,7 +499,7 @@ function BirthplaceAboutSection() {
         </motion.div>
 
         {/* Statistics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8 md:mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6 md:mb-8">
           {isLoading ? (
             <div className="col-span-full text-center py-12">
               <p className="font-paragraph text-maroon/60">Loading statistics...</p>
