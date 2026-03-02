@@ -30,11 +30,11 @@ export default function CommitteeGallery() {
   }, []);
 
   return (
-    <section id="committee" className="relative py-32 bg-cream overflow-hidden">
+    <section id="committee" className="relative py-16 md:py-20 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="mb-12 md:mb-16 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}

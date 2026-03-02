@@ -34,10 +34,10 @@ export default function FoundationDevelopment() {
   }, []);
 
   return (
-    <section id="foundation" className="relative py-32 bg-cream overflow-hidden">
+    <section id="foundation" className="relative py-16 md:py-20 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         {/* Section Header */}
-        <div className="mb-24 relative">
+        <div className="mb-12 md:mb-16 relative">
           <motion.h2
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -65,7 +65,7 @@ export default function FoundationDevelopment() {
             <p className="font-paragraph text-maroon/60">Loading timeline...</p>
           </div>
         ) : blocks.length > 0 ? (
-          <div className="space-y-12">
+          <div className="space-y-8">
             {blocks.map((block, index) => (
               <motion.div
                 key={block._id}

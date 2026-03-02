@@ -94,8 +94,7 @@ export default function HomePage() {
       <StatisticsSection />
       {/* --- DIVINE BLESSINGS SECTION --- */}
       <BlessingsSection />
-      {/* --- VAISHALI HERITAGE SECTION --- */}
-      <VaishaliHeritageSection />
+
       {/* --- FOUNDATION & DEVELOPMENT SECTION --- */}
       <FoundationDevelopment />
       {/* --- FOUNDATION & TEMPLE SECTION --- */}
@@ -113,16 +112,16 @@ export default function HomePage() {
       {/* --- CONTACT SECTION --- */}
       <ContactSection />
       {/* --- FOOTER --- */}
-      <footer className="bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-20">
+      <footer className="bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-12 md:py-16">
         <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
           
           {/* Logo */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-10">
             <h3 className="font-heading text-4xl font-black text-gold mb-2 uppercase tracking-wider">☸ Lord Mahaveer Birthplace ☸</h3>
           </div>
 
           {/* Social Links */}
-          <div className="flex flex-wrap justify-center gap-8 mb-16">
+          <div className="flex flex-wrap justify-center gap-6 md:gap-8 mb-8 md:mb-10">
             <a href="https://wa.me/919811660130" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-paragraph text-cream hover:text-gold transition-colors">
               <MessageCircle className="w-5 h-5" />
               <span>WhatsApp</span>
@@ -138,7 +137,7 @@ export default function HomePage() {
           </div>
 
           {/* Navigation Links */}
-          <div className="flex flex-wrap justify-center gap-6 mb-16 text-center">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-8 md:mb-10 text-center">
             {['About', 'Blessings', 'Vaishali', 'Foundation', 'Committee', 'Donate', 'Gallery', 'Events', 'How to Reach', 'Contact'].map((link) => (
               <a key={link} href={`#${link.toLowerCase()}`} className="font-paragraph text-cream/80 hover:text-gold transition-colors text-sm uppercase tracking-wider">
                 {link}
@@ -147,12 +146,12 @@ export default function HomePage() {
           </div>
 
           {/* Organization Info */}
-          <div className="text-center border-t border-gold/20 pt-8 mb-8">
+          <div className="text-center border-t border-gold/20 pt-6 md:pt-8 mb-6 md:mb-8">
             <p className="font-paragraph text-cream/80 mb-2">Bhagwan Mahavir Smarak Samiti | Vasokund, Vaishali (Bihar)</p>
           </div>
 
           {/* Copyright */}
-          <div className="text-center border-t border-gold/20 pt-8">
+          <div className="text-center border-t border-gold/20 pt-6 md:pt-8">
             <p className="font-paragraph text-xs text-cream/60 uppercase tracking-widest mb-4">© 2026 All rights reserved</p>
             <p className="font-paragraph text-gold uppercase tracking-widest text-sm">
               🌐 Website Designed & Managed by Vipul Jain | 💬 WhatsApp: 8470990283
@@ -269,7 +268,7 @@ function HeroSection() {
       style={{
         background: 'linear-gradient(135deg, #6B0F1A, #3D0A10, #6B0F1A)',
         paddingTop: '120px',
-        paddingBottom: '80px',
+        paddingBottom: '20px',
         paddingLeft: '24px',
         paddingRight: '24px',
       }}
@@ -431,11 +430,11 @@ function BirthplaceAboutSection() {
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="relative py-16 md:py-40 bg-cream overflow-hidden">
+    <section id="about" ref={sectionRef} className="relative py-10 md:py-16 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-16 md:mb-32 relative">
+        <div className="mb-10 md:mb-16 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -458,7 +457,7 @@ function BirthplaceAboutSection() {
         </div>
 
         {/* Single Column Full-Width Content */}
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="group relative bg-gradient-to-br from-cream to-cream/90 border-2 border-gold p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden mb-16 md:mb-24">
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="group relative bg-gradient-to-br from-cream to-cream/90 border-2 border-gold p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden mb-10 md:mb-16">
           <div className="absolute inset-0 bg-maroon/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           <div className="relative z-10">
             <h3 className="font-heading text-3xl lg:text-4xl font-black text-maroon mb-8 uppercase tracking-wide relative z-10">
@@ -500,7 +499,7 @@ function BirthplaceAboutSection() {
         </motion.div>
 
         {/* Statistics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 md:mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8 md:mb-12">
           {isLoading ? (
             <div className="col-span-full text-center py-12">
               <p className="font-paragraph text-maroon/60">Loading statistics...</p>
@@ -553,7 +552,7 @@ function BirthplaceAboutSection() {
         </div>
 
         {/* Birthplace Confirmation Section */}
-        <div className="pt-12 md:pt-20 border-t-2 border-gold/30 mb-24">
+        <div className="pt-8 md:pt-12 border-t-2 border-gold/30 mb-12">
           <motion.h3
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -686,7 +685,7 @@ function BirthplaceAboutSection() {
         </div>
 
         {/* The Unapologetic Truth Section */}
-        <div className="relative bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-16 md:py-24 px-8 md:px-12 rounded-lg border-2 border-gold">
+        <div className="relative bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-12 md:py-16 px-6 md:px-8 rounded-lg border-2 border-gold">
           <div className="absolute inset-0 opacity-5 pointer-events-none">
             <div className="absolute inset-0 bg-[radial-gradient(#C5A55A_1px,transparent_1px)] [background-size:16px_16px]" />
           </div>
@@ -697,7 +696,7 @@ function BirthplaceAboutSection() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-heading text-4xl md:text-6xl lg:text-7xl font-black text-cream uppercase tracking-tight mb-16 relative z-10"
+              className="font-heading text-4xl md:text-6xl lg:text-7xl font-black text-cream uppercase tracking-tight mb-10 relative z-10"
             >
               The Unapologetic<br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Truth</span>
@@ -727,7 +726,7 @@ function BirthplaceAboutSection() {
               </div>
 
               {/* Scrolling Text Column */}
-              <div className="lg:col-span-7 flex flex-col gap-12 md:gap-24 pt-0 md:pt-12">
+              <div className="lg:col-span-7 flex flex-col gap-8 md:gap-12 pt-0 md:pt-8">
                 
                 {/* Block 1 */}
                 <motion.div 
@@ -1206,10 +1205,10 @@ function DonateSection() {
   ];
 
   return (
-    <section id="donate" className="relative py-16 md:py-32 bg-cream overflow-hidden">
+    <section id="donate" className="relative py-16 md:py-20 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         {/* Section Header */}
-        <div className="mb-12 md:mb-24 relative">
+        <div className="mb-12 md:mb-16 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1371,11 +1370,11 @@ function GallerySection() {
   }, [lightboxOpen, galleryItems.length]);
 
   return (
-    <section id="gallery" className="relative py-16 md:py-32 bg-cream overflow-hidden">
+    <section id="gallery" className="relative py-16 md:py-20 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-12 md:mb-24 relative">
+        <div className="mb-12 md:mb-16 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1526,11 +1525,11 @@ function UpcomingEventsSection() {
   };
 
   return (
-    <section id="events" ref={sectionRef} className="relative py-16 md:py-32 bg-cream overflow-hidden">
+    <section id="events" ref={sectionRef} className="relative py-16 md:py-20 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-12 md:mb-24 relative">
+        <div className="mb-12 md:mb-16 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1709,11 +1708,11 @@ function HowToReachSection() {
   ];
 
   return (
-    <section id="how-to-reach" className="relative py-16 md:py-32 bg-cream overflow-hidden">
+    <section id="how-to-reach" className="relative py-16 md:py-20 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-12 md:mb-24 relative">
+        <div className="mb-12 md:mb-16 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1947,11 +1946,11 @@ function HowToReachSection() {
 
 function ContactSection() {
   return (
-    <section id="contact" className="relative py-16 md:py-32 bg-cream overflow-hidden">
+    <section id="contact" className="relative py-16 md:py-20 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-12 md:mb-24 relative">
+        <div className="mb-12 md:mb-16 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
