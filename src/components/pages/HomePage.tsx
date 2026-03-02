@@ -84,54 +84,36 @@ export default function HomePage() {
       className="min-h-screen bg-cream text-maroon selection:bg-maroon selection:text-gold overflow-x-hidden"
       style={{ scrollPaddingTop: '140px' }}
     >
-      
       {/* --- HEADER --- */}
       <Header />
-
       {/* --- HERO SECTION --- */}
       <HeroSection />
-
       {/* --- BIRTHPLACE SECTION --- */}
       <BirthplaceSection />
-
       {/* --- ABOUT US SECTION (The Unapologetic Truth) --- */}
       <AboutUsSection />
-
       {/* --- STATISTICS SECTION --- */}
       <StatisticsSection />
-
       {/* --- DIVINE BLESSINGS SECTION --- */}
       <BlessingsSection />
-
       {/* --- VAISHALI HERITAGE SECTION --- */}
       <VaishaliHeritageSection />
-
       {/* --- FOUNDATION & DEVELOPMENT SECTION --- */}
       <FoundationDevelopment />
-
       {/* --- FOUNDATION & TEMPLE SECTION --- */}
       <FoundationTempleSection />
-
       {/* --- COMMITTEE GALLERY SECTION --- */}
       <CommitteeGallery />
-
       {/* --- DONATE SECTION --- */}
       <DonateSection />
-
       {/* --- UPCOMING EVENTS SECTION --- */}
       <UpcomingEventsSection />
-
       {/* --- GALLERY SECTION --- */}
       <GallerySection />
-
       {/* --- HOW TO REACH SECTION --- */}
       <HowToReachSection />
-
       {/* --- CONTACT SECTION --- */}
       <ContactSection />
-
-
-
       {/* --- FOOTER --- */}
       <footer className="bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-20">
         <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
@@ -178,7 +160,7 @@ export default function HomePage() {
             <p className="font-paragraph text-xs text-cream/60 uppercase tracking-widest mb-4">
               © 2026 All rights reserved with Publisher
             </p>
-            <p className="font-paragraph text-xs text-gold uppercase tracking-widest">
+            <p className="font-paragraph text-gold uppercase tracking-widest text-sm">
               🌐 Website Designed & Managed by Vipul Jain | 💬 WhatsApp: 8470990283
             </p>
           </div>
@@ -2020,7 +2002,7 @@ function ContactSection() {
                 <span className="text-2xl">📧</span>
                 <div>
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Email</p>
-                  <p className="text-maroon font-semibold">info@lordmahaveerbirthplace.com</p>
+                  <p className="text-maroon font-semibold">bhagwanmahavir1008@gmail.com</p>
                 </div>
               </div>
 
