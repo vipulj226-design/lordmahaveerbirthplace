@@ -708,15 +708,15 @@ function BirthplaceAboutSection() {
               <div className="lg:col-span-5 relative">
                 <div className="sticky top-32">
                   <div className="relative aspect-[3/4] w-full overflow-hidden border-4 border-maroon bg-maroon">
-                    <Image 
-                      src="https://static.wixstatic.com/media/53945f_d0d06ffee96845a5826851cf03f30364~mv2.png?originWidth=640&originHeight=896" 
-                      alt="Ancient Jain Statue Representation" 
+                    <Image
+                      src="https://static.wixstatic.com/media/53945f_c4c8144dd34c4ac59690c4eca6987e26~mv2.png"
                       className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:scale-105 transition-transform duration-700"
-                    />
+                      originWidth={286}
+                      originHeight={433} />
                     <div className="absolute inset-0 border border-gold/30 m-4 pointer-events-none" />
                     
                     {/* Floating Badge */}
-                    <div className="absolute bottom-8 -right-8 bg-gold text-maroon p-6 font-heading font-bold text-xl shadow-xl border-2 border-maroon hidden lg:block">
+                    <div className="absolute bottom-8 -right-8 bg-gold text-maroon p-6 font-heading font-bold text-xl shadow-xl hidden lg:block border border-solid border-[#6b0f1a]">
                       <span className="block text-4xl font-black mb-1">24</span>
                       Tirthankara
                     </div>
