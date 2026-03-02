@@ -150,16 +150,12 @@ export default function HomePage() {
 
           {/* Organization Info */}
           <div className="text-center border-t border-gold/20 pt-8 mb-8">
-            <p className="font-paragraph text-cream/80 mb-2">
-              Bhagwan Mahavir Smarak Samiti | Vasokund, Vaishali (Bihar) & Kundkund Bharti, New Delhi
-            </p>
+            <p className="font-paragraph text-cream/80 mb-2">Bhagwan Mahavir Smarak Samiti | Vasokund, Vaishali (Bihar)</p>
           </div>
 
           {/* Copyright */}
           <div className="text-center border-t border-gold/20 pt-8">
-            <p className="font-paragraph text-xs text-cream/60 uppercase tracking-widest mb-4">
-              © 2026 All rights reserved with Publisher
-            </p>
+            <p className="font-paragraph text-xs text-cream/60 uppercase tracking-widest mb-4">© 2026 All rights reserved</p>
             <p className="font-paragraph text-gold uppercase tracking-widest text-sm">
               🌐 Website Designed & Managed by Vipul Jain | 💬 WhatsApp: 8470990283
             </p>
@@ -1372,7 +1368,7 @@ function GallerySection() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+            className="font-heading text-6xl font-black text-maroon uppercase tracking-tight relative z-10 lg:text-5xl"
           >
             Sacred <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Gallery</span>
@@ -1427,7 +1423,6 @@ function GallerySection() {
           </div>
         )}
       </div>
-
       {/* Lightbox */}
       {lightboxOpen && galleryItems.length > 0 && (
         <motion.div
@@ -1711,7 +1706,7 @@ function HowToReachSection() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+            className="font-heading text-6xl font-black text-maroon uppercase tracking-tight relative z-10 lg:text-5xl"
           >
             How to <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Reach</span>
@@ -1949,7 +1944,7 @@ function ContactSection() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+            className="font-heading text-6xl font-black text-maroon uppercase tracking-tight relative z-10 lg:text-5xl"
           >
             Contact <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Us</span>
@@ -1970,6 +1965,7 @@ function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           
           {/* Vaishali Contact Card */}
+          {/* Delhi Contact Card */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -2039,7 +2035,6 @@ function ContactSection() {
             </a>
           </motion.div>
 
-          {/* Delhi Contact Card */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
