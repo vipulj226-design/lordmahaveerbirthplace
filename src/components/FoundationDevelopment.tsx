@@ -127,7 +127,7 @@ export default function FoundationDevelopment() {
                     )}
 
                     {/* Photo Gallery - 4 Photos from CMS */}
-                    <div className="grid grid-cols-2 gap-4 mt-8">
+                    <div className="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-4 mt-8">
                       {block.galleryImage1 && (
                         <motion.div
                           initial={{ opacity: 0, scale: 0.9 }}
@@ -138,9 +138,9 @@ export default function FoundationDevelopment() {
                           <Image
                             src={block.galleryImage1}
                             alt="Gallery photo 1"
-                            width={200}
-                            height={180}
-                            className="w-full h-48 object-cover"
+                            width={300}
+                            height={280}
+                            className="w-full h-auto aspect-square object-cover"
                           />
                         </motion.div>
                       )}
@@ -155,9 +155,9 @@ export default function FoundationDevelopment() {
                           <Image
                             src={block.galleryImage2}
                             alt="Gallery photo 2"
-                            width={200}
-                            height={180}
-                            className="w-full h-48 object-cover"
+                            width={300}
+                            height={280}
+                            className="w-full h-auto aspect-square object-cover"
                           />
                         </motion.div>
                       )}
@@ -172,9 +172,9 @@ export default function FoundationDevelopment() {
                           <Image
                             src={block.galleryImage3}
                             alt="Gallery photo 3"
-                            width={200}
-                            height={180}
-                            className="w-full h-48 object-cover"
+                            width={300}
+                            height={280}
+                            className="w-full h-auto aspect-square object-cover"
                           />
                         </motion.div>
                       )}
@@ -189,9 +189,9 @@ export default function FoundationDevelopment() {
                           <Image
                             src={block.galleryImage4}
                             alt="Gallery photo 4"
-                            width={200}
-                            height={180}
-                            className="w-full h-48 object-cover"
+                            width={300}
+                            height={280}
+                            className="w-full h-auto aspect-square object-cover"
                           />
                         </motion.div>
                       )}
