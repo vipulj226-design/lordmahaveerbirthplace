@@ -1383,7 +1383,7 @@ function GallerySection() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl font-black text-maroon uppercase tracking-tight relative z-10 lg:text-5xl"
+            className="font-heading font-black text-maroon uppercase tracking-tight relative z-10 lg:text-5xl text-5xl"
           >
             Sacred <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Gallery</span>
@@ -1721,7 +1721,7 @@ function HowToReachSection() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl font-black text-maroon uppercase tracking-tight relative z-10 lg:text-5xl"
+            className="font-heading font-black text-maroon uppercase tracking-tight relative z-10 lg:text-5xl text-5xl"
           >
             How to <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Reach</span>
@@ -1959,7 +1959,7 @@ function ContactSection() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-6xl font-black text-maroon uppercase tracking-tight relative z-10 lg:text-5xl"
+            className="font-heading font-black text-maroon uppercase tracking-tight relative z-10 lg:text-5xl text-5xl"
           >
             Contact <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Us</span>
