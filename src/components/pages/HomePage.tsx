@@ -535,11 +535,7 @@ function BirthplaceAboutSection() {
                 )}
               </motion.div>
             ))
-          ) : (
-            <div className="col-span-full text-center py-12">
-
-            </div>
-          )}
+          ) : null}
         </div>
 
         {/* Birthplace Confirmation Section */}
