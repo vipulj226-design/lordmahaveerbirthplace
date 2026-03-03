@@ -312,7 +312,7 @@ function HeroSection() {
       >
         {/* Ornament Text */}
         <motion.div 
-          className="mb-6"
+          className="mb-6 pt-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.2 }}
