@@ -282,7 +282,6 @@ function HeroSection() {
           opacity: 0.45,
         }}
       />
-
       {/* Radial Gradient Vignette Overlay */}
       <div 
         className="absolute inset-0 z-0 pointer-events-none"
@@ -290,14 +289,12 @@ function HeroSection() {
           background: 'radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.6) 100%)',
         }}
       />
-
       {/* Particles Container */}
       <div 
         ref={particlesRef}
         className="absolute inset-0 z-0 pointer-events-none"
         style={{ width: '100%', height: '100%' }}
       />
-
       {/* Main Content */}
       <motion.div 
         className="relative z-20 w-full max-w-[100rem] mx-auto text-center"
@@ -322,7 +319,7 @@ function HeroSection() {
 
         {/* H1 Title with Gradient */}
         <motion.h1 
-          className="font-heading font-black tracking-tight mb-6"
+          className="font-heading font-black tracking-tight mb-6 text-xl"
           style={{
             fontSize: 'clamp(2rem, 5vw, 3.8rem)',
             backgroundImage: 'linear-gradient(to right, #C5A55A, #FDF6EC, #D4AF37)',
