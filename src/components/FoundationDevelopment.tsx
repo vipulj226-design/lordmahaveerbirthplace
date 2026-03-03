@@ -69,7 +69,7 @@ export default function FoundationDevelopment() {
             <p className="font-paragraph text-maroon/60">Loading timeline...</p>
           </div>
         ) : blocks.length > 0 ? (
-          <div className="space-y-8">
+          <div className="space-y-12">
             {blocks.map((block, index) => (
               <motion.div
                 key={block._id}
@@ -77,57 +77,64 @@ export default function FoundationDevelopment() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center`}
+                className="border-2 border-maroon rounded-lg overflow-hidden hover:border-gold transition-all duration-300"
               >
-                {/* Image */}
-                <div className={index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}>
-                  {block.image && (
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      className="rounded-[12px] overflow-hidden border-2 border-maroon hover:border-gold transition-colors duration-300"
-                    >
-                      <Image
-                        src={`${block.image}${block.image.includes('?') ? '&' : '?'}t=${new Date().getTime()}`}
-                        alt={block.heading || 'Foundation & Development'}
-                        width={500}
-                        height={400}
-                        className="w-full h-auto object-cover"
-                      />
-                    </motion.div>
-                  )}
+                {/* Combined Image + Content Box */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  {/* Main Image - Left or Right based on index */}
+                  <div className={index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}>
+                    {block.image && (
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="w-full h-full overflow-hidden"
+                      >
+                        <Image
+                          src={`${block.image}${block.image.includes('?') ? '&' : '?'}t=${new Date().getTime()}`}
+                          alt={block.heading || 'Foundation & Development'}
+                          width={600}
+                          height={600}
+                          className="w-full h-full object-cover min-h-[400px] lg:min-h-[500px]"
+                        />
+                      </motion.div>
+                    )}
+                  </div>
+
+                  {/* Content - Right or Left based on index */}
+                  <div className={index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}>
+                    <div className="bg-cream p-8 lg:p-10 h-full flex flex-col justify-center">
+                      {/* Year/Period Badge */}
+                      {block.yearPeriod && (
+                        <div className="inline-block bg-gold/20 text-maroon px-4 py-2 rounded-full mb-4 font-heading font-bold text-xs uppercase tracking-widest w-fit">
+                          {block.yearPeriod}
+                        </div>
+                      )}
+
+                      {/* Heading */}
+                      <h3 className="font-heading text-2xl lg:text-3xl font-bold text-maroon mb-4 uppercase tracking-wide">
+                        {block.heading}
+                      </h3>
+
+                      {/* Content */}
+                      <p className="font-paragraph text-base lg:text-lg text-maroon/80 mb-4 leading-relaxed">
+                        {block.content}
+                      </p>
+
+                      {/* Quote (if available) */}
+                      {block.quote && (
+                        <blockquote className="border-l-4 border-gold pl-4 py-3 italic text-maroon/80 font-paragraph text-base mb-6">
+                          "{block.quote}"
+                        </blockquote>
+                      )}
+                    </div>
+                  </div>
                 </div>
 
-                {/* Content */}
-                <div className={index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}>
-                  <div className="bg-cream border-2 border-maroon p-10 hover:border-gold transition-all duration-300">
-                    {/* Year/Period Badge */}
-                    {block.yearPeriod && (
-                      <div className="inline-block bg-gold/20 text-maroon px-6 py-2 rounded-full mb-6 font-heading font-bold text-sm uppercase tracking-widest">
-                        {block.yearPeriod}
-                      </div>
-                    )}
-
-                    {/* Heading */}
-                    <h3 className="font-heading text-3xl lg:text-4xl font-bold text-maroon mb-6 uppercase tracking-wide">
-                      {block.heading}
-                    </h3>
-
-                    {/* Content */}
-                    <p className="font-paragraph text-lg text-maroon/80 mb-6 leading-relaxed">
-                      {block.content}
-                    </p>
-
-                    {/* Quote (if available) */}
-                    {block.quote && (
-                      <blockquote className="border-l-4 border-gold pl-6 py-4 italic text-maroon/80 font-paragraph text-lg mb-8">
-                        "{block.quote}"
-                      </blockquote>
-                    )}
-
-                    {/* Photo Gallery - 4 Photos from CMS */}
-                    <div className="grid grid-cols-2 md:grid-cols-2 gap-8 md:gap-10 mt-12">
+                {/* Photo Gallery - 4 Photos from CMS - Full Width Below */}
+                {(block.galleryImage1 || block.galleryImage2 || block.galleryImage3 || block.galleryImage4) && (
+                  <div className="border-t-2 border-maroon/20 p-6 lg:p-8 bg-cream">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
                       {block.galleryImage1 && (
                         <motion.div
                           initial={{ opacity: 0, scale: 0.9 }}
@@ -138,9 +145,9 @@ export default function FoundationDevelopment() {
                           <Image
                             src={block.galleryImage1}
                             alt="Gallery photo 1"
-                            width={600}
-                            height={550}
-                            className="w-full h-auto aspect-square object-cover"
+                            width={700}
+                            height={600}
+                            className="w-full h-auto object-cover aspect-video"
                           />
                         </motion.div>
                       )}
@@ -155,9 +162,9 @@ export default function FoundationDevelopment() {
                           <Image
                             src={block.galleryImage2}
                             alt="Gallery photo 2"
-                            width={600}
-                            height={550}
-                            className="w-full h-auto aspect-square object-cover"
+                            width={700}
+                            height={600}
+                            className="w-full h-auto object-cover aspect-video"
                           />
                         </motion.div>
                       )}
@@ -172,9 +179,9 @@ export default function FoundationDevelopment() {
                           <Image
                             src={block.galleryImage3}
                             alt="Gallery photo 3"
-                            width={600}
-                            height={550}
-                            className="w-full h-auto aspect-square object-cover"
+                            width={700}
+                            height={600}
+                            className="w-full h-auto object-cover aspect-video"
                           />
                         </motion.div>
                       )}
@@ -189,15 +196,15 @@ export default function FoundationDevelopment() {
                           <Image
                             src={block.galleryImage4}
                             alt="Gallery photo 4"
-                            width={600}
-                            height={550}
-                            className="w-full h-auto aspect-square object-cover"
+                            width={700}
+                            height={600}
+                            className="w-full h-auto object-cover aspect-video"
                           />
                         </motion.div>
                       )}
                     </div>
                   </div>
-                </div>
+                )}
               </motion.div>
             ))}
           </div>
