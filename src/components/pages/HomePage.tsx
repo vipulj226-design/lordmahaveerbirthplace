@@ -539,7 +539,7 @@ function BirthplaceAboutSection() {
         </div>
 
         {/* Birthplace Confirmation Section */}
-        <div className="pt-6 border-t-2 border-gold/30 mb-24 md:p-[67px]">
+        <div className="border-t-2 border-gold/30 mb-24 md:p-[67px]">
           <motion.h3
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
