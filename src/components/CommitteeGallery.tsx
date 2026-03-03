@@ -84,16 +84,16 @@ export default function CommitteeGallery() {
                   </div>
                 )}
 
-                <div className="p-8">
-                  <h3 className="font-heading text-2xl font-bold text-maroon mb-2 uppercase tracking-wide">
+                <div className="p-6 pt-5">
+                  <h3 className="font-heading text-2xl font-bold text-maroon mb-1 uppercase tracking-wide">
                     {member.name}
                   </h3>
-                  <p className="font-paragraph text-sm text-gold font-semibold uppercase tracking-widest mb-4">
+                  <p className="font-paragraph text-sm text-gold font-semibold uppercase tracking-widest mb-3">
                     {member.role}
                   </p>
 
                   {member.bio && (
-                    <p className="font-paragraph text-maroon/80 text-sm mb-6 leading-relaxed line-clamp-4">
+                    <p className="font-paragraph text-maroon/80 text-sm mb-4 leading-relaxed line-clamp-4">
                       {member.bio}
                     </p>
                   )}
