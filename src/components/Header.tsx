@@ -53,6 +53,14 @@ export default function Header() {
       </nav>
       {/* Mobile Navigation */}
       <div className="md:hidden flex flex-col">
+        {/* Mobile Header with Logo */}
+        <div className="flex items-center justify-center gap-2 py-3 border-b border-gold/20">
+          <div className="text-2xl font-heading font-black text-maroon">☸</div>
+          <div className="flex flex-col">
+            <span className="font-heading text-xs font-black text-maroon uppercase tracking-wider">Lord Mahaveer</span>
+            <span className="font-heading text-[0.65rem] font-bold text-gold uppercase tracking-wider">Birthplace</span>
+          </div>
+        </div>
         {/* Mobile Grid Navigation */}
         <div
           className="grid gap-0"
