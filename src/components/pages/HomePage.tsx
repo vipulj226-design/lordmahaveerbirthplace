@@ -116,7 +116,7 @@ export default function HomePage() {
           
           {/* Logo */}
           <div className="text-center mb-16">
-            <h3 className="font-heading text-4xl font-black text-gold mb-2 uppercase tracking-wider">☸ Lord Mahaveer Birthplace ☸</h3>
+            <h3 className="font-heading text-4xl font-black text-gold mb-2 uppercase tracking-wider leading-tight">☸ Lord Mahaveer Birthplace ☸</h3>
           </div>
 
           {/* Social Links */}
