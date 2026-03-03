@@ -153,7 +153,15 @@ export default function HomePage() {
           <div className="text-center border-t border-gold/20 pt-8">
             <p className="font-paragraph text-xs text-cream/60 uppercase tracking-widest mb-4">© 2026 All rights reserved</p>
             <p className="font-paragraph text-gold uppercase tracking-widest text-sm">
-              🌐 Website Designed & Managed by Vipul Jain | 💬 WhatsApp: 8470990283
+              🌐 Website Designed & Managed by Vipul Jain | 💬 WhatsApp:{' '}
+              <a
+                href="https://wa.me/918470990283"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gold2 transition-colors underline"
+              >
+                8470990283
+              </a>
             </p>
           </div>
         </div>
