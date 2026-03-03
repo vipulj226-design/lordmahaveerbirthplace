@@ -60,13 +60,13 @@ export default function Header() {
       {/* Mobile Navigation */}
       <div className="md:hidden flex flex-col">
         {/* Mobile Logo */}
-        <div className="flex justify-center py-2 border-bottom border-b border-b-[rgba(197,165,90,0.15)]">
+        <div className="flex justify-center py-1.5 border-bottom border-b border-b-[rgba(197,165,90,0.15)]">
           <a href="#hero" className="flex items-center">
             <Image
               src="https://static.wixstatic.com/media/53945f_69b4da16bb88498db8c1ec0992032bea~mv2.jpg"
               alt="Logo"
-              width={50}
-              height={50}
+              width={36}
+              height={36}
               className="object-contain"
             />
           </a>
@@ -84,7 +84,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="flex flex-col items-center justify-center min-h-[48px] text-[0.55rem] uppercase font-paragraph text-maroon transition-colors duration-200"
+              className="flex flex-col items-center justify-center min-h-[40px] text-[0.5rem] uppercase font-paragraph text-maroon transition-colors duration-200"
               style={{
                 borderRight: (index + 1) % 5 !== 0 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
                 borderBottom: index < 5 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
