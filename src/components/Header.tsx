@@ -24,7 +24,7 @@ export default function Header() {
       }}
     >
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex justify-between items-center px-6 py-3 max-w-[1400px] mx-auto gap-8">
+      <nav className="hidden md:flex justify-between items-center px-6 py-2 max-w-[1400px] mx-auto gap-8">
 
         {/* Logo */}
         <a href="#hero" className="flex items-center gap-3 shrink-0">
@@ -71,7 +71,7 @@ export default function Header() {
       {/* Mobile Navigation */}
       <div className="md:hidden flex flex-col">
         {/* Mobile Header with Logo */}
-        <div className="flex items-center justify-center gap-3 py-3 border-b border-gold/20">
+        <div className="flex items-center justify-center gap-3 py-2 border-b border-gold/20">
           <Image
             src="https://static.wixstatic.com/media/53945f_926edabb995f423680415b255d79c255~mv2.png"
             alt="Lord Mahaveer Birthplace Logo"
