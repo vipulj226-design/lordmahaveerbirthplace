@@ -1,5 +1,3 @@
-import { Image } from '@/components/ui/image';
-
 const navigationLinks = [
   { label: 'Home', href: '#hero' },
   { label: 'About Birthplace', href: '#about' },
@@ -25,12 +23,6 @@ export default function Header() {
     >
       {/* Desktop Navigation */}
       <nav className="hidden md:flex justify-center items-center px-6 py-2 max-w-[1400px] mx-auto gap-8">
-        {/* Logo */}
-        <div className="flex-shrink-0 absolute left-6">
-          <a href="#hero" className="flex items-center">
-
-          </a>
-        </div>
 
         {/* Navigation Links */}
         <ul className="flex gap-1">
@@ -59,19 +51,6 @@ export default function Header() {
       </nav>
       {/* Mobile Navigation */}
       <div className="md:hidden flex flex-col">
-        {/* Mobile Logo */}
-        <div className="flex justify-center py-2 border-bottom border-b border-b-[rgba(197,165,90,0.15)]">
-          <a href="#hero" className="flex items-center">
-            <Image
-              src="https://static.wixstatic.com/media/53945f_69b4da16bb88498db8c1ec0992032bea~mv2.jpg"
-              alt="Logo"
-              width={50}
-              height={50}
-              className="object-contain"
-            />
-          </a>
-        </div>
-
         {/* Mobile Grid Navigation */}
         <div
           className="grid gap-0"
