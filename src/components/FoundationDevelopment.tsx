@@ -127,19 +127,19 @@ export default function FoundationDevelopment() {
                     )}
 
                     {/* Photo Gallery - 4 Photos from CMS */}
-                    <div className="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-4 mt-8">
+                    <div className="grid grid-cols-2 md:grid-cols-2 gap-6 md:gap-8 mt-12">
                       {block.galleryImage1 && (
                         <motion.div
                           initial={{ opacity: 0, scale: 0.9 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
-                          className="rounded-lg overflow-hidden border border-gold/30 hover:border-gold transition-colors duration-300"
+                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300"
                         >
                           <Image
                             src={block.galleryImage1}
                             alt="Gallery photo 1"
-                            width={300}
-                            height={280}
+                            width={450}
+                            height={420}
                             className="w-full h-auto aspect-square object-cover"
                           />
                         </motion.div>
@@ -150,13 +150,13 @@ export default function FoundationDevelopment() {
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
                           transition={{ delay: 0.1 }}
-                          className="rounded-lg overflow-hidden border border-gold/30 hover:border-gold transition-colors duration-300"
+                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300"
                         >
                           <Image
                             src={block.galleryImage2}
                             alt="Gallery photo 2"
-                            width={300}
-                            height={280}
+                            width={450}
+                            height={420}
                             className="w-full h-auto aspect-square object-cover"
                           />
                         </motion.div>
@@ -167,13 +167,13 @@ export default function FoundationDevelopment() {
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
                           transition={{ delay: 0.2 }}
-                          className="rounded-lg overflow-hidden border border-gold/30 hover:border-gold transition-colors duration-300"
+                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300"
                         >
                           <Image
                             src={block.galleryImage3}
                             alt="Gallery photo 3"
-                            width={300}
-                            height={280}
+                            width={450}
+                            height={420}
                             className="w-full h-auto aspect-square object-cover"
                           />
                         </motion.div>
@@ -184,13 +184,13 @@ export default function FoundationDevelopment() {
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
                           transition={{ delay: 0.3 }}
-                          className="rounded-lg overflow-hidden border border-gold/30 hover:border-gold transition-colors duration-300"
+                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300"
                         >
                           <Image
                             src={block.galleryImage4}
                             alt="Gallery photo 4"
-                            width={300}
-                            height={280}
+                            width={450}
+                            height={420}
                             className="w-full h-auto aspect-square object-cover"
                           />
                         </motion.div>
