@@ -1,7 +1,9 @@
+import { Image } from '@/components/ui/image';
+
 const navigationLinks = [
   { label: 'Home', href: '#hero' },
   { label: 'About Birthplace', href: '#about' },
-  { label: "Acharyas  Blessings", href: '#blessings' },
+  { label: "Acharyas  Blessings", href: '#blessings' },
   { label: 'Foundation', href: '#foundation' },
   { label: 'Committee', href: '#committee' },
   { label: 'Donate', href: '#donate' },
@@ -25,8 +27,14 @@ export default function Header() {
       <nav className="hidden md:flex justify-between items-center px-6 py-3 max-w-[1400px] mx-auto gap-8">
 
         {/* Logo */}
-        <a href="#hero" className="flex items-center gap-2 shrink-0">
-          <div className="text-2xl font-heading font-black text-maroon">☸</div>
+        <a href="#hero" className="flex items-center gap-3 shrink-0">
+          <Image
+            src="https://static.wixstatic.com/media/53945f_926edabb995f423680415b255d79c255~mv2.png"
+            alt="Lord Mahaveer Birthplace Logo"
+            width={48}
+            height={48}
+            className="rounded-full"
+          />
           <div className="flex flex-col">
             <span className="font-heading text-xs font-black text-maroon uppercase tracking-wider">Lord Mahaveer</span>
             <span className="font-heading text-[0.65rem] font-bold text-gold uppercase tracking-wider">Birthplace</span>
@@ -63,8 +71,14 @@ export default function Header() {
       {/* Mobile Navigation */}
       <div className="md:hidden flex flex-col">
         {/* Mobile Header with Logo */}
-        <div className="flex items-center justify-center gap-2 py-3 border-b border-gold/20">
-          <div className="text-2xl font-heading font-black text-maroon">☸</div>
+        <div className="flex items-center justify-center gap-3 py-3 border-b border-gold/20">
+          <Image
+            src="https://static.wixstatic.com/media/53945f_926edabb995f423680415b255d79c255~mv2.png"
+            alt="Lord Mahaveer Birthplace Logo"
+            width={40}
+            height={40}
+            className="rounded-full"
+          />
           <div className="flex flex-col">
             <span className="font-heading text-xs font-black text-maroon uppercase tracking-wider">Lord Mahaveer</span>
             <span className="font-heading text-[0.65rem] font-bold text-gold uppercase tracking-wider">Birthplace</span>
