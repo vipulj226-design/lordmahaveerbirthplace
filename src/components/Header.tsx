@@ -55,13 +55,7 @@ export default function Header() {
       <div className="md:hidden flex flex-col">
         {/* Mobile Header with Logo */}
         <div className="flex items-center justify-center gap-2 py-3 border-b border-gold/20">
-          <Image 
-            src="https://static.wixstatic.com/media/53945f_7f0cb55afd0b41928b178358097b3304~mv2.png" 
-            alt="Lord Mahaveer Logo" 
-            width={40}
-            height={40}
-            className="rounded-full"
-          />
+          <div className="text-2xl font-heading font-black text-maroon">☸</div>
           <div className="flex flex-col">
             <span className="font-heading text-xs font-black text-maroon uppercase tracking-wider">Lord Mahaveer</span>
             <span className="font-heading text-[0.65rem] font-bold text-gold uppercase tracking-wider">Birthplace</span>
