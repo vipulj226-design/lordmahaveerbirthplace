@@ -267,7 +267,7 @@ function HeroSection() {
   const title = heroContent?.title || 'Birthplace of Tirthankar Lord Mahavira';
   const subtitle = heroContent?.subtitle || 'Jai Jinendra — जय जिनेंद्र';
   const shortDescription = heroContent?.shortDescription || 'VASOKUND (VAISHALI), BIHAR – INDIA';
-  const ctaText = heroContent?.ctaText || '🏛️ पवित्र धरोहर देखें — Explore Heritage';
+  const ctaText = heroContent?.ctaText || 'About Birthplace';
   const ctaUrl = heroContent?.ctaUrl || '#about';
 
   return (
