@@ -376,7 +376,7 @@ function HeroSection() {
         {/* CTA Button */}
         <motion.a 
           href={ctaUrl}
-          className="inline-block font-heading font-bold tracking-wide uppercase"
+          className="inline-block font-heading font-bold tracking-wide uppercase -mt-4 md:mt-0"
           style={{
             backgroundImage: 'linear-gradient(to right, #D4AF37, #C5A55A)',
             color: '#1a1a1a',
