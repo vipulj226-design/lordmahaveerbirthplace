@@ -26,27 +26,31 @@ export default function Header() {
 
         {/* Navigation Links */}
         <ul className="flex gap-1">
-          {navigationLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="px-3 py-2 text-xs uppercase font-paragraph rounded transition-colors duration-200"
-                style={{
-                  color: '#000000',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#6B0F1A';
-                  e.currentTarget.style.color = '#D4AF37';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.color = '#000000';
-                }}
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
+          {navigationLinks.map((link) => {
+            const IconComponent = link.icon;
+            return (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className="px-3 py-2 text-xs uppercase font-paragraph rounded transition-colors duration-200 flex items-center gap-2"
+                  style={{
+                    color: '#000000',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = '#6B0F1A';
+                    e.currentTarget.style.color = '#D4AF37';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                    e.currentTarget.style.color = '#000000';
+                  }}
+                >
+                  <IconComponent size={16} />
+                  {link.label}
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </nav>
       {/* Mobile Navigation */}
@@ -59,28 +63,32 @@ export default function Header() {
             borderTop: '1px solid rgba(197, 165, 90, 0.15)',
           }}
         >
-          {navigationLinks.map((link, index) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="flex flex-col items-center justify-center min-h-[48px] text-[0.55rem] uppercase font-paragraph text-maroon transition-colors duration-200"
-              style={{
-                borderRight: (index + 1) % 5 !== 0 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
-                borderBottom: index < 5 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
-                backgroundColor: 'transparent',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#6B0F1A';
-                e.currentTarget.style.color = '#D4AF37';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent';
-                e.currentTarget.style.color = '#6B0F1A';
-              }}
-            >
-              {link.label}
-            </a>
-          ))}
+          {navigationLinks.map((link, index) => {
+            const IconComponent = link.icon;
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                className="flex flex-col items-center justify-center min-h-[48px] text-[0.55rem] uppercase font-paragraph text-maroon transition-colors duration-200 gap-1"
+                style={{
+                  borderRight: (index + 1) % 5 !== 0 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
+                  borderBottom: index < 5 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
+                  backgroundColor: 'transparent',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#6B0F1A';
+                  e.currentTarget.style.color = '#D4AF37';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                  e.currentTarget.style.color = '#6B0F1A';
+                }}
+              >
+                <IconComponent size={18} />
+                {link.label}
+              </a>
+            );
+          })}
         </div>
       </div>
     </header>
