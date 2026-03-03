@@ -448,7 +448,7 @@ function BirthplaceAboutSection() {
         </div>
 
         {/* Single Column Full-Width Content */}
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="group relative bg-gradient-to-br from-cream to-cream/90 border-2 border-gold p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden mb-16 md:mb-24">
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="group relative bg-gradient-to-br from-cream to-cream/90 border-2 border-gold p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden mb-8 md:mb-12">
           <div className="absolute inset-0 bg-maroon/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           <div className="relative z-10">
             <h3 className="font-heading text-3xl lg:text-4xl font-black text-maroon mb-8 uppercase tracking-wide relative z-10">
