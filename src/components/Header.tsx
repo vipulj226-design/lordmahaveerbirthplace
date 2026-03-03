@@ -97,13 +97,16 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="flex flex-col items-center justify-center min-h-[44px] px-1 text-[0.65rem] uppercase font-paragraph font-bold text-maroon transition-colors duration-200 gap-0.5"
+                className="flex items-center justify-center min-h-[50px] px-1.5 py-2 text-[0.6rem] uppercase font-paragraph font-bold text-maroon transition-colors duration-200"
                 style={{
                   borderRight: (index + 1) % 5 !== 0 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
                   borderBottom: index < 5 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
                   backgroundColor: 'transparent',
-                  wordBreak: 'break-word',
-                  lineHeight: '1.1',
+                  lineHeight: '1.2',
+                  textAlign: 'center',
+                  wordWrap: 'break-word',
+                  overflowWrap: 'break-word',
+                  hyphens: 'auto',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = '#6B0F1A';
