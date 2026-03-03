@@ -116,6 +116,7 @@ export default function HomePage() {
           
           {/* Logo */}
           <div className="text-center mb-16">
+            <Image src="https://static.wixstatic.com/media/53945f_7f47b075fb9a4bc892504db9ef655328~mv2.png?originWidth=192&originHeight=192" alt="Lord Mahaveer Birthplace Logo" className="w-24 h-24 mx-auto mb-6" />
             <h3 className="font-heading text-4xl font-black text-gold mb-2 uppercase tracking-wider leading-tight">Lord Mahaveer Birthplace</h3>
           </div>
 
