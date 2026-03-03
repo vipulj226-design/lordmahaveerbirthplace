@@ -421,16 +421,16 @@ function BirthplaceAboutSection() {
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="relative py-16 md:py-40 bg-cream overflow-hidden">
+    <section id="about" ref={sectionRef} className="relative py-8 md:py-40 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-16 md:mb-32 relative">
+        <div className="mb-8 md:mb-32 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-3xl md:text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10"
+            className="font-heading text-3xl md:text-6xl lg:text-8xl font-black text-maroon uppercase tracking-tight relative z-10 leading-tight"
           >
             The Sacred <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Birthplace</span>
@@ -440,7 +440,7 @@ function BirthplaceAboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="font-paragraph text-sm md:text-xl text-maroon/70 mt-6 md:mt-8 max-w-2xl"
+            className="font-paragraph text-sm md:text-xl text-maroon/70 mt-3 md:mt-8 max-w-2xl"
           >
             Vasokund (Kundpur) — The Holy Land of Vaishali
           </motion.p>
@@ -448,36 +448,36 @@ function BirthplaceAboutSection() {
         </div>
 
         {/* Single Column Full-Width Content */}
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="group relative bg-gradient-to-br from-cream to-cream/90 border-2 border-gold p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden mb-8 md:mb-12">
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="group relative bg-gradient-to-br from-cream to-cream/90 border-2 border-gold p-6 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden mb-6 md:mb-12">
           <div className="absolute inset-0 bg-maroon/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           <div className="relative z-10">
-            <h3 className="font-heading text-3xl lg:text-4xl font-black text-maroon mb-8 uppercase tracking-wide relative z-10">
+            <h3 className="font-heading text-3xl lg:text-4xl font-black text-maroon mb-6 uppercase tracking-wide relative z-10">
               Why Vaishali is the <span className="text-gold">Birthplace</span>
             </h3>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
-              <div className="space-y-6 border-l-4 border-maroon/20 pl-6">
-                <p className="font-paragraph text-lg text-maroon/80 leading-relaxed">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+              <div className="space-y-4 border-l-4 border-maroon/20 pl-6">
+                <p className="font-paragraph text-base lg:text-lg text-maroon/80 leading-relaxed">
                   Ancient texts confirm Kundpur/Vasokund in Vaishali district as the birthplace of Lord Mahavira, the 24th Tirthankar of Jainism.
                 </p>
-                <p className="font-paragraph text-lg text-maroon/80 leading-relaxed">
+                <p className="font-paragraph text-base lg:text-lg text-maroon/80 leading-relaxed">
                   Vaishali was the first republic in the world, home of democratic ideals and spiritual enlightenment. This sacred land witnessed the birth of one of humanity's greatest spiritual leaders.
                 </p>
-                <p className="font-paragraph text-lg text-maroon/80 leading-relaxed">
+                <p className="font-paragraph text-base lg:text-lg text-maroon/80 leading-relaxed">
                   Archaeological Survey of India findings at Kolhua, including the famous Lion Pillar of Ashoka, provide concrete evidence of the historical significance of this region.
                 </p>
               </div>
-              <div className="space-y-6 border-l-4 border-maroon/20 pl-6">
-                <p className="font-paragraph text-lg text-maroon/80 leading-relaxed">
+              <div className="space-y-4 border-l-4 border-maroon/20 pl-6">
+                <p className="font-paragraph text-base lg:text-lg text-maroon/80 leading-relaxed">
                   AIIMS excavation reports further confirm the archaeological and historical authenticity of the site, validating centuries of spiritual tradition.
                 </p>
-                <p className="font-paragraph text-lg text-maroon/80 leading-relaxed">
+                <p className="font-paragraph text-base lg:text-lg text-maroon/80 leading-relaxed">
                   Jain Agam texts, including the Kalpa Sutra and Acharanga Sutra, provide detailed references to Vaishali as the birthplace, establishing its place in sacred literature.
                 </p>
-                <div className="relative p-6 bg-maroon/5 border-t-4 border-gold group-hover:border-gold2 transition-colors duration-300 mt-8">
-                  <p className="font-heading text-lg italic text-maroon font-semibold leading-relaxed">
+                <div className="relative p-4 bg-maroon/5 border-t-4 border-gold group-hover:border-gold2 transition-colors duration-300 mt-6">
+                  <p className="font-heading text-base italic text-maroon font-semibold leading-relaxed">
                     "Kshtriyakund is another name for Vaishali itself"
                   </p>
-                  <p className="font-paragraph text-sm text-maroon/60 mt-3 uppercase tracking-widest">
+                  <p className="font-paragraph text-xs text-maroon/60 mt-2 uppercase tracking-widest">
                     — Ancient Geography Reference
                   </p>
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-gold rounded-full flex items-center justify-center text-cream font-bold text-lg shadow-md">
@@ -490,7 +490,7 @@ function BirthplaceAboutSection() {
         </motion.div>
 
         {/* Statistics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 md:mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8 md:mb-16">
           {isLoading ? (
             <div className="col-span-full text-center py-12">
               <p className="font-paragraph text-maroon/60">Loading statistics...</p>
@@ -523,13 +523,13 @@ function BirthplaceAboutSection() {
                 </div>
 
                 {/* Label */}
-                <h3 className="font-heading text-xl font-bold text-maroon uppercase tracking-widest mb-4">
+                <h3 className="font-heading text-lg font-bold text-maroon uppercase tracking-widest mb-2">
                   {stat.label}
                 </h3>
 
                 {/* Description */}
                 {stat.description && (
-                  <p className="font-paragraph text-sm text-maroon/70 leading-relaxed">
+                  <p className="font-paragraph text-xs text-maroon/70 leading-relaxed">
                     {stat.description}
                   </p>
                 )}
@@ -539,18 +539,18 @@ function BirthplaceAboutSection() {
         </div>
 
         {/* Birthplace Confirmation Section */}
-        <div className="border-t-2 border-gold/30 mb-24 md:p-[67px]">
+        <div className="border-t-2 border-gold/30 mb-16 md:p-[67px]">
           <motion.h3
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-3xl md:text-5xl font-black text-maroon mb-12 uppercase tracking-tight"
+            className="font-heading text-3xl md:text-5xl font-black text-maroon mb-8 uppercase tracking-tight"
           >
             Birthplace <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Confirmation</span>
           </motion.h3>
 
           {/* Evidence Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
             
             {/* Hermann Jacobi & Sacred Books */}
             <motion.div
@@ -558,20 +558,20 @@ function BirthplaceAboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-white border-2 border-maroon p-8 md:p-10 hover:border-gold transition-all duration-300"
+              className="bg-white border-2 border-maroon p-6 md:p-8 hover:border-gold transition-all duration-300"
             >
-              <h4 className="font-heading text-2xl font-bold text-maroon mb-6 uppercase tracking-wide">
+              <h4 className="font-heading text-xl font-bold text-maroon mb-4 uppercase tracking-wide">
                 📚 Hermann Jacobi & Sacred Books
               </h4>
-              <p className="font-paragraph text-maroon/80 leading-relaxed mb-4">
+              <p className="font-paragraph text-maroon/80 leading-relaxed mb-3 text-sm">
                 In the "Sacred Books of the East" (Volumes 22 & 45), Hermann Jacobi, one of the greatest authorities on Jainism, states:
               </p>
-              <div className="bg-gold/10 border-l-4 border-gold p-6 mb-4">
-                <p className="font-paragraph italic text-maroon/90 leading-relaxed">
+              <div className="bg-gold/10 border-l-4 border-gold p-4 mb-3">
+                <p className="font-paragraph italic text-maroon/90 leading-relaxed text-xs">
                   "The Jainas, both Swetambars and Digambars, believe that Mahavira was the son of King Siddhartha of Kundapur or Kundagrama. Kundagrama is called in the Acharanga Sutra as Samnivesa, a term which the commentator interprets as denoting an encampment place of caravans or processions."
                 </p>
               </div>
-              <p className="font-paragraph text-maroon/80 leading-relaxed">
+              <p className="font-paragraph text-maroon/80 leading-relaxed text-sm">
                 Mahavira was born in Kundagrama near Vaishali (Basarha in Hajipur sub-division of Muzaffarpur district). Kundagrama is known as Vasokund today.
               </p>
             </motion.div>
@@ -582,25 +582,25 @@ function BirthplaceAboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-white border-2 border-maroon p-8 md:p-10 hover:border-gold transition-all duration-300"
+              className="bg-white border-2 border-maroon p-6 md:p-8 hover:border-gold transition-all duration-300"
             >
-              <h4 className="font-heading text-2xl font-bold text-maroon mb-6 uppercase tracking-wide">
+              <h4 className="font-heading text-xl font-bold text-maroon mb-4 uppercase tracking-wide">
                 🔍 Excavated Seals & Inscriptions
               </h4>
-              <p className="font-paragraph text-maroon/80 leading-relaxed mb-4">
+              <p className="font-paragraph text-maroon/80 leading-relaxed mb-3 text-sm">
                 During excavation at Vaishali (1903-04 by Dr. T. Bloch), archaeologists found 12-15 coins with engravings:
               </p>
-              <ul className="space-y-3 mb-4">
+              <ul className="space-y-2 mb-3">
                 <li className="flex gap-3">
                   <span className="text-gold font-bold">•</span>
-                  <p className="font-paragraph text-maroon/80">Vaishalyaddhisthanadhikaran</p>
+                  <p className="font-paragraph text-maroon/80 text-xs">Vaishalyaddhisthanadhikaran</p>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-gold font-bold">•</span>
-                  <p className="font-paragraph text-maroon/80">Vaishali Nam Kunde-Kumarmattyadhikaran(sya)</p>
+                  <p className="font-paragraph text-maroon/80 text-xs">Vaishali Nam Kunde-Kumarmattyadhikaran(sya)</p>
                 </li>
               </ul>
-              <p className="font-paragraph text-maroon/80 leading-relaxed">
+              <p className="font-paragraph text-maroon/80 leading-relaxed text-sm">
                 A special seal in Brahmi script reads: "Vaishali Namakunde Kumaramatyadhikaran(sya)" — proving Prince Vardhman held the position of 'Kumaramatya' (Prime Minister).
               </p>
             </motion.div>
@@ -611,19 +611,19 @@ function BirthplaceAboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white border-2 border-maroon p-8 md:p-10 hover:border-gold transition-all duration-300"
+              className="bg-white border-2 border-maroon p-6 md:p-8 hover:border-gold transition-all duration-300"
             >
-              <h4 className="font-heading text-2xl font-bold text-maroon mb-6 uppercase tracking-wide">
+              <h4 className="font-heading text-xl font-bold text-maroon mb-4 uppercase tracking-wide">
                 🏛️ Bihar Government Recognition
               </h4>
-              <p className="font-paragraph text-maroon/80 leading-relaxed mb-4">
+              <p className="font-paragraph text-maroon/80 leading-relaxed mb-3 text-sm">
                 The tourism department of Bihar Government published a book 'Jain Circuit' in 2003, in which Vasokund in Vaishali is officially mentioned as the birthplace of Lord Mahavir.
               </p>
-              <div className="bg-gold/10 border-l-4 border-gold p-4">
-                <p className="font-heading font-bold text-maroon text-sm uppercase tracking-widest">
+              <div className="bg-gold/10 border-l-4 border-gold p-3">
+                <p className="font-heading font-bold text-maroon text-xs uppercase tracking-widest">
                   Official Recognition
                 </p>
-                <p className="font-paragraph text-maroon/80 mt-2">
+                <p className="font-paragraph text-maroon/80 mt-1 text-xs">
                   Vasokund, Vaishali — Birthplace of Lord Mahavira (Jain Circuit, 2003)
                 </p>
               </div>
@@ -635,34 +635,34 @@ function BirthplaceAboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-white border-2 border-maroon p-8 md:p-10 hover:border-gold transition-all duration-300 lg:col-span-2"
+              className="bg-white border-2 border-maroon p-6 md:p-8 hover:border-gold transition-all duration-300 lg:col-span-2"
             >
-              <h4 className="font-heading text-2xl font-bold text-maroon mb-6 uppercase tracking-wide">
+              <h4 className="font-heading text-xl font-bold text-maroon mb-4 uppercase tracking-wide">
                 🦁 Ashoka Pillar & Archaeological Finds
               </h4>
-              <p className="font-paragraph text-maroon/80 leading-relaxed mb-4">
+              <p className="font-paragraph text-maroon/80 leading-relaxed mb-3 text-sm">
                 After the Deekshoupwas, Lord Mahavir ate for the first time (Parna) at Koolgram (now Kolhua). There is a stone pillar with a Lion called the Ashok Stambh.
               </p>
-              <p className="font-paragraph text-maroon/80 leading-relaxed mb-6">
+              <p className="font-paragraph text-maroon/80 leading-relaxed mb-4 text-sm">
                 The symbol of Lord Mahavir is also a 'Lion'. His ancestors reigned here. This pillar was made by Vajjio & Lichhivi as a memorial to Vardhman Mahavir.
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-gold/5 p-6 rounded-lg border border-gold/20">
-                  <p className="font-heading font-bold text-maroon uppercase text-sm tracking-widest mb-3">Two Bulls</p>
-                  <p className="font-paragraph text-maroon/80 text-sm leading-relaxed">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="bg-gold/5 p-4 rounded-lg border border-gold/20">
+                  <p className="font-heading font-bold text-maroon uppercase text-xs tracking-widest mb-2">Two Bulls</p>
+                  <p className="font-paragraph text-maroon/80 text-xs leading-relaxed">
                     Symbols of religion, charity, and prosperity recovered during excavation at Raja Vishal ka Garh
                   </p>
                 </div>
-                <div className="bg-gold/5 p-6 rounded-lg border border-gold/20">
-                  <p className="font-heading font-bold text-maroon uppercase text-sm tracking-widest mb-3">Gold Ear-Ornament</p>
-                  <p className="font-paragraph text-maroon/80 text-sm leading-relaxed">
+                <div className="bg-gold/5 p-4 rounded-lg border border-gold/20">
+                  <p className="font-heading font-bold text-maroon uppercase text-xs tracking-widest mb-2">Gold Ear-Ornament</p>
+                  <p className="font-paragraph text-maroon/80 text-xs leading-relaxed">
                     Kundal belonging to King Chetak's family, worn by Lord Mahavir in youth
                   </p>
                 </div>
-                <div className="bg-gold/5 p-6 rounded-lg border border-gold/20">
-                  <p className="font-heading font-bold text-maroon uppercase text-sm tracking-widest mb-3">Kundalpur</p>
-                  <p className="font-paragraph text-maroon/80 text-sm leading-relaxed">
+                <div className="bg-gold/5 p-4 rounded-lg border border-gold/20">
+                  <p className="font-heading font-bold text-maroon uppercase text-xs tracking-widest mb-2">Kundalpur</p>
+                  <p className="font-paragraph text-maroon/80 text-xs leading-relaxed">
                     Named after the sacred ornament worn by Lord Mahavira
                   </p>
                 </div>
@@ -672,7 +672,7 @@ function BirthplaceAboutSection() {
         </div>
 
         {/* The Unapologetic Truth Section */}
-        <div className="relative bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-16 md:py-24 px-8 md:px-12 rounded-lg border-2 border-gold">
+        <div className="relative bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-12 md:py-24 px-6 md:px-12 rounded-lg border-2 border-gold">
           <div className="absolute inset-0 opacity-5 pointer-events-none">
             <div className="absolute inset-0 bg-[radial-gradient(#C5A55A_1px,transparent_1px)] [background-size:16px_16px]" />
           </div>
@@ -683,14 +683,14 @@ function BirthplaceAboutSection() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-heading text-4xl md:text-6xl lg:text-7xl font-black text-cream uppercase tracking-tight mb-16 relative z-10"
+              className="font-heading text-3xl md:text-5xl lg:text-6xl font-black text-cream uppercase tracking-tight mb-12 relative z-10"
             >
               The Unapologetic<br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Truth</span>
             </motion.h2>
 
             {/* Content Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-12 lg:gap-20">
               
               {/* Sticky Image Column */}
               <div className="lg:col-span-5 relative">
@@ -713,7 +713,7 @@ function BirthplaceAboutSection() {
               </div>
 
               {/* Scrolling Text Column */}
-              <div className="lg:col-span-7 flex flex-col gap-12 md:gap-24 pt-0 md:pt-12">
+              <div className="lg:col-span-7 flex flex-col gap-8 md:gap-16 pt-0 md:pt-8">
                 
                 {/* Block 1 */}
                 <motion.div 
@@ -723,11 +723,11 @@ function BirthplaceAboutSection() {
                   transition={{ duration: 0.6 }}
                   className="group"
                 >
-                  <div className="flex items-baseline gap-4 mb-6">
-                    <span className="font-heading text-6xl font-black text-gold/40 group-hover:text-gold transition-colors">01</span>
-                    <h3 className="font-heading text-3xl font-bold text-cream">A Revolution of Spirit</h3>
+                  <div className="flex items-baseline gap-4 mb-4">
+                    <span className="font-heading text-5xl font-black text-gold/40 group-hover:text-gold transition-colors">01</span>
+                    <h3 className="font-heading text-2xl font-bold text-cream">A Revolution of Spirit</h3>
                   </div>
-                  <p className="font-paragraph text-lg text-cream/80 leading-relaxed pl-20 border-l-2 border-cream/20 group-hover:border-gold transition-colors">
+                  <p className="font-paragraph text-base text-cream/80 leading-relaxed pl-16 border-l-2 border-cream/20 group-hover:border-gold transition-colors">
                     In an era of ritual complexity, Lord Mahavira introduced a radical simplicity. Born in 599 BCE at Vasokund, his life was a bold declaration that spiritual liberation is the birthright of every soul, not just the chosen few.
                   </p>
                 </motion.div>
@@ -740,11 +740,11 @@ function BirthplaceAboutSection() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="group"
                 >
-                  <div className="flex items-baseline gap-4 mb-6">
-                    <span className="font-heading text-6xl font-black text-gold/40 group-hover:text-gold transition-colors">02</span>
-                    <h3 className="font-heading text-3xl font-bold text-cream">Ahimsa: The Ultimate Strength</h3>
+                  <div className="flex items-baseline gap-4 mb-4">
+                    <span className="font-heading text-5xl font-black text-gold/40 group-hover:text-gold transition-colors">02</span>
+                    <h3 className="font-heading text-2xl font-bold text-cream">Ahimsa: The Ultimate Strength</h3>
                   </div>
-                  <p className="font-paragraph text-lg text-cream/80 leading-relaxed pl-20 border-l-2 border-cream/20 group-hover:border-gold transition-colors">
+                  <p className="font-paragraph text-base text-cream/80 leading-relaxed pl-16 border-l-2 border-cream/20 group-hover:border-gold transition-colors">
                     Non-violence is not passivity; it is the highest form of bravery. Mahavira's teachings at Vaishali challenged the very foundations of violence in thought, word, and deed, establishing a legacy that echoes through millennia.
                   </p>
                 </motion.div>
@@ -757,11 +757,11 @@ function BirthplaceAboutSection() {
                   transition={{ duration: 0.6, delay: 0.4 }}
                   className="group"
                 >
-                  <div className="flex items-baseline gap-4 mb-6">
-                    <span className="font-heading text-6xl font-black text-gold/40 group-hover:text-gold transition-colors">03</span>
-                    <h3 className="font-heading text-3xl font-bold text-cream">The Eternal Truth</h3>
+                  <div className="flex items-baseline gap-4 mb-4">
+                    <span className="font-heading text-5xl font-black text-gold/40 group-hover:text-gold transition-colors">03</span>
+                    <h3 className="font-heading text-2xl font-bold text-cream">The Eternal Truth</h3>
                   </div>
-                  <p className="font-paragraph text-lg text-cream/80 leading-relaxed pl-20 border-l-2 border-cream/20 group-hover:border-gold transition-colors">
+                  <p className="font-paragraph text-base text-cream/80 leading-relaxed pl-16 border-l-2 border-cream/20 group-hover:border-gold transition-colors">
                     Anekantavada—the multiplicity of views. In a polarized world, Mahavira's wisdom from Vasokund teaches us to see the truth in others' perspectives, fostering a harmony that is desperately needed today.
                   </p>
                 </motion.div>
@@ -855,16 +855,16 @@ function BlessingsSection() {
   ];
 
   return (
-    <section id="blessings" className="relative py-16 md:py-40 bg-cream overflow-hidden">
+    <section id="blessings" className="relative py-8 md:py-40 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-16 md:mb-32 relative">
+        <div className="mb-8 md:mb-32 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading font-black text-maroon uppercase tracking-tight relative z-10 lg:text-5xl text-5xl"
+            className="font-heading font-black text-maroon uppercase tracking-tight relative z-10 lg:text-5xl text-5xl leading-tight"
           >
             🙏 Holy <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Blessings</span>
@@ -874,7 +874,7 @@ function BlessingsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
+            className="font-paragraph text-lg text-maroon/70 mt-3 max-w-2xl"
           >
             Mangal Ashirwad — Sacred blessings from revered Acharyas for the temple at the birthplace
           </motion.p>
@@ -882,7 +882,7 @@ function BlessingsSection() {
         </div>
 
         {/* Blessing Cards */}
-        <div className="space-y-8">
+        <div className="space-y-6">
           {isLoading ? (
             <div className="text-center py-16">
               <p className="font-paragraph text-maroon/60">Loading blessings...</p>
@@ -895,34 +895,34 @@ function BlessingsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
-                className="group bg-white border-l-4 border-gold2 overflow-hidden hover:translate-y-[-3px] transition-transform duration-300 p-8"
+                className="group bg-white border-l-4 border-gold2 overflow-hidden hover:translate-y-[-3px] transition-transform duration-300 p-6"
               >
                 {/* Leader Image */}
                 {blessing.leaderImage && (
-                  <div className="mb-6 flex justify-center">
+                  <div className="mb-4 flex justify-center">
                     <Image
                       src={blessing.leaderImage}
                       alt={blessing.leaderName || 'Leader'}
-                      width={280}
-                      height={280}
-                      className="w-64 h-64 object-contain"
+                      width={240}
+                      height={240}
+                      className="w-56 h-56 object-contain"
                     />
                   </div>
                 )}
 
                 {/* Leader Name and Title */}
-                <h3 className="font-heading text-2xl font-bold text-maroon mb-2 uppercase tracking-wide">
+                <h3 className="font-heading text-xl font-bold text-maroon mb-2 uppercase tracking-wide">
                   {blessing.leaderName}
                 </h3>
                 {blessing.leaderTitle && (
-                  <p className="font-paragraph text-sm text-maroon/60 uppercase tracking-widest mb-6">
+                  <p className="font-paragraph text-xs text-maroon/60 uppercase tracking-widest mb-4">
                     {blessing.leaderTitle}
                   </p>
                 )}
                 
                 {/* Leader Description */}
                 {blessing.leaderDescription && (
-                  <p className="font-paragraph text-lg text-maroon/80 leading-relaxed italic mb-6">
+                  <p className="font-paragraph text-base text-maroon/80 leading-relaxed italic mb-4">
                     {blessing.leaderDescription}
                   </p>
                 )}
@@ -984,7 +984,7 @@ function StatisticsSection() {
   ];
 
   return (
-    <section id="statistics" ref={statsRef} className="relative bg-maroon py-16 md:py-32 overflow-hidden">
+    <section id="statistics" ref={statsRef} className="relative bg-maroon py-8 md:py-32 overflow-hidden">
       {/* Background Texture */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(#C5A55A_1px,transparent_1px)] [background-size:16px_16px]" />
@@ -992,12 +992,12 @@ function StatisticsSection() {
 
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 relative z-10">
         
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-20 border-b border-gold/30 pb-6 md:pb-8">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-8 md:mb-16 border-b border-gold/30 pb-4 md:pb-6">
           <motion.h2 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="font-heading text-5xl lg:text-7xl font-black text-cream uppercase tracking-tight"
+            className="font-heading text-4xl lg:text-6xl font-black text-cream uppercase tracking-tight"
           >
             By The <span className="text-gold">Numbers</span>
           </motion.h2>
@@ -1005,13 +1005,13 @@ function StatisticsSection() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="font-paragraph text-gold/80 text-right max-w-md mt-6 md:mt-0"
+            className="font-paragraph text-gold/80 text-right max-w-md mt-4 md:mt-0 text-sm"
           >
             Quantifying a legacy that transcends time. The impact of Lord Mahavira measured in centuries and souls.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -1024,12 +1024,12 @@ function StatisticsSection() {
               <div className="absolute inset-0 bg-gold/5 scale-y-0 group-hover:scale-y-100 origin-bottom transition-transform duration-500 ease-out" />
               
               <div className="relative z-10">
-                <div className="flex justify-between items-start mb-8">
+                <div className="flex justify-between items-start mb-6">
                   <stat.icon className="w-8 h-8 text-gold opacity-50 group-hover:opacity-100 transition-opacity" />
                   <div className="w-2 h-2 bg-gold rounded-full" />
                 </div>
 
-                <div className="font-heading text-6xl lg:text-7xl font-black text-cream mb-2 flex items-baseline">
+                <div className="font-heading text-5xl lg:text-6xl font-black text-cream mb-2 flex items-baseline">
                   {isInView ? (
                     <CountUp end={stat.value} duration={2.5} delay={index * 0.1} />
                   ) : (
@@ -1038,12 +1038,12 @@ function StatisticsSection() {
                   <span className="text-3xl text-gold ml-1">{stat.unit}</span>
                 </div>
 
-                <div className="h-px w-full bg-gold/20 my-6 group-hover:bg-gold/50 transition-colors" />
+                <div className="h-px w-full bg-gold/20 my-4 group-hover:bg-gold/50 transition-colors" />
 
-                <h3 className="font-heading text-xl font-bold text-gold uppercase tracking-widest mb-1">
+                <h3 className="font-heading text-lg font-bold text-gold uppercase tracking-widest mb-1">
                   {stat.label}
                 </h3>
-                <p className="font-paragraph text-sm text-cream/60 uppercase tracking-wider">
+                <p className="font-paragraph text-xs text-cream/60 uppercase tracking-wider">
                   {stat.description}
                 </p>
               </div>
@@ -1192,16 +1192,16 @@ function DonateSection() {
   ];
 
   return (
-    <section id="donate" className="relative py-16 md:py-32 bg-cream overflow-hidden">
+    <section id="donate" className="relative py-8 md:py-32 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-12 md:mb-24 relative">
+        <div className="mb-8 md:mb-24 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading font-black text-maroon uppercase tracking-tight relative z-10 lg:text-5xl text-5xl"
+            className="font-heading font-black text-maroon uppercase tracking-tight relative z-10 lg:text-5xl text-5xl leading-tight"
           >
             💛 Donation & <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Support</span>
@@ -1211,7 +1211,7 @@ function DonateSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
+            className="font-paragraph text-lg text-maroon/70 mt-3 max-w-2xl"
           >
             Contribute to the sacred construction — Tax exemption under Section 80-G
           </motion.p>
@@ -1224,15 +1224,15 @@ function DonateSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16 bg-gradient-to-r from-maroon to-[#1A0306] text-cream p-12 rounded-lg border-2 border-gold"
+          className="mb-12 bg-gradient-to-r from-maroon to-[#1A0306] text-cream p-8 rounded-lg border-2 border-gold"
         >
-          <p className="font-heading text-2xl italic text-gold mb-4">
+          <p className="font-heading text-xl italic text-gold mb-3">
             🙏 "एक ईंट आपकी, एक मंदिर सबका"
           </p>
-          <p className="font-paragraph text-lg leading-relaxed mb-6">
+          <p className="font-paragraph text-base leading-relaxed mb-4">
             आपका हर योगदान भगवान महावीर की जन्मभूमि को संवारता है।
           </p>
-          <p className="font-paragraph text-lg leading-relaxed text-cream/90">
+          <p className="font-paragraph text-base leading-relaxed text-cream/90">
             "Your every contribution helps build the Grand Temple at the Birthplace of Tirthankar Lord Mahavira."
           </p>
         </motion.div>
@@ -1243,13 +1243,13 @@ function DonateSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-16"
+          className="mb-12"
         >
-          <h3 className="font-heading text-3xl font-bold text-maroon mb-8 uppercase tracking-wide">
+          <h3 className="font-heading text-2xl font-bold text-maroon mb-6 uppercase tracking-wide">
             🏦 Bank Details
           </h3>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {bankDetails.map((bank, index) => (
               <motion.div
                 key={index}
@@ -1257,13 +1257,13 @@ function DonateSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white border-2 border-maroon p-8 hover:border-gold transition-all duration-300"
+                className="bg-white border-2 border-maroon p-6 hover:border-gold transition-all duration-300"
               >
-                <h4 className="font-heading text-xl font-bold text-maroon mb-6 uppercase tracking-wide">
+                <h4 className="font-heading text-lg font-bold text-maroon mb-4 uppercase tracking-wide">
                   {bank.bankName}
                 </h4>
                 
-                <div className="space-y-4 font-paragraph">
+                <div className="space-y-3 font-paragraph text-sm">
                   <div>
                     <p className="text-maroon/60 text-xs uppercase tracking-widest mb-1">Branch</p>
                     <p className="text-maroon font-semibold">{bank.branch}</p>
@@ -1274,11 +1274,11 @@ function DonateSection() {
                   </div>
                   <div>
                     <p className="text-maroon/60 text-xs uppercase tracking-widest mb-1">Account Number</p>
-                    <p className="text-maroon font-mono font-bold text-lg">{bank.accountNumber}</p>
+                    <p className="text-maroon font-mono font-bold">{bank.accountNumber}</p>
                   </div>
                   <div>
                     <p className="text-maroon/60 text-xs uppercase tracking-widest mb-1">IFSC Code</p>
-                    <p className="text-maroon font-mono font-bold text-lg">{bank.ifscCode}</p>
+                    <p className="text-maroon font-mono font-bold">{bank.ifscCode}</p>
                   </div>
                 </div>
               </motion.div>
@@ -1292,12 +1292,12 @@ function DonateSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-gold/10 border-l-4 border-gold p-8 mb-12 rounded-lg"
+          className="bg-gold/10 border-l-4 border-gold p-6 mb-8 rounded-lg"
         >
-          <h3 className="font-heading text-2xl font-bold text-maroon mb-4 uppercase tracking-wide">
+          <h3 className="font-heading text-xl font-bold text-maroon mb-3 uppercase tracking-wide">
             📝 Tax Exemption Note
           </h3>
-          <p className="font-paragraph text-lg text-maroon/80 leading-relaxed">
+          <p className="font-paragraph text-base text-maroon/80 leading-relaxed">
             Donations are exempt from Income Tax under Section 80-G. After making your deposit, please inform the office by telephone and obtain a receipt.
           </p>
         </motion.div>
@@ -1311,9 +1311,9 @@ function DonateSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-full font-heading font-bold uppercase tracking-wide hover:bg-[#20BA5A] transition-colors duration-300"
+          className="inline-flex items-center gap-3 bg-[#25D366] text-white px-6 py-3 rounded-full font-heading font-bold uppercase tracking-wide text-sm hover:bg-[#20BA5A] transition-colors duration-300"
         >
-          <MessageCircle className="w-6 h-6" />
+          <MessageCircle className="w-5 h-5" />
           💬 Donate via WhatsApp — 9811660130
         </motion.a>
       </div>
@@ -1374,16 +1374,16 @@ function GallerySection() {
   }, [lightboxOpen, galleryItems.length]);
 
   return (
-    <section id="gallery" className="relative py-16 md:py-32 bg-cream overflow-hidden">
+    <section id="gallery" className="relative py-8 md:py-32 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-12 md:mb-24 relative">
+        <div className="mb-8 md:mb-24 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading font-black text-maroon uppercase tracking-tight relative z-10 lg:text-5xl text-5xl"
+            className="font-heading font-black text-maroon uppercase tracking-tight relative z-10 lg:text-5xl text-5xl leading-tight"
           >
             Sacred <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Gallery</span>
@@ -1393,7 +1393,7 @@ function GallerySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
+            className="font-paragraph text-lg text-maroon/70 mt-3 max-w-2xl"
           >
             Glimpses of the holy birthplace and ongoing construction
           </motion.p>
@@ -1402,11 +1402,11 @@ function GallerySection() {
 
         {/* Gallery Grid */}
         {isLoading ? (
-          <div className="text-center py-16">
-            <p className="font-paragraph text-maroon/60">Loading gallery...</p>
+          <div className="text-center py-12">
+            <p className="font-paragraph text-maroon/60 text-sm">Loading gallery...</p>
           </div>
         ) : galleryItems.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[280px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 auto-rows-[240px]">
             {galleryItems.map((item, index) => (
               <motion.div
                 key={item._id}
