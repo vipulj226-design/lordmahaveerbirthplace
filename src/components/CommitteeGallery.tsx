@@ -62,7 +62,7 @@ export default function CommitteeGallery() {
             <p className="font-paragraph text-maroon/60">Loading committee members...</p>
           </div>
         ) : members.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-0">
             {members.map((member, index) => (
               <motion.div
                 key={member._id}
