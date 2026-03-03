@@ -22,7 +22,16 @@ export default function Header() {
       }}
     >
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex justify-center items-center px-6 py-2 max-w-[1400px] mx-auto gap-8">
+      <nav className="hidden md:flex justify-between items-center px-6 py-3 max-w-[1400px] mx-auto gap-8">
+
+        {/* Logo */}
+        <a href="#hero" className="flex items-center gap-2 shrink-0">
+          <div className="text-2xl font-heading font-black text-maroon">☸</div>
+          <div className="flex flex-col">
+            <span className="font-heading text-xs font-black text-maroon uppercase tracking-wider">Lord Mahaveer</span>
+            <span className="font-heading text-[0.65rem] font-bold text-gold uppercase tracking-wider">Birthplace</span>
+          </div>
+        </a>
 
         {/* Navigation Links */}
         <ul className="flex gap-1">
