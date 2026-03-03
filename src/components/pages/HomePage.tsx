@@ -290,7 +290,6 @@ function HeroSection() {
           opacity: 0.45,
         }}
       />
-
       {/* Radial Gradient Vignette Overlay */}
       <div 
         className="absolute inset-0 z-0 pointer-events-none"
@@ -298,14 +297,12 @@ function HeroSection() {
           background: 'radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.6) 100%)',
         }}
       />
-
       {/* Particles Container */}
       <div 
         ref={particlesRef}
         className="absolute inset-0 z-0 pointer-events-none"
         style={{ width: '100%', height: '100%' }}
       />
-
       {/* Main Content */}
       <motion.div 
         className="relative z-20 w-full max-w-[100rem] mx-auto text-center"
@@ -327,10 +324,9 @@ function HeroSection() {
             ✦  ✦  ✦
           </span>
         </motion.div>
-
         {/* H1 Title with Gradient */}
         <motion.h1 
-          className="font-heading font-black tracking-tight mb-6"
+          className="font-heading font-black tracking-tight mb-6 -mt-4 md:mt-0"
           style={{
             fontSize: 'clamp(2rem, 5vw, 3.8rem)',
             backgroundImage: 'linear-gradient(to right, #C5A55A, #FDF6EC, #D4AF37)',
@@ -345,17 +341,7 @@ function HeroSection() {
         >
           {title}
         </motion.h1>
-
         {/* Subtitle (Italic) */}
-        <motion.p 
-          className="font-heading italic text-2xl mb-4 tracking-wide"
-          style={{ color: '#C5A55A' }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: 0.6 }}
-        >
-          {subtitle}
-        </motion.p>
 
         {/* Sub2 Text */}
         <motion.p 
@@ -367,7 +353,6 @@ function HeroSection() {
         >
           {shortDescription}
         </motion.p>
-
         {/* Hero Image Box */}
         <motion.div 
           className="mx-auto mb-12 max-w-[600px] -mt-6 md:mt-0"
@@ -388,7 +373,6 @@ function HeroSection() {
             width={600}
           />
         </motion.div>
-
         {/* CTA Button */}
         <motion.a 
           href={ctaUrl}
