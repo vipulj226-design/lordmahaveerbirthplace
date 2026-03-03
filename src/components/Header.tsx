@@ -27,7 +27,6 @@ export default function Header() {
         {/* Navigation Links */}
         <ul className="flex gap-1">
           {navigationLinks.map((link) => {
-            const Icon = link.icon;
             return (
               <li key={link.href}>
                 <a
@@ -45,7 +44,6 @@ export default function Header() {
                     e.currentTarget.style.color = '#000000';
                   }}
                 >
-                  <Icon size={16} />
                   {link.label}
                 </a>
               </li>
@@ -64,7 +62,6 @@ export default function Header() {
           }}
         >
           {navigationLinks.map((link, index) => {
-            const Icon = link.icon;
             return (
               <a
                 key={link.href}
@@ -84,7 +81,6 @@ export default function Header() {
                   e.currentTarget.style.color = '#6B0F1A';
                 }}
               >
-                <Icon size={14} />
                 {link.label}
               </a>
             );
