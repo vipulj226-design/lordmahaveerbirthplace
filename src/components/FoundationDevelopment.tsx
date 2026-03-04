@@ -80,30 +80,30 @@ export default function FoundationDevelopment() {
                 className="border-2 border-maroon rounded-lg overflow-hidden hover:border-gold transition-all duration-300"
               >
                 {/* Combined Image + Content Box */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 w-full">
                   {/* Main Image - Left or Right based on index */}
-                  <div className={index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}>
+                  <div className={`w-full ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
                     {block.image && (
                       <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="w-full h-full overflow-hidden"
+                        className="w-full h-auto overflow-hidden"
                       >
                         <Image
                           src={`${block.image}${block.image.includes('?') ? '&' : '?'}t=${new Date().getTime()}`}
                           alt={block.heading || 'Foundation & Development'}
                           width={600}
                           height={600}
-                          className="w-full h-full object-cover min-h-[400px] lg:min-h-[500px]"
+                          className="w-full h-auto object-cover"
                         />
                       </motion.div>
                     )}
                   </div>
 
                   {/* Content - Right or Left based on index */}
-                  <div className={index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}>
-                    <div className="bg-cream p-8 lg:p-10 h-full flex flex-col justify-center">
+                  <div className={`w-full ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
+                    <div className="bg-cream p-6 md:p-8 lg:p-10 w-full flex flex-col justify-center">
                       {/* Year/Period Badge */}
                       {block.yearPeriod && (
                         <div className="inline-block bg-gold/20 text-maroon px-4 py-2 rounded-full mb-4 font-heading font-bold text-xs uppercase tracking-widest w-fit">
