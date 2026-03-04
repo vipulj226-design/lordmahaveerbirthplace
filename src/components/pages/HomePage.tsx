@@ -139,11 +139,14 @@ export default function HomePage() {
 
           {/* Navigation Links */}
           <div className="flex flex-wrap justify-center gap-6 mb-16 text-center">
-            {['About', 'Blessings', 'Foundation', 'Committee', 'Donate', 'Gallery', 'Events', 'How to Reach', 'Contact'].map((link) => (
-              <a key={link} href={`#${link.toLowerCase()}`} className="font-paragraph text-cream/80 hover:text-gold transition-colors text-sm uppercase tracking-wider">
-                {link}
-              </a>
-            ))}
+            {['About', 'Blessings', 'Foundation', 'Committee', 'Donate', 'Gallery', 'Events', 'How to Reach', 'Contact'].map((link) => {
+              const href = link === 'How to Reach' ? '#how-to-reach' : `#${link.toLowerCase()}`;
+              return (
+                <a key={link} href={href} className="font-paragraph text-cream/80 hover:text-gold transition-colors text-sm uppercase tracking-wider">
+                  {link}
+                </a>
+              );
+            })}
           </div>
 
           {/* Organization Info */}
