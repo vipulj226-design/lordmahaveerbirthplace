@@ -381,7 +381,7 @@ function HeroSection() {
         </motion.div>
         {/* CTA Button */}
         <motion.a 
-          href={ctaUrl}
+          href="#about"
           className="inline-block font-heading font-bold tracking-wide uppercase -mt-8 md:-mt-4"
           style={{
             backgroundImage: 'linear-gradient(to right, #D4AF37, #C5A55A)',
@@ -397,7 +397,7 @@ function HeroSection() {
           transition={{ duration: 1.2, delay: 1.2 }}
           whileHover={{ y: -2, boxShadow: '0 10px 30px rgba(197, 165, 90, 0.5)' }}
         >
-          {ctaText}
+          About Birthplace
         </motion.a>
       </motion.div>
     </section>
