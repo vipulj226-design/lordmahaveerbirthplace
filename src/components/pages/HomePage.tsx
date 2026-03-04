@@ -127,7 +127,7 @@ export default function HomePage() {
               <MessageCircle className="w-5 h-5" />
               <span>WhatsApp</span>
             </a>
-            <a href="mailto:info@lordmahaveerbirthplace.com" className="flex items-center gap-2 font-paragraph text-cream hover:text-gold transition-colors">
+            <a href="mailto:bhagwanmahavir1008@gmail.com" className="flex items-center gap-2 font-paragraph text-cream hover:text-gold transition-colors">
               <span>✉️</span>
               <span>Email</span>
             </a>
