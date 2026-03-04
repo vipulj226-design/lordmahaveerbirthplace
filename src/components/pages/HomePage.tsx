@@ -1617,7 +1617,7 @@ function UpcomingEventsSection() {
 
                   {/* Event Description */}
                   {event.eventDescription && (
-                    <p className="font-paragraph text-maroon/80 leading-relaxed mb-8 line-clamp-3">
+                    <p className="font-paragraph text-maroon/80 leading-relaxed mb-8">
                       {event.eventDescription}
                     </p>
                   )}
