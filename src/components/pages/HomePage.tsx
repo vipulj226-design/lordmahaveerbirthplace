@@ -1414,8 +1414,7 @@ function GallerySection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                onClick={() => openLightbox(index)}
-                className="group relative overflow-hidden rounded-[10px] cursor-pointer border-2 border-maroon hover:border-gold transition-all duration-300"
+                className="group relative overflow-hidden rounded-[10px] border-2 border-maroon hover:border-gold transition-all duration-300"
               >
                 <Image
                   src={item.image}
