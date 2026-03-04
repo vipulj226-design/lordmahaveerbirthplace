@@ -1989,20 +1989,17 @@ function ContactSection() {
 
               <div className="flex gap-4">
                 <span className="text-2xl">📞</span>
-                <div className="w-full">
+                <div>
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Phone/Mobile</p>
-                  <div className="flex flex-col gap-1">
-                    <p className="font-semibold text-primary">+91-7544003396</p>
-                    <p className="font-semibold text-primary">+91-9771682337</p>
-                  </div>
+                  <p className="font-semibold text-primary">+91-7544003396+919771682337</p>
                 </div>
               </div>
 
               <div className="flex gap-4">
                 <span className="text-2xl">📧</span>
-                <div className="min-w-0">
+                <div>
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Email</p>
-                  <p className="text-maroon font-semibold break-all">bhagwanmahavir1008@gmail.com</p>
+                  <p className="text-maroon font-semibold text-sm">bhagwanmahavir1008@gmail.com</p>
                 </div>
               </div>
 
