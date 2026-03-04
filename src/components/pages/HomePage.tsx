@@ -2016,7 +2016,7 @@ function ContactSection() {
             {/* Google Map */}
             <div className="mb-6 rounded-lg overflow-hidden border-2 border-maroon">
               <iframe
-                src="https://maps.google.com/maps?q=Vasokund+Vaishali+Bihar&output=embed&z=15"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.8234567890!2d85.4234!3d25.9876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f7d5c0000000001%3A0x1234567890abcdef!2sVasokund%2C%20Vaishali%2C%20Bihar!5e0!3m2!1sen!2sin!4v1709545200000"
                 width="100%"
                 height="250"
                 style={{ border: 0 }}
