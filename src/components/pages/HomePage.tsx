@@ -1197,7 +1197,6 @@ function DonateSection() {
   return (
     <section id="donate" className="relative py-8 md:py-32 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
-        
         {/* Section Header */}
         <div className="mb-8 md:mb-24 relative">
           <motion.h2 
@@ -1220,7 +1219,6 @@ function DonateSection() {
           </motion.p>
           <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
         </div>
-
         {/* Inspirational Quote Section */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -1239,7 +1237,6 @@ function DonateSection() {
             "Your every contribution helps build the Grand Temple at the Birthplace of Tirthankar Lord Mahavira."
           </p>
         </motion.div>
-
         {/* Bank Details Cards */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -1288,7 +1285,6 @@ function DonateSection() {
             ))}
           </div>
         </motion.div>
-
         {/* Tax Exemption Note */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -1304,21 +1300,8 @@ function DonateSection() {
             Donations are exempt from Income Tax under Section 80-G. After making your deposit, please inform the office by telephone and obtain a receipt.
           </p>
         </motion.div>
-
         {/* WhatsApp CTA */}
-        <motion.a
-          href="https://wa.me/919811660130"
-          target="_blank"
-          rel="noopener noreferrer"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="inline-flex items-center gap-3 bg-[#25D366] text-white px-6 py-3 rounded-full font-heading font-bold uppercase tracking-wide text-sm hover:bg-[#20BA5A] transition-colors duration-300"
-        >
-          <MessageCircle className="w-5 h-5" />
-          💬 Donate via WhatsApp — 9811660130
-        </motion.a>
+
       </div>
     </section>
   );
@@ -1789,7 +1772,7 @@ function HowToReachSection() {
           transition={{ duration: 0.6 }}
           className="mb-24 bg-gradient-to-r from-maroon to-[#1A0306] text-cream p-12 rounded-lg border-2 border-gold"
         >
-          <h3 className="font-heading text-3xl font-bold mb-8 uppercase tracking-wide">
+          <h3 className="font-heading text-2xl md:text-3xl font-bold mb-8 uppercase tracking-wide text-center md:text-left">
             📍 Distance & Travel Time from Major Cities
           </h3>
           
