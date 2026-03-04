@@ -1989,9 +1989,12 @@ function ContactSection() {
 
               <div className="flex gap-4">
                 <span className="text-2xl">📞</span>
-                <div>
+                <div className="w-full">
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Phone/Mobile</p>
-                  <p className="font-semibold text-primary">+91-7544003396+9771682337</p>
+                  <div className="flex flex-col gap-1">
+                    <p className="font-semibold text-primary">+91-7544003396</p>
+                    <p className="font-semibold text-primary">+91-9771682337</p>
+                  </div>
                 </div>
               </div>
 
