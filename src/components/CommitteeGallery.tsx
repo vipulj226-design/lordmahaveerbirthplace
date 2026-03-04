@@ -85,10 +85,10 @@ export default function CommitteeGallery() {
                 )}
 
                 <div className="p-6 pt-5">
-                  <h3 className="font-heading text-2xl font-bold text-maroon mb-1 uppercase tracking-wide">
+                  <h3 className="font-heading text-lg md:text-2xl font-bold text-maroon mb-1 uppercase tracking-wide text-center md:text-left">
                     {member.name}
                   </h3>
-                  <p className="font-paragraph text-sm text-gold font-semibold uppercase tracking-widest mb-3">
+                  <p className="font-paragraph text-xs md:text-sm text-gold font-semibold uppercase tracking-widest mb-3 text-center md:text-left">
                     {member.role}
                   </p>
 
@@ -111,8 +111,8 @@ export default function CommitteeGallery() {
                     </a>
                   )}
                 </div>
-              {/* Member Info */}
-                </motion.div>
+                {/* Member Info */}
+              </motion.div>
             ))}
           </div>
         ) : (
