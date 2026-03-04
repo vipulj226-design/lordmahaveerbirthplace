@@ -2100,7 +2100,7 @@ function ContactSection() {
 
             {/* Directions Button */}
             <a
-              href="https://maps.google.com/maps?q=18-B+Special+Institutional+Area+New+Delhi"
+              href="https://maps.app.goo.gl/z6JExdjA3thxMMyt8"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-paragraph font-semibold hover:bg-blue-700 transition-colors"
