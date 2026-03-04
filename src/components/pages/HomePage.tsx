@@ -227,6 +227,7 @@ function HeroSection() {
         opacity: 0;
         animation: floatUp ${duration}s linear ${delay}s infinite;
         pointer-events: none;
+        margin-top: 120px;
       `;
 
       container.appendChild(particle);
