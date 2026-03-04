@@ -1918,13 +1918,13 @@ function HowToReachSection() {
             Need help planning your pilgrimage? Contact us for personalized arrangements.
           </p>
           <a
-            href="https://wa.me/919811660130"
+            href="https://wa.me/917544003396"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-full font-heading font-bold uppercase tracking-wide hover:bg-[#20BA5A] transition-colors duration-300"
           >
             <MessageCircle className="w-6 h-6" />
-            📞 WhatsApp — 9811660130
+            📞 WhatsApp — 7544003396
           </a>
         </motion.div>
       </div>
