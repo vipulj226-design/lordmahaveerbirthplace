@@ -427,7 +427,7 @@ function BirthplaceAboutSection() {
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="relative py-8 md:py-40 bg-cream overflow-hidden">
+    <section id="about" ref={sectionRef} className="relative py-4 md:py-40 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
@@ -861,7 +861,7 @@ function BlessingsSection() {
   ];
 
   return (
-    <section id="blessings" className="relative py-8 md:py-40 bg-cream overflow-hidden">
+    <section id="blessings" className="relative py-4 md:py-40 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
@@ -1198,7 +1198,7 @@ function DonateSection() {
   ];
 
   return (
-    <section id="donate" className="relative py-8 md:py-32 bg-cream overflow-hidden">
+    <section id="donate" className="relative py-4 md:py-32 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="mb-8 md:mb-24 relative">
@@ -1363,7 +1363,7 @@ function GallerySection() {
   }, [lightboxOpen, galleryItems.length]);
 
   return (
-    <section id="gallery" className="relative py-8 md:py-32 bg-cream overflow-hidden">
+    <section id="gallery" className="relative py-4 md:py-32 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
@@ -1518,7 +1518,7 @@ function UpcomingEventsSection() {
   };
 
   return (
-    <section id="events" ref={sectionRef} className="relative py-16 md:py-32 bg-cream overflow-hidden">
+    <section id="events" ref={sectionRef} className="relative py-8 md:py-32 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
@@ -1696,7 +1696,7 @@ function HowToReachSection() {
   ];
 
   return (
-    <section id="how-to-reach" className="relative py-16 md:py-32 bg-cream overflow-hidden">
+    <section id="how-to-reach" className="relative py-8 md:py-32 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
@@ -1934,7 +1934,7 @@ function HowToReachSection() {
 
 function ContactSection() {
   return (
-    <section id="contact" className="relative py-16 md:py-32 bg-cream overflow-hidden">
+    <section id="contact" className="relative py-8 md:py-32 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
