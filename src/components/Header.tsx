@@ -48,7 +48,7 @@ export default function Header() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="px-3 py-2 text-xs uppercase font-paragraph font-bold rounded transition-colors duration-200 flex items-center gap-2"
+                  className="px-3 py-2 text-xs uppercase font-heading font-bold rounded transition-colors duration-200 flex items-center gap-2"
                   style={{
                     color: '#000000',
                   }}
@@ -97,7 +97,7 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="flex items-center justify-center min-h-[50px] px-1.5 py-2 text-[0.6rem] uppercase font-paragraph font-bold text-maroon transition-colors duration-200"
+                className="flex items-center justify-center min-h-[50px] px-1.5 py-2 text-[0.6rem] uppercase font-heading font-bold text-maroon transition-colors duration-200"
                 style={{
                   borderRight: (index + 1) % 5 !== 0 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
                   borderBottom: index < 5 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
