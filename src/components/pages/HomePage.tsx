@@ -116,16 +116,16 @@ export default function HomePage() {
           {/* Logo */}
           <div className="text-center mb-16">
             <Image
-              src="https://static.wixstatic.com/media/53945f_ab062187c24742a8a5c692b3fede74a6~mv2.png#originWidth=512&originHeight=512"
+              src="https://static.wixstatic.com/media/53945f_42ac50028f1745c8aacbbb67af2bb058~mv2.png#originWidth=588&originHeight=588"
               className="w-24 h-24 mx-auto mb-6" />
             <h3 className="font-heading text-4xl font-black text-gold mb-2 uppercase tracking-wider leading-tight">Lord Mahaveer Birthplace</h3>
           </div>
 
           {/* Social Links */}
           <div className="flex flex-wrap justify-center gap-8 mb-16">
-            <a href="https://wa.me/919811660130" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-paragraph text-cream hover:text-gold transition-colors">
+            <a href="tel:+91-7544003396" className="flex items-center gap-2 font-paragraph text-cream hover:text-gold transition-colors">
               <MessageCircle className="w-5 h-5" />
-              <span>WhatsApp</span>
+              <span>+91-7544003396</span>
             </a>
             <a href="mailto:info@lordmahaveerbirthplace.com" className="flex items-center gap-2 font-paragraph text-cream hover:text-gold transition-colors">
               <span>✉️</span>
