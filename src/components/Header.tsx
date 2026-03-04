@@ -51,7 +51,7 @@ export default function Header() {
                   className="px-3 py-2 text-xs uppercase font-heading rounded transition-colors duration-200 flex items-center gap-2"
                   style={{
                     color: '#000000',
-                    fontWeight: '900',
+                    fontWeight: '700',
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.backgroundColor = '#6B0F1A';
@@ -108,7 +108,7 @@ export default function Header() {
                   wordWrap: 'break-word',
                   overflowWrap: 'break-word',
                   hyphens: 'auto',
-                  fontWeight: '900',
+                  fontWeight: '700',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = '#6B0F1A';
