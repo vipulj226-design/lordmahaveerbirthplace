@@ -1623,7 +1623,7 @@ function UpcomingEventsSection() {
                   )}
 
                   {/* Learn More Button */}
-                  <a href={`#event-${event._id}`} className="inline-block w-full text-center bg-gradient-to-r from-gold to-gold2 text-maroon font-heading font-bold py-3 px-4 rounded-lg uppercase tracking-wide hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <a href="#events" className="inline-block w-full text-center bg-gradient-to-r from-gold to-gold2 text-maroon font-heading font-bold py-3 px-4 rounded-lg uppercase tracking-wide hover:shadow-lg transition-all duration-300 hover:scale-105">
                     Learn More
                   </a>
                 </div>
