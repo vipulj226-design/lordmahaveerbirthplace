@@ -869,7 +869,7 @@ function BlessingsSection() {
             viewport={{ once: true }}
             className="font-heading font-black text-maroon uppercase tracking-tight relative z-10 lg:text-5xl text-4xl"
           >
-            🙏 Holy <br/>
+            🙏 Acharyas <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Blessings</span>
           </motion.h2>
           <motion.p
