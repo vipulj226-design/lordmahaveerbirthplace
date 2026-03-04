@@ -2014,21 +2014,26 @@ function ContactSection() {
             </div>
 
             {/* Google Map */}
-            <div className="mb-6 rounded-lg overflow-hidden border-2 border-maroon">
+            <a
+              href="https://maps.app.goo.gl/dErHAXqxD9FGSQjJ6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-6 rounded-lg overflow-hidden border-2 border-maroon block cursor-pointer hover:border-gold transition-colors duration-300"
+            >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.8234567890!2d85.4234!3d25.9876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f7d5c0000000001%3A0x1234567890abcdef!2sVasokund%2C%20Vaishali%2C%20Bihar!5e0!3m2!1sen!2sin!4v1709545200000"
                 width="100%"
                 height="250"
-                style={{ border: 0 }}
+                style={{ border: 0, pointerEvents: 'none' }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
-            </div>
+            </a>
 
             {/* Directions Button */}
             <a
-              href="https://maps.google.com/maps?q=Vasokund+Vaishali+Bihar"
+              href="https://maps.app.goo.gl/dErHAXqxD9FGSQjJ6"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-paragraph font-semibold hover:bg-blue-700 transition-colors"
