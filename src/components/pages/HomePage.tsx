@@ -320,7 +320,7 @@ function HeroSection() {
           transition={{ duration: 1.2, delay: 0.2 }}
         >
           <span 
-            className="font-heading text-[2.5rem] tracking-[0.75em] font-black"
+            className="font-heading text-[1.5rem] tracking-[0.75em] font-black"
             style={{ color: '#C5A55A' }}
           >
             ✦  ✦  ✦
