@@ -1362,6 +1362,17 @@ function GallerySection() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [lightboxOpen, galleryItems.length]);
 
+  useEffect(() => {
+    if (lightboxOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [lightboxOpen]);
+
   return (
     <section id="gallery" className="relative py-4 md:py-32 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
@@ -1434,46 +1445,46 @@ function GallerySection() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={closeLightbox}
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center p-4 overflow-y-auto"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center p-4"
           style={{
             background: 'rgba(10, 2, 4, 0.92)',
             backdropFilter: 'blur(6px)'
           }}
         >
-          <div className="relative w-full flex flex-col items-center my-auto" onClick={(e) => e.stopPropagation()}>
+          <div className="relative w-full h-full flex flex-col items-center justify-center" onClick={(e) => e.stopPropagation()}>
             {/* Close Button */}
             <button
               onClick={closeLightbox}
-              className="absolute top-0 right-0 z-10 w-10 h-10 md:w-12 md:h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors"
+              className="absolute top-4 right-4 z-10 w-10 h-10 md:w-12 md:h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors"
             >
               <X className="w-5 h-5 md:w-6 md:h-6" />
             </button>
 
             {/* Image Container */}
-            <div className="flex items-center justify-center w-full pt-12 pb-6">
+            <div className="flex items-center justify-center w-full h-full max-h-[70vh]">
               <Image
                 src={galleryItems[currentImageIndex].image}
                 alt={galleryItems[currentImageIndex].caption || 'Gallery image'}
-                className="max-w-full max-h-[60vh] object-contain border-4 border-gold"
+                className="max-w-full max-h-full object-contain border-4 border-gold"
               />
             </div>
 
             {/* Caption */}
-            <p className="font-heading text-gold text-center text-sm md:text-lg uppercase tracking-wide px-4 mb-4">
+            <p className="font-heading text-gold text-center text-sm md:text-lg uppercase tracking-wide px-4 mt-4">
               {galleryItems[currentImageIndex].caption}
             </p>
 
             {/* Navigation Buttons */}
             <button
               onClick={prevImage}
-              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors"
+              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors z-20"
             >
               <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
             </button>
 
             <button
               onClick={nextImage}
-              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors"
+              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors z-20"
             >
               <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
             </button>
