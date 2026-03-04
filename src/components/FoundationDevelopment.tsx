@@ -133,14 +133,14 @@ export default function FoundationDevelopment() {
 
                 {/* Photo Gallery - 4 Photos from CMS - Full Width Below */}
                 {(block.galleryImage1 || block.galleryImage2 || block.galleryImage3 || block.galleryImage4) && (
-                  <div className="border-t-2 border-maroon/20 p-6 lg:p-8 bg-cream">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 auto-rows-[300px]">
+                  <div className="border-t-2 border-maroon/20 p-4 md:p-6 lg:p-8 bg-cream">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 lg:gap-6">
                       {block.galleryImage1 && (
                         <motion.div
                           initial={{ opacity: 0, scale: 0.9 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
-                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300"
+                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300 aspect-video"
                         >
                           <Image
                             src={block.galleryImage1}
@@ -157,7 +157,7 @@ export default function FoundationDevelopment() {
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
                           transition={{ delay: 0.1 }}
-                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300"
+                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300 aspect-video"
                         >
                           <Image
                             src={block.galleryImage2}
@@ -174,7 +174,7 @@ export default function FoundationDevelopment() {
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
                           transition={{ delay: 0.2 }}
-                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300"
+                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300 aspect-video"
                         >
                           <Image
                             src={block.galleryImage3}
@@ -191,7 +191,7 @@ export default function FoundationDevelopment() {
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
                           transition={{ delay: 0.3 }}
-                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300"
+                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300 aspect-video"
                         >
                           <Image
                             src={block.galleryImage4}
