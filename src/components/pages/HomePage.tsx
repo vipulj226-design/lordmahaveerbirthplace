@@ -2000,9 +2000,9 @@ function ContactSection() {
 
               <div className="flex gap-4">
                 <span className="text-2xl">📧</span>
-                <div>
+                <div className="min-w-0">
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Email</p>
-                  <p className="text-maroon font-semibold">bhagwanmahavir1008@gmail.com</p>
+                  <p className="text-maroon font-semibold break-all">bhagwanmahavir1008@gmail.com</p>
                 </div>
               </div>
 
