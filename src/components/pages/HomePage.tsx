@@ -103,8 +103,6 @@ export default function HomePage() {
       <DonateSection />
       {/* --- UPCOMING EVENTS SECTION --- */}
       <UpcomingEventsSection />
-      {/* --- ACCOMMODATION SECTION --- */}
-      <AccommodationSection />
       {/* --- GALLERY SECTION --- */}
       <GallerySection />
       {/* --- HOW TO REACH SECTION --- */}
@@ -118,7 +116,7 @@ export default function HomePage() {
           {/* Logo */}
           <div className="text-center mb-16">
             <Image
-              src="https://static.wixstatic.com/media/53945f_abce63563c11410da4e5ab2aab923b1e~mv2.png#originWidth=588&originHeight=588"
+              src="https://static.wixstatic.com/media/53945f_06a423b0a7fc4ff7a7488f7c493ec082~mv2.png#originWidth=588&originHeight=588"
               className="w-24 h-24 mx-auto mb-6" />
             <h3 className="font-heading text-4xl font-black text-gold mb-2 uppercase tracking-wider leading-tight">Lord Mahaveer Birthplace</h3>
           </div>
@@ -129,7 +127,7 @@ export default function HomePage() {
               <MessageCircle className="w-5 h-5" />
               <span>WhatsApp</span>
             </a>
-            <a href="mailto:bhagwanmahavir1008@gmail.com" className="flex items-center gap-2 font-paragraph text-cream hover:text-gold transition-colors">
+            <a href="mailto:info@lordmahaveerbirthplace.com" className="flex items-center gap-2 font-paragraph text-cream hover:text-gold transition-colors">
               <span>✉️</span>
               <span>Email</span>
             </a>
@@ -1307,169 +1305,6 @@ function DonateSection() {
         </motion.div>
         {/* WhatsApp CTA */}
 
-      </div>
-    </section>
-  );
-}
-
-// --- ACCOMMODATION SECTION COMPONENT ---
-
-function AccommodationSection() {
-  const [accommodations, setAccommodations] = useState<any[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchAccommodations = async () => {
-      try {
-        const result = await BaseCrudService.getAll<any>('accommodationoptions');
-        setAccommodations(result.items);
-      } catch (error) {
-        console.error('Error fetching accommodations:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchAccommodations();
-  }, []);
-
-  return (
-    <section id="accommodation" className="relative py-16 md:py-32 bg-cream overflow-hidden">
-      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
-        
-        {/* Section Header */}
-        <div className="mb-12 md:mb-24 relative">
-          <motion.h2 
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="font-heading font-black text-maroon uppercase tracking-tight relative z-10 lg:text-5xl text-4xl"
-          >
-            Accommodation <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Options</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="font-paragraph text-lg text-maroon/70 mt-3 max-w-2xl"
-          >
-            Comfortable lodging options near the sacred birthplace of Lord Mahavira
-          </motion.p>
-          <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
-        </div>
-
-        {/* Accommodation Grid */}
-        {isLoading ? (
-          <div className="text-center py-16">
-            <p className="font-paragraph text-maroon/60">Loading accommodations...</p>
-          </div>
-        ) : accommodations.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {accommodations.map((accommodation, index) => (
-              <motion.div
-                key={accommodation._id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group bg-white border-2 border-maroon overflow-hidden hover:border-gold transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px]"
-              >
-                {/* Accommodation Image */}
-                {accommodation.mainImage && (
-                  <div className="relative h-48 overflow-hidden bg-maroon/10">
-                    <Image
-                      src={accommodation.mainImage}
-                      alt={accommodation.name || 'Accommodation'}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                  </div>
-                )}
-
-                {/* Accommodation Content */}
-                <div className="p-8">
-                  {/* Name */}
-                  <h3 className="font-heading text-2xl font-bold text-maroon mb-4 uppercase tracking-wide line-clamp-2">
-                    {accommodation.name}
-                  </h3>
-
-                  {/* Description */}
-                  {accommodation.description && (
-                    <p className="font-paragraph text-maroon/80 leading-relaxed mb-6">
-                      {accommodation.description}
-                    </p>
-                  )}
-
-                  {/* Details */}
-                  <div className="space-y-3 mb-8">
-                    {/* Address */}
-                    {accommodation.address && (
-                      <div className="flex items-start gap-3">
-                        <MapPin className="w-5 h-5 text-gold shrink-0 mt-0.5" />
-                        <div>
-                          <p className="font-paragraph text-sm text-maroon/60 uppercase tracking-widest mb-1">Address</p>
-                          <p className="font-paragraph font-semibold text-maroon text-sm">{accommodation.address}</p>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Phone */}
-                    {accommodation.phoneNumber && (
-                      <div className="flex items-start gap-3">
-                        <span className="text-lg">📞</span>
-                        <div>
-                          <p className="font-paragraph text-sm text-maroon/60 uppercase tracking-widest mb-1">Phone</p>
-                          <p className="font-paragraph font-semibold text-maroon text-sm">{accommodation.phoneNumber}</p>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Price Range */}
-                    {accommodation.priceRange && (
-                      <div className="flex items-start gap-3">
-                        <span className="text-lg">💰</span>
-                        <div>
-                          <p className="font-paragraph text-sm text-maroon/60 uppercase tracking-widest mb-1">Price Range</p>
-                          <p className="font-paragraph font-semibold text-maroon text-sm">{accommodation.priceRange}</p>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Buttons */}
-                  <div className="flex gap-3">
-                    {accommodation.websiteUrl && (
-                      <a
-                        href={accommodation.websiteUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 bg-gradient-to-r from-gold to-gold2 text-maroon font-heading font-bold py-2 px-4 rounded-lg uppercase tracking-wide text-sm hover:shadow-lg transition-all duration-300 text-center"
-                      >
-                        Website
-                      </a>
-                    )}
-                    {accommodation.bookingLink && (
-                      <a
-                        href={accommodation.bookingLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 bg-maroon text-cream font-heading font-bold py-2 px-4 rounded-lg uppercase tracking-wide text-sm hover:bg-gold hover:text-maroon transition-all duration-300 text-center"
-                      >
-                        Book Now
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-16">
-            <p className="font-paragraph text-maroon/60 text-lg">No accommodation options available at this time.</p>
-          </div>
-        )}
       </div>
     </section>
   );
