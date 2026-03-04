@@ -2063,8 +2063,10 @@ function ContactSection() {
                 <span className="text-2xl">📞</span>
                 <div>
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Phone</p>
-                  <p className="text-maroon font-semibold">+91-7982277419 , +91-98730277</p>
-                  <p className="text-maroon font-semibold">+91-9811660130</p>
+                  <div className="space-y-1">
+                    <p className="text-maroon font-semibold">+91-7982277419</p>
+                    <p className="text-maroon font-semibold">+91-9873027779</p>
+                  </div>
                 </div>
               </div>
 
