@@ -1990,8 +1990,16 @@ function ContactSection() {
               <div className="flex gap-4">
                 <MapPin className="w-6 h-6 text-gold shrink-0 mt-1" />
                 <div>
-                  <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Address</p>
+                  <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Bihar Office</p>
                   <p className="text-maroon font-semibold">Vasokund, Vaishali District, Bihar</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <MapPin className="w-6 h-6 text-gold shrink-0 mt-1" />
+                <div>
+                  <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Delhi Office</p>
+                  <p className="text-maroon font-semibold">18-B, Special Institutional Area, New Delhi - 110067</p>
                 </div>
               </div>
 
