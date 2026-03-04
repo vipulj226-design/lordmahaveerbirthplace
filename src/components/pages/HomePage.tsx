@@ -2088,7 +2088,7 @@ function ContactSection() {
             {/* Google Map */}
             <div className="mb-6 rounded-lg overflow-hidden border-2 border-maroon">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.8235889234567!2d77.22!3d28.55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2cc00000001%3A0x1234567890abcdef!2sKund%20Kund%20Bharti!5e0!3m2!1sen!2sin!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.823588923457!2d77.22!3d28.55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2cc00000001%3A0x1234567890abcdef!2sKund%20Kund%20Bharti%20Kendra!5e0!3m2!1sen!2sin!4v1709545200000"
                 width="100%"
                 height="250"
                 style={{ border: 0 }}
