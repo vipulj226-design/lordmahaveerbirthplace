@@ -2086,12 +2086,15 @@ function ContactSection() {
             </div>
 
             {/* Google Map */}
-            <div className="mb-6 rounded-lg overflow-hidden border-2 border-maroon">
+            <div 
+              className="mb-6 rounded-lg overflow-hidden border-2 border-maroon cursor-pointer hover:border-gold transition-colors duration-300"
+              onClick={() => window.open('https://maps.google.com/maps?q=G5RH%2BFJ8,+Qutab+Institutional+Area+Rd,+Block+A,+Qutab+Institutional+Area,+New+Delhi,+Delhi+110067', '_blank')}
+            >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.823588923457!2d77.22!3d28.55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2cc00000001%3A0x1234567890abcdef!2sKund%20Kund%20Bharti%20Kendra!5e0!3m2!1sen!2sin!4v1709545200000"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.5234!2d77.1950!3d28.5244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2cc00000001%3A0x1234567890abcdef!2sQutab+Institutional+Area,+New+Delhi!5e0!3m2!1sen!2sin!4v1709545200000"
                 width="100%"
                 height="250"
-                style={{ border: 0 }}
+                style={{ border: 0, pointerEvents: 'none' }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -2100,7 +2103,7 @@ function ContactSection() {
 
             {/* Directions Button */}
             <a
-              href="https://maps.app.goo.gl/z6JExdjA3thxMMyt8"
+              href="https://maps.google.com/maps?q=G5RH%2BFJ8,+Qutab+Institutional+Area+Rd,+Block+A,+Qutab+Institutional+Area,+New+Delhi,+Delhi+110067"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-paragraph font-semibold hover:bg-blue-700 transition-colors"
