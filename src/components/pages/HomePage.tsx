@@ -1000,7 +1000,7 @@ function StatisticsSection() {
   ];
 
   return (
-    <section id="statistics" ref={statsRef} className="relative bg-maroon py-8 md:py-32 overflow-hidden pt-24 md:pt-48">
+    <section id="statistics" ref={statsRef} className="relative bg-maroon py-12 md:py-16 overflow-hidden pt-12 md:pt-16">
       {/* Background Texture */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(#C5A55A_1px,transparent_1px)] [background-size:16px_16px]" />
