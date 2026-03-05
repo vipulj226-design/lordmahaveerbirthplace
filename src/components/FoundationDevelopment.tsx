@@ -116,10 +116,15 @@ export default function FoundationDevelopment() {
                         {block.heading}
                       </h3>
 
-                      {/* Content */}
-                      <p className="font-paragraph text-base lg:text-lg text-maroon/80 mb-4 leading-relaxed">
-                        {block.content}
-                      </p>
+                      {/* Content - Displayed as vertical list of points */}
+                       <ul className="font-paragraph text-base lg:text-lg text-maroon/80 mb-4 space-y-3">
+                         {block.content?.split('\n').filter(line => line.trim()).map((point, idx) => (
+                           <li key={idx} className="flex items-start gap-3">
+                             <span className="text-gold font-bold mt-1">•</span>
+                             <span>{point.trim()}</span>
+                           </li>
+                         ))}
+                       </ul>
 
                       {/* Quote (if available) */}
                       {block.quote && (
