@@ -370,7 +370,7 @@ function HeroSection() {
           }}
         >
           <Image 
-            src={frontImage}
+            src="https://static.wixstatic.com/media/53945f_17697ca6f34448eda79f659f70536abd~mv2.jpg"
             alt="Sahastrakut Jinalaya"
             className="w-full h-full object-contain block"
             width={500}
