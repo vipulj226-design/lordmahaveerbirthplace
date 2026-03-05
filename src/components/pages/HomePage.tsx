@@ -82,7 +82,6 @@ export default function HomePage() {
   return (
     <div 
       className="min-h-screen bg-cream text-maroon selection:bg-maroon selection:text-gold overflow-x-hidden"
-      style={{ scrollPaddingTop: '140px' }}
     >
       {/* --- HEADER --- */}
       <Header />
