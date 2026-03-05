@@ -317,6 +317,7 @@ function HeroSection() {
         transition={{ duration: 1.2 }}
       >
         {/* Ornament Text */}
+        {/* H1 Title with Gradient */}
         <motion.div 
           className="mb-6 pt-8"
           initial={{ opacity: 0 }}
@@ -330,7 +331,6 @@ function HeroSection() {
             ✦  ✦  ✦
           </span>
         </motion.div>
-        {/* H1 Title with Gradient */}
         <motion.h1 
           className="font-heading font-black tracking-tight mb-6 -mt-4 md:mt-0 text-3xl"
           style={{
