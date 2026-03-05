@@ -382,21 +382,31 @@ function HeroSection() {
         {/* CTA Button */}
         <motion.a 
           href="#about"
-          className="inline-block font-heading font-bold tracking-wide uppercase -mt-8 md:-mt-4"
+          className="inline-block font-heading font-bold tracking-wide uppercase -mt-8 md:-mt-4 relative z-30"
           style={{
             backgroundImage: 'linear-gradient(to right, #D4AF37, #C5A55A)',
             color: '#1a1a1a',
-            padding: '14px 40px',
+            padding: '16px 48px',
             borderRadius: '50px',
             textDecoration: 'none',
-            fontSize: '1rem',
+            fontSize: '1.1rem',
             fontWeight: 700,
+            boxShadow: '0 8px 25px rgba(197, 165, 90, 0.4)',
+            border: '2px solid #C5A55A',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
           }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 1.2 }}
-          whileHover={{ y: -2, boxShadow: '0 10px 30px rgba(197, 165, 90, 0.5)' }}
+          whileHover={{ 
+            y: -4, 
+            boxShadow: '0 15px 40px rgba(197, 165, 90, 0.6)',
+            scale: 1.05
+          }}
         >
+          <ArrowRight className="w-5 h-5" />
           About Birthplace
         </motion.a>
       </motion.div>
