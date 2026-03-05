@@ -82,6 +82,7 @@ export default function HomePage() {
   return (
     <div 
       className="min-h-screen bg-cream text-maroon selection:bg-maroon selection:text-gold overflow-x-hidden"
+      style={{ scrollPaddingTop: '140px' }}
     >
       {/* --- HEADER --- */}
       <Header />
@@ -276,11 +277,11 @@ function HeroSection() {
   return (
     <section 
       id="hero" 
-      className="relative w-full min-h-[35vh] md:min-h-[45vh] flex items-center justify-center overflow-hidden p-[43px]"
+      className="relative w-full min-h-[50vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden p-[43px]"
       style={{
         background: 'linear-gradient(135deg, #6B0F1A, #3D0A10, #6B0F1A)',
-        paddingTop: '20px',
-        paddingBottom: '40px',
+        paddingTop: '40px',
+        paddingBottom: '80px',
         paddingLeft: '24px',
         paddingRight: '24px',
       }}
@@ -323,7 +324,12 @@ function HeroSection() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.2 }}
         >
-
+          <span 
+            className="font-heading text-[1.75rem] tracking-[0.75em] font-black -mb-2"
+            style={{ color: '#C5A55A' }}
+          >
+            ✦  ✦  ✦
+          </span>
         </motion.div>
         <motion.h1 
           className="font-heading font-black tracking-tight mb-6 -mt-4 md:mt-0 text-3xl"
