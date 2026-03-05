@@ -277,11 +277,13 @@ function HeroSection() {
   return (
     <section 
       id="hero" 
-      className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden"
+      className="relative w-full min-h-[50vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden p-[43px]"
       style={{
         background: 'linear-gradient(135deg, #6B0F1A, #3D0A10, #6B0F1A)',
-        padding: '24px',
-        minHeight: '100vh',
+        paddingTop: '20px',
+        paddingBottom: '30px',
+        paddingLeft: '24px',
+        paddingRight: '24px',
       }}
     >
       {/* Background Image Pseudo-element */}
@@ -307,16 +309,25 @@ function HeroSection() {
         className="absolute inset-0 z-0 pointer-events-none"
         style={{ width: '100%', height: '100%' }}
       />
-      {/* Main Content - Vertical Layout */}
+      {/* Main Content */}
       <motion.div 
-        className="relative z-20 w-full max-w-[100rem] mx-auto flex flex-col items-center justify-center h-full gap-4 md:gap-6"
+        className="relative z-20 w-full max-w-[100rem] mx-auto text-center"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
       >
-        {/* Title at Top */}
+        {/* Ornament Text */}
+        {/* H1 Title with Gradient */}
+        <motion.div 
+          className="mb-6 pt-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2, delay: 0.2 }}
+        >
+
+        </motion.div>
         <motion.h1 
-          className="font-heading font-black tracking-tight text-3xl text-center"
+          className="font-heading font-black tracking-tight mb-6 -mt-4 md:mt-0 text-3xl"
           style={{
             fontSize: 'clamp(2rem, 5vw, 3.8rem)',
             backgroundImage: 'linear-gradient(to right, #C5A55A, #FDF6EC, #D4AF37)',
@@ -331,19 +342,11 @@ function HeroSection() {
         >
           {title}
         </motion.h1>
-        {/* Subtitle */}
+        {/* Subtitle (Italic) */}
+
+        {/* Sub2 Text */}
         <motion.p 
-          className="font-paragraph tracking-widest italic text-lg text-center"
-          style={{ color: 'rgba(197, 165, 90, 0.9)' }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: 0.6 }}
-        >
-          {subtitle}
-        </motion.p>
-        {/* Short Description */}
-        <motion.p 
-          className="font-paragraph tracking-[0.125em] uppercase text-sm text-center"
+          className="font-paragraph mb-12 tracking-[0.125em] uppercase text-sm"
           style={{ color: 'rgba(253, 246, 236, 0.7)' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -351,12 +354,30 @@ function HeroSection() {
         >
           {shortDescription}
         </motion.p>
-        {/* Hero Image in Center */}
-
-        {/* CTA Button Below Image */}
+        {/* Hero Image Box */}
+        <motion.div 
+          className="mx-auto mb-12 max-w-[600px] -mt-6 md:mt-0"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, delay: 1 }}
+          style={{
+            borderRadius: '12px',
+            border: '3px solid #C5A55A',
+            boxShadow: '0 0 30px rgba(197, 165, 90, 0.6)',
+            overflow: 'hidden',
+          }}
+        >
+          <Image 
+            src={frontImage}
+            alt="Sahastrakut Jinalaya"
+            className="w-full h-full object-cover block"
+            width={600}
+          />
+        </motion.div>
+        {/* CTA Button */}
         <motion.a 
           href="#about"
-          className="inline-block font-heading font-bold tracking-wide uppercase relative z-30"
+          className="inline-block font-heading font-bold tracking-wide uppercase -mt-8 md:-mt-4 relative z-30"
           style={{
             backgroundImage: 'linear-gradient(to right, #D4AF37, #C5A55A)',
             color: '#1a1a1a',
@@ -379,7 +400,10 @@ function HeroSection() {
             boxShadow: '0 15px 40px rgba(197, 165, 90, 0.6)',
             scale: 1.05
           }}
-        >Explore The Heritage</motion.a>
+        >
+          <ArrowRight className="w-5 h-5" />
+          About Birthplace
+        </motion.a>
       </motion.div>
     </section>
   );
