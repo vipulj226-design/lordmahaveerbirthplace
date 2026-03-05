@@ -870,7 +870,7 @@ function BlessingsSection() {
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
-        <div className="mb-8 md:mb-32 relative">
+        <div className="mb-6 md:mb-12 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -885,7 +885,7 @@ function BlessingsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="font-paragraph text-lg text-maroon/70 mt-6 max-w-2xl text-left"
+            className="font-paragraph text-lg text-maroon/70 mt-3 max-w-2xl text-left"
           >
             Mangal Ashirwad — Sacred blessings from revered Acharyas for the temple at the birthplace
           </motion.p>
