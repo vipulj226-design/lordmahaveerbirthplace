@@ -280,8 +280,8 @@ function HeroSection() {
       className="relative w-full min-h-[50vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden p-[43px]"
       style={{
         background: 'linear-gradient(135deg, #6B0F1A, #3D0A10, #6B0F1A)',
-        paddingTop: '40px',
-        paddingBottom: '80px',
+        paddingTop: '20px',
+        paddingBottom: '30px',
         paddingLeft: '24px',
         paddingRight: '24px',
       }}
