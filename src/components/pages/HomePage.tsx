@@ -356,7 +356,7 @@ function HeroSection() {
 
         {/* Hero Image in Center */}
         <motion.div 
-          className="flex items-center justify-center w-full max-w-[500px] flex-shrink-0"
+          className="flex items-center justify-center w-full max-w-[400px] flex-shrink-0"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 1 }}
@@ -365,7 +365,7 @@ function HeroSection() {
             border: '3px solid #C5A55A',
             boxShadow: '0 0 30px rgba(197, 165, 90, 0.6)',
             overflow: 'hidden',
-            aspectRatio: '1 / 1',
+            aspectRatio: '3 / 4',
             backgroundColor: '#1a1a1a',
           }}
         >
@@ -373,7 +373,7 @@ function HeroSection() {
             src="https://static.wixstatic.com/media/53945f_17697ca6f34448eda79f659f70536abd~mv2.jpg"
             alt="Sahastrakut Jinalaya"
             className="w-full h-full object-cover block"
-            width={500}
+            width={400}
           />
         </motion.div>
 
