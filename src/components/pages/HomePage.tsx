@@ -86,10 +86,10 @@ export default function HomePage() {
     >
       {/* --- HEADER --- */}
       <Header />
-      {/* --- HERO SECTION --- */}
-      <HeroSection />
       {/* --- BIRTHPLACE & ABOUT US SECTION (MERGED) --- */}
       <BirthplaceAboutSection />
+      {/* --- HERO SECTION --- */}
+      <HeroSection />
       {/* --- STATISTICS SECTION --- */}
       <StatisticsSection />
       {/* --- DIVINE BLESSINGS SECTION --- */}
