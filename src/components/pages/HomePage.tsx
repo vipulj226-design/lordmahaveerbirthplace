@@ -688,7 +688,7 @@ function BirthplaceAboutSection() {
         </div>
 
         {/* The Unapologetic Truth Section */}
-        <div className="relative bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-12 md:py-24 px-6 md:px-12 rounded-lg border-2 border-gold">
+        <div className="relative bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-6 md:py-12 px-6 md:px-12 rounded-lg border-2 border-gold">
           <div className="absolute inset-0 opacity-5 pointer-events-none">
             <div className="absolute inset-0 bg-[radial-gradient(#C5A55A_1px,transparent_1px)] [background-size:16px_16px]" />
           </div>
