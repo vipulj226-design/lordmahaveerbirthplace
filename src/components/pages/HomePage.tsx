@@ -1711,7 +1711,7 @@ function HowToReachSection() {
   ];
 
   return (
-    <section id="how-to-reach" className="relative py-8 md:py-32 bg-cream overflow-hidden">
+    <section id="how-to-reach" className="relative py-4 md:py-12 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
