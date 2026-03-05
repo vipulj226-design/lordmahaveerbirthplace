@@ -353,7 +353,7 @@ function HeroSection() {
         </motion.p>
         {/* Hero Image Box */}
         <motion.div 
-          className="mx-auto mb-12 max-w-[600px] -mt-6 md:mt-0"
+          className="mx-auto mb-12 max-w-[600px] -mt-6 md:mt-0 flex items-center justify-center"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 1 }}
@@ -362,12 +362,14 @@ function HeroSection() {
             border: '3px solid #C5A55A',
             boxShadow: '0 0 30px rgba(197, 165, 90, 0.6)',
             overflow: 'hidden',
+            aspectRatio: '1 / 1',
+            backgroundColor: '#1a1a1a',
           }}
         >
           <Image 
             src={frontImage}
             alt="Sahastrakut Jinalaya"
-            className="w-full h-full object-cover block"
+            className="w-full h-full object-contain block"
             width={600}
           />
         </motion.div>
