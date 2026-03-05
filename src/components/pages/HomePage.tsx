@@ -324,12 +324,7 @@ function HeroSection() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.2 }}
         >
-          <span 
-            className="font-heading text-[1.75rem] tracking-[0.75em] font-black -mb-2"
-            style={{ color: '#C5A55A' }}
-          >
-            ✦  ✦  ✦
-          </span>
+
         </motion.div>
         <motion.h1 
           className="font-heading font-black tracking-tight mb-6 -mt-4 md:mt-0 text-3xl"
@@ -880,7 +875,7 @@ function BlessingsSection() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-heading font-black text-maroon uppercase tracking-tight relative z-10 lg:text-5xl text-4xl"
+            className="font-heading font-black text-maroon uppercase tracking-tight relative z-10 lg:text-5xl text-4xl text-left"
           >
             🙏 Acharyas <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Blessings</span>
@@ -890,7 +885,7 @@ function BlessingsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="font-paragraph text-lg text-maroon/70 mt-3 max-w-2xl"
+            className="font-paragraph text-lg text-maroon/70 mt-3 max-w-2xl text-center"
           >
             Mangal Ashirwad — Sacred blessings from revered Acharyas for the temple at the birthplace
           </motion.p>
