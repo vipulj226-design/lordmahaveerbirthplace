@@ -1203,7 +1203,7 @@ function DonateSection() {
   ];
 
   return (
-    <section id="donate" className="relative py-8 md:py-16 bg-cream overflow-hidden">
+    <section id="donate" className="relative py-4 md:py-8 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="mb-8 md:mb-24 relative">
