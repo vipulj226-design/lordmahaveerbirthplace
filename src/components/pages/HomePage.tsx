@@ -340,6 +340,15 @@ function HeroSection() {
           {title}
         </motion.h1>
         {/* Subtitle (Italic) */}
+        <motion.p 
+          className="font-paragraph mb-8 tracking-widest italic text-lg"
+          style={{ color: 'rgba(197, 165, 90, 0.9)' }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2, delay: 0.6 }}
+        >
+          {subtitle}
+        </motion.p>
 
         {/* Sub2 Text */}
         <motion.p 
