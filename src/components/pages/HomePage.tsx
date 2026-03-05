@@ -885,11 +885,11 @@ function BlessingsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="font-paragraph text-lg text-maroon/70 mt-3 max-w-2xl text-center"
+            className="font-paragraph text-lg text-maroon/70 mt-3 max-w-2xl text-left"
           >
             Mangal Ashirwad — Sacred blessings from revered Acharyas for the temple at the birthplace
           </motion.p>
-          <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
+
         </div>
 
         {/* Blessing Cards */}
