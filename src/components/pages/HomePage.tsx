@@ -331,7 +331,6 @@ function HeroSection() {
         >
           {title}
         </motion.h1>
-
         {/* Subtitle */}
         <motion.p 
           className="font-paragraph tracking-widest italic text-lg text-center"
@@ -342,7 +341,6 @@ function HeroSection() {
         >
           {subtitle}
         </motion.p>
-
         {/* Short Description */}
         <motion.p 
           className="font-paragraph tracking-[0.125em] uppercase text-sm text-center"
@@ -353,29 +351,7 @@ function HeroSection() {
         >
           {shortDescription}
         </motion.p>
-
         {/* Hero Image in Center */}
-        <motion.div 
-          className="flex items-center justify-center w-full max-w-[400px] flex-shrink-0"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, delay: 1 }}
-          style={{
-            borderRadius: '12px',
-            border: '3px solid #C5A55A',
-            boxShadow: '0 0 30px rgba(197, 165, 90, 0.6)',
-            overflow: 'hidden',
-            aspectRatio: '3 / 4',
-            backgroundColor: '#1a1a1a',
-          }}
-        >
-          <Image 
-            src="https://static.wixstatic.com/media/53945f_17697ca6f34448eda79f659f70536abd~mv2.jpg"
-            alt="Sahastrakut Jinalaya"
-            className="w-full h-full object-cover block"
-            width={400}
-          />
-        </motion.div>
 
         {/* CTA Button Below Image */}
         <motion.a 
@@ -403,10 +379,7 @@ function HeroSection() {
             boxShadow: '0 15px 40px rgba(197, 165, 90, 0.6)',
             scale: 1.05
           }}
-        >
-          <ArrowRight className="w-5 h-5" />
-          About Birthplace
-        </motion.a>
+        >Explore The Heritage</motion.a>
       </motion.div>
     </section>
   );
