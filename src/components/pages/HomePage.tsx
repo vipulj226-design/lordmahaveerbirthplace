@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useScroll, useSpring, useInView, useTransform } from 'framer-motion';
-import { ArrowRight, MapPin, Calendar, Users, Scroll, Star, ChevronDown, X, ChevronLeft, ChevronRight, MessageCircle, Clock } from 'lucide-react';
+import { ArrowRight, MapPin, Calendar, Users, Scroll, Star, ChevronDown, X, ChevronLeft, ChevronRight, MessageCircle, Clock, Building2 } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import { BaseCrudService } from '@/integrations';
 import { BirthplaceStatistics, SpiritualLeaders } from '@/entities';
@@ -1974,8 +1974,12 @@ function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           
           {/* Vaishali Contact Card */}
-          {/* Delhi Contact Card */}
-          <motion.div
+          <div>
+            <div className="flex items-center gap-3 mb-6">
+              <Building2 className="w-8 h-8 text-maroon" />
+              <h2 className="font-heading text-3xl font-bold text-maroon uppercase tracking-wide">Bihar Office</h2>
+            </div>
+            <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -2050,9 +2054,16 @@ function ContactSection() {
             >
               🗺️ Open in Google Maps
             </a>
-          </motion.div>
+            </motion.div>
+          </div>
 
-          <motion.div
+          {/* Delhi Contact Card */}
+          <div>
+            <div className="flex items-center gap-3 mb-6">
+              <Building2 className="w-8 h-8 text-maroon" />
+              <h2 className="font-heading text-3xl font-bold text-maroon uppercase tracking-wide">Delhi Office</h2>
+            </div>
+            <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -2125,7 +2136,8 @@ function ContactSection() {
             >
               🗺️ Open in Google Maps
             </a>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
