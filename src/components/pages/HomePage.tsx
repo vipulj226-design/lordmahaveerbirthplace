@@ -277,7 +277,7 @@ function HeroSection() {
   return (
     <section 
       id="hero" 
-      className="relative w-full min-h-[70vh] md:min-h-screen flex items-center justify-center overflow-hidden p-[43px]"
+      className="relative w-full min-h-[50vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden p-[43px]"
       style={{
         background: 'linear-gradient(135deg, #6B0F1A, #3D0A10, #6B0F1A)',
         paddingTop: '40px',
