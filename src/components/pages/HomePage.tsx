@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { motion, useScroll, useSpring, useInView, useTransform, AnimatePresence } from 'framer-motion';
-import { ArrowRight, MapPin, Calendar, Users, Scroll, Star, ChevronDown, X, ChevronLeft, ChevronRight, MessageCircle, Clock, Building2, TrendingUp } from 'lucide-react';
+import { motion, useScroll, useSpring, useInView, useTransform } from 'framer-motion';
+import { ArrowRight, MapPin, Calendar, Users, Scroll, Star, ChevronDown, X, ChevronLeft, ChevronRight, MessageCircle, Clock, Building2 } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import { BaseCrudService } from '@/integrations';
 import { BirthplaceStatistics, SpiritualLeaders } from '@/entities';
@@ -38,76 +38,6 @@ interface CommitteeMember {
 
 // --- UTILITY COMPONENTS ---
 
-// Animated Progress Indicator Component
-const ProgressIndicator = () => {
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
-
-  return (
-    <motion.div
-      style={{ scaleX }}
-      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold via-gold2 to-gold origin-left z-50"
-    />
-  );
-};
-
-// Section Progress Dots Component
-const SectionProgressDots = ({ sections }: { sections: string[] }) => {
-  const [activeSection, setActiveSection] = useState(0);
-  const { scrollYProgress } = useScroll();
-
-  useEffect(() => {
-    const unsubscribe = scrollYProgress.onChange((latest) => {
-      const sectionIndex = Math.floor(latest * sections.length);
-      setActiveSection(Math.min(sectionIndex, sections.length - 1));
-    });
-    return () => unsubscribe();
-  }, [scrollYProgress, sections.length]);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: 20 }}
-      animate={{ opacity: 1, x: 0 }}
-      className="fixed right-8 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-4"
-    >
-      {sections.map((section, index) => (
-        <motion.button
-          key={section}
-          onClick={() => {
-            const element = document.getElementById(section);
-            element?.scrollIntoView({ behavior: 'smooth' });
-          }}
-          className="relative group"
-          whileHover={{ scale: 1.2 }}
-        >
-          <motion.div
-            animate={{
-              width: activeSection === index ? 32 : 12,
-              height: activeSection === index ? 32 : 12,
-            }}
-            className="rounded-full border-2 border-gold bg-maroon/20 backdrop-blur-sm"
-          />
-          <motion.div
-            animate={{
-              opacity: activeSection === index ? 1 : 0,
-              x: activeSection === index ? -50 : 0,
-            }}
-            className="absolute right-full mr-4 top-1/2 -translate-y-1/2 whitespace-nowrap"
-          >
-            <span className="text-gold font-heading text-sm font-bold uppercase tracking-wide">
-              {section}
-            </span>
-          </motion.div>
-        </motion.button>
-      ))}
-    </motion.div>
-  );
-};
-
 const CountUp = ({ end, duration, delay }: { end: number; duration: number; delay: number }) => {
   const [count, setCount] = useState(0);
 
@@ -139,18 +69,21 @@ const CountUp = ({ end, duration, delay }: { end: number; duration: number; dela
 // --- MAIN COMPONENT ---
 
 export default function HomePage() {
-  const sections = ['hero', 'about', 'statistics', 'blessings', 'foundation', 'committee', 'donate', 'events', 'gallery', 'how-to-reach', 'contact'];
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  // Parallax Transforms
+  const statsY = useTransform(scrollYProgress, [0.1, 0.3], [100, 0]);
 
   return (
     <div 
       className="min-h-screen bg-cream text-maroon selection:bg-maroon selection:text-gold overflow-x-hidden"
       style={{ scrollPaddingTop: '140px' }}
     >
-      {/* Progress Indicator Bar */}
-      <ProgressIndicator />
-      
-      {/* Section Progress Dots */}
-      <SectionProgressDots sections={sections} />
       {/* --- HEADER --- */}
       <Header />
       {/* --- HERO SECTION --- */}
@@ -163,6 +96,7 @@ export default function HomePage() {
       <BlessingsSection />
       {/* --- FOUNDATION & DEVELOPMENT SECTION --- */}
       <FoundationDevelopment />
+      {/* --- FOUNDATION & TEMPLE SECTION --- */}
       {/* --- COMMITTEE GALLERY SECTION --- */}
       <CommitteeGallery />
       {/* --- DONATE SECTION --- */}
@@ -242,23 +176,6 @@ export default function HomePage() {
 }
 
 // --- HERO SECTION COMPONENT ---
-
-// Animated Section Reveal Component
-const AnimatedSectionReveal = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.8, delay }}
-    >
-      {children}
-    </motion.div>
-  );
-};
 
 function HeroSection() {
   const particlesRef = useRef<HTMLDivElement>(null);
@@ -864,35 +781,9 @@ function BirthplaceAboutSection() {
   );
 }
 
-// Staggered List Animation Component
-const StaggeredList = ({ children }: { children: React.ReactNode }) => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-    >
-      {children}
-    </motion.div>
-  );
-};
-
 function BlessingsSection() {
   const [blessings, setBlessings] = useState<SpiritualLeaders[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const fetchBlessings = async () => {
@@ -1003,73 +894,46 @@ function BlessingsSection() {
               <p className="font-paragraph text-maroon/60">Loading blessings...</p>
             </div>
           ) : blessings.length > 0 ? (
-            <StaggeredList>
-              {blessings.map((blessing, index) => (
-                <motion.div
-                  key={blessing._id}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.05 }}
-                  className="group"
-                >
-                  <motion.button
-                    onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
-                    className="w-full text-left bg-white border-l-4 border-gold2 overflow-hidden hover:translate-y-[-3px] transition-transform duration-300 p-6"
-                  >
-                    {/* Leader Image */}
-                    {blessing.leaderImage && (
-                      <div className="mb-4 flex justify-center">
-                        <Image
-                          src={blessing.leaderImage}
-                          alt={blessing.leaderName || 'Leader'}
-                          width={240}
-                          height={280}
-                          className="w-56 h-64 object-contain"
-                        />
-                      </div>
-                    )}
+            blessings.map((blessing, index) => (
+              <motion.div
+                key={blessing._id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.05 }}
+                className="group bg-white border-l-4 border-gold2 overflow-hidden hover:translate-y-[-3px] transition-transform duration-300 p-6"
+              >
+                {/* Leader Image */}
+                {blessing.leaderImage && (
+                  <div className="mb-4 flex justify-center">
+                    <Image
+                      src={blessing.leaderImage}
+                      alt={blessing.leaderName || 'Leader'}
+                      width={240}
+                      height={280}
+                      className="w-56 h-64 object-contain"
+                    />
+                  </div>
+                )}
 
-                    {/* Leader Name and Title */}
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <h3 className="font-heading text-xl font-bold text-maroon mb-2 uppercase tracking-wide">
-                          {blessing.leaderName}
-                        </h3>
-                        {blessing.leaderTitle && (
-                          <p className="font-paragraph text-xs text-maroon/60 uppercase tracking-widest mb-4">
-                            {blessing.leaderTitle}
-                          </p>
-                        )}
-                      </div>
-                      <motion.div
-                        animate={{ rotate: expandedIndex === index ? 180 : 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <ChevronDown className="w-6 h-6 text-gold" />
-                      </motion.div>
-                    </div>
-                  </motion.button>
-
-                  {/* Expandable Description */}
-                  <AnimatePresence>
-                    {expandedIndex === index && blessing.leaderDescription && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="bg-gold/5 border-l-4 border-gold2 border-t border-r border-b border-gold/20 p-6"
-                      >
-                        <p className="font-paragraph text-base text-maroon/80 leading-relaxed italic">
-                          {blessing.leaderDescription}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              ))}
-            </StaggeredList>
+                {/* Leader Name and Title */}
+                <h3 className="font-heading text-xl font-bold text-maroon mb-2 uppercase tracking-wide">
+                  {blessing.leaderName}
+                </h3>
+                {blessing.leaderTitle && (
+                  <p className="font-paragraph text-xs text-maroon/60 uppercase tracking-widest mb-4">
+                    {blessing.leaderTitle}
+                  </p>
+                )}
+                
+                {/* Leader Description */}
+                {blessing.leaderDescription && (
+                  <p className="font-paragraph text-base text-maroon/80 leading-relaxed italic mb-4">
+                    {blessing.leaderDescription}
+                  </p>
+                )}
+              </motion.div>
+            ))
           ) : (
             <div className="text-center py-16">
               <p className="font-paragraph text-maroon/60 text-lg">No spiritual leaders available</p>
@@ -1132,18 +996,6 @@ function StatisticsSection() {
         <div className="absolute inset-0 bg-[radial-gradient(#C5A55A_1px,transparent_1px)] [background-size:16px_16px]" />
       </div>
 
-      {/* Animated Background Elements */}
-      <motion.div
-        className="absolute top-10 left-10 w-32 h-32 bg-gold/10 rounded-full blur-3xl"
-        animate={{ y: [0, 20, 0], x: [0, 10, 0] }}
-        transition={{ duration: 6, repeat: Infinity }}
-      />
-      <motion.div
-        className="absolute bottom-20 right-20 w-40 h-40 bg-gold/5 rounded-full blur-3xl"
-        animate={{ y: [0, -20, 0], x: [0, -10, 0] }}
-        transition={{ duration: 8, repeat: Infinity }}
-      />
-
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12 relative z-10">
         
         <div className="flex flex-col md:flex-row justify-between items-end mb-8 md:mb-16 border-b border-gold/30 pb-4 md:pb-6">
@@ -1177,20 +1029,10 @@ function StatisticsSection() {
               {/* Hover Effect Background */}
               <div className="absolute inset-0 bg-gold/5 scale-y-0 group-hover:scale-y-100 origin-bottom transition-transform duration-500 ease-out" />
               
-              {/* Animated Counter Background */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-gold/10 to-transparent opacity-0 group-hover:opacity-100"
-                transition={{ duration: 0.5 }}
-              />
-              
               <div className="relative z-10">
                 <div className="flex justify-between items-start mb-6">
                   <stat.icon className="w-8 h-8 text-gold opacity-50 group-hover:opacity-100 transition-opacity" />
-                  <motion.div
-                    animate={{ scale: [1, 1.2, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="w-2 h-2 bg-gold rounded-full"
-                  />
+                  <div className="w-2 h-2 bg-gold rounded-full" />
                 </div>
 
                 <div className="font-heading text-5xl lg:text-6xl font-black text-cream mb-2 flex items-baseline">
@@ -1564,13 +1406,7 @@ function GallerySection() {
             <p className="font-paragraph text-maroon/60 text-sm">Loading gallery...</p>
           </div>
         ) : galleryItems.length > 0 ? (
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 auto-rows-[240px]"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 auto-rows-[240px]">
             {galleryItems.map((item, index) => (
               <motion.div
                 key={item._id}
@@ -1579,7 +1415,6 @@ function GallerySection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 className="group relative overflow-hidden rounded-[10px] border-2 border-maroon hover:border-gold transition-all duration-300"
-                whileHover={{ y: -4 }}
               >
                 <Image
                   src={item.image}
@@ -1587,31 +1422,15 @@ function GallerySection() {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 
-                {/* Animated Overlay */}
-                <motion.div 
-                  className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
-                >
-                  <motion.p 
-                    className="font-paragraph text-cream text-sm p-4 w-full"
-                    initial={{ y: 10 }}
-                    whileHover={{ y: 0 }}
-                  >
+                {/* Caption Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <p className="font-paragraph text-cream text-sm p-4 w-full">
                     {item.caption}
-                  </motion.p>
-                </motion.div>
-
-                {/* Animated Border Accent */}
-                <motion.div
-                  className="absolute inset-0 border-2 border-gold opacity-0 group-hover:opacity-100"
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 100 }}
-                  transition={{ duration: 0.3 }}
-                />
+                  </p>
+                </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         ) : (
           <div className="text-center py-16">
             <p className="font-paragraph text-maroon/60 text-lg">No gallery items yet. Check back soon!</p>
