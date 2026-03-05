@@ -277,10 +277,11 @@ function HeroSection() {
   return (
     <section 
       id="hero" 
-      className="relative w-full h-screen flex items-center justify-center overflow-hidden"
+      className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden"
       style={{
         background: 'linear-gradient(135deg, #6B0F1A, #3D0A10, #6B0F1A)',
         padding: '24px',
+        minHeight: '100vh',
       }}
     >
       {/* Background Image Pseudo-element */}
@@ -306,25 +307,16 @@ function HeroSection() {
         className="absolute inset-0 z-0 pointer-events-none"
         style={{ width: '100%', height: '100%' }}
       />
-      {/* Main Content */}
+      {/* Main Content - Vertical Layout */}
       <motion.div 
-        className="relative z-20 w-full max-w-[100rem] mx-auto text-center"
+        className="relative z-20 w-full max-w-[100rem] mx-auto flex flex-col items-center justify-center h-full gap-8 md:gap-12"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
       >
-        {/* Ornament Text */}
-        {/* H1 Title with Gradient */}
-        <motion.div 
-          className="mb-6 pt-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: 0.2 }}
-        >
-
-        </motion.div>
+        {/* Title at Top */}
         <motion.h1 
-          className="font-heading font-black tracking-tight mb-6 -mt-4 md:mt-0 text-3xl"
+          className="font-heading font-black tracking-tight text-3xl text-center"
           style={{
             fontSize: 'clamp(2rem, 5vw, 3.8rem)',
             backgroundImage: 'linear-gradient(to right, #C5A55A, #FDF6EC, #D4AF37)',
@@ -339,9 +331,10 @@ function HeroSection() {
         >
           {title}
         </motion.h1>
-        {/* Subtitle (Italic) */}
+
+        {/* Subtitle */}
         <motion.p 
-          className="font-paragraph mb-8 tracking-widest italic text-lg"
+          className="font-paragraph tracking-widest italic text-lg text-center"
           style={{ color: 'rgba(197, 165, 90, 0.9)' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -350,9 +343,9 @@ function HeroSection() {
           {subtitle}
         </motion.p>
 
-        {/* Sub2 Text */}
+        {/* Short Description */}
         <motion.p 
-          className="font-paragraph mb-12 tracking-[0.125em] uppercase text-sm"
+          className="font-paragraph tracking-[0.125em] uppercase text-sm text-center"
           style={{ color: 'rgba(253, 246, 236, 0.7)' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -360,9 +353,10 @@ function HeroSection() {
         >
           {shortDescription}
         </motion.p>
-        {/* Hero Image Box */}
+
+        {/* Hero Image in Center */}
         <motion.div 
-          className="mx-auto mb-12 max-w-[600px] -mt-6 md:mt-0 flex items-center justify-center"
+          className="flex items-center justify-center w-full max-w-[500px] flex-shrink-0"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 1 }}
@@ -379,13 +373,14 @@ function HeroSection() {
             src={frontImage}
             alt="Sahastrakut Jinalaya"
             className="w-full h-full object-contain block"
-            width={600}
+            width={500}
           />
         </motion.div>
-        {/* CTA Button */}
+
+        {/* CTA Button Below Image */}
         <motion.a 
           href="#about"
-          className="inline-block font-heading font-bold tracking-wide uppercase -mt-8 md:-mt-4 relative z-30"
+          className="inline-block font-heading font-bold tracking-wide uppercase relative z-30"
           style={{
             backgroundImage: 'linear-gradient(to right, #D4AF37, #C5A55A)',
             color: '#1a1a1a',
