@@ -120,7 +120,7 @@ export default function FoundationDevelopment() {
                        <ul className="font-paragraph text-base lg:text-lg text-maroon/80 mb-4 space-y-3">
                          {block.content?.split('\n').filter(line => line.trim()).map((point, idx) => (
                            <li key={idx} className="flex items-start gap-3">
-                             <span className="text-gold font-bold mt-1">•</span>
+
                              <span>{point.trim()}</span>
                            </li>
                          ))}
