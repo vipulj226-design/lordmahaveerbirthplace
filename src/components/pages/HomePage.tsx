@@ -309,7 +309,7 @@ function HeroSection() {
       />
       {/* Main Content - Vertical Layout */}
       <motion.div 
-        className="relative z-20 w-full max-w-[100rem] mx-auto flex flex-col items-center justify-center h-full gap-8 md:gap-12"
+        className="relative z-20 w-full max-w-[100rem] mx-auto flex flex-col items-center justify-center h-full gap-4 md:gap-6"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
