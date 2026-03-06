@@ -13,6 +13,23 @@ const navigationLinks = [
   { label: 'Contact', href: '#contact' },
 ];
 
+const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  e.preventDefault();
+  const targetId = href.replace('#', '');
+  const element = document.getElementById(targetId);
+  
+  if (element) {
+    const headerHeight = 140; // Match the scrollPaddingTop value
+    const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+    const offsetPosition = elementPosition - headerHeight;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
+};
+
 export default function Header() {
   return (
     <header
@@ -27,7 +44,7 @@ export default function Header() {
       <nav className="hidden md:flex justify-between items-center px-6 py-2 max-w-[1400px] mx-auto gap-8">
 
         {/* Logo */}
-        <a href="#hero" className="flex items-center gap-3 shrink-0">
+        <a href="#hero" onClick={(e) => handleAnchorClick(e, '#hero')} className="flex items-center gap-3 shrink-0">
           <Image
             src="https://static.wixstatic.com/media/53945f_926edabb995f423680415b255d79c255~mv2.png"
             alt="Lord Mahaveer Birthplace Logo"
@@ -48,6 +65,7 @@ export default function Header() {
               <li key={link.href}>
                 <a
                   href={link.href}
+                  onClick={(e) => handleAnchorClick(e, link.href)}
                   className="px-3 py-2 text-xs uppercase font-heading rounded transition-colors duration-200 flex items-center gap-2"
                   style={{
                     color: '#000000',
@@ -98,6 +116,7 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
+                onClick={(e) => handleAnchorClick(e, link.href)}
                 className="flex items-center justify-center min-h-[50px] px-1.5 py-2 text-[0.6rem] uppercase font-heading text-maroon transition-colors duration-200"
                 style={{
                   borderRight: (index + 1) % 5 !== 0 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
