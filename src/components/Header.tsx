@@ -19,7 +19,9 @@ const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string)
   const element = document.getElementById(targetId);
   
   if (element) {
-    const headerHeight = 140; // Match the scrollPaddingTop value
+    // Use larger offset for desktop (md breakpoint ~768px), smaller for mobile
+    const isDesktop = window.innerWidth >= 768;
+    const headerHeight = isDesktop ? 200 : 140; // 200px for desktop, 140px for mobile
     const elementPosition = element.getBoundingClientRect().top + window.scrollY;
     const offsetPosition = elementPosition - headerHeight;
     
