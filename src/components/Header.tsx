@@ -20,8 +20,9 @@ const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string)
   
   if (element) {
     // Larger offset for desktop to ensure section title appears fully below header
+    // and previous section is not visible above the target section
     const isDesktop = window.innerWidth >= 768;
-    const headerHeight = isDesktop ? 200 : 140; // Desktop: 200px, Mobile: 140px
+    const headerHeight = isDesktop ? 240 : 140; // Desktop: 240px (larger for full visibility), Mobile: 140px
     const elementPosition = element.getBoundingClientRect().top + window.scrollY;
     const offsetPosition = elementPosition - headerHeight;
     
