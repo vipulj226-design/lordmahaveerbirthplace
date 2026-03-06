@@ -1,4 +1,5 @@
 import { Image } from '@/components/ui/image';
+import { useActiveSection } from '@/hooks/use-active-section';
 
 const navigationLinks = [
   { label: 'Home', href: '#hero' },
@@ -36,6 +37,7 @@ const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string)
 };
 
 export default function Header() {
+  const activeSection = useActiveSection();
   return (
     <header
       className="fixed top-0 left-0 right-0 z-[1000] w-full"
@@ -66,23 +68,29 @@ export default function Header() {
         {/* Navigation Links */}
         <ul className="flex gap-0.5 items-center">
           {navigationLinks.map((link, index) => {
+            const isActive = activeSection === link.href.replace('#', '');
             return (
               <li key={link.href} style={{ marginLeft: index === 0 ? '80px' : '0' }}>
                 <a
                   href={link.href}
                   onClick={(e) => handleAnchorClick(e, link.href)}
-                  className="px-2 py-2 text-xs uppercase font-heading rounded transition-colors duration-200 flex items-center gap-2 whitespace-nowrap"
+                  className="px-2 py-2 text-xs uppercase font-heading rounded transition-all duration-200 flex items-center gap-2 whitespace-nowrap"
                   style={{
-                    color: '#000000',
+                    color: isActive ? '#D4AF37' : '#000000',
                     fontWeight: '700',
+                    backgroundColor: isActive ? '#6B0F1A' : 'transparent',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#6B0F1A';
-                    e.currentTarget.style.color = '#D4AF37';
+                    if (!isActive) {
+                      e.currentTarget.style.backgroundColor = '#6B0F1A';
+                      e.currentTarget.style.color = '#D4AF37';
+                    }
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'transparent';
-                    e.currentTarget.style.color = '#000000';
+                    if (!isActive) {
+                      e.currentTarget.style.backgroundColor = 'transparent';
+                      e.currentTarget.style.color = '#000000';
+                    }
                   }}
                 >
                   {link.label}
@@ -117,16 +125,18 @@ export default function Header() {
           }}
         >
           {navigationLinks.map((link, index) => {
+            const isActive = activeSection === link.href.replace('#', '');
             return (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleAnchorClick(e, link.href)}
-                className="flex items-center justify-center min-h-[50px] px-1.5 py-2 text-[0.6rem] uppercase font-heading text-maroon transition-colors duration-200"
+                className="flex items-center justify-center min-h-[50px] px-1.5 py-2 text-[0.6rem] uppercase font-heading transition-all duration-200"
                 style={{
                   borderRight: (index + 1) % 5 !== 0 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
                   borderBottom: index < 5 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
-                  backgroundColor: 'transparent',
+                  backgroundColor: isActive ? '#6B0F1A' : 'transparent',
+                  color: isActive ? '#D4AF37' : '#6B0F1A',
                   lineHeight: '1.2',
                   textAlign: 'center',
                   wordWrap: 'break-word',
@@ -135,12 +145,16 @@ export default function Header() {
                   fontWeight: '700',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#6B0F1A';
-                  e.currentTarget.style.color = '#D4AF37';
+                  if (!isActive) {
+                    e.currentTarget.style.backgroundColor = '#6B0F1A';
+                    e.currentTarget.style.color = '#D4AF37';
+                  }
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.color = '#6B0F1A';
+                  if (!isActive) {
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                    e.currentTarget.style.color = '#6B0F1A';
+                  }
                 }}
               >
                 {link.label}
