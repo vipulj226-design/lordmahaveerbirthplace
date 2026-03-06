@@ -62,9 +62,9 @@ export default function Header() {
 
         {/* Navigation Links */}
         <ul className="flex gap-0.5 items-center">
-          {navigationLinks.map((link) => {
+          {navigationLinks.map((link, index) => {
             return (
-              <li key={link.href}>
+              <li key={link.href} style={{ marginLeft: index === 0 ? '80px' : '0' }}>
                 <a
                   href={link.href}
                   onClick={(e) => handleAnchorClick(e, link.href)}
