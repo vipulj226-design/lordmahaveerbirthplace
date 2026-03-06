@@ -398,9 +398,8 @@ function HeroSection() {
             scale: 1.05
           }}
         >
-          <ArrowRight className="w-5 h-5" />
           Explore the heritage
-        </motion.a>
+                  </motion.a>
       </motion.div>
     </section>
   );
