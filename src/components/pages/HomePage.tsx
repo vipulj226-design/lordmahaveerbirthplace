@@ -367,7 +367,8 @@ function HeroSection() {
           <Image 
             src={frontImage}
             alt="Sahastrakut Jinalaya"
-            className="w-full h-80 object-cover block object-center"
+            className="w-full h-80 object-cover block"
+            style={{ objectPosition: 'center 30%' }}
             width={600}
           />
         </motion.div>
