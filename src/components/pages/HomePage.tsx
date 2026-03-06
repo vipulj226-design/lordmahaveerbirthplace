@@ -399,7 +399,7 @@ function HeroSection() {
           }}
         >
           <ArrowRight className="w-5 h-5" />
-          About Birthplace
+          Explore the heritage
         </motion.a>
       </motion.div>
     </section>
