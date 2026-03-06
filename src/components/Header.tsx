@@ -103,7 +103,7 @@ export default function Header() {
       {/* Mobile Navigation */}
       <div className="md:hidden flex flex-col">
         {/* Mobile Header with Logo */}
-        <div className="flex items-center justify-center gap-3 py-2 border-b border-gold/20">
+        <a href="#hero" onClick={(e) => handleAnchorClick(e, '#hero')} className="flex items-center justify-center gap-3 py-2 border-b border-gold/20 cursor-pointer hover:opacity-80 transition-opacity">
           <Image
             src="https://static.wixstatic.com/media/53945f_926edabb995f423680415b255d79c255~mv2.png"
             alt="Lord Mahaveer Birthplace Logo"
@@ -115,7 +115,7 @@ export default function Header() {
             <span className="font-heading text-xs font-black text-maroon uppercase tracking-wider">Lord Mahaveer</span>
             <span className="font-heading text-[0.65rem] font-bold text-gold uppercase tracking-wider">Birthplace</span>
           </div>
-        </div>
+        </a>
         {/* Mobile Grid Navigation */}
         <div
           className="grid gap-0"
