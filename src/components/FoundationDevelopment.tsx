@@ -152,7 +152,7 @@ export default function FoundationDevelopment() {
                             alt="Gallery photo 1"
                             width={1000}
                             height={800}
-                            className="w-full h-auto object-cover min-h-[300px] md:min-h-[400px] lg:min-h-[500px]"
+                            className="w-full h-auto object-cover min-h-[400px] md:min-h-[400px] lg:min-h-[500px]"
                           />
                         </motion.div>
                       )}
@@ -169,7 +169,7 @@ export default function FoundationDevelopment() {
                             alt="Gallery photo 2"
                             width={1000}
                             height={800}
-                            className="w-full h-auto object-cover min-h-[300px] md:min-h-[400px] lg:min-h-[500px]"
+                            className="w-full h-auto object-cover min-h-[400px] md:min-h-[400px] lg:min-h-[500px]"
                           />
                         </motion.div>
                       )}
@@ -186,7 +186,7 @@ export default function FoundationDevelopment() {
                             alt="Gallery photo 3"
                             width={1000}
                             height={800}
-                            className="w-full h-auto object-cover min-h-[300px] md:min-h-[400px] lg:min-h-[500px]"
+                            className="w-full h-auto object-cover min-h-[400px] md:min-h-[400px] lg:min-h-[500px]"
                           />
                         </motion.div>
                       )}
@@ -203,7 +203,7 @@ export default function FoundationDevelopment() {
                             alt="Gallery photo 4"
                             width={1000}
                             height={800}
-                            className="w-full h-auto object-cover min-h-[300px] md:min-h-[400px] lg:min-h-[500px]"
+                            className="w-full h-auto object-cover min-h-[400px] md:min-h-[400px] lg:min-h-[500px]"
                           />
                         </motion.div>
                       )}
