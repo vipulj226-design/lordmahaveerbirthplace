@@ -19,9 +19,12 @@ const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string)
   const element = document.getElementById(targetId);
   
   if (element) {
-    // Use larger offset for desktop (md breakpoint ~768px), smaller for mobile
+    // Calculate header height based on viewport
     const isDesktop = window.innerWidth >= 768;
-    const headerHeight = isDesktop ? 200 : 140; // 200px for desktop, 140px for mobile
+    // Desktop: ~140px header + extra offset to prevent previous section visibility
+    // Mobile: ~130px header
+    const headerHeight = isDesktop ? 160 : 130;
+    
     const elementPosition = element.getBoundingClientRect().top + window.scrollY;
     const offsetPosition = elementPosition - headerHeight;
     
