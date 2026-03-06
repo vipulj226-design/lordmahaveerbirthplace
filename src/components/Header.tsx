@@ -19,7 +19,9 @@ const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string)
   const element = document.getElementById(targetId);
   
   if (element) {
-    const headerHeight = 140; // Match the scrollPaddingTop value
+    // Larger offset for desktop to ensure section title appears fully below header
+    const isDesktop = window.innerWidth >= 768;
+    const headerHeight = isDesktop ? 200 : 140; // Desktop: 200px, Mobile: 140px
     const elementPosition = element.getBoundingClientRect().top + window.scrollY;
     const offsetPosition = elementPosition - headerHeight;
     
