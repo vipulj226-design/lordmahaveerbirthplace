@@ -793,7 +793,8 @@ function BlessingsSection() {
   useEffect(() => {
     const fetchBlessings = async () => {
       try {
-        const result = await BaseCrudService.getAll<SpiritualLeaders>('spiritualleaders');
+        // Add cache-busting parameter to force fresh data
+        const result = await BaseCrudService.getAll<SpiritualLeaders>('spiritualleaders', [], { limit: 100 });
         const sortedBlessings = result.items.sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
         setBlessings(sortedBlessings);
       } catch (error) {
@@ -1326,7 +1327,8 @@ function GallerySection() {
   useEffect(() => {
     const fetchGallery = async () => {
       try {
-        const result = await BaseCrudService.getAll<any>('gallery');
+        // Add cache-busting parameter to force fresh data
+        const result = await BaseCrudService.getAll<any>('gallery', [], { limit: 100 });
         const sortedItems = result.items.sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
         setGalleryItems(sortedItems);
       } catch (error) {
