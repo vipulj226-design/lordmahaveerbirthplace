@@ -1,5 +1,6 @@
 import { Image } from '@/components/ui/image';
 import { useActiveSection } from '@/hooks/use-active-section';
+import { useNavigate } from 'react-router-dom';
 
 const navigationLinks = [
   { label: 'Home', href: '#hero' },
@@ -14,9 +15,28 @@ const navigationLinks = [
   { label: 'Contact', href: '#contact' },
 ];
 
-const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, navigate?: ReturnType<typeof useNavigate>) => {
   e.preventDefault();
   const targetId = href.replace('#', '');
+  
+  // If it's the Home link and we're already on homepage, scroll to hero
+  if (targetId === 'hero') {
+    const element = document.getElementById(targetId);
+    if (element) {
+      const header = document.querySelector('header');
+      const headerHeight = header ? header.offsetHeight : 80;
+      const buffer = 8;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerHeight - buffer;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+    return;
+  }
+  
   const element = document.getElementById(targetId);
   
   if (element) {
@@ -38,6 +58,7 @@ const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string)
 
 export default function Header() {
   const activeSection = useActiveSection();
+  const navigate = useNavigate();
   return (
     <header
       className="fixed top-0 left-0 right-0 z-[1000] w-full"
@@ -51,7 +72,7 @@ export default function Header() {
       <nav className="hidden md:flex justify-center items-center px-6 py-2 max-w-[1400px] mx-auto">
 
         {/* Logo */}
-        <a href="#hero" onClick={(e) => handleAnchorClick(e, '#hero')} className="flex items-center gap-3 shrink-0 absolute left-6">
+        <a href="/" onClick={(e) => { e.preventDefault(); navigate('/'); }} className="flex items-center gap-3 shrink-0 absolute left-6 cursor-pointer hover:opacity-80 transition-opacity">
           <Image
             src="https://static.wixstatic.com/media/53945f_926edabb995f423680415b255d79c255~mv2.png"
             alt="Lord Mahaveer Birthplace Logo"
@@ -103,7 +124,7 @@ export default function Header() {
       {/* Mobile Navigation */}
       <div className="md:hidden flex flex-col">
         {/* Mobile Header with Logo */}
-        <a href="#hero" onClick={(e) => handleAnchorClick(e, '#hero')} className="flex items-center justify-center gap-3 py-2 border-b border-gold/20 cursor-pointer hover:opacity-80 transition-opacity">
+        <a href="/" onClick={(e) => { e.preventDefault(); navigate('/'); }} className="flex items-center justify-center gap-3 py-2 border-b border-gold/20 cursor-pointer hover:opacity-80 transition-opacity">
           <Image
             src="https://static.wixstatic.com/media/53945f_926edabb995f423680415b255d79c255~mv2.png"
             alt="Lord Mahaveer Birthplace Logo"
