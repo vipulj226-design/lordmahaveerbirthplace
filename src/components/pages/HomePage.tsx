@@ -793,9 +793,31 @@ function BlessingsSection() {
   useEffect(() => {
     const fetchBlessings = async () => {
       try {
-        // Add cache-busting parameter to force fresh data
+        // Force fresh data with cache busting
         const result = await BaseCrudService.getAll<SpiritualLeaders>('spiritualleaders', [], { limit: 100 });
-        const sortedBlessings = result.items.sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
+        // Sort by displayOrder - items with displayOrder come first in ascending order, then items without displayOrder
+        const sortedBlessings = result.items.sort((a, b) => {
+          const aHasOrder = typeof a.displayOrder === 'number';
+          const bHasOrder = typeof b.displayOrder === 'number';
+          
+          // Both have displayOrder - sort by value
+          if (aHasOrder && bHasOrder) {
+            return a.displayOrder - b.displayOrder;
+          }
+          
+          // Only a has displayOrder - a comes first
+          if (aHasOrder && !bHasOrder) {
+            return -1;
+          }
+          
+          // Only b has displayOrder - b comes first
+          if (!aHasOrder && bHasOrder) {
+            return 1;
+          }
+          
+          // Neither has displayOrder - maintain original order
+          return 0;
+        });
         setBlessings(sortedBlessings);
       } catch (error) {
         console.error('Error fetching spiritual leaders:', error);
