@@ -138,8 +138,8 @@ export default function FoundationDevelopment() {
 
                 {/* Photo Gallery - 4 Photos from CMS - Full Width Below */}
                 {(block.galleryImage1 || block.galleryImage2 || block.galleryImage3 || block.galleryImage4) && (
-                  <div className="border-t-2 border-maroon/20 p-6 lg:p-8 bg-cream">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 auto-rows-max">
+                  <div className="border-t-2 border-maroon/20 p-6 lg:p-10 bg-cream">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                       {block.galleryImage1 && (
                         <motion.div
                           initial={{ opacity: 0, scale: 0.9 }}
@@ -150,9 +150,9 @@ export default function FoundationDevelopment() {
                           <Image
                             src={block.galleryImage1}
                             alt="Gallery photo 1"
-                            width={700}
-                            height={500}
-                            className="w-full h-auto object-contain"
+                            width={1000}
+                            height={800}
+                            className="w-full h-auto object-cover min-h-[300px] md:min-h-[400px] lg:min-h-[500px]"
                           />
                         </motion.div>
                       )}
@@ -167,9 +167,9 @@ export default function FoundationDevelopment() {
                           <Image
                             src={block.galleryImage2}
                             alt="Gallery photo 2"
-                            width={700}
-                            height={500}
-                            className="w-full h-auto object-contain"
+                            width={1000}
+                            height={800}
+                            className="w-full h-auto object-cover min-h-[300px] md:min-h-[400px] lg:min-h-[500px]"
                           />
                         </motion.div>
                       )}
@@ -184,9 +184,9 @@ export default function FoundationDevelopment() {
                           <Image
                             src={block.galleryImage3}
                             alt="Gallery photo 3"
-                            width={700}
-                            height={500}
-                            className="w-full h-auto object-contain"
+                            width={1000}
+                            height={800}
+                            className="w-full h-auto object-cover min-h-[300px] md:min-h-[400px] lg:min-h-[500px]"
                           />
                         </motion.div>
                       )}
@@ -201,9 +201,9 @@ export default function FoundationDevelopment() {
                           <Image
                             src={block.galleryImage4}
                             alt="Gallery photo 4"
-                            width={700}
-                            height={500}
-                            className="w-full h-auto object-contain"
+                            width={1000}
+                            height={800}
+                            className="w-full h-auto object-cover min-h-[300px] md:min-h-[400px] lg:min-h-[500px]"
                           />
                         </motion.div>
                       )}
