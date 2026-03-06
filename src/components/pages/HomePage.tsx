@@ -324,14 +324,17 @@ function HeroSection() {
 
         </motion.div>
         <motion.h1 
-          className="font-heading font-black tracking-tight mb-6 -mt-4 md:mt-0 text-3xl"
+          className="font-heading font-black tracking-tight mb-6 -mt-4 md:mt-0 text-3xl px-4"
           style={{
-            fontSize: 'clamp(2rem, 5vw, 3.8rem)',
+            fontSize: 'clamp(1.5rem, 4.5vw, 3.8rem)',
+            lineHeight: '1.2',
             backgroundImage: 'linear-gradient(to right, #C5A55A, #FDF6EC, #D4AF37)',
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             color: 'transparent',
+            wordWrap: 'break-word',
+            overflowWrap: 'break-word',
           }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
