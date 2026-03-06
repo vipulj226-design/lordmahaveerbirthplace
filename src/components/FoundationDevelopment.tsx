@@ -145,14 +145,14 @@ export default function FoundationDevelopment() {
                           initial={{ opacity: 0, scale: 0.9 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
-                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300"
+                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300 bg-cream flex items-center justify-center"
                         >
                           <Image
                             src={block.galleryImage1}
                             alt="Gallery photo 1"
                             width={1000}
                             height={800}
-                            className="w-full h-auto object-cover min-h-[400px] md:min-h-[400px] lg:min-h-[500px]"
+                            className="w-full h-auto object-contain"
                           />
                         </motion.div>
                       )}
@@ -162,14 +162,14 @@ export default function FoundationDevelopment() {
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
                           transition={{ delay: 0.1 }}
-                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300"
+                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300 bg-cream flex items-center justify-center"
                         >
                           <Image
                             src={block.galleryImage2}
                             alt="Gallery photo 2"
                             width={1000}
                             height={800}
-                            className="w-full h-auto object-cover min-h-[400px] md:min-h-[400px] lg:min-h-[500px]"
+                            className="w-full h-auto object-contain"
                           />
                         </motion.div>
                       )}
@@ -179,14 +179,14 @@ export default function FoundationDevelopment() {
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
                           transition={{ delay: 0.2 }}
-                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300"
+                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300 bg-cream flex items-center justify-center"
                         >
                           <Image
                             src={block.galleryImage3}
                             alt="Gallery photo 3"
                             width={1000}
                             height={800}
-                            className="w-full h-auto object-cover min-h-[400px] md:min-h-[400px] lg:min-h-[500px]"
+                            className="w-full h-auto object-contain"
                           />
                         </motion.div>
                       )}
@@ -196,14 +196,14 @@ export default function FoundationDevelopment() {
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
                           transition={{ delay: 0.3 }}
-                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300"
+                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300 bg-cream flex items-center justify-center"
                         >
                           <Image
                             src={block.galleryImage4}
                             alt="Gallery photo 4"
                             width={1000}
                             height={800}
-                            className="w-full h-auto object-cover min-h-[400px] md:min-h-[400px] lg:min-h-[500px]"
+                            className="w-full h-auto object-contain"
                           />
                         </motion.div>
                       )}
