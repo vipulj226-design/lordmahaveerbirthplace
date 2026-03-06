@@ -139,6 +139,7 @@ export default function HomePage() {
 
           {/* Navigation Links */}
           <div className="flex flex-wrap justify-center gap-6 mb-16 text-center">
+            <span className="w-full font-paragraph text-gold text-sm uppercase tracking-wider mb-4">Quick links</span>
             <a href="#hero" className="font-paragraph text-cream/80 hover:text-gold transition-colors text-sm uppercase tracking-wider">
               Home
             </a>
