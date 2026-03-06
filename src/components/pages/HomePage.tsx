@@ -324,7 +324,7 @@ function HeroSection() {
 
         </motion.div>
         <motion.h1 
-          className="font-heading font-black tracking-tight mb-6 -mt-4 md:mt-0 text-3xl px-4"
+          className="font-heading font-black tracking-tight mb-6 mt-4 md:mt-0 text-3xl px-4"
           style={{
             fontSize: 'clamp(1.5rem, 4.5vw, 3.8rem)',
             lineHeight: '1.2',
