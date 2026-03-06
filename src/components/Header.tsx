@@ -43,10 +43,10 @@ export default function Header() {
       }}
     >
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex justify-between items-center px-6 py-2 max-w-[1400px] mx-auto gap-8">
+      <nav className="hidden md:flex justify-center items-center px-6 py-2 max-w-[1400px] mx-auto">
 
         {/* Logo */}
-        <a href="#hero" onClick={(e) => handleAnchorClick(e, '#hero')} className="flex items-center gap-3 shrink-0">
+        <a href="#hero" onClick={(e) => handleAnchorClick(e, '#hero')} className="flex items-center gap-3 shrink-0 absolute left-6">
           <Image
             src="https://static.wixstatic.com/media/53945f_926edabb995f423680415b255d79c255~mv2.png"
             alt="Lord Mahaveer Birthplace Logo"
@@ -61,14 +61,14 @@ export default function Header() {
         </a>
 
         {/* Navigation Links */}
-        <ul className="flex gap-1">
+        <ul className="flex gap-0.5 items-center">
           {navigationLinks.map((link) => {
             return (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={(e) => handleAnchorClick(e, link.href)}
-                  className="px-3 py-2 text-xs uppercase font-heading rounded transition-colors duration-200 flex items-center gap-2"
+                  className="px-2 py-2 text-xs uppercase font-heading rounded transition-colors duration-200 flex items-center gap-2 whitespace-nowrap"
                   style={{
                     color: '#000000',
                     fontWeight: '700',
