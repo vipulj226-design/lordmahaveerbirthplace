@@ -10,7 +10,7 @@ export default function WhatsAppChat() {
   const whatsappUrl = `https://wa.me/917544003396?text=Hello%2C%20I%20want%20to%20know%20more%20about%20your%20service.`;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 md:bottom-8 md:right-8">
+    <div className="fixed bottom-4 right-4 z-50 md:bottom-6 md:right-6">
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -59,18 +59,18 @@ export default function WhatsAppChat() {
         onClick={() => setIsOpen(!isOpen)}
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
-        className="flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full shadow-2xl transition-all duration-300"
+        className="flex items-center justify-center w-10.5 h-10.5 md:w-12 md:h-12 rounded-full shadow-2xl transition-all duration-300"
         aria-label="WhatsApp Live Chat"
       >
         {isOpen ? (
-          <X className="w-6 h-6 md:w-7 md:h-7 text-white" />
+          <X className="w-5 h-5 md:w-5.5 md:h-5.5 text-white" />
         ) : (
           <Image
             src="https://static.wixstatic.com/media/53945f_35e6208606dd4874847f2da4e39392d5~mv2.png"
             alt="WhatsApp Logo"
-            width={64}
-            height={64}
-            className="w-14 h-14 md:w-16 md:h-16 object-cover rounded-full"
+            width={48}
+            height={48}
+            className="w-10.5 h-10.5 md:w-12 md:h-12 object-cover rounded-full"
           />
         )}
       </motion.button>
