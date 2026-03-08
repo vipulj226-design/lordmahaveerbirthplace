@@ -7,7 +7,7 @@ export default function WhatsAppChat() {
   const [isOpen, setIsOpen] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
   const phoneNumber = '+91 7544003396';
-  const whatsappUrl = `https://wa.me/917544003396?text=Hello%2C%20I%20want%20to%20know%20more%20about%20your%20service.`;
+  const whatsappUrl = `https://wa.me/917544003396?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20Lord%20Mahaveer%20Birthplace.`;
 
   return (
     <div className="fixed bottom-4 right-4 z-50 md:bottom-6 md:right-6">
