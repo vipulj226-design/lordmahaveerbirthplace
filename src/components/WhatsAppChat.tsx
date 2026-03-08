@@ -50,21 +50,7 @@ export default function WhatsAppChat() {
         )}
       </AnimatePresence>
 
-      {/* Tooltip */}
-      <AnimatePresence>
-        {showTooltip && !isOpen && (
-          <motion.div
-            initial={{ opacity: 0, x: 10 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 10 }}
-            transition={{ duration: 0.2 }}
-            className="absolute bottom-20 right-0 bg-maroon text-cream px-4 py-2 rounded-lg text-sm font-paragraph font-semibold whitespace-nowrap shadow-lg"
-          >
-            Chat with us on WhatsApp
-            <div className="absolute bottom-0 right-4 w-2 h-2 bg-maroon transform rotate-45 translate-y-1" />
-          </motion.div>
-        )}
-      </AnimatePresence>
+
 
       {/* Main Button */}
       <motion.button
