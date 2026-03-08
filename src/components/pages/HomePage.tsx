@@ -192,11 +192,6 @@ function HeroSection() {
         const result = await BaseCrudService.getAll<any>('herosectioncontent');
         if (result.items.length > 0) {
           setHeroContent(result.items[0]);
-          // Preload images for faster rendering
-          if (result.items[0].backgroundImage) {
-            const img = new Image();
-            img.src = result.items[0].backgroundImage;
-          }
         } else {
           setHeroContent(null);
         }
@@ -300,9 +295,6 @@ function HeroSection() {
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           opacity: 0.45,
-          willChange: 'background-image',
-          backfaceVisibility: 'hidden',
-          WebkitBackfaceVisibility: 'hidden',
         }}
       />
       {/* Radial Gradient Vignette Overlay */}

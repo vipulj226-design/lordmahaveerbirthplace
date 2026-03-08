@@ -1,7 +1,6 @@
 import { Image } from '@/components/ui/image';
 import { useActiveSection } from '@/hooks/use-active-section';
 import { useNavigate } from 'react-router-dom';
-import WhatsAppChat from '@/components/WhatsAppChat';
 
 const navigationLinks = [
   { label: 'Home', href: '#hero' },
@@ -61,15 +60,14 @@ export default function Header() {
   const activeSection = useActiveSection();
   const navigate = useNavigate();
   return (
-    <>
-      <header
-        className="fixed top-0 left-0 right-0 z-[1000] w-full"
-        style={{
-          backgroundColor: 'rgba(253, 246, 236, 0.96)',
-          backdropFilter: 'blur(10px)',
-          boxShadow: '0 2px 20px rgba(107, 15, 26, 0.1)',
-        }}
-      >
+    <header
+      className="fixed top-0 left-0 right-0 z-[1000] w-full"
+      style={{
+        backgroundColor: 'rgba(253, 246, 236, 0.96)',
+        backdropFilter: 'blur(10px)',
+        boxShadow: '0 2px 20px rgba(107, 15, 26, 0.1)',
+      }}
+    >
       {/* Desktop Navigation */}
       <nav className="hidden md:flex justify-center items-center px-6 py-2 max-w-[1400px] mx-auto">
 
@@ -186,8 +184,6 @@ export default function Header() {
           })}
         </div>
       </div>
-      </header>
-      <WhatsAppChat />
-    </>
+    </header>
   );
 }
