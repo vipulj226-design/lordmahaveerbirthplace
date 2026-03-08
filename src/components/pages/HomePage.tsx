@@ -2040,8 +2040,9 @@ function ContactSection() {
                 <div>
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Phone/Mobile</p>
                   <div className="space-y-1">
-                    <p className="font-semibold text-primary">+91-7544003396</p>
-                    <p className="font-semibold text-primary">+91-9771682337</p>
+                    <a href="tel:+917544003396" className="font-semibold text-primary hover:text-gold transition-colors cursor-pointer">+91-7544003396</a>
+                    <br />
+                    <a href="tel:+919771682337" className="font-semibold text-primary hover:text-gold transition-colors cursor-pointer">+91-9771682337</a>
                   </div>
                 </div>
               </div>
@@ -2050,7 +2051,7 @@ function ContactSection() {
                 <span className="text-2xl">📧</span>
                 <div>
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Email</p>
-                  <p className="text-maroon font-semibold text-sm">bhagwanmahavir1008@gmail.com</p>
+                  <a href="mailto:bhagwanmahavir1008@gmail.com" className="text-maroon font-semibold text-sm hover:text-gold transition-colors cursor-pointer">bhagwanmahavir1008@gmail.com</a>
                 </div>
               </div>
 
@@ -2058,7 +2059,7 @@ function ContactSection() {
                 <span className="text-2xl">🌐</span>
                 <div>
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Website</p>
-                  <p className="text-maroon font-semibold">lordmahaveerbirthplace.com</p>
+                  <a href="https://lordmahaveerbirthplace.com" target="_blank" rel="noopener noreferrer" className="text-maroon font-semibold hover:text-gold transition-colors cursor-pointer">lordmahaveerbirthplace.com</a>
                 </div>
               </div>
             </div>
@@ -2124,8 +2125,9 @@ function ContactSection() {
                 <div>
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Phone</p>
                   <div className="space-y-1">
-                    <p className="text-maroon font-semibold">+91-7982277419</p>
-                    <p className="text-maroon font-semibold">+91-9873027779</p>
+                    <a href="tel:+917982277419" className="text-maroon font-semibold hover:text-gold transition-colors cursor-pointer">+91-7982277419</a>
+                    <br />
+                    <a href="tel:+919873027779" className="text-maroon font-semibold hover:text-gold transition-colors cursor-pointer">+91-9873027779</a>
                   </div>
                 </div>
               </div>
@@ -2134,7 +2136,7 @@ function ContactSection() {
                 <span className="text-2xl">📧</span>
                 <div>
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Email</p>
-                  <p className="text-maroon font-semibold">kundkundbharti@gmail.com</p>
+                  <a href="mailto:kundkundbharti@gmail.com" className="text-maroon font-semibold hover:text-gold transition-colors cursor-pointer">kundkundbharti@gmail.com</a>
                 </div>
               </div>
 
@@ -2142,7 +2144,7 @@ function ContactSection() {
                 <span className="text-2xl">🌐</span>
                 <div>
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Website</p>
-                  <p className="text-maroon font-semibold">kundkundbharti.com</p>
+                  <a href="https://kundkundbharti.com" target="_blank" rel="noopener noreferrer" className="text-maroon font-semibold hover:text-gold transition-colors cursor-pointer">kundkundbharti.com</a>
                 </div>
               </div>
             </div>
