@@ -52,7 +52,7 @@ export default function WhatsAppChat() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-center w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition-colors"
+        className="flex items-center justify-center gap-2 px-4 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition-colors"
         aria-label="WhatsApp Chat"
       >
         {isOpen ? (
@@ -70,7 +70,10 @@ export default function WhatsAppChat() {
             />
           </svg>
         ) : (
-          <MessageCircle className="w-6 h-6" />
+          <>
+            <MessageCircle className="w-6 h-6" />
+            <span className="font-paragraph text-sm font-semibold">Live Chat</span>
+          </>
         )}
       </motion.button>
     </div>
