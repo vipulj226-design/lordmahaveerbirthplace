@@ -68,29 +68,24 @@ export default function WhatsAppChat() {
 
       {/* Main Button */}
       <motion.button
-        whileHover={{ scale: 1.05 }}
+        whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
-        className="flex items-center justify-center gap-2 px-4 py-3 md:px-5 md:py-4 rounded-full shadow-2xl transition-all duration-300 bg-white"
+        className="flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full shadow-2xl transition-all duration-300"
         aria-label="WhatsApp Live Chat"
       >
         {isOpen ? (
-          <X className="w-6 h-6 md:w-7 md:h-7 text-maroon" />
+          <X className="w-6 h-6 md:w-7 md:h-7 text-white" />
         ) : (
-          <>
-            <Image
-              src="https://static.wixstatic.com/media/53945f_35e6208606dd4874847f2da4e39392d5~mv2.png"
-              alt="WhatsApp Logo"
-              width={48}
-              height={48}
-              className="w-10 h-10 md:w-12 md:h-12 object-cover rounded-full"
-            />
-            <span className="font-paragraph font-bold text-maroon text-sm md:text-base whitespace-nowrap hidden sm:inline">
-              Live Chat
-            </span>
-          </>
+          <Image
+            src="https://static.wixstatic.com/media/53945f_35e6208606dd4874847f2da4e39392d5~mv2.png"
+            alt="WhatsApp Logo"
+            width={64}
+            height={64}
+            className="w-14 h-14 md:w-16 md:h-16 object-cover rounded-full"
+          />
         )}
       </motion.button>
     </div>
