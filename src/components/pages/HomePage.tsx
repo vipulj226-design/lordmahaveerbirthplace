@@ -7,6 +7,7 @@ import { BirthplaceStatistics, SpiritualLeaders } from '@/entities';
 import Header from '@/components/Header';
 import FoundationDevelopment from '@/components/FoundationDevelopment';
 import CommitteeGallery from '@/components/CommitteeGallery';
+import WhatsAppChat from '@/components/WhatsAppChat';
 
 // Types for new CMS collections
 interface SpiritualLeader {
@@ -109,6 +110,8 @@ export default function HomePage() {
       <HowToReachSection />
       {/* --- CONTACT SECTION --- */}
       <ContactSection />
+      {/* --- WHATSAPP CHAT BUTTON --- */}
+      <WhatsAppChat />
       {/* --- FOOTER --- */}
       <footer className="bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-20">
         <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">

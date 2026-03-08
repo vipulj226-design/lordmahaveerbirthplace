@@ -1,14 +1,15 @@
-import { MessageCircle, X } from 'lucide-react';
+import { X } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function WhatsAppChat() {
   const [isOpen, setIsOpen] = useState(false);
-  const phoneNumber = '7544003396';
-  const whatsappUrl = `https://wa.me/917544003396?text=Hello%20I%20would%20like%20to%20know%20more%20about%20your%20services`;
+  const [showTooltip, setShowTooltip] = useState(false);
+  const phoneNumber = '+91 7544003396';
+  const whatsappUrl = `https://wa.me/917544003396?text=Hello%2C%20I%20want%20to%20know%20more%20about%20your%20service.`;
 
   return (
-    <div className="fixed bottom-8 right-8 z-50">
+    <div className="fixed bottom-6 right-6 z-50 md:bottom-8 md:right-8">
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -20,7 +21,7 @@ export default function WhatsAppChat() {
           >
             <div className="space-y-4">
               <h3 className="font-heading text-xl text-maroon font-bold uppercase tracking-wide">
-                📞 Live Chat
+                Live Chat
               </h3>
               <p className="font-paragraph text-sm text-maroon/80 leading-relaxed">
                 Connect with us on WhatsApp for instant support and inquiries about the sacred birthplace.
@@ -41,25 +42,44 @@ export default function WhatsAppChat() {
                 Open WhatsApp
               </a>
               <p className="font-heading text-sm font-bold text-maroon text-center uppercase tracking-wider">
-                📱 {phoneNumber}
+                {phoneNumber}
               </p>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
+      {/* Tooltip */}
+      <AnimatePresence>
+        {showTooltip && !isOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: 10 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 10 }}
+            transition={{ duration: 0.2 }}
+            className="absolute bottom-20 right-0 bg-maroon text-cream px-4 py-2 rounded-lg text-sm font-paragraph font-semibold whitespace-nowrap shadow-lg"
+          >
+            Chat with us on WhatsApp
+            <div className="absolute bottom-0 right-4 w-2 h-2 bg-maroon transform rotate-45 translate-y-1" />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Main Button */}
       <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-center w-16 h-16 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full shadow-2xl transition-all duration-300"
+        onMouseEnter={() => setShowTooltip(true)}
+        onMouseLeave={() => setShowTooltip(false)}
+        className="flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full shadow-2xl transition-all duration-300"
         aria-label="WhatsApp Live Chat"
       >
         {isOpen ? (
-          <X className="w-7 h-7" />
+          <X className="w-6 h-6 md:w-7 md:h-7" />
         ) : (
           <svg
-            className="w-9 h-9"
+            className="w-7 h-7 md:w-9 md:h-9"
             fill="currentColor"
             viewBox="0 0 24 24"
           >
