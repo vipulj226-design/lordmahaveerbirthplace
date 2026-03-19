@@ -185,6 +185,13 @@ export default function GalleryPage() {
                                         // Collect all image fields from the item
                                         const imageFields = [
                                           item.image,
+                                          item.image4,
+                                          item.image5,
+                                          item.image6,
+                                          item.image7,
+                                          item.image8,
+                                          item.image9,
+                                          item.image10,
                                           item.galleryImages,
                                           item.galleryImagesBatch,
                                         ].filter(Boolean);
