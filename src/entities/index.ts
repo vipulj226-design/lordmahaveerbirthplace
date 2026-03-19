@@ -119,6 +119,29 @@ export interface CommitteeMembers {
 
 
 /**
+ * Collection ID: eventyears
+ * Interface for EventYears
+ */
+export interface EventYears {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType number */
+  year?: number;
+  /** @wixFieldType text */
+  title?: string;
+  /** @wixFieldType text */
+  description?: string;
+  /** @wixFieldType date */
+  startDate?: Date | string;
+  /** @wixFieldType date */
+  endDate?: Date | string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  yearImage?: string;
+}
+
+
+/**
  * Collection ID: foundationdevelopment
  * Interface for FoundationDevelopment
  */
@@ -267,6 +290,8 @@ export interface PastEvents {
   _updatedDate?: Date;
   /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   eventImage3?: string;
+  /** @wixFieldType number */
+  eventYear?: number;
   /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   eventGalleryImages?: string;
   /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
