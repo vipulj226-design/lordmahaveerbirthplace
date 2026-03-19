@@ -11,20 +11,12 @@ const navigationLinks = [
   { label: 'Donate', href: '#donate' },
   { label: 'Events', href: '#events' },
   { label: 'Gallery', href: '#gallery' },
-  { label: 'Past Events', href: '/past-events' },
   { label: 'How to Reach', href: '#how-to-reach' },
   { label: 'Contact', href: '#contact' },
 ];
 
 const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, navigate?: ReturnType<typeof useNavigate>) => {
   e.preventDefault();
-  
-  // Check if it's a route (starts with /)
-  if (href.startsWith('/')) {
-    navigate?.(href);
-    return;
-  }
-  
   const targetId = href.replace('#', '');
   
   // If it's the Home link and we're already on homepage, scroll to hero

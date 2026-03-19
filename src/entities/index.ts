@@ -158,8 +158,6 @@ export interface Gallery {
   /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   image?: string;
   /** @wixFieldType text */
-  pastEvent?: string;
-  /** @wixFieldType text */
   caption?: string;
   /** @wixFieldType number */
   displayOrder?: number;
@@ -234,29 +232,6 @@ export interface NavigationItems {
   isActive?: boolean;
   /** @wixFieldType url */
   url?: string;
-}
-
-
-/**
- * Collection ID: pastevents
- * Interface for PastEvents
- */
-export interface PastEvents {
-  _id: string;
-  _createdDate?: Date;
-  _updatedDate?: Date;
-  /** @wixFieldType text */
-  eventName?: string;
-  /** @wixFieldType date */
-  eventDate?: Date | string;
-  /** @wixFieldType text */
-  description?: string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
-  coverImage?: string;
-  /** @wixFieldType text */
-  location?: string;
-  /** @wixFieldType url */
-  eventUrl?: string;
 }
 
 
