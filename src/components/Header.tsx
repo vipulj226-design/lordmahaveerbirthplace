@@ -10,7 +10,7 @@ const navigationLinks = [
   { label: 'Committee', href: '#committee' },
   { label: 'Donate', href: '#donate' },
   { label: 'Events', href: '#events' },
-  { label: 'Gallery', href: '/gallery' },
+  { label: 'Gallery', href: '#gallery' },
   { label: 'How to Reach', href: '#how-to-reach' },
   { label: 'Contact', href: '#contact' },
 ];
