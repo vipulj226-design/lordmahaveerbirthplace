@@ -247,8 +247,16 @@ export interface PastEvents {
   _id: string;
   _createdDate?: Date;
   _updatedDate?: Date;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  eventImage3?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  eventImage5?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  eventImage4?: string;
   /** @wixFieldType text */
   eventName?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  eventImage2?: string;
   /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   eventGallery?: string;
   /** @wixFieldType date */
