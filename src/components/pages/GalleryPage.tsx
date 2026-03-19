@@ -2,20 +2,14 @@ import { useState, useEffect } from 'react';
 import { BaseCrudService } from '@/integrations';
 import { Gallery } from '@/entities';
 import { Image } from '@/components/ui/image';
-import { Button } from '@/components/ui/button';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import Header from '@/components/Header';
 import { motion } from 'framer-motion';
 
-const IMAGES_PER_PAGE = 15;
-
 export default function GalleryPage() {
   const [items, setItems] = useState<Gallery[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [selectedYear, setSelectedYear] = useState<number | null>(null);
-  const [displayedCount, setDisplayedCount] = useState(IMAGES_PER_PAGE);
-  const [hasMore, setHasMore] = useState(false);
-  const [years, setYears] = useState<number[]>([]);
+  const [groupedByYear, setGroupedByYear] = useState<Record<number, Gallery[]>>({});
 
   useEffect(() => {
     loadGalleryImages();
@@ -28,7 +22,7 @@ export default function GalleryPage() {
         limit: 100,
       });
       
-      // Sort by displayOrder if available, otherwise by dateAdded
+      // Sort by displayOrder if available
       const sortedItems = (result.items || []).sort((a, b) => {
         if (a.displayOrder !== undefined && b.displayOrder !== undefined) {
           return a.displayOrder - b.displayOrder;
@@ -38,17 +32,18 @@ export default function GalleryPage() {
 
       setItems(sortedItems);
       
-      // Extract unique years and sort in descending order
-      const uniqueYears = Array.from(
-        new Set(sortedItems.map(item => item.year).filter(year => year !== undefined && year !== null))
-      ).sort((a, b) => b - a);
+      // Group items by year
+      const grouped: Record<number, Gallery[]> = {};
+      sortedItems.forEach(item => {
+        if (item.year !== undefined && item.year !== null) {
+          if (!grouped[item.year]) {
+            grouped[item.year] = [];
+          }
+          grouped[item.year].push(item);
+        }
+      });
       
-      setYears(uniqueYears as number[]);
-      
-      // Set first year as default if available
-      if (uniqueYears.length > 0) {
-        setSelectedYear(uniqueYears[0] as number);
-      }
+      setGroupedByYear(grouped);
     } catch (error) {
       console.error('Error loading gallery:', error);
     } finally {
@@ -56,24 +51,10 @@ export default function GalleryPage() {
     }
   };
 
-  const handleLoadMore = () => {
-    const newCount = displayedCount + IMAGES_PER_PAGE;
-    setDisplayedCount(newCount);
-    setHasMore(newCount < filteredItems.length);
-  };
-
-  const handleYearSelect = (year: number | null) => {
-    setSelectedYear(year);
-    setDisplayedCount(IMAGES_PER_PAGE);
-  };
-
-  // Filter items by selected year
-  const filteredItems = selectedYear 
-    ? items.filter(item => item.year === selectedYear)
-    : items;
-
-  const displayedItems = filteredItems.slice(0, displayedCount);
-  const totalCount = filteredItems.length;
+  // Get years sorted in descending order
+  const years = Object.keys(groupedByYear)
+    .map(Number)
+    .sort((a, b) => b - a);
 
   return (
     <>
@@ -90,113 +71,88 @@ export default function GalleryPage() {
             </p>
           </div>
 
-          {/* Year Filter Section */}
-          {!isLoading && years.length > 0 && (
-            <motion.div
-              className="mb-12 flex flex-wrap justify-center gap-3"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-            >
-              {years.map((year) => (
-                <button
-                  key={year}
-                  onClick={() => handleYearSelect(year)}
-                  className={`px-6 py-2 rounded-lg font-heading text-lg transition-all duration-300 ${
-                    selectedYear === year
-                      ? 'bg-maroon text-cream shadow-lg'
-                      : 'bg-white text-maroon border-2 border-maroon hover:bg-maroon hover:text-cream'
-                  }`}
-                >
-                  {year}
-                </button>
-              ))}
-            </motion.div>
-          )}
-
-          {/* Gallery Grid */}
+          {/* Gallery by Years */}
           {isLoading ? (
             <div className="flex justify-center items-center py-20">
               <LoadingSpinner />
             </div>
-          ) : displayedItems.length > 0 ? (
-            <>
-              <motion.div
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                {displayedItems.map((item, index) => (
-                  <motion.div
-                    key={item._id}
-                    className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.05, duration: 0.4 }}
-                  >
-                    <div className="aspect-square overflow-hidden bg-gray-200">
-                      {item.image ? (
-                        <Image
-                          src={item.image}
-                          alt={item.caption || 'Gallery image'}
-                          width={400}
-                          height={400}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                      ) : (
-                        <div className="w-full h-full bg-gray-300 flex items-center justify-center">
-                          <span className="text-gray-500">No image</span>
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Overlay with info */}
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100">
-                      {item.caption && (
-                        <h3 className="font-heading text-white text-lg mb-2">
-                          {item.caption}
-                        </h3>
-                      )}
-                      {item.description && (
-                        <p className="font-paragraph text-gray-100 text-sm line-clamp-2">
-                          {item.description}
-                        </p>
-                      )}
-                      {item.pastEvent && (
-                        <p className="font-paragraph text-gold text-xs mt-2">
-                          Event: {item.pastEvent}
-                        </p>
-                      )}
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-
-              {/* Load More Button */}
-              {hasMore && (
+          ) : years.length > 0 ? (
+            <div className="space-y-16">
+              {years.map((year, yearIndex) => (
                 <motion.div
-                  className="flex justify-center mt-16"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.3, duration: 0.4 }}
+                  key={year}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: yearIndex * 0.1, duration: 0.5 }}
                 >
-                  <Button
-                    onClick={handleLoadMore}
-                    className="bg-maroon hover:bg-maroon/90 text-cream px-8 py-3 rounded-lg font-heading text-lg"
-                  >
-                    See More Images ({displayedCount}/{totalCount})
-                  </Button>
-                </motion.div>
-              )}
+                  {/* Year Heading */}
+                  <div className="mb-8">
+                    <h2 className="font-heading text-4xl md:text-5xl text-maroon mb-2">
+                      {year} Events Images
+                    </h2>
+                    <div className="w-24 h-1 bg-gold rounded-full"></div>
+                  </div>
 
-              {/* Results Info */}
-              <div className="text-center mt-12">
-                <p className="font-paragraph text-gray-600">
-                  Showing {displayedCount} of {totalCount} images {selectedYear && `from ${selectedYear}`}
-                </p>
-              </div>
-            </>
+                  {/* Year Gallery Grid */}
+                  <motion.div
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    {groupedByYear[year].map((item, index) => (
+                      <motion.div
+                        key={item._id}
+                        className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.05, duration: 0.4 }}
+                      >
+                        <div className="aspect-square overflow-hidden bg-gray-200">
+                          {item.image ? (
+                            <Image
+                              src={item.image}
+                              alt={item.caption || 'Gallery image'}
+                              width={400}
+                              height={400}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                          ) : (
+                            <div className="w-full h-full bg-gray-300 flex items-center justify-center">
+                              <span className="text-gray-500">No image</span>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Overlay with info */}
+                        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100">
+                          {item.caption && (
+                            <h3 className="font-heading text-white text-lg mb-2">
+                              {item.caption}
+                            </h3>
+                          )}
+                          {item.description && (
+                            <p className="font-paragraph text-gray-100 text-sm line-clamp-2">
+                              {item.description}
+                            </p>
+                          )}
+                          {item.pastEvent && (
+                            <p className="font-paragraph text-gold text-xs mt-2">
+                              Event: {item.pastEvent}
+                            </p>
+                          )}
+                        </div>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+
+                  {/* Year divider */}
+                  {yearIndex < years.length - 1 && (
+                    <div className="mt-16 border-t-2 border-gold/30"></div>
+                  )}
+                </motion.div>
+              ))}
+            </div>
           ) : (
             <div className="text-center py-20">
               <p className="font-paragraph text-lg text-gray-600">
