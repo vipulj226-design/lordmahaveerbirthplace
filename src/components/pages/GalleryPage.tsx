@@ -12,9 +12,10 @@ const IMAGES_PER_PAGE = 15;
 export default function GalleryPage() {
   const [items, setItems] = useState<Gallery[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [selectedYear, setSelectedYear] = useState<number | null>(null);
   const [displayedCount, setDisplayedCount] = useState(IMAGES_PER_PAGE);
   const [hasMore, setHasMore] = useState(false);
-  const [totalCount, setTotalCount] = useState(0);
+  const [years, setYears] = useState<number[]>([]);
 
   useEffect(() => {
     loadGalleryImages();
@@ -36,8 +37,18 @@ export default function GalleryPage() {
       });
 
       setItems(sortedItems);
-      setTotalCount(sortedItems.length);
-      setHasMore(sortedItems.length > IMAGES_PER_PAGE);
+      
+      // Extract unique years and sort in descending order
+      const uniqueYears = Array.from(
+        new Set(sortedItems.map(item => item.year).filter(year => year !== undefined && year !== null))
+      ).sort((a, b) => b - a);
+      
+      setYears(uniqueYears as number[]);
+      
+      // Set first year as default if available
+      if (uniqueYears.length > 0) {
+        setSelectedYear(uniqueYears[0] as number);
+      }
     } catch (error) {
       console.error('Error loading gallery:', error);
     } finally {
@@ -48,10 +59,21 @@ export default function GalleryPage() {
   const handleLoadMore = () => {
     const newCount = displayedCount + IMAGES_PER_PAGE;
     setDisplayedCount(newCount);
-    setHasMore(newCount < totalCount);
+    setHasMore(newCount < filteredItems.length);
   };
 
-  const displayedItems = items.slice(0, displayedCount);
+  const handleYearSelect = (year: number | null) => {
+    setSelectedYear(year);
+    setDisplayedCount(IMAGES_PER_PAGE);
+  };
+
+  // Filter items by selected year
+  const filteredItems = selectedYear 
+    ? items.filter(item => item.year === selectedYear)
+    : items;
+
+  const displayedItems = filteredItems.slice(0, displayedCount);
+  const totalCount = filteredItems.length;
 
   return (
     <>
@@ -67,6 +89,30 @@ export default function GalleryPage() {
               Explore our collection of memorable moments from past events and celebrations
             </p>
           </div>
+
+          {/* Year Filter Section */}
+          {!isLoading && years.length > 0 && (
+            <motion.div
+              className="mb-12 flex flex-wrap justify-center gap-3"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+            >
+              {years.map((year) => (
+                <button
+                  key={year}
+                  onClick={() => handleYearSelect(year)}
+                  className={`px-6 py-2 rounded-lg font-heading text-lg transition-all duration-300 ${
+                    selectedYear === year
+                      ? 'bg-maroon text-cream shadow-lg'
+                      : 'bg-white text-maroon border-2 border-maroon hover:bg-maroon hover:text-cream'
+                  }`}
+                >
+                  {year}
+                </button>
+              ))}
+            </motion.div>
+          )}
 
           {/* Gallery Grid */}
           {isLoading ? (
@@ -147,7 +193,7 @@ export default function GalleryPage() {
               {/* Results Info */}
               <div className="text-center mt-12">
                 <p className="font-paragraph text-gray-600">
-                  Showing {displayedCount} of {totalCount} images
+                  Showing {displayedCount} of {totalCount} images {selectedYear && `from ${selectedYear}`}
                 </p>
               </div>
             </>
