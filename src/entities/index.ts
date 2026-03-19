@@ -250,6 +250,8 @@ export interface PastEvents {
   /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   eventImage3?: string;
   /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  eventImages?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   eventImage5?: string;
   /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   eventImage4?: string;
