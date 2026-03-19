@@ -159,9 +159,6 @@ export default function GalleryPage() {
                                 <span className="font-paragraph text-maroon flex-1">
                                   {eventName}
                                 </span>
-                                <span className="text-sm text-gold font-paragraph">
-                                  {groupedByYearAndEvent[year][eventName].length} photos
-                                </span>
                                 <motion.div
                                   animate={{ rotate: expandedEvents.has(eventName) ? 90 : 0 }}
                                   transition={{ duration: 0.2 }}
