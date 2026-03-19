@@ -156,6 +156,8 @@ export interface Gallery {
   _createdDate?: Date;
   _updatedDate?: Date;
   /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  galleryImages?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   image?: string;
   /** @wixFieldType number */
   year?: number;
