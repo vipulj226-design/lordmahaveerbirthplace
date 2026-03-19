@@ -412,6 +412,25 @@ function HeroSection() {
           Explore the heritage
                   </motion.a>
       </motion.div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 1.8 }}
+      >
+        <p className="font-paragraph text-xs text-cream/70 uppercase tracking-widest">
+          Scroll to explore
+        </p>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
+          className="flex flex-col items-center"
+        >
+          <ChevronDown className="w-6 h-6 text-gold" />
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
