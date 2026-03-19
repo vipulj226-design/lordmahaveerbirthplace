@@ -249,6 +249,8 @@ export interface PastEvents {
   _updatedDate?: Date;
   /** @wixFieldType text */
   eventName?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  eventGallery?: string;
   /** @wixFieldType date */
   eventDate?: Date | string;
   /** @wixFieldType text */
