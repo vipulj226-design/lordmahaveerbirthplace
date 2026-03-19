@@ -180,7 +180,7 @@ export default function GalleryPage() {
                                     transition={{ duration: 0.3 }}
                                     className="overflow-hidden"
                                   >
-                                    <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pl-4">
+                                    <div className="mt-3 grid grid-cols-2 md:grid-cols-4 gap-4 pl-4">
                                       {groupedByYearAndEvent[year][eventName].map((item, photoIndex) => {
                                         // Collect all image fields from the item
                                         const imageFields = [
