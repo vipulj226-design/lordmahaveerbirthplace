@@ -95,7 +95,7 @@ export default function Header() {
                 <a
                   href={link.href}
                   onClick={(e) => handleAnchorClick(e, link.href)}
-                  className="px-2 py-2 text-lg uppercase font-heading rounded transition-all duration-200 flex items-center gap-2 whitespace-nowrap"
+                  className="px-2 py-2 text-sm uppercase font-heading rounded transition-all duration-200 flex items-center gap-2 whitespace-nowrap"
                   style={{
                     color: isActive ? '#D4AF37' : '#000000',
                     fontWeight: '700',
