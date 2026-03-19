@@ -72,7 +72,7 @@ export default function Header() {
       <nav className="hidden md:flex justify-center items-center px-6 py-2 max-w-[1400px] mx-auto">
 
         {/* Logo */}
-        <a href="/" onClick={(e) => handleAnchorClick(e, '#hero')} className="flex items-center gap-3 shrink-0 absolute left-6 cursor-pointer hover:opacity-80 transition-opacity">
+        <a href="/" onClick={(e) => handleAnchorClick(e, '#hero')} className="flex items-center gap-4 shrink-0 absolute left-6 cursor-pointer hover:opacity-80 transition-opacity">
           <Image
             src="https://static.wixstatic.com/media/53945f_926edabb995f423680415b255d79c255~mv2.png"
             alt="Lord Mahaveer Birthplace Logo"
@@ -124,7 +124,7 @@ export default function Header() {
       {/* Mobile Navigation */}
       <div className="md:hidden flex flex-col">
         {/* Mobile Header with Logo */}
-        <a href="/" onClick={(e) => handleAnchorClick(e, '#hero')} className="flex items-center justify-center gap-3 py-2 border-b border-gold/20 cursor-pointer hover:opacity-80 transition-opacity">
+        <a href="/" onClick={(e) => handleAnchorClick(e, '#hero')} className="flex items-center justify-center gap-4 py-2 border-b border-gold/20 cursor-pointer hover:opacity-80 transition-opacity">
           <Image
             src="https://static.wixstatic.com/media/53945f_926edabb995f423680415b255d79c255~mv2.png"
             alt="Lord Mahaveer Birthplace Logo"
