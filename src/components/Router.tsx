@@ -3,6 +3,9 @@ import { createBrowserRouter, RouterProvider, Navigate, Outlet } from 'react-rou
 import { ScrollToTop } from '@/lib/scroll-to-top';
 import ErrorPage from '@/integrations/errorHandlers/ErrorPage';
 import HomePage from '@/components/pages/HomePage';
+import GalleryPage from '@/components/pages/GalleryPage';
+import PastEventsPage from '@/components/pages/PastEventsPage';
+import PastEventDetailPage from '@/components/pages/PastEventDetailPage';
 import ScrollProgressBar from '@/components/ScrollProgressBar';
 
 // Layout component that includes ScrollToTop and ScrollProgressBar
@@ -27,6 +30,27 @@ const router = createBrowserRouter([
         element: <HomePage />,
         routeMetadata: {
           pageIdentifier: 'home',
+        },
+      },
+      {
+        path: "gallery",
+        element: <GalleryPage />,
+        routeMetadata: {
+          pageIdentifier: 'gallery',
+        },
+      },
+      {
+        path: "past-events",
+        element: <PastEventsPage />,
+        routeMetadata: {
+          pageIdentifier: 'past-events',
+        },
+      },
+      {
+        path: "past-events/:id",
+        element: <PastEventDetailPage />,
+        routeMetadata: {
+          pageIdentifier: 'past-event-detail',
         },
       },
       {
