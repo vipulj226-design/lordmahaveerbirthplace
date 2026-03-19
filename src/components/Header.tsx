@@ -91,7 +91,7 @@ export default function Header() {
           {navigationLinks.map((link, index) => {
             const isActive = activeSection === link.href.replace('#', '');
             return (
-              <li key={link.href} style={{ marginLeft: index === 0 ? '120px' : '0' }}>
+              <li key={link.href} style={{ marginLeft: index === 0 ? '200px' : '0' }}>
                 <a
                   href={link.href}
                   onClick={(e) => handleAnchorClick(e, link.href)}
