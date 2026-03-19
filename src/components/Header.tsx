@@ -20,11 +20,35 @@ const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string,
   
   // If it's a route (starts with /), navigate to it
   if (href.startsWith('/')) {
-    navigate(href);
+    navigate?.(href);
     return;
   }
   
   const targetId = href.replace('#', '');
+  const currentPath = window.location.pathname;
+  const isHomePage = currentPath === '/' || currentPath === '';
+  
+  // If we're not on the homepage, navigate to home first
+  if (!isHomePage) {
+    navigate?.('/');
+    // Use setTimeout to allow navigation to complete before scrolling
+    setTimeout(() => {
+      const element = document.getElementById(targetId);
+      if (element) {
+        const header = document.querySelector('header');
+        const headerHeight = header ? header.offsetHeight : 80;
+        const buffer = 8;
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - headerHeight - buffer;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
+    return;
+  }
   
   // If it's the Home link and we're already on homepage, scroll to hero
   if (targetId === 'hero') {
