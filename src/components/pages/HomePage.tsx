@@ -296,7 +296,8 @@ function HeroSection() {
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundPosition: 'center',
-          backgroundSize: 'cover',
+          backgroundSize: 'contain',
+          backgroundRepeat: 'no-repeat',
           opacity: 0.45,
         }}
       />
