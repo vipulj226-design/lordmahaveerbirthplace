@@ -158,6 +158,20 @@ export interface Gallery {
   /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   galleryImages?: string;
   /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  image10?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  image9?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  image8?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  image7?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  image6?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  image5?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  image4?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   galleryImagesBatch?: string;
   /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   image?: string;
