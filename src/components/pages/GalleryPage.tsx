@@ -18,7 +18,7 @@ export default function GalleryPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [groupedByYearAndEvent, setGroupedByYearAndEvent] = useState<GroupedGallery>({});
   const [expandedYear, setExpandedYear] = useState<number | null>(null);
-  const [expandedEvent, setExpandedEvent] = useState<string | null>(null);
+  const [expandedEvents, setExpandedEvents] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     loadGalleryImages();
@@ -72,11 +72,16 @@ export default function GalleryPage() {
 
   const toggleYear = (year: number) => {
     setExpandedYear(expandedYear === year ? null : year);
-    setExpandedEvent(null);
   };
 
   const toggleEvent = (eventName: string) => {
-    setExpandedEvent(expandedEvent === eventName ? null : eventName);
+    const newExpandedEvents = new Set(expandedEvents);
+    if (newExpandedEvents.has(eventName)) {
+      newExpandedEvents.delete(eventName);
+    } else {
+      newExpandedEvents.add(eventName);
+    }
+    setExpandedEvents(newExpandedEvents);
   };
 
   return (
@@ -158,7 +163,7 @@ export default function GalleryPage() {
                                   {groupedByYearAndEvent[year][eventName].length} photos
                                 </span>
                                 <motion.div
-                                  animate={{ rotate: expandedEvent === eventName ? 90 : 0 }}
+                                  animate={{ rotate: expandedEvents.has(eventName) ? 90 : 0 }}
                                   transition={{ duration: 0.2 }}
                                 >
                                   <ChevronRight className="w-4 h-4 text-gold" />
@@ -167,7 +172,7 @@ export default function GalleryPage() {
 
                               {/* Photos Grid */}
                               <AnimatePresence>
-                                {expandedEvent === eventName && (
+                                {expandedEvents.has(eventName) && (
                                   <motion.div
                                     initial={{ opacity: 0, height: 0 }}
                                     animate={{ opacity: 1, height: 'auto' }}
