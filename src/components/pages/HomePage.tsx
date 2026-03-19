@@ -1348,7 +1348,7 @@ function DonateSection() {
 // --- GALLERY SECTION COMPONENT ---
 
 function GallerySection() {
-  const [galleryItems, setGalleryItems] = useState<any[]>([]);
+  const [allImages, setAllImages] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -1358,8 +1358,41 @@ function GallerySection() {
       try {
         // Add cache-busting parameter to force fresh data
         const result = await BaseCrudService.getAll<any>('gallery', [], { limit: 100 });
-        const sortedItems = result.items.sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
-        setGalleryItems(sortedItems);
+        
+        // Flatten all images from all gallery items
+        const flattenedImages: any[] = [];
+        result.items.forEach((item) => {
+          // List of all possible image fields in the gallery collection
+          const imageFields = [
+            'image',
+            'galleryImages',
+            'galleryImagesBatch',
+            'image2',
+            'image3',
+            'image4',
+            'image5',
+            'image6',
+            'image7',
+            'image8',
+            'image9',
+            'image10'
+          ];
+          
+          // Extract all non-empty images from this item
+          imageFields.forEach((field) => {
+            if (item[field]) {
+              flattenedImages.push({
+                src: item[field],
+                caption: item.caption || '',
+                displayOrder: item.displayOrder || 0
+              });
+            }
+          });
+        });
+        
+        // Sort by display order
+        flattenedImages.sort((a, b) => a.displayOrder - b.displayOrder);
+        setAllImages(flattenedImages);
       } catch (error) {
         console.error('Error fetching gallery:', error);
       } finally {
@@ -1380,11 +1413,11 @@ function GallerySection() {
   };
 
   const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % galleryItems.length);
+    setCurrentImageIndex((prev) => (prev + 1) % allImages.length);
   };
 
   const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + galleryItems.length) % galleryItems.length);
+    setCurrentImageIndex((prev) => (prev - 1 + allImages.length) % allImages.length);
   };
 
   useEffect(() => {
@@ -1396,7 +1429,7 @@ function GallerySection() {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [lightboxOpen, galleryItems.length]);
+  }, [lightboxOpen, allImages.length]);
 
   useEffect(() => {
     if (lightboxOpen) {
@@ -1441,27 +1474,28 @@ function GallerySection() {
           <div className="text-center py-12">
             <p className="font-paragraph text-maroon/60 text-sm">Loading gallery...</p>
           </div>
-        ) : galleryItems.length > 0 ? (
+        ) : allImages.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 auto-rows-[240px]">
-            {galleryItems.map((item, index) => (
+            {allImages.map((image, index) => (
               <motion.div
-                key={item._id}
+                key={`${index}-${image.src}`}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="group relative overflow-hidden rounded-[10px] border-2 border-maroon hover:border-gold transition-all duration-300"
+                className="group relative overflow-hidden rounded-[10px] border-2 border-maroon hover:border-gold transition-all duration-300 cursor-pointer"
+                onClick={() => openLightbox(index)}
               >
                 <Image
-                  src={item.image}
-                  alt={item.caption || 'Gallery image'}
+                  src={image.src}
+                  alt={image.caption || 'Gallery image'}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 
                 {/* Caption Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                   <p className="font-paragraph text-cream text-sm p-4 w-full">
-                    {item.caption}
+                    {image.caption}
                   </p>
                 </div>
               </motion.div>
@@ -1474,7 +1508,7 @@ function GallerySection() {
         )}
       </div>
       {/* Lightbox */}
-      {lightboxOpen && galleryItems.length > 0 && (
+      {lightboxOpen && allImages.length > 0 && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -1498,15 +1532,15 @@ function GallerySection() {
             {/* Image Container */}
             <div className="flex items-center justify-center w-full h-full max-h-[70vh]">
               <Image
-                src={galleryItems[currentImageIndex].image}
-                alt={galleryItems[currentImageIndex].caption || 'Gallery image'}
+                src={allImages[currentImageIndex].src}
+                alt={allImages[currentImageIndex].caption || 'Gallery image'}
                 className="max-w-full max-h-full object-contain border-4 border-gold"
               />
             </div>
 
             {/* Caption */}
             <p className="font-heading text-gold text-center text-sm md:text-lg uppercase tracking-wide px-4 mt-4">
-              {galleryItems[currentImageIndex].caption}
+              {allImages[currentImageIndex].caption}
             </p>
 
             {/* Navigation Buttons */}
