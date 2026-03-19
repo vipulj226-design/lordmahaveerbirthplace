@@ -176,45 +176,54 @@ export default function GalleryPage() {
                                     className="overflow-hidden"
                                   >
                                     <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pl-4">
-                                      {groupedByYearAndEvent[year][eventName].map((item, photoIndex) => (
-                                        <motion.div
-                                          key={item._id}
-                                          initial={{ opacity: 0, scale: 0.9 }}
-                                          animate={{ opacity: 1, scale: 1 }}
-                                          transition={{ delay: photoIndex * 0.03, duration: 0.2 }}
-                                          className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-                                        >
-                                          <div className="aspect-square overflow-hidden bg-gray-200">
-                                            {item.image ? (
-                                              <Image
-                                                src={item.image}
-                                                alt={item.caption || 'Gallery image'}
-                                                width={300}
-                                                height={300}
-                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                                              />
-                                            ) : (
-                                              <div className="w-full h-full bg-gray-300 flex items-center justify-center">
-                                                <ImageIcon className="w-8 h-8 text-gray-500" />
-                                              </div>
-                                            )}
-                                          </div>
+                                      {groupedByYearAndEvent[year][eventName].map((item, photoIndex) => {
+                                        // Collect all image fields from the item
+                                        const imageFields = [
+                                          item.image,
+                                          item.galleryImages,
+                                          item.galleryImagesBatch,
+                                        ].filter(Boolean);
 
-                                          {/* Overlay with info */}
-                                          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex flex-col justify-end p-3 opacity-0 group-hover:opacity-100">
-                                            {item.caption && (
-                                              <h3 className="font-heading text-white text-sm mb-1">
-                                                {item.caption}
-                                              </h3>
-                                            )}
-                                            {item.description && (
-                                              <p className="font-paragraph text-gray-100 text-xs line-clamp-2">
-                                                {item.description}
-                                              </p>
-                                            )}
-                                          </div>
-                                        </motion.div>
-                                      ))}
+                                        return imageFields.map((imageUrl, imgIndex) => (
+                                          <motion.div
+                                            key={`${item._id}-${imgIndex}`}
+                                            initial={{ opacity: 0, scale: 0.9 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            transition={{ delay: (photoIndex + imgIndex) * 0.03, duration: 0.2 }}
+                                            className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                                          >
+                                            <div className="aspect-square overflow-hidden bg-gray-200">
+                                              {imageUrl ? (
+                                                <Image
+                                                  src={imageUrl}
+                                                  alt={item.caption || 'Gallery image'}
+                                                  width={300}
+                                                  height={300}
+                                                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                                                />
+                                              ) : (
+                                                <div className="w-full h-full bg-gray-300 flex items-center justify-center">
+                                                  <ImageIcon className="w-8 h-8 text-gray-500" />
+                                                </div>
+                                              )}
+                                            </div>
+
+                                            {/* Overlay with info */}
+                                            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex flex-col justify-end p-3 opacity-0 group-hover:opacity-100">
+                                              {item.caption && (
+                                                <h3 className="font-heading text-white text-sm mb-1">
+                                                  {item.caption}
+                                                </h3>
+                                              )}
+                                              {item.description && (
+                                                <p className="font-paragraph text-gray-100 text-xs line-clamp-2">
+                                                  {item.description}
+                                                </p>
+                                              )}
+                                            </div>
+                                          </motion.div>
+                                        ));
+                                      })}
                                     </div>
                                   </motion.div>
                                 )}

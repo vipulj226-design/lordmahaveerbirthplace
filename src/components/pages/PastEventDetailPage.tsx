@@ -183,38 +183,47 @@ export default function PastEventDetailPage() {
               <>
                 {/* Photo Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                  {photos.map((photo, index) => (
-                    <motion.div
-                      key={photo._id}
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.4, delay: index * 0.05 }}
-                      className="cursor-pointer group"
-                      onClick={() => setSelectedPhoto(photo)}
-                    >
-                      <div className="relative w-full h-64 overflow-hidden rounded-lg bg-gray-200 shadow-md hover:shadow-xl transition-shadow duration-300">
-                        {photo.image && (
-                          <Image
-                            src={photo.image}
-                            alt={photo.caption || 'Event photo'}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                            width={400}
-                            height={300}
-                          />
-                        )}
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                          <span className="text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            🔍
-                          </span>
+                  {photos.map((photo, index) => {
+                    // Collect all image fields from the photo
+                    const imageFields = [
+                      photo.image,
+                      (photo as any).galleryImages,
+                      (photo as any).galleryImagesBatch,
+                    ].filter(Boolean);
+
+                    return imageFields.map((imageUrl, imgIndex) => (
+                      <motion.div
+                        key={`${photo._id}-${imgIndex}`}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.4, delay: (index + imgIndex) * 0.05 }}
+                        className="cursor-pointer group"
+                        onClick={() => setSelectedPhoto({ ...photo, image: imageUrl })}
+                      >
+                        <div className="relative w-full h-64 overflow-hidden rounded-lg bg-gray-200 shadow-md hover:shadow-xl transition-shadow duration-300">
+                          {imageUrl && (
+                            <Image
+                              src={imageUrl}
+                              alt={photo.caption || 'Event photo'}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                              width={400}
+                              height={300}
+                            />
+                          )}
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                            <span className="text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              🔍
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                      {photo.caption && (
-                        <p className="font-paragraph text-sm text-gray-700 mt-3 line-clamp-2">
-                          {photo.caption}
-                        </p>
-                      )}
-                    </motion.div>
-                  ))}
+                        {photo.caption && (
+                          <p className="font-paragraph text-sm text-gray-700 mt-3 line-clamp-2">
+                            {photo.caption}
+                          </p>
+                        )}
+                      </motion.div>
+                    ));
+                  })}
                 </div>
 
                 {/* Lightbox Modal */}
