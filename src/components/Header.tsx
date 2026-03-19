@@ -10,13 +10,20 @@ const navigationLinks = [
   { label: 'Committee', href: '#committee' },
   { label: 'Donate', href: '#donate' },
   { label: 'Events', href: '#events' },
-  { label: 'Gallery', href: '#gallery' },
+  { label: 'Gallery', href: '/gallery' },
   { label: 'How to Reach', href: '#how-to-reach' },
   { label: 'Contact', href: '#contact' },
 ];
 
 const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, navigate?: ReturnType<typeof useNavigate>) => {
   e.preventDefault();
+  
+  // If it's a route (starts with /), navigate to it
+  if (href.startsWith('/')) {
+    navigate(href);
+    return;
+  }
+  
   const targetId = href.replace('#', '');
   
   // If it's the Home link and we're already on homepage, scroll to hero
@@ -89,12 +96,12 @@ export default function Header() {
         {/* Navigation Links */}
         <ul className="flex gap-0.5 items-center">
           {navigationLinks.map((link, index) => {
-            const isActive = activeSection === link.href.replace('#', '');
+            const isActive = link.href.startsWith('/') ? false : activeSection === link.href.replace('#', '');
             return (
               <li key={link.href} style={{ marginLeft: index === 0 ? '200px' : '0' }}>
                 <a
                   href={link.href}
-                  onClick={(e) => handleAnchorClick(e, link.href)}
+                  onClick={(e) => handleAnchorClick(e, link.href, navigate)}
                   className="px-2 py-2 text-sm uppercase font-heading rounded transition-all duration-200 flex items-center gap-2 whitespace-nowrap"
                   style={{
                     color: isActive ? '#D4AF37' : '#000000',
@@ -146,12 +153,12 @@ export default function Header() {
           }}
         >
           {navigationLinks.map((link, index) => {
-            const isActive = activeSection === link.href.replace('#', '');
+            const isActive = link.href.startsWith('/') ? false : activeSection === link.href.replace('#', '');
             return (
               <a
                 key={link.href}
                 href={link.href}
-                onClick={(e) => handleAnchorClick(e, link.href)}
+                onClick={(e) => handleAnchorClick(e, link.href, navigate)}
                 className="flex items-center justify-center min-h-[50px] px-1.5 py-2 text-[0.6rem] uppercase font-heading transition-all duration-200"
                 style={{
                   borderRight: (index + 1) % 5 !== 0 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
