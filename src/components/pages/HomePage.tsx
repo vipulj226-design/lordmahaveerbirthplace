@@ -158,7 +158,7 @@ export default function HomePage() {
 
           {/* Organization Info */}
           <div className="text-center border-t border-gold/20 pt-8 mb-8">
-            <p className="font-paragraph text-cream/80 mb-2">Bhagwan Mahavir Smarak Samiti | Vasokund, Vaishali (Bihar)</p>
+            <p className="font-paragraph text-cream/80 mb-2">Bhagwan Mahavir Smarak Samiti | Basokund, Vaishali (Bihar)</p>
           </div>
 
           {/* Copyright */}
@@ -277,7 +277,7 @@ function HeroSection() {
   const frontImage = heroContent?.backgroundImage || 'https://static.wixstatic.com/media/53945f_a4195685dc67436e92a6c31eb31c2755~mv2.webp';
   const title = heroContent?.title || 'Birthplace of Tirthankar Lord Mahavira';
   const subtitle = heroContent?.subtitle || 'Jai Jinendra — जय जिनेंद्र';
-  const shortDescription = heroContent?.shortDescription || 'VASOKUND (VAISHALI), BIHAR – INDIA';
+  const shortDescription = heroContent?.shortDescription || 'BASOKUND (VAISHALI), BIHAR – INDIA';
   const ctaText = heroContent?.ctaText || 'Explore Heritage';
   const ctaUrl = heroContent?.ctaUrl || '#about';
 
@@ -460,7 +460,7 @@ function BirthplaceAboutSection() {
             transition={{ delay: 0.2 }}
             className="font-paragraph text-sm md:text-xl text-maroon/70 mt-3 md:mt-8 max-w-2xl"
           >
-            Vasokund (Kundpur) — The Holy Land of Vaishali
+            Basokund (Kundpur) — The Holy Land of Vaishali
           </motion.p>
           <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
         </div>
@@ -475,7 +475,7 @@ function BirthplaceAboutSection() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
               <div className="space-y-4 border-l-4 border-maroon/20 pl-6">
                 <p className="font-paragraph text-base lg:text-lg text-maroon/80 leading-relaxed">
-                  Ancient texts confirm Kundpur/Vasokund in Vaishali district as the birthplace of Lord Mahavira, the 24th Tirthankar of Jainism.
+                  Ancient texts confirm Kundpur/Basokund in Vaishali district as the birthplace of Lord Mahavira, the 24th Tirthankar of Jainism.
                 </p>
                 <p className="font-paragraph text-base lg:text-lg text-maroon/80 leading-relaxed">
                   Vaishali was the first republic in the world, home of democratic ideals and spiritual enlightenment. This sacred land witnessed the birth of one of humanity's greatest spiritual leaders.
@@ -590,7 +590,7 @@ function BirthplaceAboutSection() {
                 </p>
               </div>
               <p className="font-paragraph text-maroon/80 leading-relaxed text-sm">
-                Mahavira was born in Kundagrama near Vaishali (Basarha in Hajipur sub-division of Muzaffarpur district). Kundagrama is known as Vasokund today.
+                Mahavira was born in Kundagrama near Vaishali (Basarha in Hajipur sub-division of Muzaffarpur district). Kundagrama is known as Basokund today.
               </p>
             </motion.div>
 
@@ -635,14 +635,14 @@ function BirthplaceAboutSection() {
                 🏛️ Bihar Government Recognition
               </h4>
               <p className="font-paragraph text-maroon/80 leading-relaxed mb-3 text-sm">
-                The tourism department of Bihar Government published a book 'Jain Circuit' in 2003, in which Vasokund in Vaishali is officially mentioned as the birthplace of Lord Mahavir.
+                The tourism department of Bihar Government published a book 'Jain Circuit' in 2003, in which Basokund in Vaishali is officially mentioned as the birthplace of Lord Mahavir.
               </p>
               <div className="bg-gold/10 border-l-4 border-gold p-3">
                 <p className="font-heading font-bold text-maroon text-xs uppercase tracking-widest">
                   Official Recognition
                 </p>
                 <p className="font-paragraph text-maroon/80 mt-1 text-xs">
-                  Vasokund, Vaishali — Birthplace of Lord Mahavira (Jain Circuit, 2003)
+                  Basokund, Vaishali — Birthplace of Lord Mahavira (Jain Circuit, 2003)
                 </p>
               </div>
             </motion.div>
@@ -746,7 +746,7 @@ function BirthplaceAboutSection() {
                     <h3 className="font-heading text-2xl font-bold text-cream">A Revolution of Spirit</h3>
                   </div>
                   <p className="font-paragraph text-base text-cream/80 leading-relaxed pl-16 border-l-2 border-cream/20 group-hover:border-gold transition-colors">
-                    In an era of ritual complexity, Lord Mahavira introduced a radical simplicity. Born in 599 BCE at Vasokund, his life was a bold declaration that spiritual liberation is the birthright of every soul, not just the chosen few.
+                    In an era of ritual complexity, Lord Mahavira introduced a radical simplicity. Born in 599 BCE at Basokund, his life was a bold declaration that spiritual liberation is the birthright of every soul, not just the chosen few.
                   </p>
                 </motion.div>
 
@@ -780,7 +780,7 @@ function BirthplaceAboutSection() {
                     <h3 className="font-heading text-2xl font-bold text-cream">The Eternal Truth</h3>
                   </div>
                   <p className="font-paragraph text-base text-cream/80 leading-relaxed pl-16 border-l-2 border-cream/20 group-hover:border-gold transition-colors">
-                    Anekantavada—the multiplicity of views. In a polarized world, Mahavira's wisdom from Vasokund teaches us to see the truth in others' perspectives, fostering a harmony that is desperately needed today.
+                    Anekantavada—the multiplicity of views. In a polarized world, Mahavira's wisdom from Basokund teaches us to see the truth in others' perspectives, fostering a harmony that is desperately needed today.
                   </p>
                 </motion.div>
 
@@ -841,14 +841,14 @@ function BlessingsSection() {
       name: "Parampujya Shwetpicchhacharya Shri Vidyanandji Muniraj",
       dates: "(Born: 22 April 1925 — Devlokgaman: 22 September 2019)",
       image: "https://static.wixstatic.com/media/53945f_ec462564133b4e80a302aa05a0c90887~mv2.png?originWidth=384&originHeight=384",
-      blessing: "\"Lord Mahavira was born at Vasokund (Kundpur). My Holy blessings are there to build Vardhman's magnificent temple at Vasokund (Kundpur) in Vaishali. This should have been completed much earlier. It is my holy desire and feeling that this work is now completed without any obstacles.\"",
+      blessing: "\"Lord Mahavira was born at Basokund (Kundpur). My Holy blessings are there to build Vardhman's magnificent temple at Basokund (Kundpur) in Vaishali. This should have been completed much earlier. It is my holy desire and feeling that this work is now completed without any obstacles.\"",
       achievements: "उनके निर्देशन में सम्पन्न महत्त्वपूर्ण कार्य (31 कार्य): भगवान् महावीर का 2500वाँ निर्वाण महोत्सव, श्रवणबेलगोला महामस्तकाभिषेक, गोम्मटेश्वर प्रतिमाओं का निर्माण, बावनगजा जीर्णोद्धार, सम्मेदशिखर आन्दोलन, जैन अल्पसंख्यक घोषणा आन्दोलन, जैन ध्वज व प्रतीक निर्माण, कुन्दकुन्द भारती की स्थापना, प्राकृत शोध संस्थान, तथा 100+ पुस्तकों का प्रकाशन आदि।"
     },
     {
       name: "Parampujya Aacharya Shri Vidyasagar Muniraj",
       dates: "",
       image: "https://static.wixstatic.com/media/53945f_0ffb1236e6ae46f685a0a02c0aff1c9d~mv2.png?originWidth=384&originHeight=384",
-      blessing: "\"The construction work of a temple (Jinalaya) of Lord Mahavira at the Birth-Place of Lord Mahavira at Vasokund (Kundpur) in Vaishali is in progress. This temple at Vaishali shall become the model epicentre of spreading the Principles of Lord Mahavira. It is my Holy Blessing that it may lead to the welfare of all the creatures.\"",
+      blessing: "\"The construction work of a temple (Jinalaya) of Lord Mahavira at the Birth-Place of Lord Mahavira at Basokund (Kundpur) in Vaishali is in progress. This temple at Vaishali shall become the model epicentre of spreading the Principles of Lord Mahavira. It is my Holy Blessing that it may lead to the welfare of all the creatures.\"",
       achievements: ""
     },
     {
@@ -862,7 +862,7 @@ function BlessingsSection() {
       name: "Parampujya Aacharya Shri Shrutsagar Muniraj",
       dates: "",
       image: "https://static.wixstatic.com/media/53945f_611b7a06d8b24450a30c12c323200291~mv2.png?originWidth=384&originHeight=384",
-      blessing: "\"Tirthankar Mahavira is a pillar of light from where the Rays of Non-Violence, Anekant (Non-Absolutism), Aparigraha (Non-Possessiveness) have enlightened the world. I give my Holy Blessing for this superb temple (Jinalaya) at Bhagwan Mahavir Birth Place Vasokund, Vaishali where construction is going on.\"",
+      blessing: "\"Tirthankar Mahavira is a pillar of light from where the Rays of Non-Violence, Anekant (Non-Absolutism), Aparigraha (Non-Possessiveness) have enlightened the world. I give my Holy Blessing for this superb temple (Jinalaya) at Bhagwan Mahavir Birth Place Basokund, Vaishali where construction is going on.\"",
       achievements: ""
     },
     {
@@ -883,7 +883,7 @@ function BlessingsSection() {
       name: "Dr. Virendra D. Heggade",
       dates: "— Guidance (Param Shiromani Sanrakshak)",
       image: "https://static.wixstatic.com/media/53945f_d80881a0ba7243d8b1118389d87aa75a~mv2.png?originWidth=384&originHeight=384",
-      blessing: "\"Lord Mahavira does not represent any particular community, religion or society but He is established as a pride and glory of the whole mankind. Lord Mahavira's immense kindness not only towards human beings but also for speechless creatures was invaluable. He abolished exploitation and stress in the world by means of Non-Violence, Non-Possessiveness and Non-Absolutism. My best wishes are there for the construction of this Grand Temple at the Birth Place of Lord Mahavira in Vasokund, Vaishali at fast pace.\"",
+      blessing: "\"Lord Mahavira does not represent any particular community, religion or society but He is established as a pride and glory of the whole mankind. Lord Mahavira's immense kindness not only towards human beings but also for speechless creatures was invaluable. He abolished exploitation and stress in the world by means of Non-Violence, Non-Possessiveness and Non-Absolutism. My best wishes are there for the construction of this Grand Temple at the Birth Place of Lord Mahavira in Basokund, Vaishali at fast pace.\"",
       achievements: ""
     },
     {
@@ -992,7 +992,7 @@ function VaishaliHeritageSection() {
     },
     {
       title: "Jain Connection",
-      content: "Lord Mahavira born here (599 BCE)\nVasokund/Kundpur = exact birthplace\nLicchavi Kshatriya clan was Mahavira's family\nMultiple visits by Lord Buddha to Vaishali also documented"
+      content: "Lord Mahavira born here (599 BCE)\nBasokund/Kundpur = exact birthplace\nLicchavi Kshatriya clan was Mahavira's family\nMultiple visits by Lord Buddha to Vaishali also documented"
     }
   ];
 
@@ -1160,7 +1160,7 @@ function AboutUsSection() {
                 <h3 className="font-heading text-3xl font-bold text-cream">A Revolution of Spirit</h3>
               </div>
               <p className="font-paragraph text-lg text-cream/80 leading-relaxed pl-20 border-l-2 border-cream/20 group-hover:border-gold transition-colors">
-                In an era of ritual complexity, Lord Mahavira introduced a radical simplicity. Born in 599 BCE at Vasokund, his life was a bold declaration that spiritual liberation is the birthright of every soul, not just the chosen few.
+                In an era of ritual complexity, Lord Mahavira introduced a radical simplicity. Born in 599 BCE at Basokund, his life was a bold declaration that spiritual liberation is the birthright of every soul, not just the chosen few.
               </p>
             </motion.div>
 
@@ -1194,7 +1194,7 @@ function AboutUsSection() {
                 <h3 className="font-heading text-3xl font-bold text-cream">The Eternal Truth</h3>
               </div>
               <p className="font-paragraph text-lg text-cream/80 leading-relaxed pl-20 border-l-2 border-cream/20 group-hover:border-gold transition-colors">
-                Anekantavada—the multiplicity of views. In a polarized world, Mahavira's wisdom from Vasokund teaches us to see the truth in others' perspectives, fostering a harmony that is desperately needed today.
+                Anekantavada—the multiplicity of views. In a polarized world, Mahavira's wisdom from Basokund teaches us to see the truth in others' perspectives, fostering a harmony that is desperately needed today.
               </p>
             </motion.div>
 
@@ -1763,7 +1763,7 @@ function HowToReachSection() {
             transition={{ delay: 0.2 }}
             className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
           >
-            Journey to the sacred birthplace of Lord Mahavira at Vasokund, Vaishali
+            Journey to the sacred birthplace of Lord Mahavira at Basokund, Vaishali
           </motion.p>
           <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
         </div>
@@ -2031,7 +2031,7 @@ function ContactSection() {
                 <MapPin className="w-6 h-6 text-gold shrink-0 mt-1" />
                 <div>
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Address</p>
-                  <p className="text-maroon font-semibold">Vasokund, Vaishali District, Bihar</p>
+                  <p className="text-maroon font-semibold">Basokund, Vaishali District, Bihar</p>
                 </div>
               </div>
 
@@ -2072,7 +2072,7 @@ function ContactSection() {
               className="mb-6 rounded-lg overflow-hidden border-2 border-maroon block cursor-pointer hover:border-gold transition-colors duration-300"
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.8234567890!2d85.4234!3d25.9876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f7d5c0000000001%3A0x1234567890abcdef!2sVasokund%2C%20Vaishali%2C%20Bihar!5e0!3m2!1sen!2sin!4v1709545200000"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.8234567890!2d85.4234!3d25.9876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f7d5c0000000001%3A0x1234567890abcdef!2sBasokund%2C%20Vaishali%2C%20Bihar!5e0!3m2!1sen!2sin!4v1709545200000"
                 width="100%"
                 height="250"
                 style={{ border: 0, pointerEvents: 'none' }}
