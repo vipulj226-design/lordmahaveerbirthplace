@@ -1548,7 +1548,7 @@ function GallerySection() {
                   e.currentTarget.style.boxShadow = '0 8px 25px rgba(197, 165, 90, 0.4)';
                 }}
               >
-                View All Images Gallery
+                View All Past Events Gallery
                 <ArrowRight className="w-5 h-5" />
               </a>
             </motion.div>
