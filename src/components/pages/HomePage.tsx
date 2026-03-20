@@ -323,7 +323,7 @@ function HeroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
-        style={{ gap: 'clamp(12px, 2vh, 20px)' }}
+        style={{ gap: 'clamp(6px, 1.2vh, 12px)' }}
       >
         {/* H1 Title with Gradient */}
         <motion.h1 
@@ -383,7 +383,7 @@ function HeroSection() {
 
       {/* CTA Button - Fixed at bottom */}
       <motion.div 
-        className="relative z-30 w-full flex justify-center py-2"
+        className="relative z-30 w-full flex justify-center py-1"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 1.2 }}
