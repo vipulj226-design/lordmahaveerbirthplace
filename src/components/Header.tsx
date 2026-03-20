@@ -76,7 +76,7 @@ export default function Header() {
       }}
     >
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex items-center px-4 lg:px-6 py-1 max-w-[1600px] mx-auto gap-4 lg:gap-6">
+      <nav className="hidden md:flex items-center px-4 lg:px-6 py-3 max-w-[1600px] mx-auto gap-4 lg:gap-6">
 
         {/* Logo */}
         <a href="/" onClick={(e) => handleAnchorClick(e, '#hero')} className="flex items-center gap-2 lg:gap-4 shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
@@ -102,7 +102,7 @@ export default function Header() {
                 <a
                   href={link.href}
                   onClick={(e) => handleAnchorClick(e, link.href, navigate)}
-                  className="px-2 lg:px-3 py-1 text-xs lg:text-sm uppercase font-heading rounded transition-all duration-200 flex items-center gap-2 whitespace-nowrap"
+                  className="px-2 lg:px-3 py-2 text-xs lg:text-sm uppercase font-heading rounded transition-all duration-200 flex items-center gap-2 whitespace-nowrap"
                   style={{
                     color: isActive ? '#D4AF37' : '#000000',
                     fontWeight: '700',
@@ -131,7 +131,7 @@ export default function Header() {
       {/* Mobile Navigation */}
       <div className="md:hidden flex flex-col">
         {/* Mobile Header with Logo */}
-        <a href="/" onClick={(e) => handleAnchorClick(e, '#hero')} className="flex items-center justify-center gap-4 py-1.5 border-b border-gold/20 cursor-pointer hover:opacity-80 transition-opacity">
+        <a href="/" onClick={(e) => handleAnchorClick(e, '#hero')} className="flex items-center justify-center gap-4 py-2.5 border-b border-gold/20 cursor-pointer hover:opacity-80 transition-opacity">
           <Image
             src="https://static.wixstatic.com/media/53945f_926edabb995f423680415b255d79c255~mv2.png"
             alt="Lord Mahaveer Birthplace Logo"
