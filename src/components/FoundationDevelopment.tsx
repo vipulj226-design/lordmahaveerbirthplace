@@ -91,7 +91,7 @@ export default function FoundationDevelopment() {
                         className="w-full h-auto overflow-hidden"
                       >
                         <Image
-                          src={`${block.image}${block.image.includes('?') ? '&' : '?'}t=${new Date().getTime()}`}
+                          src={block.image}
                           alt={block.heading || 'Foundation & Development'}
                           width={600}
                           height={600}
