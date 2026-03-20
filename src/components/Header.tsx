@@ -76,7 +76,7 @@ export default function Header() {
       }}
     >
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex items-center px-4 lg:px-6 py-2 max-w-[1600px] mx-auto gap-4 lg:gap-6">
+      <nav className="hidden md:flex items-center px-4 lg:px-6 py-1 max-w-[1600px] mx-auto gap-4 lg:gap-6">
 
         {/* Logo */}
         <a href="/" onClick={(e) => handleAnchorClick(e, '#hero')} className="flex items-center gap-2 lg:gap-4 shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
@@ -131,7 +131,7 @@ export default function Header() {
       {/* Mobile Navigation */}
       <div className="md:hidden flex flex-col">
         {/* Mobile Header with Logo */}
-        <a href="/" onClick={(e) => handleAnchorClick(e, '#hero')} className="flex items-center justify-center gap-4 py-2 border-b border-gold/20 cursor-pointer hover:opacity-80 transition-opacity">
+        <a href="/" onClick={(e) => handleAnchorClick(e, '#hero')} className="flex items-center justify-center gap-4 py-1.5 border-b border-gold/20 cursor-pointer hover:opacity-80 transition-opacity">
           <Image
             src="https://static.wixstatic.com/media/53945f_926edabb995f423680415b255d79c255~mv2.png"
             alt="Lord Mahaveer Birthplace Logo"
@@ -159,7 +159,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleAnchorClick(e, link.href, navigate)}
-                className="flex items-center justify-center min-h-[50px] px-1.5 py-2 text-[0.6rem] uppercase font-heading transition-all duration-200"
+                className="flex items-center justify-center min-h-[42px] px-1.5 py-1.5 text-[0.6rem] uppercase font-heading transition-all duration-200"
                 style={{
                   borderRight: (index + 1) % 5 !== 0 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
                   borderBottom: index < 5 ? '1px solid rgba(197, 165, 90, 0.15)' : 'none',
