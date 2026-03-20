@@ -1358,9 +1358,35 @@ function GallerySection() {
       try {
         const result = await BaseCrudService.getAll<any>('gallery', [], { limit: 100 });
         
-        // Extract images from galleryNew media gallery field
+        // Extract images from all image fields in the gallery collection
         const images: any[] = [];
         result.items.forEach((item) => {
+          // Check all image fields
+          const imageFields = [
+            'image',
+            'galleryImages',
+            'galleryImagesBatch',
+            'image4',
+            'image5',
+            'image6',
+            'image7',
+            'image8',
+            'image9',
+            'image10'
+          ];
+          
+          imageFields.forEach((field) => {
+            if (item[field]) {
+              images.push({
+                src: item[field],
+                caption: item.caption || '',
+                description: item.description || '',
+                displayOrder: item.displayOrder || 0
+              });
+            }
+          });
+          
+          // Also check galleryNew media gallery field
           if (item.galleryNew && Array.isArray(item.galleryNew)) {
             item.galleryNew.forEach((img: any) => {
               if (img && img.url) {
