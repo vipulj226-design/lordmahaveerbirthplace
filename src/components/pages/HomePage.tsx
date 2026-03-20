@@ -741,28 +741,8 @@ function BirthplaceAboutSection() {
             {/* Content Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-12 lg:gap-20">
               
-              {/* Sticky Image Column */}
-              <div className="lg:col-span-5 relative">
-                <div className="sticky top-32">
-                  <div className="relative aspect-[3/4] w-full overflow-hidden border-4 border-maroon bg-maroon">
-                    <Image
-                      src="https://static.wixstatic.com/media/53945f_c4c8144dd34c4ac59690c4eca6987e26~mv2.png"
-                      className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:scale-105 transition-transform duration-700"
-                      originWidth={286}
-                      originHeight={433} />
-                    <div className="absolute inset-0 border border-gold/30 m-4 pointer-events-none" />
-                    
-                    {/* Floating Badge */}
-                    <div className="absolute bottom-8 -right-8 bg-gold text-maroon p-6 font-heading font-bold text-xl shadow-xl hidden lg:block border border-solid border-[#6b0f1a]">
-                      <span className="block text-4xl font-black mb-1">24</span>
-                      Tirthankara
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Scrolling Text Column */}
-              <div className="lg:col-span-7 flex flex-col gap-8 md:gap-16 pt-0 md:pt-8">
+              {/* Scrolling Text Column - Reordered for mobile */}
+              <div className="lg:col-span-7 flex flex-col gap-8 md:gap-16 pt-0 md:pt-8 order-1 lg:order-2">
                 
                 {/* Block 1 */}
                 <motion.div 
@@ -815,6 +795,26 @@ function BirthplaceAboutSection() {
                   </p>
                 </motion.div>
 
+              </div>
+
+              {/* Sticky Image Column - Reordered for mobile */}
+              <div className="lg:col-span-5 relative order-2 lg:order-1 mt-8 lg:mt-0">
+                <div className="sticky top-32">
+                  <div className="relative aspect-[3/4] w-full overflow-hidden border-4 border-maroon bg-maroon">
+                    <Image
+                      src="https://static.wixstatic.com/media/53945f_c4c8144dd34c4ac59690c4eca6987e26~mv2.png"
+                      className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:scale-105 transition-transform duration-700"
+                      originWidth={286}
+                      originHeight={433} />
+                    <div className="absolute inset-0 border border-gold/30 m-4 pointer-events-none" />
+                    
+                    {/* Floating Badge */}
+                    <div className="absolute bottom-8 -right-8 bg-gold text-maroon p-6 font-heading font-bold text-xl shadow-xl hidden lg:block border border-solid border-[#6b0f1a]">
+                      <span className="block text-4xl font-black mb-1">24</span>
+                      Tirthankara
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
