@@ -324,7 +324,7 @@ function HeroSection() {
       >
         {/* H1 Title with Gradient */}
         <motion.h1 
-          className="font-heading font-black tracking-tight px-4 mt-20"
+          className="font-heading font-black tracking-tight px-4"
           style={{
             fontSize: 'clamp(1.25rem, 3.5vw, 2.8rem)',
             lineHeight: '1.1',
