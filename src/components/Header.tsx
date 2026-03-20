@@ -76,25 +76,25 @@ export default function Header() {
       }}
     >
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex items-center px-[2%] py-[1%] max-w-full w-full gap-[1.5%]">
+      <nav className="hidden md:flex items-center px-4 lg:px-6 py-3 lg:py-4 max-w-full w-full gap-4 lg:gap-6">
 
         {/* Logo */}
-        <a href="/" onClick={(e) => handleAnchorClick(e, '#hero')} className="flex items-center gap-3 shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
+        <a href="/" onClick={(e) => handleAnchorClick(e, '#hero')} className="flex items-center gap-2 lg:gap-3 shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
           <Image
             src="https://static.wixstatic.com/media/53945f_926edabb995f423680415b255d79c255~mv2.png"
             alt="Lord Mahaveer Birthplace Logo"
-            width={48}
-            height={48}
-            className="rounded-full"
+            width={40}
+            height={40}
+            className="rounded-full lg:w-12 lg:h-12"
           />
           <div className="flex flex-col">
-            <span className="font-heading text-[0.65rem] lg:text-sm font-black text-maroon uppercase tracking-wider">Lord Mahaveer</span>
-            <span className="font-heading text-[0.55rem] lg:text-sm font-bold text-gold uppercase tracking-wider">Birthplace</span>
+            <span className="font-heading text-xs lg:text-sm font-black text-maroon uppercase tracking-wider">Lord Mahaveer</span>
+            <span className="font-heading text-[0.65rem] lg:text-xs font-bold text-gold uppercase tracking-wider">Birthplace</span>
           </div>
         </a>
 
         {/* Navigation Links */}
-        <ul className="flex gap-[0.5%] items-center flex-1 justify-between">
+        <ul className="flex gap-1 lg:gap-2 items-center flex-1 justify-between">
           {navigationLinks.map((link) => {
             const isActive = link.href.startsWith('/') ? false : activeSection === link.href.replace('#', '');
             return (
@@ -102,7 +102,7 @@ export default function Header() {
                 <a
                   href={link.href}
                   onClick={(e) => handleAnchorClick(e, link.href, navigate)}
-                  className="px-[0.5%] py-[0.75%] text-[0.65rem] lg:text-sm uppercase font-heading rounded transition-all duration-200 flex items-center justify-center gap-1 whitespace-nowrap"
+                  className="px-2 lg:px-3 py-2 lg:py-2.5 text-[0.6rem] lg:text-xs xl:text-sm uppercase font-heading rounded transition-all duration-200 flex items-center justify-center gap-1 whitespace-nowrap"
                   style={{
                     color: isActive ? '#D4AF37' : '#000000',
                     fontWeight: '700',
