@@ -3,7 +3,6 @@ import { BaseCrudService } from '@/integrations';
 import { Gallery } from '@/entities';
 import { Image } from '@/components/ui/image';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
-import Header from '@/components/Header';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, Folder, Image as ImageIcon, X, ChevronLeft, ChevronRight as ChevronRightIcon } from 'lucide-react';
 
@@ -129,7 +128,6 @@ export default function GalleryPage() {
 
   return (
     <>
-      <Header />
       <main className="min-h-screen bg-cream">
         <div className="max-w-[100rem] mx-auto px-4 py-16 md:py-24">
           {/* Header Section */}
