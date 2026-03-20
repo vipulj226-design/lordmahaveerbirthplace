@@ -288,8 +288,10 @@ function HeroSection() {
       style={{
         background: 'linear-gradient(135deg, #6B0F1A, #3D0A10, #6B0F1A)',
         padding: '16px',
-        paddingTop: 'clamp(60px, 8vh, 100px)',
-        paddingBottom: '16px',
+        paddingTop: 'clamp(80px, 12vh, 120px)',
+        paddingBottom: '12px',
+        display: 'flex',
+        flexDirection: 'column',
       }}
     >
       {/* Background Image Pseudo-element */}
@@ -317,10 +319,11 @@ function HeroSection() {
       />
       {/* Main Content */}
       <motion.div 
-        className="relative z-20 w-full max-w-[100rem] mx-auto text-center flex flex-col items-center justify-center flex-1"
+        className="relative z-20 w-full max-w-[100rem] mx-auto text-center flex flex-col items-center justify-center flex-1 min-h-0"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
+        style={{ gap: 'clamp(12px, 2vh, 20px)' }}
       >
         {/* H1 Title with Gradient */}
         <motion.h1 
@@ -335,7 +338,7 @@ function HeroSection() {
             color: 'transparent',
             wordWrap: 'break-word',
             overflowWrap: 'break-word',
-            marginBottom: '8px',
+            marginBottom: '0px',
           }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -347,7 +350,7 @@ function HeroSection() {
         {/* Sub Text */}
         <motion.p 
           className="font-paragraph tracking-[0.125em] uppercase text-xs md:text-sm"
-          style={{ color: 'rgba(253, 246, 236, 0.7)', marginBottom: '12px' }}
+          style={{ color: 'rgba(253, 246, 236, 0.7)', marginBottom: '0px' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.8 }}
@@ -357,7 +360,7 @@ function HeroSection() {
 
         {/* Hero Image Box */}
         <motion.div 
-          className="mx-auto max-w-[400px] md:max-w-[500px] w-full"
+          className="mx-auto max-w-[350px] md:max-w-[450px] w-full"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 1 }}
@@ -380,7 +383,7 @@ function HeroSection() {
 
       {/* CTA Button - Fixed at bottom */}
       <motion.div 
-        className="relative z-30 w-full flex justify-center pb-4"
+        className="relative z-30 w-full flex justify-center py-2"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 1.2 }}
@@ -391,10 +394,10 @@ function HeroSection() {
           style={{
             backgroundImage: 'linear-gradient(to right, #D4AF37, #C5A55A)',
             color: '#1a1a1a',
-            padding: '12px 36px',
+            padding: '10px 32px',
             borderRadius: '50px',
             textDecoration: 'none',
-            fontSize: 'clamp(0.85rem, 2vw, 1rem)',
+            fontSize: 'clamp(0.8rem, 1.8vw, 0.95rem)',
             fontWeight: 700,
             boxShadow: '0 8px 25px rgba(197, 165, 90, 0.4)',
             border: '2px solid #C5A55A',
@@ -414,15 +417,15 @@ function HeroSection() {
 
       {/* Scroll Down Indicator */}
       <motion.div 
-        className="relative z-30 w-full flex flex-col items-center pb-8"
+        className="relative z-30 w-full flex flex-col items-center py-2"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 1.6 }}
       >
         <motion.div
-          animate={{ y: [0, 8, 0] }}
+          animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-2"
+          className="flex flex-col items-center gap-1"
         >
           <p className="font-paragraph text-xs md:text-sm text-cream/70 uppercase tracking-widest font-semibold">
             Scroll Down
@@ -431,7 +434,7 @@ function HeroSection() {
             animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
-            <ChevronDown className="w-6 h-6 md:w-7 md:h-7 text-gold" />
+            <ChevronDown className="w-5 h-5 md:w-6 md:h-6 text-gold" />
           </motion.div>
         </motion.div>
       </motion.div>
