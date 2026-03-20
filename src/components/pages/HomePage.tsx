@@ -386,11 +386,11 @@ function HeroSection() {
 
       {/* CTA Button - Fixed at bottom */}
       <motion.div 
-        className="relative z-30 w-full flex justify-center py-1 md:py-2"
+        className="relative z-30 w-full flex justify-center"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 1.2 }}
-        style={{ marginTop: 'clamp(8px, 2vh, 16px)' }}
+        style={{ marginTop: 'clamp(2px, 0.8vh, 8px)', paddingBottom: 'clamp(4px, 1vh, 12px)' }}
       >
         <motion.a 
           href="#about"
