@@ -1382,11 +1382,12 @@ function GallerySection() {
   useEffect(() => {
     const fetchGallery = async () => {
       try {
-        const result = await BaseCrudService.getAll<any>('gallery', [], { limit: 100 });
-        
-        // Extract images from all image fields in the gallery collection
         const images: any[] = [];
-        result.items.forEach((item) => {
+
+        // Fetch from gallery collection
+        const galleryResult = await BaseCrudService.getAll<any>('gallery', [], { limit: 100 });
+        
+        galleryResult.items.forEach((item) => {
           // Check all image fields
           const imageFields = [
             'image',
@@ -1427,6 +1428,20 @@ function GallerySection() {
                   });
                 }
               }
+            });
+          }
+        });
+
+        // Fetch from gallerysectionmenuimages collection
+        const menuImagesResult = await BaseCrudService.getAll<any>('gallerysectionmenuimages', [], { limit: 100 });
+        
+        menuImagesResult.items.forEach((item) => {
+          if (item.menuImage && item.isActive !== false) {
+            images.push({
+              src: item.menuImage,
+              caption: item.title || '',
+              description: item.description || '',
+              displayOrder: item.displayOrder || 0
             });
           }
         });
