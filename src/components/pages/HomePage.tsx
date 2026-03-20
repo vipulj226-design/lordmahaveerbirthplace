@@ -1356,16 +1356,27 @@ function GallerySection() {
   useEffect(() => {
     const fetchGallery = async () => {
       try {
-        const result = await BaseCrudService.getAll<any>('gallerypageimages', [], { limit: 100 });
+        const result = await BaseCrudService.getAll<any>('gallery', [], { limit: 100 });
         
-        // Get images from gallerypageimages collection
-        const images = result.items.map((item) => ({
-          src: item.image || '',
-          caption: item.title || '',
-          description: item.description || '',
-          displayOrder: 0
-        })).filter(img => img.src); // Filter out items without images
+        // Extract images from galleryNew media gallery field
+        const images: any[] = [];
+        result.items.forEach((item) => {
+          if (item.galleryNew && Array.isArray(item.galleryNew)) {
+            item.galleryNew.forEach((img: any) => {
+              if (img && img.url) {
+                images.push({
+                  src: img.url,
+                  caption: item.caption || '',
+                  description: item.description || '',
+                  displayOrder: item.displayOrder || 0
+                });
+              }
+            });
+          }
+        });
         
+        // Sort by displayOrder
+        images.sort((a, b) => a.displayOrder - b.displayOrder);
         setAllImages(images);
       } catch (error) {
         console.error('Error fetching gallery:', error);
