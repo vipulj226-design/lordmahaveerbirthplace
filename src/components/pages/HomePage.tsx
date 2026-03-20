@@ -284,11 +284,12 @@ function HeroSection() {
   return (
     <section 
       id="hero" 
-      className="relative w-full h-screen flex items-center justify-center overflow-hidden"
+      className="relative w-full min-h-screen flex items-center justify-center overflow-visible"
       style={{
         background: 'linear-gradient(135deg, #6B0F1A, #3D0A10, #6B0F1A)',
         padding: '24px',
         paddingTop: 'clamp(100px, 12vh, 200px)',
+        paddingBottom: '80px',
       }}
     >
       {/* Background Image Pseudo-element */}
