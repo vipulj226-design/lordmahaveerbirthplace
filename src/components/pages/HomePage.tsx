@@ -1384,7 +1384,7 @@ function GallerySection() {
       try {
         const images: any[] = [];
 
-        // Fetch from gallery collection
+        // Fetch from gallery collection only
         const galleryResult = await BaseCrudService.getAll<any>('gallery', [], { limit: 100 });
         
         galleryResult.items.forEach((item) => {
@@ -1428,20 +1428,6 @@ function GallerySection() {
                   });
                 }
               }
-            });
-          }
-        });
-
-        // Fetch from gallerysectionmenuimages collection
-        const menuImagesResult = await BaseCrudService.getAll<any>('gallerysectionmenuimages', [], { limit: 100 });
-        
-        menuImagesResult.items.forEach((item) => {
-          if (item.menuImage && item.isActive !== false) {
-            images.push({
-              src: item.menuImage,
-              caption: item.title || '',
-              description: item.description || '',
-              displayOrder: item.displayOrder || 0
             });
           }
         });
