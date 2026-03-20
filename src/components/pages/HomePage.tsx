@@ -284,7 +284,7 @@ function HeroSection() {
   return (
     <section 
       id="hero" 
-      className="relative w-full h-screen flex flex-col items-center justify-between overflow-hidden"
+      className="relative w-full flex flex-col items-center justify-between overflow-hidden"
       style={{
         background: 'linear-gradient(135deg, #6B0F1A, #3D0A10, #6B0F1A)',
         padding: '8px',
@@ -292,6 +292,8 @@ function HeroSection() {
         paddingBottom: '4px',
         display: 'flex',
         flexDirection: 'column',
+        minHeight: '100vh',
+        height: 'auto',
       }}
     >
       {/* Background Image Pseudo-element */}
@@ -319,11 +321,11 @@ function HeroSection() {
       />
       {/* Main Content */}
       <motion.div 
-        className="relative z-20 w-full max-w-[100rem] mx-auto text-center flex flex-col items-center justify-center flex-1 min-h-0"
+        className="relative z-20 w-full max-w-[100rem] mx-auto text-center flex flex-col items-center justify-center flex-1"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
-        style={{ gap: 'clamp(2px, 0.6vh, 6px)' }}
+        style={{ gap: 'clamp(8px, 2vh, 16px)' }}
       >
         {/* H1 Title with Gradient */}
         <motion.h1 
