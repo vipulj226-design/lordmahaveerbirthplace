@@ -27,6 +27,27 @@ export interface CommitteeMembers {
 
 
 /**
+ * Collection ID: eventyears
+ * Interface for EventYears
+ */
+export interface EventYears {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType number */
+  year?: number;
+  /** @wixFieldType text */
+  title?: string;
+  /** @wixFieldType text */
+  description?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  coverImage?: string;
+  /** @wixFieldType boolean */
+  isActive?: boolean;
+}
+
+
+/**
  * Collection ID: foundationdevelopment
  * Interface for FoundationDevelopment
  */
@@ -164,6 +185,29 @@ export interface NavigationItems {
   isActive?: boolean;
   /** @wixFieldType url */
   url?: string;
+}
+
+
+/**
+ * Collection ID: pastevents
+ * Interface for PastEvents
+ */
+export interface PastEvents {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType text */
+  eventName?: string;
+  /** @wixFieldType date */
+  eventDate?: Date | string;
+  /** @wixFieldType number */
+  eventYear?: number;
+  /** @wixFieldType text */
+  location?: string;
+  /** @wixFieldType text */
+  description?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  coverImage?: string;
 }
 
 

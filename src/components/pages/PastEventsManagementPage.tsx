@@ -1,10 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { BaseCrudService } from '@/integrations';
-import { PastEvents, EventYears } from '@/entities';
 import { Image } from '@/components/ui/image';
 import Header from '@/components/Header';
 import { ChevronDown, ChevronUp, Calendar, MapPin } from 'lucide-react';
+
+interface EventYears {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  year?: number;
+  title?: string;
+  description?: string;
+  coverImage?: string;
+  isActive?: boolean;
+}
+
+interface PastEvents {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  eventName?: string;
+  eventDate?: Date | string;
+  eventYear?: number;
+  location?: string;
+  description?: string;
+  coverImage?: string;
+}
 
 interface EventsByYear {
   year: EventYears;
