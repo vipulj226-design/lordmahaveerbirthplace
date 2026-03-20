@@ -373,7 +373,7 @@ function HeroSection() {
             alt="Sahastrakut Jinalaya"
             className="w-full h-auto object-cover block"
             style={{ objectPosition: 'center 50%', aspectRatio: '16/9' }}
-            width={500}
+            width={800}
           />
         </motion.div>
       </motion.div>
