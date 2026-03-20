@@ -5,7 +5,7 @@ import { Image } from '@/components/ui/image';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import Header from '@/components/Header';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight, Folder, Image as ImageIcon } from 'lucide-react';
+import { ChevronRight, Folder, Image as ImageIcon, X, ChevronLeft, ChevronRight as ChevronRightIcon } from 'lucide-react';
 
 interface GroupedGallery {
   [year: number]: {
@@ -14,11 +14,14 @@ interface GroupedGallery {
 }
 
 export default function GalleryPage() {
-  const [items, setItems] = useState<Gallery[]>([]);
+  const [items, setItems] = useState<Gallery[]>([]);;
   const [isLoading, setIsLoading] = useState(true);
   const [groupedByYearAndEvent, setGroupedByYearAndEvent] = useState<GroupedGallery>({});
   const [expandedYear, setExpandedYear] = useState<number | null>(null);
   const [expandedEvents, setExpandedEvents] = useState<Set<string>>(new Set());
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [allLightboxImages, setAllLightboxImages] = useState<string[]>([]);
 
   useEffect(() => {
     loadGalleryImages();
@@ -83,6 +86,46 @@ export default function GalleryPage() {
     }
     setExpandedEvents(newExpandedEvents);
   };
+
+  const openLightbox = (images: string[], index: number) => {
+    setAllLightboxImages(images);
+    setCurrentImageIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % allLightboxImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + allLightboxImages.length) % allLightboxImages.length);
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!lightboxOpen) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxOpen, allLightboxImages.length]);
+
+  useEffect(() => {
+    if (lightboxOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [lightboxOpen]);
 
   return (
     <>
@@ -179,21 +222,10 @@ export default function GalleryPage() {
                                   >
                                     <div className="mt-3 grid grid-cols-2 md:grid-cols-4 gap-4 pl-4">
                                       {groupedByYearAndEvent[year][eventName].map((item, photoIndex) => {
-                                        // Get images from mediaGallery array or fallback to legacy single image fields
-                                        const imageUrls = (item as any).mediaGallery && Array.isArray((item as any).mediaGallery)
-                                          ? (item as any).mediaGallery.filter(Boolean)
-                                          : [
-                                              item.image,
-                                              item.image4,
-                                              item.image5,
-                                              item.image6,
-                                              item.image7,
-                                              item.image8,
-                                              item.image9,
-                                              item.image10,
-                                              item.galleryImages,
-                                              item.galleryImagesBatch,
-                                            ].filter(Boolean);
+                                        // Get images from galleryNew media gallery field
+                                        const imageUrls = (item as any).galleryNew && Array.isArray((item as any).galleryNew)
+                                          ? (item as any).galleryNew.filter((img: any) => img && img.url).map((img: any) => img.url)
+                                          : [];
 
                                         return imageUrls.map((imageUrl, imgIndex) => (
                                           <motion.div
@@ -201,7 +233,8 @@ export default function GalleryPage() {
                                             initial={{ opacity: 0, scale: 0.9 }}
                                             animate={{ opacity: 1, scale: 1 }}
                                             transition={{ delay: (photoIndex + imgIndex) * 0.03, duration: 0.2 }}
-                                            className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                                            className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+                                            onClick={() => openLightbox(imageUrls, imgIndex)}
                                           >
                                             <div className="aspect-square overflow-hidden bg-gray-200">
                                               {imageUrl ? (
@@ -257,6 +290,55 @@ export default function GalleryPage() {
           )}
         </div>
       </main>
+
+      {/* Lightbox */}
+      {lightboxOpen && allLightboxImages.length > 0 && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={closeLightbox}
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center p-4"
+          style={{
+            background: 'rgba(10, 2, 4, 0.92)',
+            backdropFilter: 'blur(6px)'
+          }}
+        >
+          <div className="relative w-full h-full flex flex-col items-center justify-center" onClick={(e) => e.stopPropagation()}>
+            {/* Close Button */}
+            <button
+              onClick={closeLightbox}
+              className="absolute top-4 right-4 z-10 w-10 h-10 md:w-12 md:h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors"
+            >
+              <X className="w-5 h-5 md:w-6 md:h-6" />
+            </button>
+
+            {/* Image Container */}
+            <div className="flex items-center justify-center w-full h-full max-h-[70vh]">
+              <Image
+                src={allLightboxImages[currentImageIndex]}
+                alt="Gallery image"
+                className="max-w-full max-h-full object-contain border-4 border-gold"
+              />
+            </div>
+
+            {/* Navigation Buttons */}
+            <button
+              onClick={prevImage}
+              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors z-20"
+            >
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+            </button>
+
+            <button
+              onClick={nextImage}
+              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors z-20"
+            >
+              <ChevronRightIcon className="w-5 h-5 md:w-6 md:h-6" />
+            </button>
+          </div>
+        </motion.div>
+      )}
     </>
   );
 }

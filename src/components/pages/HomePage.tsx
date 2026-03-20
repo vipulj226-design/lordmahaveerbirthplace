@@ -1359,35 +1359,21 @@ function GallerySection() {
         // Add cache-busting parameter to force fresh data
         const result = await BaseCrudService.getAll<any>('gallery', [], { limit: 100 });
         
-        // Flatten all images from all gallery items
+        // Flatten all images from galleryNew media gallery field
         const flattenedImages: any[] = [];
         result.items.forEach((item) => {
-          // List of all possible image fields in the gallery collection
-          const imageFields = [
-            'image',
-            'galleryImages',
-            'galleryImagesBatch',
-            'image2',
-            'image3',
-            'image4',
-            'image5',
-            'image6',
-            'image7',
-            'image8',
-            'image9',
-            'image10'
-          ];
-          
-          // Extract all non-empty images from this item
-          imageFields.forEach((field) => {
-            if (item[field]) {
-              flattenedImages.push({
-                src: item[field],
-                caption: item.caption || '',
-                displayOrder: item.displayOrder || 0
-              });
-            }
-          });
+          // Get images from galleryNew media gallery field
+          if (item.galleryNew && Array.isArray(item.galleryNew)) {
+            item.galleryNew.forEach((img: any) => {
+              if (img && img.url) {
+                flattenedImages.push({
+                  src: img.url,
+                  caption: item.caption || '',
+                  displayOrder: item.displayOrder || 0
+                });
+              }
+            });
+          }
         });
         
         // Sort by display order

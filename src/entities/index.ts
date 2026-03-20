@@ -95,6 +95,8 @@ export interface Gallery {
   description?: string;
   /** @wixFieldType datetime */
   dateAdded?: Date | string;
+  /** @wixFieldType media_gallery */
+  galleryNew?: any;
 }
 
 
