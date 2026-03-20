@@ -232,7 +232,11 @@ export default function GalleryPage() {
                                         // Check galleryNew media gallery field
                                         if ((item as any).galleryNew && Array.isArray((item as any).galleryNew)) {
                                           (item as any).galleryNew.forEach((img: any) => {
-                                            if (img && img.url) imageUrls.push(img.url);
+                                            if (img) {
+                                              // Try different possible property names for the image URL
+                                              const imageUrl = img.url || img.src || img.image || (typeof img === 'string' ? img : null);
+                                              if (imageUrl) imageUrls.push(imageUrl);
+                                            }
                                           });
                                         }
                                         

@@ -1389,13 +1389,17 @@ function GallerySection() {
           // Also check galleryNew media gallery field
           if (item.galleryNew && Array.isArray(item.galleryNew)) {
             item.galleryNew.forEach((img: any) => {
-              if (img && img.url) {
-                images.push({
-                  src: img.url,
-                  caption: item.caption || '',
-                  description: item.description || '',
-                  displayOrder: item.displayOrder || 0
-                });
+              if (img) {
+                // Try different possible property names for the image URL
+                const imageUrl = img.url || img.src || img.image || (typeof img === 'string' ? img : null);
+                if (imageUrl) {
+                  images.push({
+                    src: imageUrl,
+                    caption: item.caption || '',
+                    description: item.description || '',
+                    displayOrder: item.displayOrder || 0
+                  });
+                }
               }
             });
           }
