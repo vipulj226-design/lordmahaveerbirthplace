@@ -4,7 +4,8 @@ import { Gallery } from '@/entities';
 import { Image } from '@/components/ui/image';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight, Folder, Image as ImageIcon, X, ChevronLeft, ChevronRight as ChevronRightIcon } from 'lucide-react';
+import { ChevronRight, Folder, Image as ImageIcon, X, ChevronLeft, ChevronRight as ChevronRightIcon, Home } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface GroupedGallery {
   [year: number]: {
@@ -130,6 +131,17 @@ export default function GalleryPage() {
     <>
       <main className="min-h-screen bg-cream">
         <div className="max-w-[100rem] mx-auto px-4 py-16 md:py-24">
+          {/* Go to Homepage Button */}
+          <div className="mb-8">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-maroon text-cream border-2 border-maroon rounded-lg hover:bg-cream hover:text-maroon transition-colors duration-200 font-paragraph font-semibold"
+            >
+              <Home className="w-4 h-4" />
+              Go to Homepage
+            </Link>
+          </div>
+
           {/* Header Section */}
           <div className="mb-16 text-center">
             <h1 className="font-heading text-5xl md:text-6xl text-maroon mb-4">
