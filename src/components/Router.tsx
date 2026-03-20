@@ -7,6 +7,7 @@ import GalleryPage from '@/components/pages/GalleryPage';
 import PastEventsPage from '@/components/pages/PastEventsPage';
 import PastEventDetailPage from '@/components/pages/PastEventDetailPage';
 import PastEventsManagementPage from '@/components/pages/PastEventsManagementPage';
+import EventPhotoUploadPage from '@/components/pages/EventPhotoUploadPage';
 import ScrollProgressBar from '@/components/ScrollProgressBar';
 
 // Layout component that includes ScrollToTop and ScrollProgressBar
@@ -59,6 +60,13 @@ const router = createBrowserRouter([
         element: <PastEventsManagementPage />,
         routeMetadata: {
           pageIdentifier: 'past-events-year-wise',
+        },
+      },
+      {
+        path: "upload-photos",
+        element: <EventPhotoUploadPage />,
+        routeMetadata: {
+          pageIdentifier: 'upload-photos',
         },
       },
       {
