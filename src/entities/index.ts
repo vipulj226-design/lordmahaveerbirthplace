@@ -145,6 +145,29 @@ export interface GalleryPageImages {
 
 
 /**
+ * Collection ID: gallerysectionmenuimages
+ * Interface for GallerySectionMenuImages
+ */
+export interface GallerySectionMenuImages {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  menuImage?: string;
+  /** @wixFieldType text */
+  title?: string;
+  /** @wixFieldType text */
+  description?: string;
+  /** @wixFieldType number */
+  displayOrder?: number;
+  /** @wixFieldType text */
+  altText?: string;
+  /** @wixFieldType boolean */
+  isActive?: boolean;
+}
+
+
+/**
  * Collection ID: herosectioncontent
  * Interface for HeroSectionContent
  */
