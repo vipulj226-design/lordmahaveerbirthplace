@@ -214,6 +214,29 @@ export interface Gallery {
 
 
 /**
+ * Collection ID: gallerypageimages
+ * Interface for GalleryPageImages
+ */
+export interface GalleryPageImages {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType text */
+  title?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  image?: string;
+  /** @wixFieldType text */
+  description?: string;
+  /** @wixFieldType text */
+  altText?: string;
+  /** @wixFieldType datetime */
+  dateAdded?: Date | string;
+  /** @wixFieldType text */
+  category?: string;
+}
+
+
+/**
  * Collection ID: heritagesites
  * Interface for HeritageSites
  */
