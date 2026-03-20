@@ -73,6 +73,7 @@ export default function Header() {
         backgroundColor: 'rgba(253, 246, 236, 0.96)',
         backdropFilter: 'blur(10px)',
         boxShadow: '0 2px 20px rgba(107, 15, 26, 0.1)',
+        borderBottom: '3px solid #C5A55A',
       }}
     >
       {/* Desktop Navigation */}
