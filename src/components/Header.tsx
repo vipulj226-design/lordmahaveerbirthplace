@@ -76,7 +76,7 @@ export default function Header() {
       }}
     >
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex items-center px-4 lg:px-6 py-3 lg:py-4 max-w-full w-full gap-4 lg:gap-6">
+      <nav className="hidden md:flex items-center px-4 lg:px-6 py-3 lg:py-4 max-w-full w-full gap-2 lg:gap-3 overflow-x-auto">
 
         {/* Logo */}
         <a href="/" onClick={(e) => handleAnchorClick(e, '#hero')} className="flex items-center gap-2 lg:gap-3 shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
@@ -94,15 +94,15 @@ export default function Header() {
         </a>
 
         {/* Navigation Links */}
-        <ul className="flex gap-1 lg:gap-2 items-center flex-1 justify-between">
+        <ul className="flex gap-1 lg:gap-2 items-center shrink-0">
           {navigationLinks.map((link) => {
             const isActive = link.href.startsWith('/') ? false : activeSection === link.href.replace('#', '');
             return (
-              <li key={link.href} className="flex-1 min-w-0">
+              <li key={link.href} className="shrink-0">
                 <a
                   href={link.href}
                   onClick={(e) => handleAnchorClick(e, link.href, navigate)}
-                  className="px-2 lg:px-3 py-2 lg:py-2.5 text-[0.6rem] lg:text-xs xl:text-sm uppercase font-heading rounded transition-all duration-200 flex items-center justify-center gap-1 whitespace-nowrap"
+                  className="px-1.5 lg:px-2.5 py-2 lg:py-2.5 text-[0.55rem] lg:text-xs xl:text-sm uppercase font-heading rounded transition-all duration-200 flex items-center justify-center gap-1 whitespace-nowrap"
                   style={{
                     color: isActive ? '#D4AF37' : '#000000',
                     fontWeight: '700',
