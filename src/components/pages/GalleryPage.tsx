@@ -226,10 +226,23 @@ export default function GalleryPage() {
                                   >
                                     <div className="mt-3 grid grid-cols-2 md:grid-cols-4 gap-4 pl-4">
                                       {groupedByYearAndEvent[year][eventName].map((item, photoIndex) => {
-                                        // Get images from galleryNew media gallery field
-                                        const imageUrls = (item as any).galleryNew && Array.isArray((item as any).galleryNew)
-                                          ? (item as any).galleryNew.filter((img: any) => img && img.url).map((img: any) => img.url)
-                                          : [];
+                                        // Get images from all available image fields
+                                        const imageUrls: string[] = [];
+                                        
+                                        // Check galleryNew media gallery field
+                                        if ((item as any).galleryNew && Array.isArray((item as any).galleryNew)) {
+                                          (item as any).galleryNew.forEach((img: any) => {
+                                            if (img && img.url) imageUrls.push(img.url);
+                                          });
+                                        }
+                                        
+                                        // Check individual image fields
+                                        const imageFields = ['image', 'image4', 'image5', 'image6', 'image7', 'image8', 'image9', 'image10', 'galleryImages', 'galleryImagesBatch'];
+                                        imageFields.forEach(field => {
+                                          if ((item as any)[field] && typeof (item as any)[field] === 'string') {
+                                            imageUrls.push((item as any)[field]);
+                                          }
+                                        });
 
                                         return imageUrls.map((imageUrl, imgIndex) => (
                                           <motion.button
