@@ -4,98 +4,6 @@
  */
 
 /**
- * Collection ID: aboutus
- * Interface for AboutUs
- */
-export interface AboutUs {
-  _id: string;
-  _createdDate?: Date;
-  _updatedDate?: Date;
-  /** @wixFieldType text */
-  sectionTitle?: string;
-  /** @wixFieldType text */
-  introText?: string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
-  statueImage?: string;
-  /** @wixFieldType text */
-  statueDescription?: string;
-  /** @wixFieldType url */
-  learnMoreUrl?: string;
-  /** @wixFieldType date */
-  acquisitionDate?: Date | string;
-}
-
-
-/**
- * Collection ID: accommodationoptions
- * Interface for AccommodationOptions
- */
-export interface AccommodationOptions {
-  _id: string;
-  _createdDate?: Date;
-  _updatedDate?: Date;
-  /** @wixFieldType text */
-  name?: string;
-  /** @wixFieldType text */
-  description?: string;
-  /** @wixFieldType text */
-  address?: string;
-  /** @wixFieldType text */
-  phoneNumber?: string;
-  /** @wixFieldType url */
-  websiteUrl?: string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
-  mainImage?: string;
-  /** @wixFieldType text */
-  priceRange?: string;
-  /** @wixFieldType url */
-  bookingLink?: string;
-}
-
-
-/**
- * Collection ID: bankdetails
- * Interface for BankDetails
- */
-export interface BankDetails {
-  _id: string;
-  _createdDate?: Date;
-  _updatedDate?: Date;
-  /** @wixFieldType text */
-  bankName?: string;
-  /** @wixFieldType text */
-  accountNumber?: string;
-  /** @wixFieldType text */
-  ifscCode?: string;
-  /** @wixFieldType text */
-  branchName?: string;
-  /** @wixFieldType text */
-  accountHolderName?: string;
-}
-
-
-/**
- * Collection ID: blessings
- * Interface for Blessings
- */
-export interface Blessings {
-  _id: string;
-  _createdDate?: Date;
-  _updatedDate?: Date;
-  /** @wixFieldType text */
-  title?: string;
-  /** @wixFieldType text */
-  content?: string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
-  blessingImage?: string;
-  /** @wixFieldType text */
-  author?: string;
-  /** @wixFieldType date */
-  blessingDate?: Date | string;
-}
-
-
-/**
  * Collection ID: committee
  * Interface for CommitteeMembers
  */
@@ -115,29 +23,6 @@ export interface CommitteeMembers {
   linkedInUrl?: string;
   /** @wixFieldType date */
   joiningDate?: Date | string;
-}
-
-
-/**
- * Collection ID: eventyears
- * Interface for EventYears
- */
-export interface EventYears {
-  _id: string;
-  _createdDate?: Date;
-  _updatedDate?: Date;
-  /** @wixFieldType number */
-  year?: number;
-  /** @wixFieldType text */
-  title?: string;
-  /** @wixFieldType text */
-  description?: string;
-  /** @wixFieldType date */
-  startDate?: Date | string;
-  /** @wixFieldType date */
-  endDate?: Date | string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
-  yearImage?: string;
 }
 
 
@@ -237,29 +122,6 @@ export interface GalleryPageImages {
 
 
 /**
- * Collection ID: heritagesites
- * Interface for HeritageSites
- */
-export interface HeritageSites {
-  _id: string;
-  _createdDate?: Date;
-  _updatedDate?: Date;
-  /** @wixFieldType text */
-  title?: string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
-  mainImage?: string;
-  /** @wixFieldType text */
-  description?: string;
-  /** @wixFieldType text */
-  location?: string;
-  /** @wixFieldType number */
-  yearEstablished?: number;
-  /** @wixFieldType url */
-  moreInfoUrl?: string;
-}
-
-
-/**
  * Collection ID: herosectioncontent
  * Interface for HeroSectionContent
  */
@@ -304,45 +166,6 @@ export interface NavigationItems {
 
 
 /**
- * Collection ID: pastevents
- * Interface for PastEvents
- */
-export interface PastEvents {
-  _id: string;
-  _createdDate?: Date;
-  _updatedDate?: Date;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
-  eventImage3?: string;
-  /** @wixFieldType number */
-  eventYear?: number;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
-  eventGalleryImages?: string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
-  eventImages?: string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
-  eventImage5?: string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
-  eventImage4?: string;
-  /** @wixFieldType text */
-  eventName?: string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
-  eventImage2?: string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
-  eventGallery?: string;
-  /** @wixFieldType date */
-  eventDate?: Date | string;
-  /** @wixFieldType text */
-  description?: string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
-  coverImage?: string;
-  /** @wixFieldType text */
-  location?: string;
-  /** @wixFieldType url */
-  eventUrl?: string;
-}
-
-
-/**
  * Collection ID: spiritualleaders
  * Interface for SpiritualLeaders
  */
@@ -360,29 +183,6 @@ export interface SpiritualLeaders {
   leaderDescription?: string;
   /** @wixFieldType number */
   displayOrder?: number;
-}
-
-
-/**
- * Collection ID: transportmodes
- * Interface for TransportModes
- */
-export interface TransportModes {
-  _id: string;
-  _createdDate?: Date;
-  _updatedDate?: Date;
-  /** @wixFieldType text */
-  modeName?: string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
-  modeImage?: string;
-  /** @wixFieldType text */
-  description?: string;
-  /** @wixFieldType text */
-  estimatedTravelTime?: string;
-  /** @wixFieldType text */
-  averageCost?: string;
-  /** @wixFieldType url */
-  bookingUrl?: string;
 }
 
 

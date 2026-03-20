@@ -179,21 +179,23 @@ export default function GalleryPage() {
                                   >
                                     <div className="mt-3 grid grid-cols-2 md:grid-cols-4 gap-4 pl-4">
                                       {groupedByYearAndEvent[year][eventName].map((item, photoIndex) => {
-                                        // Collect all image fields from the item
-                                        const imageFields = [
-                                          item.image,
-                                          item.image4,
-                                          item.image5,
-                                          item.image6,
-                                          item.image7,
-                                          item.image8,
-                                          item.image9,
-                                          item.image10,
-                                          item.galleryImages,
-                                          item.galleryImagesBatch,
-                                        ].filter(Boolean);
+                                        // Get images from mediaGallery array or fallback to legacy single image fields
+                                        const imageUrls = (item as any).mediaGallery && Array.isArray((item as any).mediaGallery)
+                                          ? (item as any).mediaGallery.filter(Boolean)
+                                          : [
+                                              item.image,
+                                              item.image4,
+                                              item.image5,
+                                              item.image6,
+                                              item.image7,
+                                              item.image8,
+                                              item.image9,
+                                              item.image10,
+                                              item.galleryImages,
+                                              item.galleryImagesBatch,
+                                            ].filter(Boolean);
 
-                                        return imageFields.map((imageUrl, imgIndex) => (
+                                        return imageUrls.map((imageUrl, imgIndex) => (
                                           <motion.div
                                             key={`${item._id}-${imgIndex}`}
                                             initial={{ opacity: 0, scale: 0.9 }}
