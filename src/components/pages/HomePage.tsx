@@ -1384,56 +1384,23 @@ function GallerySection() {
       try {
         const images: any[] = [];
 
-        // Fetch from gallery collection only
-        const galleryResult = await BaseCrudService.getAll<any>('gallery', [], { limit: 100 });
+        // Fetch from gallerysectionmenuimages collection (the correct one for homepage gallery)
+        const galleryResult = await BaseCrudService.getAll<any>('gallerysectionmenuimages', [], { limit: 100 });
         
         galleryResult.items.forEach((item) => {
-          // Check all image fields
-          const imageFields = [
-            'image',
-            'galleryImages',
-            'galleryImagesBatch',
-            'image4',
-            'image5',
-            'image6',
-            'image7',
-            'image8',
-            'image9',
-            'image10'
-          ];
-          
-          imageFields.forEach((field) => {
-            if (item[field]) {
-              images.push({
-                src: item[field],
-                caption: item.caption || '',
-                description: item.description || '',
-                displayOrder: item.displayOrder || 0
-              });
-            }
-          });
-          
-          // Also check galleryNew media gallery field
-          if (item.galleryNew && Array.isArray(item.galleryNew)) {
-            item.galleryNew.forEach((img: any) => {
-              if (img) {
-                // Try different possible property names for the image URL
-                const imageUrl = img.url || img.src || img.image || (typeof img === 'string' ? img : null);
-                if (imageUrl) {
-                  images.push({
-                    src: imageUrl,
-                    caption: item.caption || '',
-                    description: item.description || '',
-                    displayOrder: item.displayOrder || 0
-                  });
-                }
-              }
+          if (item.menuImage) {
+            images.push({
+              src: item.menuImage,
+              caption: item.title || '',
+              description: item.description || '',
+              displayOrder: item.displayOrder || 0,
+              altText: item.altText || ''
             });
           }
         });
         
         // Sort by displayOrder
-        images.sort((a, b) => a.displayOrder - b.displayOrder);
+        images.sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
         setAllImages(images);
       } catch (error) {
         console.error('Error fetching gallery:', error);
