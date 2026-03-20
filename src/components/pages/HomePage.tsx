@@ -1443,7 +1443,7 @@ function GallerySection() {
   }, [lightboxOpen]);
 
   return (
-    <section id="gallery" className="relative py-4 md:py-8 bg-cream overflow-hidden">
+    <section id="gallery-section" className="relative py-4 md:py-8 bg-cream overflow-hidden">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
@@ -1469,38 +1469,80 @@ function GallerySection() {
           <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
         </div>
 
-        {/* Gallery Grid */}
+        {/* Gallery Grid - Show only first 6 images */}
         {isLoading ? (
           <div className="text-center py-12">
             <p className="font-paragraph text-maroon/60 text-sm">Loading gallery...</p>
           </div>
         ) : allImages.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 auto-rows-[240px]">
-            {allImages.map((image, index) => (
-              <motion.div
-                key={`${index}-${image.src}`}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="group relative overflow-hidden rounded-[10px] border-2 border-maroon hover:border-gold transition-all duration-300 cursor-pointer"
-                onClick={() => openLightbox(index)}
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 auto-rows-[240px] mb-12">
+              {allImages.slice(0, 6).map((image, index) => (
+                <motion.div
+                  key={`${index}-${image.src}`}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                  className="group relative overflow-hidden rounded-[10px] border-2 border-maroon hover:border-gold transition-all duration-300 cursor-pointer"
+                  onClick={() => openLightbox(index)}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.caption || 'Gallery image'}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  
+                  {/* Caption Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                    <p className="font-paragraph text-cream text-sm p-4 w-full">
+                      {image.caption}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* View All Gallery Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="flex justify-center"
+            >
+              <a
+                href="/gallery"
+                className="inline-block font-heading font-bold tracking-wide uppercase relative z-30"
+                style={{
+                  backgroundImage: 'linear-gradient(to right, #D4AF37, #C5A55A)',
+                  color: '#1a1a1a',
+                  padding: '16px 48px',
+                  borderRadius: '50px',
+                  textDecoration: 'none',
+                  fontSize: '1.1rem',
+                  fontWeight: 700,
+                  boxShadow: '0 8px 25px rgba(197, 165, 90, 0.4)',
+                  border: '2px solid #C5A55A',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  transition: 'all 0.3s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.boxShadow = '0 15px 40px rgba(197, 165, 90, 0.6)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(197, 165, 90, 0.4)';
+                }}
               >
-                <Image
-                  src={image.src}
-                  alt={image.caption || 'Gallery image'}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                
-                {/* Caption Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                  <p className="font-paragraph text-cream text-sm p-4 w-full">
-                    {image.caption}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                View All Images Gallery
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            </motion.div>
+          </>
         ) : (
           <div className="text-center py-16">
             <p className="font-paragraph text-maroon/60 text-lg">No gallery items yet. Check back soon!</p>
