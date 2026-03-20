@@ -390,7 +390,7 @@ function HeroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 1.2 }}
-        style={{ marginTop: 'clamp(-8px, -2vh, 0px)' }}
+        style={{ marginTop: 'clamp(8px, 2vh, 16px)' }}
       >
         <motion.a 
           href="#about"
