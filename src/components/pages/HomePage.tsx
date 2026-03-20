@@ -386,10 +386,11 @@ function HeroSection() {
 
       {/* CTA Button - Fixed at bottom */}
       <motion.div 
-        className="relative z-30 w-full flex justify-center py-1"
+        className="relative z-30 w-full flex justify-center py-1 md:py-2"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 1.2 }}
+        style={{ marginTop: 'clamp(-8px, -2vh, 0px)' }}
       >
         <motion.a 
           href="#about"
@@ -420,10 +421,11 @@ function HeroSection() {
 
       {/* Scroll Down Indicator */}
       <motion.div 
-        className="relative z-30 w-full flex flex-col items-center py-2"
+        className="relative z-30 w-full flex flex-col items-center py-1 md:py-2"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 1.6 }}
+        style={{ marginTop: 'clamp(-6px, -1.5vh, 0px)' }}
       >
         <motion.div
           animate={{ y: [0, 6, 0] }}
