@@ -6,7 +6,6 @@ import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, Folder, Image as ImageIcon, X, ChevronLeft, ChevronRight as ChevronRightIcon, Home } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import Header from '@/components/Header';
 
 interface GroupedGallery {
   [year: number]: {
@@ -130,9 +129,18 @@ export default function GalleryPage() {
 
   return (
     <>
-      <Header />
-      <main className="min-h-screen bg-cream pt-24 md:pt-28">
+      <main className="min-h-screen bg-cream">
         <div className="max-w-[100rem] mx-auto px-4 py-16 md:py-24">
+          {/* Go to Homepage Button */}
+          <div className="mb-8">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-maroon text-cream border-2 border-maroon rounded-lg hover:bg-cream hover:text-maroon transition-colors duration-200 font-paragraph font-semibold"
+            >
+              <Home className="w-4 h-4" />
+              Go to Homepage
+            </Link>
+          </div>
 
           {/* Header Section */}
           <div className="mb-16 text-center">
