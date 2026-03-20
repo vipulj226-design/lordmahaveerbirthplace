@@ -1356,31 +1356,20 @@ function GallerySection() {
   useEffect(() => {
     const fetchGallery = async () => {
       try {
-        // Add cache-busting parameter to force fresh data
-        const result = await BaseCrudService.getAll<any>('gallery', [], { limit: 100 });
+        const result = await BaseCrudService.getAll<any>('gallerypageimages', [], { limit: 100 });
         
-        // Flatten all images from galleryNew media gallery field
-        const flattenedImages: any[] = [];
-        result.items.forEach((item) => {
-          // Get images from galleryNew media gallery field
-          if (item.galleryNew && Array.isArray(item.galleryNew)) {
-            item.galleryNew.forEach((img: any) => {
-              if (img && img.url) {
-                flattenedImages.push({
-                  src: img.url,
-                  caption: item.caption || '',
-                  displayOrder: item.displayOrder || 0
-                });
-              }
-            });
-          }
-        });
+        // Get images from gallerypageimages collection
+        const images = result.items.map((item) => ({
+          src: item.image || '',
+          caption: item.title || '',
+          description: item.description || '',
+          displayOrder: 0
+        })).filter(img => img.src); // Filter out items without images
         
-        // Sort by display order
-        flattenedImages.sort((a, b) => a.displayOrder - b.displayOrder);
-        setAllImages(flattenedImages);
+        setAllImages(images);
       } catch (error) {
         console.error('Error fetching gallery:', error);
+        setAllImages([]);
       } finally {
         setIsLoading(false);
       }
