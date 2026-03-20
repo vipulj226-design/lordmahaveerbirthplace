@@ -76,33 +76,33 @@ export default function Header() {
       }}
     >
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex items-center px-4 lg:px-6 py-3 lg:py-4 max-w-full w-full gap-2 lg:gap-3 overflow-x-auto">
+      <nav className="hidden md:flex justify-center items-center px-6 py-2 max-w-[1400px] mx-auto">
 
         {/* Logo */}
-        <a href="/" onClick={(e) => handleAnchorClick(e, '#hero')} className="flex items-center gap-2 lg:gap-3 shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
+        <a href="/" onClick={(e) => handleAnchorClick(e, '#hero')} className="flex items-center gap-4 shrink-0 absolute left-6 cursor-pointer hover:opacity-80 transition-opacity">
           <Image
             src="https://static.wixstatic.com/media/53945f_926edabb995f423680415b255d79c255~mv2.png"
             alt="Lord Mahaveer Birthplace Logo"
-            width={40}
-            height={40}
-            className="rounded-full lg:w-12 lg:h-12"
+            width={48}
+            height={48}
+            className="rounded-full"
           />
           <div className="flex flex-col">
-            <span className="font-heading text-xs lg:text-sm font-black text-maroon uppercase tracking-wider">Lord Mahaveer</span>
-            <span className="font-heading text-[0.65rem] lg:text-xs font-bold text-gold uppercase tracking-wider">Birthplace</span>
+            <span className="font-heading text-sm font-black text-maroon uppercase tracking-wider">Lord Mahaveer</span>
+            <span className="font-heading text-sm font-bold text-gold uppercase tracking-wider">Birthplace</span>
           </div>
         </a>
 
         {/* Navigation Links */}
-        <ul className="flex gap-1 lg:gap-2 items-center shrink-0">
-          {navigationLinks.map((link) => {
+        <ul className="flex gap-0.5 items-center">
+          {navigationLinks.map((link, index) => {
             const isActive = link.href.startsWith('/') ? false : activeSection === link.href.replace('#', '');
             return (
-              <li key={link.href} className="shrink-0">
+              <li key={link.href} style={{ marginLeft: index === 0 ? '200px' : '0' }}>
                 <a
                   href={link.href}
                   onClick={(e) => handleAnchorClick(e, link.href, navigate)}
-                  className="px-1.5 lg:px-2.5 py-2 lg:py-2.5 text-[0.55rem] lg:text-xs xl:text-sm uppercase font-heading rounded transition-all duration-200 flex items-center justify-center gap-1 whitespace-nowrap"
+                  className="px-2 py-2 text-sm uppercase font-heading rounded transition-all duration-200 flex items-center gap-2 whitespace-nowrap"
                   style={{
                     color: isActive ? '#D4AF37' : '#000000',
                     fontWeight: '700',
