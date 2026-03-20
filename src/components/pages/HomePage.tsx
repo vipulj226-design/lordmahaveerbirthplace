@@ -317,7 +317,7 @@ function HeroSection() {
       />
       {/* Main Content */}
       <motion.div 
-        className="relative z-20 w-full max-w-[100rem] mx-auto text-center flex flex-col items-center justify-center flex-1"
+        className="relative z-20 w-full max-w-[100rem] mx-auto text-center flex flex-col items-center justify-center flex-1 gap-10 md:gap-12"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
@@ -335,7 +335,6 @@ function HeroSection() {
             color: 'transparent',
             wordWrap: 'break-word',
             overflowWrap: 'break-word',
-            marginBottom: '8px',
           }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -347,7 +346,7 @@ function HeroSection() {
         {/* Sub Text */}
         <motion.p 
           className="font-paragraph tracking-[0.125em] uppercase text-xs md:text-sm"
-          style={{ color: 'rgba(253, 246, 236, 0.7)', marginBottom: '12px' }}
+          style={{ color: 'rgba(253, 246, 236, 0.7)' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.8 }}
@@ -357,7 +356,7 @@ function HeroSection() {
 
         {/* Hero Image Box */}
         <motion.div 
-          className="mx-auto max-w-[400px] md:max-w-[500px] w-full"
+          className="mx-auto w-full max-w-[350px] md:max-w-[450px] lg:max-w-[500px]"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 1 }}
@@ -380,7 +379,7 @@ function HeroSection() {
 
       {/* CTA Button - Fixed at bottom */}
       <motion.div 
-        className="relative z-30 w-full flex justify-center pb-4"
+        className="relative z-30 w-full flex justify-center pt-8 md:pt-12 pb-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 1.2 }}
@@ -414,7 +413,7 @@ function HeroSection() {
 
       {/* Scroll Down Indicator */}
       <motion.div 
-        className="relative z-30 w-full flex flex-col items-center pb-8"
+        className="relative z-30 w-full flex flex-col items-center pt-6 md:pt-8 pb-8"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 1.6 }}
