@@ -14,7 +14,7 @@ interface GroupedGallery {
 }
 
 export default function GalleryPage() {
-  const [items, setItems] = useState<Gallery[]>([]);;
+  const [items, setItems] = useState<Gallery[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [groupedByYearAndEvent, setGroupedByYearAndEvent] = useState<GroupedGallery>({});
   const [expandedYear, setExpandedYear] = useState<number | null>(null);
@@ -159,16 +159,18 @@ export default function GalleryPage() {
                   {/* Year Folder */}
                   <motion.button
                     onClick={() => toggleYear(year)}
-                    className="w-full flex items-center gap-3 p-4 bg-white border-2 border-gold/30 rounded-lg hover:bg-cream hover:border-gold transition-all duration-200 text-left"
+                    className="w-full flex items-center gap-3 p-4 bg-white border-2 border-gold/30 rounded-lg hover:bg-cream hover:border-gold active:bg-cream active:border-gold transition-all duration-200 text-left cursor-pointer touch-manipulation"
                     whileHover={{ x: 4 }}
+                    whileTap={{ scale: 0.98 }}
                   >
-                    <Folder className="w-6 h-6 text-gold flex-shrink-0" />
-                    <span className="font-heading text-xl text-maroon flex-1">
+                    <Folder className="w-6 h-6 text-gold flex-shrink-0 pointer-events-none" />
+                    <span className="font-heading text-xl text-maroon flex-1 pointer-events-none">
                       {year} Events Images
                     </span>
                     <motion.div
                       animate={{ rotate: expandedYear === year ? 90 : 0 }}
                       transition={{ duration: 0.2 }}
+                      className="pointer-events-none"
                     >
                       <ChevronRight className="w-5 h-5 text-gold" />
                     </motion.div>
@@ -195,16 +197,18 @@ export default function GalleryPage() {
                               {/* Event Folder */}
                               <motion.button
                                 onClick={() => toggleEvent(eventName)}
-                                className="w-full flex items-center gap-3 p-3 bg-gold/10 border border-gold/20 rounded-lg hover:bg-gold/20 transition-all duration-200 text-left"
+                                className="w-full flex items-center gap-3 p-3 bg-gold/10 border border-gold/20 rounded-lg hover:bg-gold/20 active:bg-gold/30 transition-all duration-200 text-left cursor-pointer touch-manipulation"
                                 whileHover={{ x: 4 }}
+                                whileTap={{ scale: 0.98 }}
                               >
-                                <Folder className="w-5 h-5 text-gold flex-shrink-0" />
-                                <span className="font-paragraph text-maroon flex-1">
+                                <Folder className="w-5 h-5 text-gold flex-shrink-0 pointer-events-none" />
+                                <span className="font-paragraph text-maroon flex-1 pointer-events-none">
                                   {eventName}
                                 </span>
                                 <motion.div
                                   animate={{ rotate: expandedEvents.has(eventName) ? 90 : 0 }}
                                   transition={{ duration: 0.2 }}
+                                  className="pointer-events-none"
                                 >
                                   <ChevronRight className="w-4 h-4 text-gold" />
                                 </motion.div>
@@ -228,13 +232,14 @@ export default function GalleryPage() {
                                           : [];
 
                                         return imageUrls.map((imageUrl, imgIndex) => (
-                                          <motion.div
+                                          <motion.button
                                             key={`${item._id}-${imgIndex}`}
                                             initial={{ opacity: 0, scale: 0.9 }}
                                             animate={{ opacity: 1, scale: 1 }}
                                             transition={{ delay: (photoIndex + imgIndex) * 0.03, duration: 0.2 }}
-                                            className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer"
                                             onClick={() => openLightbox(imageUrls, imgIndex)}
+                                            className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer touch-manipulation active:shadow-xl p-0 border-0 bg-transparent"
+                                            whileTap={{ scale: 0.95 }}
                                           >
                                             <div className="aspect-square overflow-hidden bg-gray-200">
                                               {imageUrl ? (
@@ -243,7 +248,7 @@ export default function GalleryPage() {
                                                   alt={item.caption || 'Gallery image'}
                                                   width={300}
                                                   height={300}
-                                                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                                                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 pointer-events-none"
                                                 />
                                               ) : (
                                                 <div className="w-full h-full bg-gray-300 flex items-center justify-center">
@@ -253,7 +258,7 @@ export default function GalleryPage() {
                                             </div>
 
                                             {/* Overlay with info */}
-                                            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex flex-col justify-end p-3 opacity-0 group-hover:opacity-100">
+                                            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex flex-col justify-end p-3 opacity-0 group-hover:opacity-100 group-active:opacity-100 group-active:bg-opacity-60">
                                               {item.caption && (
                                                 <h3 className="font-heading text-white text-sm mb-1">
                                                   {item.caption}
@@ -265,7 +270,7 @@ export default function GalleryPage() {
                                                 </p>
                                               )}
                                             </div>
-                                          </motion.div>
+                                          </motion.button>
                                         ));
                                       })}
                                     </div>
@@ -308,7 +313,7 @@ export default function GalleryPage() {
             {/* Close Button */}
             <button
               onClick={closeLightbox}
-              className="absolute top-4 right-4 z-10 w-10 h-10 md:w-12 md:h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors"
+              className="absolute top-4 right-4 z-10 w-10 h-10 md:w-12 md:h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon active:bg-gold active:text-maroon transition-colors touch-manipulation"
             >
               <X className="w-5 h-5 md:w-6 md:h-6" />
             </button>
@@ -325,14 +330,14 @@ export default function GalleryPage() {
             {/* Navigation Buttons */}
             <button
               onClick={prevImage}
-              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors z-20"
+              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon active:bg-gold active:text-maroon transition-colors z-20 touch-manipulation"
             >
               <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
             </button>
 
             <button
               onClick={nextImage}
-              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon transition-colors z-20"
+              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon active:bg-gold active:text-maroon transition-colors z-20 touch-manipulation"
             >
               <ChevronRightIcon className="w-5 h-5 md:w-6 md:h-6" />
             </button>
