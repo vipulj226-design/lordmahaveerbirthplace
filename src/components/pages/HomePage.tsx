@@ -283,6 +283,11 @@ function HeroSection() {
 
   // Add mobile styles
   const heroMobileStyles = `
+    @media (min-width: 769px) {
+      #hero {
+        min-height: 90vh !important;
+      }
+    }
     @media (max-width: 768px) {
       #hero {
         min-height: 80vh !important;
