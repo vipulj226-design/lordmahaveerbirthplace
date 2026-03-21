@@ -391,6 +391,8 @@ function HeroSection() {
           transition={{ duration: 1.2, delay: 0.8 }}
         >
           {shortDescription}
+          <br />
+          Pincode: 844128
         </motion.p>
 
         {/* Hero Image Box */}
