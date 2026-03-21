@@ -285,10 +285,7 @@ function HeroSection() {
   const heroMobileStyles = `
     @media (min-width: 769px) {
       #hero {
-        height: 100vh !important;
-        min-height: 100vh !important;
-        max-height: 100vh !important;
-        overflow: hidden !important;
+        min-height: 70vh !important;
       }
     }
     @media (max-width: 768px) {
@@ -405,7 +402,7 @@ function HeroSection() {
 
         {/* Hero Image Box */}
         <motion.div 
-          className="mx-auto max-w-[320px] sm:max-w-[380px] md:max-w-[550px] lg:max-w-[650px] w-full"
+          className="mx-auto max-w-[320px] sm:max-w-[380px] md:max-w-[450px] w-full"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 1 }}
@@ -465,7 +462,7 @@ function HeroSection() {
           }}
           whileTap={{ scale: 0.98 }}
         >
-          Expolure the past events gallery
+          Explore the heritage
         </motion.a>
       </motion.div>
 
