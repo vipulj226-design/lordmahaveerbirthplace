@@ -386,11 +386,11 @@ function HeroSection() {
 
       {/* CTA Button - Fixed at bottom */}
       <motion.div 
-        className="relative z-30 w-full flex justify-center"
+        className="relative z-30 w-full flex justify-center px-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 1.2 }}
-        style={{ marginTop: 'clamp(-60px, 0.3vh, 6px)', paddingBottom: 'clamp(4px, 1vh, 12px)' }}
+        style={{ marginTop: 'clamp(12px, 2vh, 24px)', paddingBottom: 'clamp(8px, 2vh, 20px)' }}
       >
         <motion.a 
           href="#about"
@@ -398,16 +398,17 @@ function HeroSection() {
           style={{
             backgroundImage: 'linear-gradient(to right, #D4AF37, #C5A55A)',
             color: '#1a1a1a',
-            padding: '10px 32px',
+            padding: 'clamp(10px, 2vw, 14px) clamp(24px, 4vw, 40px)',
             borderRadius: '50px',
             textDecoration: 'none',
-            fontSize: 'clamp(0.8rem, 1.8vw, 0.95rem)',
+            fontSize: 'clamp(0.75rem, 2vw, 1rem)',
             fontWeight: 700,
             boxShadow: '0 8px 25px rgba(197, 165, 90, 0.4)',
             border: '2px solid #C5A55A',
             display: 'inline-flex',
             alignItems: 'center',
             gap: '8px',
+            whiteSpace: 'nowrap',
           }}
           whileHover={{ 
             y: -4, 
