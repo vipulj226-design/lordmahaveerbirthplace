@@ -30,7 +30,7 @@ export default function CommitteeGallery() {
   }, []);
 
   return (
-    <section id="committee" className="relative py-4 md:py-6 bg-cream overflow-hidden">
+    <section id="committee" className="relative py-4 md:py-6 bg-cream overflow-hidden border-b-[3px] border-gold">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
         {/* Section Header */}
