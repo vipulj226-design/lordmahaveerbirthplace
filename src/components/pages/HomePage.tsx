@@ -326,7 +326,7 @@ function HeroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
-        style={{ gap: 'clamp(8px, 2vh, 16px)' }}
+        style={{ gap: 'clamp(8px, 2vh, 16px)', minHeight: 'auto' }}
       >
         {/* H1 Title with Gradient */}
         <motion.h1 
@@ -343,6 +343,7 @@ function HeroSection() {
             overflowWrap: 'break-word',
             marginBottom: '0px',
             minHeight: 'auto',
+            order: 1,
           }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -354,7 +355,7 @@ function HeroSection() {
         {/* Sub Text */}
         <motion.p 
           className="font-paragraph tracking-[0.125em] uppercase text-xs sm:text-sm md:text-base w-full px-4"
-          style={{ color: 'rgba(253, 246, 236, 0.8)', marginBottom: '0px', minHeight: 'auto' }}
+          style={{ color: 'rgba(253, 246, 236, 0.8)', marginBottom: '0px', minHeight: 'auto', order: 2 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.8 }}
@@ -375,6 +376,7 @@ function HeroSection() {
             overflow: 'hidden',
             marginTop: 'clamp(8px, 2vh, 12px)',
             marginBottom: '0px',
+            order: 3,
           }}
         >
           <Image 
