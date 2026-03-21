@@ -395,7 +395,7 @@ function HeroSection() {
 
         {/* Hero Image Box */}
         <motion.div 
-          className="mx-auto max-w-[320px] sm:max-w-[380px] md:max-w-[450px] w-full px-4 sm:px-0"
+          className="mx-auto max-w-[320px] sm:max-w-[380px] md:max-w-[450px] w-full"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 1 }}
@@ -407,6 +407,7 @@ function HeroSection() {
             marginTop: 'clamp(8px, 2vh, 12px)',
             marginBottom: '0px',
             order: 3,
+            padding: 0,
           }}
         >
           <Image 
