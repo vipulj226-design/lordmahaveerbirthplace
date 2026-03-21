@@ -285,7 +285,7 @@ function HeroSection() {
   const heroMobileStyles = `
     @media (min-width: 769px) {
       #hero {
-        min-height: 90vh !important;
+        min-height: 80vh !important;
       }
     }
     @media (max-width: 768px) {
