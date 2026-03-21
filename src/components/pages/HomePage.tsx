@@ -287,23 +287,23 @@ function HeroSection() {
       #hero {
         min-height: 80vh !important;
         height: auto !important;
-        padding-top: clamp(50px, 6vh, 70px) !important;
-        padding-bottom: clamp(12px, 2vh, 16px) !important;
-        gap: clamp(4px, 1vh, 8px) !important;
+        padding-top: clamp(100px, 12vh, 140px) !important;
+        padding-bottom: clamp(16px, 2vh, 24px) !important;
+        gap: clamp(6px, 1.5vh, 12px) !important;
       }
       #hero .hero-main-content {
         flex: 0 1 auto;
         min-height: auto;
         justify-content: center;
-        gap: clamp(4px, 1vh, 8px) !important;
+        gap: clamp(6px, 1.5vh, 12px) !important;
       }
       #hero .hero-cta {
         flex-shrink: 0;
-        margin-top: clamp(8px, 1.5vh, 12px) !important;
+        margin-top: clamp(12px, 2vh, 16px) !important;
       }
       #hero .hero-scroll {
         flex-shrink: 0;
-        margin-top: clamp(4px, 1vh, 8px) !important;
+        margin-top: clamp(8px, 1.5vh, 12px) !important;
       }
     }
   `;
