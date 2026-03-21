@@ -264,6 +264,24 @@ function HeroSection() {
             opacity: 0;
           }
         }
+        
+        @media (max-width: 768px) {
+          #hero > div:nth-child(4) {
+            order: 1 !important;
+            z-index: 20 !important;
+          }
+          
+          #hero > div:nth-child(5) {
+            order: 2 !important;
+            z-index: 30 !important;
+            margin-top: clamp(10px, 2vh, 15px) !important;
+          }
+          
+          #hero > div:nth-child(6) {
+            order: 3 !important;
+            z-index: 30 !important;
+          }
+        }
       `;
       document.head.appendChild(style);
     }
@@ -284,7 +302,7 @@ function HeroSection() {
   return (
     <section 
       id="hero" 
-      className="relative w-full flex flex-col items-center justify-start overflow-hidden"
+      className="relative w-full flex flex-col items-center justify-start overflow-visible"
       style={{
         background: 'linear-gradient(135deg, #6B0F1A, #3D0A10, #6B0F1A)',
         padding: 'clamp(16px, 3vw, 24px)',
@@ -294,7 +312,7 @@ function HeroSection() {
         flexDirection: 'column',
         minHeight: 'auto',
         height: 'auto',
-        gap: 'clamp(12px, 2.5vh, 20px)',
+        gap: 'clamp(10px, 2vh, 15px)',
       }}
     >
       {/* Background Image Pseudo-element */}
@@ -326,7 +344,7 @@ function HeroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
-        style={{ gap: 'clamp(8px, 2vh, 16px)' }}
+        style={{ gap: 'clamp(10px, 2vh, 15px)', order: 1 }}
       >
         {/* H1 Title with Gradient */}
         <motion.h1 
