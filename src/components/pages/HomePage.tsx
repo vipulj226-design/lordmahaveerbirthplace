@@ -437,6 +437,8 @@ function HeroSection() {
       >
         <motion.a 
           href="/gallery"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-block font-heading font-black tracking-widest uppercase"
           style={{
             backgroundImage: 'linear-gradient(135deg, #D4AF37 0%, #FFE680 50%, #C5A55A 100%)',
