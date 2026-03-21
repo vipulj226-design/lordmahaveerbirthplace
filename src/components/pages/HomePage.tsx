@@ -285,20 +285,25 @@ function HeroSection() {
   const heroMobileStyles = `
     @media (max-width: 768px) {
       #hero {
-        height: 99vh !important;
-        padding-top: clamp(60px, 6vh, 80px) !important;
-        padding-bottom: clamp(12px, 2vh, 16px) !important;
-        gap: clamp(6px, 1vh, 12px) !important;
+        min-height: 100vh !important;
+        height: auto !important;
+        padding-top: clamp(60px, 8vh, 80px) !important;
+        padding-bottom: clamp(16px, 3vh, 24px) !important;
+        gap: clamp(8px, 2vh, 16px) !important;
       }
       #hero .hero-main-content {
-        flex: 1;
+        flex: 0 1 auto;
+        min-height: auto;
         justify-content: center;
+        gap: clamp(8px, 2vh, 16px) !important;
       }
       #hero .hero-cta {
         flex-shrink: 0;
+        margin-top: clamp(12px, 2vh, 16px) !important;
       }
       #hero .hero-scroll {
         flex-shrink: 0;
+        margin-top: clamp(8px, 1.5vh, 12px) !important;
       }
     }
   `;
@@ -316,7 +321,7 @@ function HeroSection() {
           paddingBottom: 'clamp(16px, 3vw, 24px)',
           display: 'flex',
           flexDirection: 'column',
-          minHeight: 'auto',
+          minHeight: '100vh',
           height: 'auto',
           gap: 'clamp(8px, 1.5vh, 16px)',
         }}
