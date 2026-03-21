@@ -402,7 +402,7 @@ function HeroSection() {
 
         {/* Hero Image Box */}
         <motion.div 
-          className="mx-auto max-w-[320px] sm:max-w-[380px] md:max-w-[450px] w-full"
+          className="mx-auto max-w-[320px] sm:max-w-[380px] md:max-w-[550px] lg:max-w-[650px] w-full"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 1 }}
