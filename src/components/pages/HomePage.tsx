@@ -779,7 +779,7 @@ function BirthplaceAboutSection() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-12 lg:gap-20">
               
               {/* Scrolling Text Column - Reordered for mobile */}
-              <div className="lg:col-span-7 flex flex-col gap-8 md:gap-16 pt-0 md:pt-8 order-1 lg:order-2">
+              <div className="lg:col-span-7 flex flex-col gap-8 md:gap-16 pt-8 md:pt-8 order-1 lg:order-2">
                 
                 {/* Block 1 */}
                 <motion.div 
