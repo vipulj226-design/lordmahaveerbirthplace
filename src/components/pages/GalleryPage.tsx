@@ -4,7 +4,7 @@ import { Gallery } from '@/entities';
 import { Image } from '@/components/ui/image';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight, Folder, Image as ImageIcon, X, ChevronLeft, ChevronRight as ChevronRightIcon, Home } from 'lucide-react';
+import { ChevronRight, Folder, Image as ImageIcon, X, ChevronLeft, ChevronRight as ChevronRightIcon, Home, Youtube } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface GroupedGallery {
@@ -312,6 +312,46 @@ export default function GalleryPage() {
                   </AnimatePresence>
                 </motion.div>
               ))}
+
+              {/* YouTube Video Section */}
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="mt-24 bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream p-12 rounded-lg border-2 border-gold"
+              >
+                <div className="flex flex-col md:flex-row items-center gap-8">
+                  {/* YouTube Icon and Text */}
+                  <div className="flex-1">
+                    <div className="flex items-center gap-4 mb-6">
+                      <Youtube className="w-12 h-12 text-[#FF0000]" />
+                      <h3 className="font-heading text-3xl md:text-4xl font-black text-cream uppercase tracking-wide">
+                        Watch Our Videos
+                      </h3>
+                    </div>
+                    <p className="font-paragraph text-lg text-cream/90 leading-relaxed mb-6">
+                      For videos watch all events videos subscribe and watch in our official YouTube channel
+                    </p>
+                    <a
+                      href="https://www.youtube.com/@lordmahaveerbirthplace"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-3 bg-[#FF0000] text-white px-8 py-4 rounded-full font-heading font-bold uppercase tracking-wide hover:bg-[#CC0000] transition-colors duration-300"
+                    >
+                      <Youtube className="w-6 h-6" />
+                      Subscribe on YouTube
+                    </a>
+                  </div>
+                  
+                  {/* YouTube Logo */}
+                  <div className="flex-1 flex justify-center">
+                    <div className="w-32 h-32 md:w-40 md:h-40 bg-white rounded-lg flex items-center justify-center shadow-lg">
+                      <Youtube className="w-24 h-24 md:w-32 md:h-32 text-[#FF0000]" />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           ) : (
             <div className="text-center py-20">

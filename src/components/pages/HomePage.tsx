@@ -441,10 +441,10 @@ function HeroSection() {
           style={{
             backgroundImage: 'linear-gradient(135deg, #D4AF37 0%, #FFE680 50%, #C5A55A 100%)',
             color: '#1a1a1a',
-            padding: 'clamp(12px, 2.5vw, 18px) clamp(28px, 5vw, 48px)',
+            padding: 'clamp(12px, 2.5vw, 18px) clamp(20px, 4vw, 48px)',
             borderRadius: '50px',
             textDecoration: 'none',
-            fontSize: 'clamp(0.85rem, 2.2vw, 1.1rem)',
+            fontSize: 'clamp(0.75rem, 2vw, 1.1rem)',
             fontWeight: 900,
             boxShadow: '0 12px 35px rgba(197, 165, 90, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
             border: '3px solid #FFE680',
@@ -454,6 +454,7 @@ function HeroSection() {
             whiteSpace: 'nowrap',
             letterSpacing: '0.15em',
             textShadow: '0 2px 4px rgba(26, 26, 26, 0.2)',
+            maxWidth: 'clamp(180px, 85vw, 600px)',
           }}
           whileHover={{ 
             y: -6, 
