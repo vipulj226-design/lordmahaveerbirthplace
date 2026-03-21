@@ -287,7 +287,7 @@ function HeroSection() {
       #hero {
         min-height: 80vh !important;
         height: auto !important;
-        padding-top: clamp(140px, 18vh, 180px) !important;
+        padding-top: clamp(160px, 22vh, 200px) !important;
         padding-bottom: clamp(16px, 2vh, 24px) !important;
         gap: clamp(6px, 1.5vh, 12px) !important;
       }
