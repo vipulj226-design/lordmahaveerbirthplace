@@ -462,7 +462,7 @@ function HeroSection() {
           }}
           whileTap={{ scale: 0.98 }}
         >
-          Explore the heritage
+          Expolure the past events gallery
         </motion.a>
       </motion.div>
 
