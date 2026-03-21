@@ -436,7 +436,7 @@ function HeroSection() {
         style={{ marginTop: 'clamp(8px, 1.5vh, 12px)', paddingBottom: 'clamp(8px, 2vh, 20px)' }}
       >
         <motion.a 
-          href="#about"
+          href="/gallery"
           className="inline-block font-heading font-black tracking-widest uppercase"
           style={{
             backgroundImage: 'linear-gradient(135deg, #D4AF37 0%, #FFE680 50%, #C5A55A 100%)',
