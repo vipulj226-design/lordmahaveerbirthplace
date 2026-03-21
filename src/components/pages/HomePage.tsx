@@ -430,29 +430,33 @@ function HeroSection() {
       >
         <motion.a 
           href="#about"
-          className="inline-block font-heading font-bold tracking-wide uppercase"
+          className="inline-block font-heading font-black tracking-widest uppercase"
           style={{
-            backgroundImage: 'linear-gradient(to right, #D4AF37, #C5A55A)',
+            backgroundImage: 'linear-gradient(135deg, #D4AF37 0%, #FFE680 50%, #C5A55A 100%)',
             color: '#1a1a1a',
-            padding: 'clamp(10px, 2vw, 14px) clamp(24px, 4vw, 40px)',
+            padding: 'clamp(12px, 2.5vw, 18px) clamp(28px, 5vw, 48px)',
             borderRadius: '50px',
             textDecoration: 'none',
-            fontSize: 'clamp(0.75rem, 2vw, 1rem)',
-            fontWeight: 700,
-            boxShadow: '0 8px 25px rgba(197, 165, 90, 0.4)',
-            border: '2px solid #C5A55A',
+            fontSize: 'clamp(0.85rem, 2.2vw, 1.1rem)',
+            fontWeight: 900,
+            boxShadow: '0 12px 35px rgba(197, 165, 90, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
+            border: '3px solid #FFE680',
             display: 'inline-flex',
             alignItems: 'center',
-            gap: '8px',
+            gap: '10px',
             whiteSpace: 'nowrap',
+            letterSpacing: '0.15em',
+            textShadow: '0 2px 4px rgba(26, 26, 26, 0.2)',
           }}
           whileHover={{ 
-            y: -4, 
-            boxShadow: '0 15px 40px rgba(197, 165, 90, 0.6)',
-            scale: 1.05
+            y: -6, 
+            boxShadow: '0 20px 50px rgba(197, 165, 90, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.4)',
+            scale: 1.08
           }}
+          whileTap={{ scale: 0.98 }}
         >
           Explore the heritage
+          <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
         </motion.a>
       </motion.div>
 
