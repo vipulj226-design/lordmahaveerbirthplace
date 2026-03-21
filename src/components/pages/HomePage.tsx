@@ -285,25 +285,30 @@ function HeroSection() {
   const heroMobileStyles = `
     @media (max-width: 768px) {
       #hero {
-        min-height: 80vh !important;
+        min-height: auto !important;
         height: auto !important;
-        padding-top: clamp(50px, 6vh, 70px) !important;
-        padding-bottom: clamp(12px, 2vh, 16px) !important;
-        gap: clamp(4px, 1vh, 8px) !important;
+        padding-top: clamp(50px, 8vh, 70px) !important;
+        padding-bottom: clamp(20px, 4vh, 28px) !important;
+        gap: clamp(6px, 1.2vh, 10px) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
       }
       #hero .hero-main-content {
         flex: 0 1 auto;
         min-height: auto;
         justify-content: center;
-        gap: clamp(4px, 1vh, 8px) !important;
+        gap: clamp(6px, 1.2vh, 10px) !important;
+        margin-bottom: clamp(8px, 1.5vh, 12px) !important;
       }
       #hero .hero-cta {
         flex-shrink: 0;
-        margin-top: clamp(8px, 1.5vh, 12px) !important;
+        margin-top: clamp(4px, 0.8vh, 8px) !important;
+        margin-bottom: clamp(4px, 0.8vh, 8px) !important;
       }
       #hero .hero-scroll {
         flex-shrink: 0;
-        margin-top: clamp(4px, 1vh, 8px) !important;
+        margin-top: clamp(2px, 0.5vh, 4px) !important;
       }
     }
   `;
@@ -318,10 +323,10 @@ function HeroSection() {
           background: 'linear-gradient(135deg, #6B0F1A, #3D0A10, #6B0F1A)',
           padding: 'clamp(16px, 3vw, 24px)',
           paddingTop: 'clamp(80px, 8vh, 120px)',
-          paddingBottom: 'clamp(16px, 3vw, 24px)',
+          paddingBottom: 'clamp(20px, 4vh, 28px)',
           display: 'flex',
           flexDirection: 'column',
-          minHeight: '100vh',
+          minHeight: 'auto',
           height: 'auto',
           gap: 'clamp(8px, 1.5vh, 16px)',
         }}
@@ -355,7 +360,7 @@ function HeroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
-        style={{ gap: 'clamp(6px, 1.5vh, 14px)', minHeight: 'auto' }}
+        style={{ gap: 'clamp(6px, 1.2vh, 12px)', minHeight: 'auto', marginBottom: 'clamp(8px, 1.5vh, 12px)' }}
       >
         {/* H1 Title with Gradient */}
         <motion.h1 
