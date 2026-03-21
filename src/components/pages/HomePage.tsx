@@ -2172,7 +2172,7 @@ function ContactSection() {
                 <MapPin className="w-6 h-6 text-gold shrink-0 mt-1" />
                 <div>
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Address</p>
-                  <p className="text-maroon font-semibold">Basokund, Vaishali District, Bihar</p>
+                  <p className="text-maroon font-semibold">Basokund, Vaishali District, Bihar - 844128</p>
                 </div>
               </div>
 
