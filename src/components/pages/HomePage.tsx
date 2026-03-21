@@ -285,7 +285,7 @@ function HeroSection() {
   const heroMobileStyles = `
     @media (max-width: 768px) {
       #hero {
-        min-height: 100vh !important;
+        min-height: 70vh !important;
         height: auto !important;
         padding-top: clamp(60px, 8vh, 80px) !important;
         padding-bottom: clamp(16px, 3vh, 24px) !important;
