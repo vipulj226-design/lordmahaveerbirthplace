@@ -281,22 +281,46 @@ function HeroSection() {
   const ctaText = heroContent?.ctaText || 'Explore Heritage';
   const ctaUrl = heroContent?.ctaUrl || '#about';
 
+  // Add mobile styles
+  const heroMobileStyles = `
+    @media (max-width: 768px) {
+      #hero {
+        height: 99vh !important;
+        padding-top: clamp(60px, 6vh, 80px) !important;
+        padding-bottom: clamp(12px, 2vh, 16px) !important;
+        gap: clamp(6px, 1vh, 12px) !important;
+      }
+      #hero .hero-main-content {
+        flex: 1;
+        justify-content: center;
+      }
+      #hero .hero-cta {
+        flex-shrink: 0;
+      }
+      #hero .hero-scroll {
+        flex-shrink: 0;
+      }
+    }
+  `;
+
   return (
-    <section 
-      id="hero" 
-      className="relative w-full flex flex-col items-center justify-start overflow-hidden"
-      style={{
-        background: 'linear-gradient(135deg, #6B0F1A, #3D0A10, #6B0F1A)',
-        padding: 'clamp(16px, 3vw, 24px)',
-        paddingTop: 'clamp(80px, 10vh, 120px)',
-        paddingBottom: 'clamp(16px, 3vw, 24px)',
-        display: 'flex',
-        flexDirection: 'column',
-        minHeight: 'auto',
-        height: 'auto',
-        gap: 'clamp(12px, 2.5vh, 20px)',
-      }}
-    >
+    <>
+      <style>{heroMobileStyles}</style>
+      <section 
+        id="hero" 
+        className="relative w-full flex flex-col items-center justify-center overflow-hidden"
+        style={{
+          background: 'linear-gradient(135deg, #6B0F1A, #3D0A10, #6B0F1A)',
+          padding: 'clamp(16px, 3vw, 24px)',
+          paddingTop: 'clamp(80px, 8vh, 120px)',
+          paddingBottom: 'clamp(16px, 3vw, 24px)',
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: 'auto',
+          height: 'auto',
+          gap: 'clamp(8px, 1.5vh, 16px)',
+        }}
+      >
       {/* Background Image Pseudo-element */}
       <div 
         className="absolute inset-0 z-0 pointer-events-none"
@@ -322,11 +346,11 @@ function HeroSection() {
       />
       {/* Main Content */}
       <motion.div 
-        className="relative z-20 w-full max-w-[100rem] mx-auto text-center flex flex-col items-center justify-start"
+        className="hero-main-content relative z-20 w-full max-w-[100rem] mx-auto text-center flex flex-col items-center justify-center flex-1"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
-        style={{ gap: 'clamp(8px, 2vh, 16px)', minHeight: 'auto' }}
+        style={{ gap: 'clamp(6px, 1.5vh, 14px)', minHeight: 'auto' }}
       >
         {/* H1 Title with Gradient */}
         <motion.h1 
@@ -391,7 +415,7 @@ function HeroSection() {
 
       {/* CTA Button - Fixed at bottom */}
       <motion.div 
-        className="relative z-30 w-full flex justify-center px-4"
+        className="hero-cta relative z-30 w-full flex justify-center px-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 1.2 }}
@@ -427,7 +451,7 @@ function HeroSection() {
 
       {/* Scroll Down Indicator */}
       <motion.div 
-        className="relative z-30 w-full flex flex-col items-center py-1 md:py-2"
+        className="hero-scroll relative z-30 w-full flex flex-col items-center py-1 md:py-2"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 1.6 }}
@@ -449,7 +473,8 @@ function HeroSection() {
           </motion.div>
         </motion.div>
       </motion.div>
-    </section>
+      </section>
+    </>
   );
 }
 
