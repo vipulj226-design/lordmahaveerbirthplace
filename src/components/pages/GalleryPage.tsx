@@ -334,7 +334,7 @@ export default function GalleryPage() {
                       For videos watch all events videos subscribe and watch in our official YouTube channel
                     </p>
                     <a
-                      href="https://www.youtube.com/@lordmahaveerbirthplace"
+                      href="https://youtube.com/@lordmahaveerbirthplaceofficial?si=pzWROH2caVMC4Cyr"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-3 bg-[#FF0000] text-white px-8 py-4 rounded-full font-heading font-bold uppercase tracking-wide hover:bg-[#CC0000] transition-colors duration-300"
