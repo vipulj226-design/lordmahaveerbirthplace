@@ -287,14 +287,14 @@ function HeroSection() {
       className="relative w-full flex flex-col items-center justify-between overflow-hidden"
       style={{
         background: 'linear-gradient(135deg, #6B0F1A, #3D0A10, #6B0F1A)',
-        padding: '8px',
-        paddingTop: 'clamp(60px, 8vh, 80px)',
-        paddingBottom: '8px',
+        padding: 'clamp(8px, 2vw, 16px)',
+        paddingTop: 'clamp(80px, 12vh, 120px)',
+        paddingBottom: 'clamp(8px, 2vw, 16px)',
         display: 'flex',
         flexDirection: 'column',
         minHeight: '100vh',
         height: 'auto',
-        gap: 'clamp(12px, 3vh, 24px)',
+        gap: 'clamp(16px, 4vh, 32px)',
       }}
     >
       {/* Background Image Pseudo-element */}
