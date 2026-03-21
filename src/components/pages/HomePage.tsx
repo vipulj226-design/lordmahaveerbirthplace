@@ -361,8 +361,8 @@ function HeroSection() {
         <motion.h1 
           className="font-heading font-black tracking-tight px-4 w-full"
           style={{
-            fontSize: 'clamp(1.5rem, 4vw, 3rem)',
-            lineHeight: '1.2',
+            fontSize: 'clamp(1.25rem, 3.5vw, 3rem)',
+            lineHeight: '1.1',
             backgroundImage: 'linear-gradient(to right, #C5A55A, #FDF6EC, #D4AF37)',
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
@@ -373,6 +373,7 @@ function HeroSection() {
             marginBottom: '0px',
             minHeight: 'auto',
             order: 1,
+            maxWidth: '100%',
           }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
