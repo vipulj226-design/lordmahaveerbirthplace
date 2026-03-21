@@ -287,14 +287,14 @@ function HeroSection() {
       className="relative w-full flex flex-col items-center justify-start overflow-hidden"
       style={{
         background: 'linear-gradient(135deg, #6B0F1A, #3D0A10, #6B0F1A)',
-        padding: 'clamp(8px, 2vw, 16px)',
-        paddingTop: 'clamp(60px, 8vh, 100px)',
-        paddingBottom: 'clamp(8px, 2vw, 16px)',
+        padding: 'clamp(16px, 3vw, 24px)',
+        paddingTop: 'clamp(80px, 10vh, 120px)',
+        paddingBottom: 'clamp(16px, 3vw, 24px)',
         display: 'flex',
         flexDirection: 'column',
         minHeight: 'auto',
         height: 'auto',
-        gap: 'clamp(8px, 2vh, 16px)',
+        gap: 'clamp(12px, 2.5vh, 20px)',
       }}
     >
       {/* Background Image Pseudo-element */}
@@ -322,18 +322,18 @@ function HeroSection() {
       />
       {/* Main Content */}
       <motion.div 
-        className="relative z-20 w-full max-w-[100rem] mx-auto text-center flex flex-col items-center justify-start flex-1"
+        className="relative z-20 w-full max-w-[100rem] mx-auto text-center flex flex-col items-center justify-start"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
-        style={{ gap: 'clamp(4px, 1.5vh, 12px)' }}
+        style={{ gap: 'clamp(8px, 2vh, 16px)' }}
       >
         {/* H1 Title with Gradient */}
         <motion.h1 
-          className="font-heading font-black tracking-tight px-4"
+          className="font-heading font-black tracking-tight px-4 w-full"
           style={{
-            fontSize: 'clamp(1.25rem, 3.5vw, 2.8rem)',
-            lineHeight: '1.1',
+            fontSize: 'clamp(1.5rem, 4vw, 3rem)',
+            lineHeight: '1.2',
             backgroundImage: 'linear-gradient(to right, #C5A55A, #FDF6EC, #D4AF37)',
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
@@ -342,6 +342,7 @@ function HeroSection() {
             wordWrap: 'break-word',
             overflowWrap: 'break-word',
             marginBottom: '0px',
+            minHeight: 'auto',
           }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -352,8 +353,8 @@ function HeroSection() {
 
         {/* Sub Text */}
         <motion.p 
-          className="font-paragraph tracking-[0.125em] uppercase text-xs md:text-sm"
-          style={{ color: 'rgba(253, 246, 236, 0.7)', marginBottom: '0px' }}
+          className="font-paragraph tracking-[0.125em] uppercase text-xs sm:text-sm md:text-base w-full px-4"
+          style={{ color: 'rgba(253, 246, 236, 0.8)', marginBottom: '0px', minHeight: 'auto' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.8 }}
@@ -363,7 +364,7 @@ function HeroSection() {
 
         {/* Hero Image Box */}
         <motion.div 
-          className="mx-auto max-w-[350px] md:max-w-[450px] w-full"
+          className="mx-auto max-w-[280px] sm:max-w-[350px] md:max-w-[450px] w-full px-4 sm:px-0"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 1 }}
@@ -372,7 +373,7 @@ function HeroSection() {
             border: '3px solid #C5A55A',
             boxShadow: '0 0 30px rgba(197, 165, 90, 0.6)',
             overflow: 'hidden',
-            marginTop: 'clamp(4px, 1.5vh, 8px)',
+            marginTop: 'clamp(8px, 2vh, 12px)',
             marginBottom: '0px',
           }}
         >
