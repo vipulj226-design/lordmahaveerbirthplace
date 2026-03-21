@@ -456,7 +456,6 @@ function HeroSection() {
           whileTap={{ scale: 0.98 }}
         >
           Explore the heritage
-          <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
         </motion.a>
       </motion.div>
 
