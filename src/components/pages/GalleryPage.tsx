@@ -33,7 +33,7 @@ export default function GalleryPage() {
       const result = await BaseCrudService.getAll<Gallery>('gallery', [], {
         limit: 100,
       });
-      
+
       // Sort by displayOrder if available
       const sortedItems = (result.items || []).sort((a, b) => {
         if (a.displayOrder !== undefined && b.displayOrder !== undefined) {
@@ -43,7 +43,7 @@ export default function GalleryPage() {
       });
 
       setItems(sortedItems);
-      
+
       // Group items by year and then by event
       const grouped: GroupedGallery = {};
       sortedItems.forEach(item => {
@@ -51,7 +51,7 @@ export default function GalleryPage() {
           if (!grouped[item.year]) {
             grouped[item.year] = {};
           }
-          
+
           const eventName = item.pastEvent || 'Uncategorized';
           if (!grouped[item.year][eventName]) {
             grouped[item.year][eventName] = [];
@@ -59,7 +59,7 @@ export default function GalleryPage() {
           grouped[item.year][eventName].push(item);
         }
       });
-      
+
       setGroupedByYearAndEvent(grouped);
     } catch (error) {
       console.error('Error loading gallery:', error);
@@ -238,7 +238,7 @@ export default function GalleryPage() {
                                       {groupedByYearAndEvent[year][eventName].map((item, photoIndex) => {
                                         // Get images from all available image fields
                                         const imageUrls: string[] = [];
-                                        
+
                                         // Check galleryNew media gallery field
                                         if ((item as any).galleryNew && Array.isArray((item as any).galleryNew)) {
                                           (item as any).galleryNew.forEach((img: any) => {
@@ -249,7 +249,7 @@ export default function GalleryPage() {
                                             }
                                           });
                                         }
-                                        
+
                                         // Check individual image fields
                                         const imageFields = ['image', 'image4', 'image5', 'image6', 'image7', 'image8', 'image9', 'image10', 'galleryImages', 'galleryImagesBatch'];
                                         imageFields.forEach(field => {
@@ -331,7 +331,7 @@ export default function GalleryPage() {
                       </h3>
                     </div>
                     <p className="font-paragraph text-lg text-cream/90 leading-relaxed mb-6">
-                      For videos watch all events videos subscribe and watch in our official YouTube channel
+                     Watch All Events Videos From our official YouTube channel 
                     </p>
                     <a
                       href="https://youtube.com/@lordmahaveerbirthplaceofficial?si=pzWROH2caVMC4Cyr"
@@ -343,7 +343,7 @@ export default function GalleryPage() {
                       Subscribe on YouTube
                     </a>
                   </div>
-                  
+
                   {/* YouTube Logo */}
                   <div className="flex-1 flex justify-center">
                     <div className="w-32 h-32 md:w-40 md:h-40 bg-white rounded-lg flex items-center justify-center shadow-lg">
