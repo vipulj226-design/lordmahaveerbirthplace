@@ -284,17 +284,17 @@ function HeroSection() {
   return (
     <section 
       id="hero" 
-      className="relative w-full flex flex-col items-center justify-between overflow-hidden"
+      className="relative w-full flex flex-col items-center justify-start overflow-hidden"
       style={{
         background: 'linear-gradient(135deg, #6B0F1A, #3D0A10, #6B0F1A)',
         padding: 'clamp(8px, 2vw, 16px)',
-        paddingTop: 'clamp(80px, 12vh, 120px)',
+        paddingTop: 'clamp(60px, 8vh, 100px)',
         paddingBottom: 'clamp(8px, 2vw, 16px)',
         display: 'flex',
         flexDirection: 'column',
-        minHeight: '100vh',
+        minHeight: 'auto',
         height: 'auto',
-        gap: 'clamp(16px, 4vh, 32px)',
+        gap: 'clamp(8px, 2vh, 16px)',
       }}
     >
       {/* Background Image Pseudo-element */}
@@ -322,11 +322,11 @@ function HeroSection() {
       />
       {/* Main Content */}
       <motion.div 
-        className="relative z-20 w-full max-w-[100rem] mx-auto text-center flex flex-col items-center justify-center flex-1"
+        className="relative z-20 w-full max-w-[100rem] mx-auto text-center flex flex-col items-center justify-start flex-1"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
-        style={{ gap: 'clamp(8px, 2vh, 16px)' }}
+        style={{ gap: 'clamp(4px, 1.5vh, 12px)' }}
       >
         {/* H1 Title with Gradient */}
         <motion.h1 
@@ -372,6 +372,8 @@ function HeroSection() {
             border: '3px solid #C5A55A',
             boxShadow: '0 0 30px rgba(197, 165, 90, 0.6)',
             overflow: 'hidden',
+            marginTop: 'clamp(4px, 1.5vh, 8px)',
+            marginBottom: '0px',
           }}
         >
           <Image 
@@ -390,7 +392,7 @@ function HeroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 1.2 }}
-        style={{ marginTop: 'clamp(12px, 2vh, 24px)', paddingBottom: 'clamp(8px, 2vh, 20px)' }}
+        style={{ marginTop: 'clamp(8px, 1.5vh, 12px)', paddingBottom: 'clamp(8px, 2vh, 20px)' }}
       >
         <motion.a 
           href="#about"
