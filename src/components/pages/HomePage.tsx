@@ -285,7 +285,10 @@ function HeroSection() {
   const heroMobileStyles = `
     @media (min-width: 769px) {
       #hero {
-        min-height: 70vh !important;
+        height: 100vh !important;
+        min-height: 100vh !important;
+        max-height: 100vh !important;
+        overflow: hidden !important;
       }
     }
     @media (max-width: 768px) {
