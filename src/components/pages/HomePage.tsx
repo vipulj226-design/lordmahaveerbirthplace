@@ -463,25 +463,32 @@ function HeroSection() {
 
       {/* Scroll Down Indicator */}
       <motion.div 
-        className="hero-scroll relative z-30 w-full flex flex-col items-center py-1 md:py-2"
+        className="hero-scroll relative z-30 w-full flex flex-col items-center py-3 md:py-4 px-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 1.6 }}
-        style={{ marginTop: 'clamp(12px, 2vh, 24px)' }}
+        style={{ 
+          marginTop: 'clamp(12px, 2vh, 24px)',
+          backgroundColor: 'rgba(197, 165, 90, 0.2)',
+          borderRadius: '16px',
+          border: '2px solid rgba(197, 165, 90, 0.5)',
+          backdropFilter: 'blur(10px)',
+          padding: 'clamp(12px, 3vw, 20px)'
+        }}
       >
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-1"
+          className="flex flex-col items-center gap-2"
         >
-          <p className="font-paragraph text-xs md:text-sm text-cream/70 uppercase tracking-widest font-semibold">
+          <p className="font-paragraph text-sm md:text-lg text-gold uppercase tracking-widest font-bold">
             Scroll Down
           </p>
           <motion.div
             animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
-            <ChevronDown className="w-5 h-5 md:w-6 md:h-6 text-gold" />
+            <ChevronDown className="w-6 h-6 md:w-8 md:h-8 text-gold" />
           </motion.div>
         </motion.div>
       </motion.div>
