@@ -191,7 +191,7 @@ export default function GalleryPage() {
                     whileTap={{ scale: 0.98 }}
                   >
                     <Folder className="w-5 sm:w-6 h-5 sm:h-6 text-gold flex-shrink-0 pointer-events-none" />
-                    <span className="font-heading text-base sm:text-lg md:text-xl text-maroon flex-1 pointer-events-none">
+                    <span className="font-heading text-base sm:text-lg md:text-xl text-maroon flex-1 pointer-events-none font-bold">
                       {year} Events Images
                     </span>
                     <motion.div
