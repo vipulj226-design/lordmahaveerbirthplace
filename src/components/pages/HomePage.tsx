@@ -1643,11 +1643,11 @@ function GallerySection() {
             </button>
 
             {/* Image Container */}
-            <div className="flex items-center justify-center w-full h-full max-h-[90vh] md:max-h-[95vh]">
+            <div className="flex items-center justify-center w-full h-full max-h-[70vh]">
               <Image
                 src={allImages[currentImageIndex].src}
                 alt={allImages[currentImageIndex].caption || 'Gallery image'}
-                className="max-w-[95vw] max-h-[90vh] md:max-h-[95vh] object-contain border-4 border-gold"
+                className="max-w-full max-h-full object-contain border-4 border-gold"
               />
             </div>
 

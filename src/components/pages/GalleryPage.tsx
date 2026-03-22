@@ -384,77 +384,64 @@ export default function GalleryPage() {
       </main>
 
       {/* Lightbox */}
-      <AnimatePresence>
-        {lightboxOpen && allLightboxImages.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={closeLightbox}
-            className="fixed inset-0 z-50 flex flex-col items-center justify-center p-2 sm:p-4"
-            style={{
-              background: 'rgba(10, 2, 4, 0.92)',
-              backdropFilter: 'blur(6px)'
-            }}
-          >
-            <div className="relative w-full h-full flex flex-col items-center justify-center z-50" onClick={(e) => e.stopPropagation()}>
-              {/* Close Button */}
-              <motion.button
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                onClick={closeLightbox}
-                className="absolute top-3 right-3 sm:top-4 sm:right-4 z-[60] w-10 h-10 md:w-12 md:h-12 bg-cream border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon active:bg-gold active:text-maroon transition-colors touch-manipulation text-maroon flex-shrink-0"
-              >
-                <X className="w-5 h-5 md:w-6 md:h-6" />
-              </motion.button>
+      {lightboxOpen && allLightboxImages.length > 0 && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={closeLightbox}
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center p-4"
+          style={{
+            background: 'rgba(10, 2, 4, 0.92)',
+            backdropFilter: 'blur(6px)'
+          }}
+        >
+          <div className="relative w-full h-full flex flex-col items-center justify-center" onClick={(e) => e.stopPropagation()}>
+            {/* Close Button */}
+            <button
+              onClick={closeLightbox}
+              className="absolute top-4 right-4 z-10 w-10 h-10 md:w-12 md:h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon active:bg-gold active:text-maroon transition-colors touch-manipulation"
+            >
+              <X className="w-5 h-5 md:w-6 md:h-6" />
+            </button>
 
-              {/* Image Container */}
-              <div className="flex items-center justify-center w-full h-full px-2 sm:px-4 z-50">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentImageIndex}
-                    initial={{ opacity: 0, x: imageDirection === 'left' ? 100 : -100 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: imageDirection === 'left' ? -100 : 100 }}
-                    transition={{ duration: 0.3, ease: 'easeInOut' }}
-                    className="flex items-center justify-center w-full h-full"
-                  >
-                    <Image
-                      src={allLightboxImages[currentImageIndex]}
-                      alt="Gallery image"
-                      width={1200}
-                      height={800}
-                      className="w-auto h-auto max-w-[95vw] max-h-[85vh] sm:max-w-[90vw] sm:max-h-[85vh] md:max-w-[85vw] md:max-h-[90vh] border-4 border-gold object-contain z-50"
-                    />
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-
-              {/* Navigation Buttons */}
-              <motion.button
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                onClick={prevImage}
-                className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-cream border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon active:bg-gold active:text-maroon transition-colors z-[60] touch-manipulation text-maroon flex-shrink-0"
-              >
-                <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
-              </motion.button>
-
-              <motion.button
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-                onClick={nextImage}
-                className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-cream border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon active:bg-gold active:text-maroon transition-colors z-[60] touch-manipulation text-maroon flex-shrink-0"
-              >
-                <ChevronRightIcon className="w-5 h-5 md:w-6 md:h-6" />
-              </motion.button>
+            {/* Image Container */}
+            <div className="flex items-center justify-center w-full h-full max-h-[70vh]">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentImageIndex}
+                  initial={{ opacity: 0, x: imageDirection === 'left' ? 100 : -100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: imageDirection === 'left' ? -100 : 100 }}
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  className="flex items-center justify-center w-full h-full"
+                >
+                  <Image
+                    src={allLightboxImages[currentImageIndex]}
+                    alt="Gallery image"
+                    className="max-w-full max-h-full object-contain border-4 border-gold"
+                  />
+                </motion.div>
+              </AnimatePresence>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
+            {/* Navigation Buttons */}
+            <button
+              onClick={prevImage}
+              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-cream border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon active:bg-gold active:text-maroon transition-colors z-20 touch-manipulation text-maroon"
+            >
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+            </button>
+
+            <button
+              onClick={nextImage}
+              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-cream border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon active:bg-gold active:text-maroon transition-colors z-20 touch-manipulation text-maroon"
+            >
+              <ChevronRightIcon className="w-5 h-5 md:w-6 md:h-6" />
+            </button>
+          </div>
+        </motion.div>
+      )}
     </>
   );
 }
