@@ -419,7 +419,8 @@ export default function GalleryPage() {
                   <Image
                     src={allLightboxImages[currentImageIndex]}
                     alt="Gallery image"
-                    className="w-full h-full object-contain border-4 border-gold"
+                    fittingType="fit"
+                    className="w-full h-full border-4 border-gold"
                   />
                 </motion.div>
               </AnimatePresence>
