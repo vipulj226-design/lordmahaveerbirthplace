@@ -147,7 +147,7 @@ export default function GalleryPage() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h2 className="font-heading text-base sm:text-lg md:text-xl text-maroon text-center">
+              <h2 className="font-heading text-base sm:text-lg md:text-xl text-maroon text-center font-bold">
                 Lord Mahaveer Birthplace
               </h2>
             </div>
