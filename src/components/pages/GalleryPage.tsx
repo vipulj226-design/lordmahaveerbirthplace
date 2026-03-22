@@ -340,14 +340,14 @@ export default function GalleryPage() {
               >
                 <div className="flex flex-col md:flex-row items-center gap-4 sm:gap-6 md:gap-8">
                   {/* YouTube Icon and Text */}
-                  <div className="flex-1">
+                  <div className="flex-1 flex flex-col items-center md:items-start">
                     <div className="flex items-center gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6">
                       <Youtube className="w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12 text-[#FF0000] flex-shrink-0" />
                       <h3 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-cream uppercase tracking-wide">
                         Watch Our Videos
                       </h3>
                     </div>
-                    <p className="font-paragraph text-sm sm:text-base md:text-lg text-cream/90 leading-relaxed mb-3 sm:mb-4 md:mb-6">
+                    <p className="font-paragraph text-sm sm:text-base md:text-lg text-cream/90 leading-relaxed mb-3 sm:mb-4 md:mb-6 text-center md:text-left">
                       Watch all our event videos on our official YouTube channel. Subscribe to stay updated with the latest content.
                     </p>
                     <a
