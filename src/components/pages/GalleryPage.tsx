@@ -348,7 +348,7 @@ export default function GalleryPage() {
                       </h3>
                     </div>
                     <p className="font-paragraph text-sm sm:text-base md:text-lg text-cream/90 leading-relaxed mb-3 sm:mb-4 md:mb-6">
-                      For videos watch all events videos subscribe and watch in our official YouTube channel
+                      Watch all our event videos on our official YouTube channel. Subscribe to stay updated with the latest content.
                     </p>
                     <a
                       href="https://youtube.com/@lordmahaveerbirthplaceofficial?si=pzWROH2caVMC4Cyr"
