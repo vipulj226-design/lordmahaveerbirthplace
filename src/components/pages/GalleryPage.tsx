@@ -130,21 +130,21 @@ export default function GalleryPage() {
   return (
     <>
       <main className="min-h-screen bg-cream">
-        <div className="max-w-[100rem] mx-auto px-3 sm:px-4 py-6 sm:py-12 md:py-24">
+        <div className="max-w-[100rem] mx-auto px-3 sm:px-4 py-4 sm:py-8 md:py-12">
           {/* Logo and Go to Homepage Section - Centered */}
-          <div className="flex flex-col items-center justify-center mb-8 sm:mb-12 md:mb-16">
+          <div className="flex flex-col items-center justify-center mb-4 sm:mb-6 md:mb-8">
             {/* Logo Section */}
-            <div className="flex flex-col items-center gap-2 sm:gap-3 mb-4 sm:mb-6 md:mb-8">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center border-2 border-gold overflow-hidden flex-shrink-0">
+            <div className="flex flex-col items-center gap-1.5 sm:gap-2 mb-2 sm:mb-3 md:mb-4">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center border-2 border-gold overflow-hidden flex-shrink-0">
                 <Image
                   src="https://static.wixstatic.com/media/53945f_e6cd73f23f1c458b99a1317f3bc1ba6e~mv2.webp"
                   alt="Lord Mahaveer Birthplace Logo"
-                  width={80}
-                  height={80}
+                  width={64}
+                  height={64}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h2 className="font-heading text-lg sm:text-xl md:text-2xl text-maroon text-center">
+              <h2 className="font-heading text-base sm:text-lg md:text-xl text-maroon text-center">
                 Lord Mahaveer Birthplace
               </h2>
             </div>
@@ -152,19 +152,19 @@ export default function GalleryPage() {
             {/* Go to Homepage Button */}
             <Link
               to="/"
-              className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-maroon text-cream border-2 border-maroon rounded-lg hover:bg-cream hover:text-maroon transition-colors duration-200 font-paragraph font-semibold text-sm sm:text-base"
+              className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-maroon text-cream border-2 border-maroon rounded-lg hover:bg-cream hover:text-maroon transition-colors duration-200 font-paragraph font-semibold text-xs sm:text-sm"
             >
-              <Home className="w-4 h-4" />
+              <Home className="w-3.5 h-3.5" />
               Go to Homepage
             </Link>
           </div>
 
           {/* Header Section */}
-          <div className="mb-8 sm:mb-12 md:mb-16 text-center">
-            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-maroon mb-2 sm:mb-4">
+          <div className="mb-6 sm:mb-8 md:mb-10 text-center">
+            <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-maroon mb-1.5 sm:mb-2">
               Event Gallery
             </h1>
-            <p className="font-paragraph text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl mx-auto px-2">
+            <p className="font-paragraph text-xs sm:text-sm md:text-base text-gray-700 max-w-2xl mx-auto px-2">
               Explore our collection of memorable moments from past events and celebrations
             </p>
           </div>
