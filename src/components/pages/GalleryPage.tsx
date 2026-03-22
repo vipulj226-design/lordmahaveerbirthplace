@@ -414,13 +414,12 @@ export default function GalleryPage() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: imageDirection === 'left' ? -100 : 100 }}
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
-                  className="flex items-center justify-center w-full h-full"
+                  className="flex items-center justify-center"
                 >
                   <Image
                     src={allLightboxImages[currentImageIndex]}
                     alt="Gallery image"
-                    fittingType="fit"
-                    className="w-full h-full border-4 border-gold"
+                    className="max-w-full max-h-[90vh] border-4 border-gold object-contain"
                   />
                 </motion.div>
               </AnimatePresence>
