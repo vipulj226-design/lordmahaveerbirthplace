@@ -22,6 +22,7 @@ export default function GalleryPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [allLightboxImages, setAllLightboxImages] = useState<string[]>([]);
+  const [imageDirection, setImageDirection] = useState<'left' | 'right'>('right');
 
   useEffect(() => {
     loadGalleryImages();
@@ -98,10 +99,12 @@ export default function GalleryPage() {
   };
 
   const nextImage = () => {
+    setImageDirection('left');
     setCurrentImageIndex((prev) => (prev + 1) % allLightboxImages.length);
   };
 
   const prevImage = () => {
+    setImageDirection('right');
     setCurrentImageIndex((prev) => (prev - 1 + allLightboxImages.length) % allLightboxImages.length);
   };
 
@@ -404,24 +407,35 @@ export default function GalleryPage() {
 
             {/* Image Container */}
             <div className="flex items-center justify-center w-full h-full max-h-[70vh]">
-              <Image
-                src={allLightboxImages[currentImageIndex]}
-                alt="Gallery image"
-                className="max-w-full max-h-full object-contain border-4 border-gold"
-              />
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentImageIndex}
+                  initial={{ opacity: 0, x: imageDirection === 'left' ? 100 : -100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: imageDirection === 'left' ? -100 : 100 }}
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  className="flex items-center justify-center w-full h-full"
+                >
+                  <Image
+                    src={allLightboxImages[currentImageIndex]}
+                    alt="Gallery image"
+                    className="max-w-full max-h-full object-contain border-4 border-gold"
+                  />
+                </motion.div>
+              </AnimatePresence>
             </div>
 
             {/* Navigation Buttons */}
             <button
               onClick={prevImage}
-              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon active:bg-gold active:text-maroon transition-colors z-20 touch-manipulation"
+              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-cream border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon active:bg-gold active:text-maroon transition-colors z-20 touch-manipulation text-maroon"
             >
               <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
             </button>
 
             <button
               onClick={nextImage}
-              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon active:bg-gold active:text-maroon transition-colors z-20 touch-manipulation"
+              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-cream border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon active:bg-gold active:text-maroon transition-colors z-20 touch-manipulation text-maroon"
             >
               <ChevronRightIcon className="w-5 h-5 md:w-6 md:h-6" />
             </button>
