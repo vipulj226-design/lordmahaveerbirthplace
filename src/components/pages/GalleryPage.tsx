@@ -390,7 +390,7 @@ export default function GalleryPage() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={closeLightbox}
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center p-4"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center p-2 sm:p-4"
           style={{
             background: 'rgba(10, 2, 4, 0.92)',
             backdropFilter: 'blur(6px)'
@@ -400,13 +400,13 @@ export default function GalleryPage() {
             {/* Close Button */}
             <button
               onClick={closeLightbox}
-              className="absolute top-4 right-4 z-10 w-10 h-10 md:w-12 md:h-12 bg-cream border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon active:bg-gold active:text-maroon transition-colors touch-manipulation text-maroon"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 w-10 h-10 md:w-12 md:h-12 bg-cream border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon active:bg-gold active:text-maroon transition-colors touch-manipulation text-maroon flex-shrink-0"
             >
               <X className="w-5 h-5 md:w-6 md:h-6" />
             </button>
 
             {/* Image Container */}
-            <div className="flex items-center justify-center w-full flex-1 px-2 sm:px-4 min-h-0">
+            <div className="flex items-center justify-center w-full h-full px-2 sm:px-4 py-16 sm:py-12">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentImageIndex}
@@ -414,14 +414,14 @@ export default function GalleryPage() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: imageDirection === 'left' ? -100 : 100 }}
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
-                  className="flex items-center justify-center w-full h-full min-h-0"
+                  className="flex items-center justify-center w-full h-full"
                 >
                   <Image
                     src={allLightboxImages[currentImageIndex]}
                     alt="Gallery image"
                     width={1200}
                     height={800}
-                    className="w-auto h-auto max-w-[95vw] max-h-[70vh] sm:max-h-[80vh] md:max-h-[85vh] border-4 border-gold object-contain"
+                    className="w-auto h-auto max-w-[90vw] max-h-[60vh] sm:max-w-[85vw] sm:max-h-[70vh] md:max-w-[80vw] md:max-h-[80vh] border-4 border-gold object-contain"
                   />
                 </motion.div>
               </AnimatePresence>
@@ -430,14 +430,14 @@ export default function GalleryPage() {
             {/* Navigation Buttons */}
             <button
               onClick={prevImage}
-              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-cream border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon active:bg-gold active:text-maroon transition-colors z-20 touch-manipulation text-maroon"
+              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-cream border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon active:bg-gold active:text-maroon transition-colors z-20 touch-manipulation text-maroon flex-shrink-0"
             >
               <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
             </button>
 
             <button
               onClick={nextImage}
-              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-cream border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon active:bg-gold active:text-maroon transition-colors z-20 touch-manipulation text-maroon"
+              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-cream border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon active:bg-gold active:text-maroon transition-colors z-20 touch-manipulation text-maroon flex-shrink-0"
             >
               <ChevronRightIcon className="w-5 h-5 md:w-6 md:h-6" />
             </button>
