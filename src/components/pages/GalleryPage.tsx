@@ -131,11 +131,22 @@ export default function GalleryPage() {
     <>
       <main className="min-h-screen bg-cream">
         <div className="max-w-[100rem] mx-auto px-4 py-16 md:py-24">
-          {/* Go to Homepage Button */}
-          <div className="mb-8">
+          {/* Logo and Go to Homepage Section - Centered */}
+          <div className="flex flex-col items-center justify-center mb-16">
+            {/* Logo Section */}
+            <div className="flex flex-col items-center gap-3 mb-8">
+              <div className="w-16 h-16 md:w-20 md:h-20 bg-maroon rounded-full flex items-center justify-center border-2 border-gold">
+                <span className="font-heading text-2xl md:text-3xl text-gold font-bold">LM</span>
+              </div>
+              <h2 className="font-heading text-xl md:text-2xl text-maroon text-center">
+                Lord Mahaveer Birthplace
+              </h2>
+            </div>
+
+            {/* Go to Homepage Button */}
             <Link
               to="/"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-maroon text-cream border-2 border-maroon rounded-lg hover:bg-cream hover:text-maroon transition-colors duration-200 font-paragraph font-semibold"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-maroon text-cream border-2 border-maroon rounded-lg hover:bg-cream hover:text-maroon transition-colors duration-200 font-paragraph font-semibold"
             >
               <Home className="w-4 h-4" />
               Go to Homepage
