@@ -135,8 +135,14 @@ export default function GalleryPage() {
           <div className="flex flex-col items-center justify-center mb-8 sm:mb-12 md:mb-16">
             {/* Logo Section */}
             <div className="flex flex-col items-center gap-2 sm:gap-3 mb-4 sm:mb-6 md:mb-8">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-maroon rounded-full flex items-center justify-center border-2 border-gold">
-                <span className="font-heading text-xl sm:text-2xl md:text-3xl text-gold font-bold">LM</span>
+              <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center border-2 border-gold overflow-hidden flex-shrink-0">
+                <Image
+                  src="https://static.wixstatic.com/media/53945f_e6cd73f23f1c458b99a1317f3bc1ba6e~mv2.webp"
+                  alt="Lord Mahaveer Birthplace Logo"
+                  width={80}
+                  height={80}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h2 className="font-heading text-lg sm:text-xl md:text-2xl text-maroon text-center">
                 Lord Mahaveer Birthplace
