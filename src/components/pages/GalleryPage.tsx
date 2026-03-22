@@ -400,13 +400,13 @@ export default function GalleryPage() {
             {/* Close Button */}
             <button
               onClick={closeLightbox}
-              className="absolute top-4 right-4 z-10 w-10 h-10 md:w-12 md:h-12 bg-maroon border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon active:bg-gold active:text-maroon transition-colors touch-manipulation"
+              className="absolute top-4 right-4 z-10 w-10 h-10 md:w-12 md:h-12 bg-cream border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon active:bg-gold active:text-maroon transition-colors touch-manipulation text-maroon"
             >
               <X className="w-5 h-5 md:w-6 md:h-6" />
             </button>
 
             {/* Image Container */}
-            <div className="flex items-center justify-center w-full h-full max-h-[70vh]">
+            <div className="flex items-center justify-center w-full h-full max-h-[90vh] px-4">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentImageIndex}
@@ -419,7 +419,7 @@ export default function GalleryPage() {
                   <Image
                     src={allLightboxImages[currentImageIndex]}
                     alt="Gallery image"
-                    className="max-w-full max-h-full object-contain border-4 border-gold"
+                    className="w-full h-full object-contain border-4 border-gold"
                   />
                 </motion.div>
               </AnimatePresence>
