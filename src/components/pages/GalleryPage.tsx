@@ -130,15 +130,15 @@ export default function GalleryPage() {
   return (
     <>
       <main className="min-h-screen bg-cream">
-        <div className="max-w-[100rem] mx-auto px-4 py-16 md:py-24">
+        <div className="max-w-[100rem] mx-auto px-3 sm:px-4 py-6 sm:py-12 md:py-24">
           {/* Logo and Go to Homepage Section - Centered */}
-          <div className="flex flex-col items-center justify-center mb-16">
+          <div className="flex flex-col items-center justify-center mb-8 sm:mb-12 md:mb-16">
             {/* Logo Section */}
-            <div className="flex flex-col items-center gap-3 mb-8">
-              <div className="w-16 h-16 md:w-20 md:h-20 bg-maroon rounded-full flex items-center justify-center border-2 border-gold">
-                <span className="font-heading text-2xl md:text-3xl text-gold font-bold">LM</span>
+            <div className="flex flex-col items-center gap-2 sm:gap-3 mb-4 sm:mb-6 md:mb-8">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-maroon rounded-full flex items-center justify-center border-2 border-gold">
+                <span className="font-heading text-xl sm:text-2xl md:text-3xl text-gold font-bold">LM</span>
               </div>
-              <h2 className="font-heading text-xl md:text-2xl text-maroon text-center">
+              <h2 className="font-heading text-lg sm:text-xl md:text-2xl text-maroon text-center">
                 Lord Mahaveer Birthplace
               </h2>
             </div>
@@ -146,7 +146,7 @@ export default function GalleryPage() {
             {/* Go to Homepage Button */}
             <Link
               to="/"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-maroon text-cream border-2 border-maroon rounded-lg hover:bg-cream hover:text-maroon transition-colors duration-200 font-paragraph font-semibold"
+              className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-maroon text-cream border-2 border-maroon rounded-lg hover:bg-cream hover:text-maroon transition-colors duration-200 font-paragraph font-semibold text-sm sm:text-base"
             >
               <Home className="w-4 h-4" />
               Go to Homepage
@@ -154,22 +154,22 @@ export default function GalleryPage() {
           </div>
 
           {/* Header Section */}
-          <div className="mb-16 text-center">
-            <h1 className="font-heading text-5xl md:text-6xl text-maroon mb-4">
+          <div className="mb-8 sm:mb-12 md:mb-16 text-center">
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-maroon mb-2 sm:mb-4">
               Event Gallery
             </h1>
-            <p className="font-paragraph text-lg text-gray-700 max-w-2xl mx-auto">
+            <p className="font-paragraph text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl mx-auto px-2">
               Explore our collection of memorable moments from past events and celebrations
             </p>
           </div>
 
           {/* Gallery Folder Structure */}
           {isLoading ? (
-            <div className="flex justify-center items-center py-20">
+            <div className="flex justify-center items-center py-12 sm:py-20">
               <LoadingSpinner />
             </div>
           ) : years.length > 0 ? (
-            <div className="space-y-4">
+            <div className="space-y-2 sm:space-y-3 md:space-y-4">
               {years.map((year, yearIndex) => (
                 <motion.div
                   key={year}
@@ -180,12 +180,12 @@ export default function GalleryPage() {
                   {/* Year Folder */}
                   <motion.button
                     onClick={() => toggleYear(year)}
-                    className="w-full flex items-center gap-3 p-4 bg-white border-2 border-gold/30 rounded-lg hover:bg-cream hover:border-gold active:bg-cream active:border-gold transition-all duration-200 text-left cursor-pointer touch-manipulation"
+                    className="w-full flex items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-white border-2 border-gold/30 rounded-lg hover:bg-cream hover:border-gold active:bg-cream active:border-gold transition-all duration-200 text-left cursor-pointer touch-manipulation"
                     whileHover={{ x: 4 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <Folder className="w-6 h-6 text-gold flex-shrink-0 pointer-events-none" />
-                    <span className="font-heading text-xl text-maroon flex-1 pointer-events-none">
+                    <Folder className="w-5 sm:w-6 h-5 sm:h-6 text-gold flex-shrink-0 pointer-events-none" />
+                    <span className="font-heading text-base sm:text-lg md:text-xl text-maroon flex-1 pointer-events-none">
                       {year} Events Images
                     </span>
                     <motion.div
@@ -193,7 +193,7 @@ export default function GalleryPage() {
                       transition={{ duration: 0.2 }}
                       className="pointer-events-none"
                     >
-                      <ChevronRight className="w-5 h-5 text-gold" />
+                      <ChevronRight className="w-4 sm:w-5 h-4 sm:h-5 text-gold" />
                     </motion.div>
                   </motion.button>
 
@@ -207,7 +207,7 @@ export default function GalleryPage() {
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden"
                       >
-                        <div className="pl-8 space-y-2 mt-2">
+                        <div className="pl-4 sm:pl-8 space-y-1 sm:space-y-2 mt-2">
                           {Object.keys(groupedByYearAndEvent[year]).map((eventName, eventIndex) => (
                             <motion.div
                               key={eventName}
@@ -218,12 +218,12 @@ export default function GalleryPage() {
                               {/* Event Folder */}
                               <motion.button
                                 onClick={() => toggleEvent(eventName)}
-                                className="w-full flex items-center gap-3 p-3 bg-gold/10 border border-gold/20 rounded-lg hover:bg-gold/20 active:bg-gold/30 transition-all duration-200 text-left cursor-pointer touch-manipulation"
+                                className="w-full flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-gold/10 border border-gold/20 rounded-lg hover:bg-gold/20 active:bg-gold/30 transition-all duration-200 text-left cursor-pointer touch-manipulation"
                                 whileHover={{ x: 4 }}
                                 whileTap={{ scale: 0.98 }}
                               >
-                                <Folder className="w-5 h-5 text-gold flex-shrink-0 pointer-events-none" />
-                                <span className="font-paragraph text-maroon flex-1 pointer-events-none">
+                                <Folder className="w-4 sm:w-5 h-4 sm:h-5 text-gold flex-shrink-0 pointer-events-none" />
+                                <span className="font-paragraph text-sm sm:text-base text-maroon flex-1 pointer-events-none">
                                   {eventName}
                                 </span>
                                 <motion.div
@@ -231,7 +231,7 @@ export default function GalleryPage() {
                                   transition={{ duration: 0.2 }}
                                   className="pointer-events-none"
                                 >
-                                  <ChevronRight className="w-4 h-4 text-gold" />
+                                  <ChevronRight className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-gold" />
                                 </motion.div>
                               </motion.button>
 
@@ -245,7 +245,7 @@ export default function GalleryPage() {
                                     transition={{ duration: 0.3 }}
                                     className="overflow-hidden"
                                   >
-                                    <div className="mt-3 grid grid-cols-2 md:grid-cols-4 gap-4 pl-4">
+                                    <div className="mt-2 sm:mt-3 grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 pl-2 sm:pl-4">
                                       {groupedByYearAndEvent[year][eventName].map((item, photoIndex) => {
                                         // Get images from all available image fields
                                         const imageUrls: string[] = [];
@@ -330,35 +330,35 @@ export default function GalleryPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="mt-24 bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream p-12 rounded-lg border-2 border-gold"
+                className="mt-12 sm:mt-16 md:mt-24 bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream p-6 sm:p-8 md:p-12 rounded-lg border-2 border-gold"
               >
-                <div className="flex flex-col md:flex-row items-center gap-8">
+                <div className="flex flex-col md:flex-row items-center gap-4 sm:gap-6 md:gap-8">
                   {/* YouTube Icon and Text */}
                   <div className="flex-1">
-                    <div className="flex items-center gap-4 mb-6">
-                      <Youtube className="w-12 h-12 text-[#FF0000]" />
-                      <h3 className="font-heading text-3xl md:text-4xl font-black text-cream uppercase tracking-wide">
+                    <div className="flex items-center gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6">
+                      <Youtube className="w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12 text-[#FF0000] flex-shrink-0" />
+                      <h3 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-cream uppercase tracking-wide">
                         Watch Our Videos
                       </h3>
                     </div>
-                    <p className="font-paragraph text-lg text-cream/90 leading-relaxed mb-6">
+                    <p className="font-paragraph text-sm sm:text-base md:text-lg text-cream/90 leading-relaxed mb-3 sm:mb-4 md:mb-6">
                       For videos watch all events videos subscribe and watch in our official YouTube channel
                     </p>
                     <a
                       href="https://youtube.com/@lordmahaveerbirthplaceofficial?si=pzWROH2caVMC4Cyr"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 bg-[#FF0000] text-white px-8 py-4 rounded-full font-heading font-bold uppercase tracking-wide hover:bg-[#CC0000] transition-colors duration-300"
+                      className="inline-flex items-center gap-2 sm:gap-3 bg-[#FF0000] text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full font-heading font-bold uppercase tracking-wide text-xs sm:text-sm md:text-base hover:bg-[#CC0000] transition-colors duration-300"
                     >
-                      <Youtube className="w-6 h-6" />
+                      <Youtube className="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6" />
                       Subscribe on YouTube
                     </a>
                   </div>
                   
                   {/* YouTube Logo */}
                   <div className="flex-1 flex justify-center">
-                    <div className="w-32 h-32 md:w-40 md:h-40 bg-white rounded-lg flex items-center justify-center shadow-lg">
-                      <Youtube className="w-24 h-24 md:w-32 md:h-32 text-[#FF0000]" />
+                    <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-40 md:h-40 bg-white rounded-lg flex items-center justify-center shadow-lg flex-shrink-0">
+                      <Youtube className="w-16 sm:w-20 md:w-32 h-16 sm:h-20 md:h-32 text-[#FF0000]" />
                     </div>
                   </div>
                 </div>
