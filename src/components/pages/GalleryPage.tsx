@@ -421,7 +421,7 @@ export default function GalleryPage() {
                     alt="Gallery image"
                     width={1200}
                     height={800}
-                    className="w-auto h-auto max-w-[95vw] max-h-[85vh] border-4 border-gold object-contain"
+                    className="w-auto h-auto max-w-[98vw] max-h-[90vh] sm:max-h-[85vh] border-4 border-gold object-contain"
                   />
                 </motion.div>
               </AnimatePresence>
