@@ -410,7 +410,7 @@ export default function GalleryPage() {
               </motion.button>
 
               {/* Image Container */}
-              <div className="flex items-center justify-center w-full h-full px-2 sm:px-4 py-16 sm:py-12 z-50">
+              <div className="flex items-center justify-center w-full h-full px-2 sm:px-4 z-50">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentImageIndex}
@@ -425,7 +425,7 @@ export default function GalleryPage() {
                       alt="Gallery image"
                       width={1200}
                       height={800}
-                      className="w-auto h-auto max-w-[90vw] max-h-[60vh] sm:max-w-[85vw] sm:max-h-[70vh] md:max-w-[80vw] md:max-h-[80vh] lg:max-h-[85vh] border-4 border-gold object-contain z-50"
+                      className="w-auto h-auto max-w-[95vw] max-h-[85vh] sm:max-w-[90vw] sm:max-h-[85vh] md:max-w-[85vw] md:max-h-[90vh] border-4 border-gold object-contain z-50"
                     />
                   </motion.div>
                 </AnimatePresence>
