@@ -2132,11 +2132,18 @@ function DistanceGuideSection() {
     { location: "Patna", distance: "35 km", time: "~1 hour", transport: "By Road/Air", details: "Via NH-2, well-connected highway" },
     { location: "Vaishali City", distance: "25 km", time: "~45 minutes", transport: "By Road", details: "District headquarters, main city center" },
     { location: "Hajipur", distance: "15 km", time: "~30 minutes", transport: "By Road", details: "Nearest major town with railway station" },
-    { location: "Delhi", distance: "1000 km", time: "18-20 hours", transport: "By Air/Train", details: "Flight: 2.5 hours | Train: 16-18 hours" },
-    { location: "Kolkata", distance: "250 km", time: "5-6 hours", transport: "By Train/Road", details: "Train: 4-5 hours | Road: 5-6 hours" },
-    { location: "Mumbai", distance: "1800 km", time: "28-30 hours", transport: "By Air/Train", details: "Flight: 3 hours | Train: 24-26 hours" },
     { location: "Muzaffarpur", distance: "50 km", time: "~1.5 hours", transport: "By Road", details: "Major railway junction in Bihar" },
+    { location: "Motihari", distance: "60 km", time: "~1.5 hours", transport: "By Road", details: "District headquarters" },
+    { location: "Begusarai", distance: "80 km", time: "~2 hours", transport: "By Road", details: "Major city in Bihar" },
+    { location: "Darbhanga", distance: "90 km", time: "~2.5 hours", transport: "By Road", details: "Important city in Mithila region" },
+    { location: "Madhubani", distance: "100 km", time: "~2.5 hours", transport: "By Road", details: "Famous for Madhubani art" },
+    { location: "Samastipur", distance: "120 km", time: "~3 hours", transport: "By Road", details: "Railway junction in Bihar" },
+    { location: "Arrah", distance: "130 km", time: "~3 hours", transport: "By Road", details: "District headquarters" },
+    { location: "Gaya", distance: "150 km", time: "~3.5 hours", transport: "By Road", details: "Important pilgrimage destination" },
     { location: "Varanasi", distance: "150 km", time: "~3 hours", transport: "By Road", details: "Important pilgrimage destination" },
+    { location: "Kolkata", distance: "250 km", time: "5-6 hours", transport: "By Train/Road", details: "Train: 4-5 hours | Road: 5-6 hours" },
+    { location: "Delhi", distance: "1000 km", time: "18-20 hours", transport: "By Air/Train", details: "Flight: 2.5 hours | Train: 16-18 hours" },
+    { location: "Mumbai", distance: "1800 km", time: "28-30 hours", transport: "By Air/Train", details: "Flight: 3 hours | Train: 24-26 hours" },
     { location: "Kolhua (Ashoka Pillar)", distance: "8 km", time: "~15 minutes", transport: "By Road", details: "Famous archaeological site with Lion Pillar" }
   ];
 
@@ -2166,6 +2173,22 @@ function DistanceGuideSection() {
           </motion.p>
           <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
         </div>
+
+        {/* Distance Map Image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 rounded-lg overflow-hidden border-4 border-maroon shadow-xl"
+        >
+          <Image
+            src="https://static.wixstatic.com/media/53945f_cf98e72ccde14c1a88eae4870e172b58~mv2.jpg"
+            alt="Distance Guide Map - Bhagwan Mahavir Janmbhumi Basokund, Vaishali"
+            className="w-full h-auto object-contain"
+            width={1200}
+          />
+        </motion.div>
 
         {/* Distance Information Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
