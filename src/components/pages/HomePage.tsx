@@ -1972,7 +1972,7 @@ function HowToReachSection() {
               { city: "Patna", distance: "35 km", time: "1 hour" },
               { city: "Delhi", distance: "1000 km", time: "18-20 hours" },
               { city: "Kolkata", distance: "250 km", time: "5-6 hours" },
-              { city: "Varanasi", distance: "150 km", time: "3-4 hours" }
+              { city: "Mumbai", distance: "1800 km", time: "28-30 hours" }
             ].map((item, index) => (
               <div key={index} className="text-center">
                 <p className="font-heading text-2xl font-bold text-gold mb-2 uppercase tracking-wide">
