@@ -1431,9 +1431,32 @@ function DonateSection() {
           <h3 className="font-heading text-xl font-bold text-gold mb-3 uppercase tracking-wide">
             📱 Important Instructions
           </h3>
-          <p className="font-paragraph text-base leading-relaxed">
-            Kindly inform us on WhatsApp <a href="https://wa.me/917544003396" target="_blank" rel="noopener noreferrer" className="font-bold text-gold hover:text-gold2 transition-colors underline cursor-pointer">7544003396</a> after sending the payment and share the payment receipt.
+          <p className="font-paragraph text-base leading-relaxed mb-6">
+            Kindly inform us after sending the payment and share the payment receipt.
           </p>
+          
+          {/* Contact Options */}
+          <div className="flex flex-col sm:flex-row gap-4">
+            {/* Phone Dialer */}
+            <a 
+              href="tel:+917544003396" 
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-gold text-maroon px-6 py-3 rounded-lg font-heading font-bold uppercase tracking-wide hover:bg-gold2 transition-colors duration-300"
+            >
+              <span>📞</span>
+              Call: 7544003396
+            </a>
+            
+            {/* WhatsApp Link */}
+            <a 
+              href="https://wa.me/917544003396" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-[#25D366] text-white px-6 py-3 rounded-lg font-heading font-bold uppercase tracking-wide hover:bg-[#20BA5A] transition-colors duration-300"
+            >
+              <span>💬</span>
+              WhatsApp: 7544003396
+            </a>
+          </div>
         </motion.div>
         {/* Tax Exemption Note */}
         <motion.div
