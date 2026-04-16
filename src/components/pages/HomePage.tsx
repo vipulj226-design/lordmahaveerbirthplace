@@ -2183,7 +2183,7 @@ function DistanceGuideSection() {
           className="mb-16 rounded-lg overflow-hidden border-4 border-maroon shadow-xl"
         >
           <Image
-            src="https://static.wixstatic.com/media/53945f_cf98e72ccde14c1a88eae4870e172b58~mv2.jpg"
+            src="https://static.wixstatic.com/media/53945f_4237a21aefa34d238d831c66996d5766~mv2.png"
             alt="Distance Guide Map - Bhagwan Mahavir Janmbhumi Basokund, Vaishali"
             className="w-full h-auto object-contain"
             width={1200}
