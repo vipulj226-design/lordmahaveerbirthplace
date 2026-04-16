@@ -1401,6 +1401,21 @@ function DonateSection() {
                     <p className="text-maroon font-mono font-bold">{bank.ifscCode}</p>
                   </div>
                 </div>
+                
+                {/* QR Code for Vaishali Branch */}
+                {index === 1 && (
+                  <div className="mt-6 pt-6 border-t-2 border-maroon/20">
+                    <p className="font-heading text-xs font-bold text-maroon uppercase tracking-widest mb-4 text-center">
+                      Scan & Pay
+                    </p>
+                    <Image
+                      src="https://static.wixstatic.com/media/53945f_621a4a7978d445028339cddaf86e84fc~mv2.jpg"
+                      alt="SBI Vaishali Payment QR Code"
+                      className="w-full h-auto object-contain border-2 border-gold rounded-lg"
+                      width={300}
+                    />
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>
