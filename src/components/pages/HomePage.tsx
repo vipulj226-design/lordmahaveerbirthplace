@@ -1432,7 +1432,7 @@ function DonateSection() {
             📱 Important Instructions
           </h3>
           <p className="font-paragraph text-base leading-relaxed">
-            Kindly inform us on mobile number <a href="tel:+917544003396" className="font-bold text-gold hover:text-gold2 transition-colors underline cursor-pointer">7544003396</a> after sending the payment and share the payment receipt.
+            Kindly inform us on WhatsApp <a href="https://wa.me/917544003396" target="_blank" rel="noopener noreferrer" className="font-bold text-gold hover:text-gold2 transition-colors underline cursor-pointer">7544003396</a> after sending the payment and share the payment receipt.
           </p>
         </motion.div>
         {/* Tax Exemption Note */}
