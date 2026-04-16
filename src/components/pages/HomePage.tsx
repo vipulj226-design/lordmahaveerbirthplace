@@ -1420,6 +1420,21 @@ function DonateSection() {
             ))}
           </div>
         </motion.div>
+        {/* Payment Instructions */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="bg-maroon text-cream p-6 mb-8 rounded-lg border-2 border-gold"
+        >
+          <h3 className="font-heading text-xl font-bold text-gold mb-3 uppercase tracking-wide">
+            📱 Important Instructions
+          </h3>
+          <p className="font-paragraph text-base leading-relaxed">
+            Kindly inform us on mobile number <span className="font-bold text-gold">7544003396</span> after sending the payment and share the payment receipt.
+          </p>
+        </motion.div>
         {/* Tax Exemption Note */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
