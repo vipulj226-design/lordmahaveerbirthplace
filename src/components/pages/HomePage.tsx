@@ -2128,6 +2128,18 @@ function HowToReachSection() {
 // --- DISTANCE GUIDE SECTION COMPONENT ---
 
 function DistanceGuideSection() {
+  const distanceData = [
+    { location: "Patna", distance: "35 km", time: "~1 hour", transport: "By Road/Air", details: "Via NH-2, well-connected highway" },
+    { location: "Vaishali City", distance: "25 km", time: "~45 minutes", transport: "By Road", details: "District headquarters, main city center" },
+    { location: "Hajipur", distance: "15 km", time: "~30 minutes", transport: "By Road", details: "Nearest major town with railway station" },
+    { location: "Delhi", distance: "1000 km", time: "18-20 hours", transport: "By Air/Train", details: "Flight: 2.5 hours | Train: 16-18 hours" },
+    { location: "Kolkata", distance: "250 km", time: "5-6 hours", transport: "By Train/Road", details: "Train: 4-5 hours | Road: 5-6 hours" },
+    { location: "Mumbai", distance: "1800 km", time: "28-30 hours", transport: "By Air/Train", details: "Flight: 3 hours | Train: 24-26 hours" },
+    { location: "Muzaffarpur", distance: "50 km", time: "~1.5 hours", transport: "By Road", details: "Major railway junction in Bihar" },
+    { location: "Varanasi", distance: "150 km", time: "~3 hours", transport: "By Road", details: "Important pilgrimage destination" },
+    { location: "Kolhua (Ashoka Pillar)", distance: "8 km", time: "~15 minutes", transport: "By Road", details: "Famous archaeological site with Lion Pillar" }
+  ];
+
   return (
     <section id="distance-guide" className="relative py-4 md:py-12 bg-cream overflow-hidden border-b-[3px] border-gold">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
@@ -2150,30 +2162,21 @@ function DistanceGuideSection() {
             transition={{ delay: 0.2 }}
             className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
           >
-            Complete distance and travel information from nearby cities to Basokund
+            Complete distance and travel information from nearby cities and sacred sites to Basokund, Vaishali
           </motion.p>
           <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
         </div>
 
-
-
         {/* Distance Information Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {[
-            { location: "Patna", distance: "35 km", time: "~1 hour", transport: "By Road/Air" },
-            { location: "Vaishali City", distance: "25 km", time: "~45 minutes", transport: "By Road" },
-            { location: "Hajipur", distance: "15 km", time: "~30 minutes", transport: "By Road" },
-            { location: "Delhi", distance: "1000 km", time: "18-20 hours", transport: "By Air/Train" },
-            { location: "Kolkata", distance: "250 km", time: "5-6 hours", transport: "By Train/Road" },
-            { location: "Mumbai", distance: "1800 km", time: "28-30 hours", transport: "By Air/Train" }
-          ].map((item, index) => (
+          {distanceData.map((item, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white border-2 border-maroon p-6 hover:border-gold transition-all duration-300 hover:shadow-lg"
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="bg-white border-2 border-maroon p-6 hover:border-gold transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px]"
             >
               <h3 className="font-heading text-2xl font-bold text-maroon mb-4 uppercase tracking-wide">
                 {item.location}
@@ -2194,8 +2197,11 @@ function DistanceGuideSection() {
                   </div>
                 </div>
                 <div className="pt-2 border-t border-maroon/20">
-                  <p className="font-paragraph text-sm text-maroon/80">
+                  <p className="font-paragraph text-sm text-maroon/80 mb-2">
                     <span className="font-bold">Transport:</span> {item.transport}
+                  </p>
+                  <p className="font-paragraph text-xs text-maroon/70 italic">
+                    {item.details}
                   </p>
                 </div>
               </div>
@@ -2209,7 +2215,7 @@ function DistanceGuideSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-gradient-to-r from-maroon to-[#1A0306] text-cream p-8 md:p-12 rounded-lg border-2 border-gold"
+          className="bg-gradient-to-r from-maroon to-[#1A0306] text-cream p-8 md:p-12 rounded-lg border-2 border-gold mb-12"
         >
           <h3 className="font-heading text-2xl md:text-3xl font-bold mb-8 uppercase tracking-wide">
             📍 Important Information
@@ -2230,6 +2236,45 @@ function DistanceGuideSection() {
                 <li>• Hajipur Junction (15 km)</li>
                 <li>• Muzaffarpur Junction (50 km)</li>
               </ul>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Sacred Sites Nearby */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="bg-gold/10 border-2 border-gold p-8 md:p-12 rounded-lg"
+        >
+          <h3 className="font-heading text-2xl md:text-3xl font-bold text-maroon mb-8 uppercase tracking-wide">
+            🏛️ Sacred Sites & Pilgrimage Locations Near Vaishali
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <div className="bg-white p-6 rounded-lg border-l-4 border-maroon">
+                <h4 className="font-heading font-bold text-maroon mb-2 uppercase tracking-wide">Kolhua (Ashoka Pillar)</h4>
+                <p className="font-paragraph text-maroon/80 text-sm mb-2">Distance: 8 km (~15 minutes)</p>
+                <p className="font-paragraph text-maroon/70 text-xs leading-relaxed">Famous archaeological site with the Lion Pillar of Ashoka, commemorating Lord Mahavira's visit to Vaishali.</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg border-l-4 border-maroon">
+                <h4 className="font-heading font-bold text-maroon mb-2 uppercase tracking-wide">Raja Vishal ka Garh</h4>
+                <p className="font-paragraph text-maroon/80 text-sm mb-2">Distance: 12 km (~25 minutes)</p>
+                <p className="font-paragraph text-maroon/70 text-xs leading-relaxed">Ancient fort ruins and archaeological site with historical significance to Vaishali's royal heritage.</p>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div className="bg-white p-6 rounded-lg border-l-4 border-maroon">
+                <h4 className="font-heading font-bold text-maroon mb-2 uppercase tracking-wide">Abhishek Pushkarini</h4>
+                <p className="font-paragraph text-maroon/80 text-sm mb-2">Distance: 10 km (~20 minutes)</p>
+                <p className="font-paragraph text-maroon/70 text-xs leading-relaxed">The sacred coronation tank where Lord Mahavira was ceremonially crowned, an important pilgrimage site.</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg border-l-4 border-maroon">
+                <h4 className="font-heading font-bold text-maroon mb-2 uppercase tracking-wide">Bawan Pokhar Temple</h4>
+                <p className="font-paragraph text-maroon/80 text-sm mb-2">Distance: 18 km (~35 minutes)</p>
+                <p className="font-paragraph text-maroon/70 text-xs leading-relaxed">Ancient temple complex with 52 ponds, representing the spiritual heritage of Vaishali region.</p>
+              </div>
             </div>
           </div>
         </motion.div>
