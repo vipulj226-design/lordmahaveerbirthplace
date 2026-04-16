@@ -2155,21 +2155,7 @@ function DistanceGuideSection() {
           <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
         </div>
 
-        {/* Main Distance Guide Image */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16 bg-white border-2 border-maroon p-6 md:p-8 rounded-lg overflow-hidden"
-        >
-          <Image
-            src="https://static.wixstatic.com/media/53945f_e00ccf447e7c4192ab4a5e4a7b61ffe7~mv2.jpg"
-            alt="Distance and Travel Guide Map - Basokund, Vaishali"
-            className="w-full h-auto object-contain"
-            width={1200}
-          />
-        </motion.div>
+
 
         {/* Distance Information Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
