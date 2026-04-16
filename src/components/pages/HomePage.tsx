@@ -1299,13 +1299,6 @@ function AboutUsSection() {
 function DonateSection() {
   const bankDetails = [
     {
-      bankName: "HDFC Bank",
-      branch: "Green Park Branch, New Delhi",
-      accountNumber: "50100264497212",
-      ifscCode: "HDFC0000586",
-      accountHolder: "Bhagwan Mahavir Smarak Samiti"
-    },
-    {
       bankName: "State Bank of India",
       branch: "JNU Branch, New Delhi",
       accountNumber: "10596551078",
