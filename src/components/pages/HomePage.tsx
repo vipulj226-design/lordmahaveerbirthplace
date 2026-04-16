@@ -108,6 +108,8 @@ export default function HomePage() {
       <GallerySection />
       {/* --- HOW TO REACH SECTION --- */}
       <HowToReachSection />
+      {/* --- DISTANCE GUIDE SECTION --- */}
+      <DistanceGuideSection />
       {/* --- CONTACT SECTION --- */}
       <ContactSection />
       {/* --- WHATSAPP CHAT BUTTON --- */}
@@ -2117,6 +2119,133 @@ function HowToReachSection() {
             <MessageCircle className="w-6 h-6" />
             📞 WhatsApp — 7544003396
           </a>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+// --- DISTANCE GUIDE SECTION COMPONENT ---
+
+function DistanceGuideSection() {
+  return (
+    <section id="distance-guide" className="relative py-4 md:py-12 bg-cream overflow-hidden border-b-[3px] border-gold">
+      <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+        
+        {/* Section Header */}
+        <div className="mb-12 md:mb-24 relative">
+          <motion.h2 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-heading font-black text-maroon uppercase tracking-tight relative z-10 lg:text-5xl text-4xl"
+          >
+            Distance <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold2">Guide</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="font-paragraph text-xl text-maroon/70 mt-6 max-w-2xl"
+          >
+            Complete distance and travel information from nearby cities to Basokund
+          </motion.p>
+          <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
+        </div>
+
+        {/* Main Distance Guide Image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 bg-white border-2 border-maroon p-6 md:p-8 rounded-lg overflow-hidden"
+        >
+          <Image
+            src="https://static.wixstatic.com/media/53945f_e00ccf447e7c4192ab4a5e4a7b61ffe7~mv2.jpg"
+            alt="Distance and Travel Guide Map - Basokund, Vaishali"
+            className="w-full h-auto object-contain"
+            width={1200}
+          />
+        </motion.div>
+
+        {/* Distance Information Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          {[
+            { location: "Patna", distance: "35 km", time: "~1 hour", transport: "By Road/Air" },
+            { location: "Vaishali City", distance: "25 km", time: "~45 minutes", transport: "By Road" },
+            { location: "Hajipur", distance: "15 km", time: "~30 minutes", transport: "By Road" },
+            { location: "Delhi", distance: "1000 km", time: "18-20 hours", transport: "By Air/Train" },
+            { location: "Kolkata", distance: "250 km", time: "5-6 hours", transport: "By Train/Road" },
+            { location: "Mumbai", distance: "1800 km", time: "28-30 hours", transport: "By Air/Train" }
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white border-2 border-maroon p-6 hover:border-gold transition-all duration-300 hover:shadow-lg"
+            >
+              <h3 className="font-heading text-2xl font-bold text-maroon mb-4 uppercase tracking-wide">
+                {item.location}
+              </h3>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <MapPin className="w-5 h-5 text-gold" />
+                  <div>
+                    <p className="font-paragraph text-xs text-maroon/60 uppercase tracking-widest">Distance</p>
+                    <p className="font-heading font-bold text-maroon text-lg">{item.distance}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Clock className="w-5 h-5 text-gold" />
+                  <div>
+                    <p className="font-paragraph text-xs text-maroon/60 uppercase tracking-widest">Travel Time</p>
+                    <p className="font-heading font-bold text-maroon text-lg">{item.time}</p>
+                  </div>
+                </div>
+                <div className="pt-2 border-t border-maroon/20">
+                  <p className="font-paragraph text-sm text-maroon/80">
+                    <span className="font-bold">Transport:</span> {item.transport}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Key Information Box */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-gradient-to-r from-maroon to-[#1A0306] text-cream p-8 md:p-12 rounded-lg border-2 border-gold"
+        >
+          <h3 className="font-heading text-2xl md:text-3xl font-bold mb-8 uppercase tracking-wide">
+            📍 Important Information
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h4 className="font-heading font-bold text-gold mb-4 uppercase tracking-wide">Nearest Airports</h4>
+              <ul className="space-y-2 font-paragraph text-cream/90">
+                <li>• Patna International Airport (35 km)</li>
+                <li>• Varanasi International Airport (150 km)</li>
+                <li>• Indira Gandhi International Airport, Delhi (1000 km)</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-heading font-bold text-gold mb-4 uppercase tracking-wide">Nearest Railway Stations</h4>
+              <ul className="space-y-2 font-paragraph text-cream/90">
+                <li>• Patna Junction (35 km)</li>
+                <li>• Hajipur Junction (15 km)</li>
+                <li>• Muzaffarpur Junction (50 km)</li>
+              </ul>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
