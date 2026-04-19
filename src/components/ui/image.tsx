@@ -83,7 +83,7 @@ const ImageWrapper = forwardRef<HTMLSpanElement, ImageWrapperProps>(({ data, cla
   return (
     <span
       ref={ref}
-      className={cn('inline-block relative', className)}
+      className={cn('block relative', className)}
       style={
         {
           '--img-aspect-ratio': aspectRatio,
