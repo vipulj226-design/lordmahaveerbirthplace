@@ -437,9 +437,30 @@ function HeroSection() {
         transition={{ duration: 1.2, delay: 1.2 }}
         style={{ marginTop: 'clamp(8px, 1.5vh, 12px)', paddingBottom: 'clamp(8px, 2vh, 20px)' }}
       >
+        {/* Animated pulse ring around button */}
+        <motion.div
+          className="absolute inset-0 flex justify-center items-center pointer-events-none"
+          style={{ width: 'clamp(200px, 90vw, 650px)', height: '60px' }}
+        >
+          <motion.div
+            className="absolute rounded-full border-2 border-gold"
+            initial={{ scale: 0.8, opacity: 0.8 }}
+            animate={{ scale: 1.3, opacity: 0 }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
+            style={{ width: '100%', height: '100%' }}
+          />
+          <motion.div
+            className="absolute rounded-full border-2 border-gold"
+            initial={{ scale: 0.8, opacity: 0.8 }}
+            animate={{ scale: 1.3, opacity: 0 }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeOut", delay: 0.6 }}
+            style={{ width: '100%', height: '100%' }}
+          />
+        </motion.div>
+
         <motion.a 
           href="/gallery"
-          className="inline-block font-heading font-black tracking-widest uppercase"
+          className="inline-block font-heading font-black tracking-widest uppercase relative z-10"
           style={{
             backgroundImage: 'linear-gradient(135deg, #D4AF37 0%, #FFE680 50%, #C5A55A 100%)',
             color: '#1a1a1a',
@@ -457,6 +478,7 @@ function HeroSection() {
             letterSpacing: '0.15em',
             textShadow: '0 2px 4px rgba(26, 26, 26, 0.2)',
             maxWidth: 'clamp(180px, 85vw, 600px)',
+            position: 'relative',
           }}
           whileHover={{ 
             y: -6, 
@@ -464,8 +486,29 @@ function HeroSection() {
             scale: 1.08
           }}
           whileTap={{ scale: 0.98 }}
+          animate={{ 
+            y: [0, -4, 0],
+          }}
+          transition={{
+            y: {
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }
+          }}
         >
-          Explore the past events gallery
+          <motion.span
+            animate={{ x: [0, 4, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
+            Explore the past events gallery
+          </motion.span>
+          <motion.div
+            animate={{ x: [0, 6, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <ArrowRight className="w-5 h-5" />
+          </motion.div>
         </motion.a>
       </motion.div>
 
