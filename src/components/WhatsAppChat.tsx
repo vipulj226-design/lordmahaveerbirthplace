@@ -9,8 +9,6 @@ export default function WhatsAppChat() {
   const phoneNumber = '+91 7544003396';
   const whatsappUrl = `https://wa.me/917544003396?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20Lord%20Mahaveer%20Birthplace.`;
 
-  const youtubeUrl = 'https://www.youtube.com/@lordmahaveerbirthplace'; // Update with actual YouTube channel URL
-
   return (
     <div className="fixed bottom-4 right-4 z-50 md:bottom-6 md:right-6 flex flex-col items-end gap-4">
       <AnimatePresence>
@@ -51,53 +49,6 @@ export default function WhatsAppChat() {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* YouTube Button with Tooltip */}
-      <motion.div
-        className="relative flex flex-col items-center"
-        onMouseEnter={() => setShowTooltip(true)}
-        onMouseLeave={() => setShowTooltip(false)}
-      >
-        <motion.a
-          href={youtubeUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          whileHover={{ scale: 1.15, rotate: 5 }}
-          whileTap={{ scale: 0.95 }}
-          animate={{ y: [0, -8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full shadow-2xl transition-all duration-300 bg-red-600 hover:bg-red-700 relative"
-          aria-label="Subscribe our YouTube channel"
-        >
-          <svg
-            className="w-8 h-8 md:w-10 md:h-10 text-white"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-          </svg>
-          {/* Pulsing ring effect */}
-          <motion.div
-            className="absolute inset-0 rounded-full border-2 border-red-400"
-            animate={{ scale: [1, 1.3], opacity: [1, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
-        </motion.a>
-        {/* YouTube Tooltip */}
-        <AnimatePresence>
-          {showTooltip && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 10 }}
-              transition={{ duration: 0.2 }}
-              className="absolute -top-12 bg-red-600 text-white px-3 py-2 rounded-lg text-xs font-bold whitespace-nowrap shadow-lg"
-            >
-              Subscribe our youtube channel
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.div>
 
       {/* Main WhatsApp Button with Tooltip */}
       <motion.div
