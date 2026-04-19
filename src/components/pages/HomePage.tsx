@@ -483,15 +483,15 @@ function HeroSection() {
           rel="noopener noreferrer"
           className="inline-block font-heading font-black tracking-widest uppercase"
           style={{
-            backgroundColor: '#FF0000',
+            backgroundColor: '#6B0F1A',
             color: '#FFFFFF',
             padding: 'clamp(12px, 2.5vw, 18px) clamp(20px, 4vw, 48px)',
             borderRadius: '50px',
             textDecoration: 'none',
             fontSize: 'clamp(0.75rem, 2vw, 1.1rem)',
             fontWeight: 900,
-            boxShadow: '0 12px 35px rgba(255, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
-            border: '3px solid #FF6B6B',
+            boxShadow: '0 12px 35px rgba(107, 15, 26, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
+            border: '3px solid #8B1538',
             display: 'inline-flex',
             alignItems: 'center',
             gap: '10px',
@@ -502,9 +502,9 @@ function HeroSection() {
           }}
           whileHover={{ 
             y: -6, 
-            boxShadow: '0 20px 50px rgba(255, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
+            boxShadow: '0 20px 50px rgba(107, 15, 26, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
             scale: 1.08,
-            backgroundColor: '#E60000'
+            backgroundColor: '#4A0A13'
           }}
           whileTap={{ scale: 0.98 }}
         >
