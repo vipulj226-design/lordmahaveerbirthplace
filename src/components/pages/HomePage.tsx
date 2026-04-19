@@ -465,7 +465,7 @@ function HeroSection() {
           }}
           whileTap={{ scale: 0.98 }}
         >
-          Explore the past events gallery
+          Tap to View Events Gallery →
         </motion.a>
       </motion.div>
 
