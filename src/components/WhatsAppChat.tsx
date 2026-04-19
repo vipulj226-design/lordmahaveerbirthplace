@@ -7,24 +7,30 @@ export default function WhatsAppChat() {
   const youtubeUrl = `https://www.youtube.com/@lordmahaveerbirthplace`;
 
   return (
-    <div className="fixed bottom-4 right-4 z-50 md:bottom-6 md:right-6 flex flex-col items-end gap-3">
+    <div className="fixed bottom-3 right-3 z-50 sm:bottom-4 sm:right-4 md:bottom-6 md:right-6 flex flex-col items-end gap-2 sm:gap-2.5">
       {/* YouTube Button */}
       <motion.a
         href={youtubeUrl}
         target="_blank"
         rel="noopener noreferrer"
-        whileHover={{ scale: 1.15, rotate: -5 }}
+        whileHover={{ scale: 1.12, rotate: -5 }}
         whileTap={{ scale: 0.95 }}
-        animate={{ y: [0, -8, 0] }}
+        animate={{ y: [0, -6, 0] }}
         transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-        className="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full shadow-2xl transition-all duration-300 relative bg-red-600 hover:bg-red-700"
+        className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full shadow-lg sm:shadow-xl transition-all duration-300 relative bg-red-600 hover:bg-red-700 shrink-0"
         aria-label="YouTube Channel"
       >
-        <span className="text-white text-2xl md:text-3xl font-bold">▶</span>
+        <Image
+          src="https://static.wixstatic.com/media/53945f_71ebdd7141d041e4be3d91d80d4578dd~mv2.png"
+          alt="YouTube Logo"
+          width={64}
+          height={64}
+          className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 object-contain"
+        />
         {/* Pulsing ring effect */}
         <motion.div
           className="absolute inset-0 rounded-full border-2 border-red-600"
-          animate={{ scale: [1, 1.3], opacity: [1, 0] }}
+          animate={{ scale: [1, 1.25], opacity: [1, 0] }}
           transition={{ duration: 2.5, repeat: Infinity }}
         />
       </motion.a>
@@ -34,7 +40,7 @@ export default function WhatsAppChat() {
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.3 }}
-        className="bg-[#25D366] text-white px-3 py-1 rounded-lg font-heading font-bold text-xs uppercase tracking-wide shadow-lg"
+        className="bg-[#25D366] text-white px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md sm:rounded-lg font-heading font-bold text-[10px] sm:text-xs uppercase tracking-wide shadow-md sm:shadow-lg shrink-0"
       >
         Live Chat
       </motion.div>
@@ -44,24 +50,24 @@ export default function WhatsAppChat() {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        whileHover={{ scale: 1.15, rotate: -5 }}
+        whileHover={{ scale: 1.12, rotate: -5 }}
         whileTap={{ scale: 0.95 }}
-        animate={{ y: [0, -8, 0] }}
+        animate={{ y: [0, -6, 0] }}
         transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-        className="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full shadow-2xl transition-all duration-300 relative"
+        className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full shadow-lg sm:shadow-xl transition-all duration-300 relative shrink-0"
         aria-label="WhatsApp Live Chat"
       >
         <Image
           src="https://static.wixstatic.com/media/53945f_35e6208606dd4874847f2da4e39392d5~mv2.png"
           alt="WhatsApp Logo"
-          width={80}
-          height={80}
-          className="w-16 h-16 md:w-20 md:h-20 object-cover rounded-full"
+          width={64}
+          height={64}
+          className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-cover rounded-full"
         />
         {/* Pulsing ring effect */}
         <motion.div
           className="absolute inset-0 rounded-full border-2 border-[#25D366]"
-          animate={{ scale: [1, 1.3], opacity: [1, 0] }}
+          animate={{ scale: [1, 1.25], opacity: [1, 0] }}
           transition={{ duration: 2.5, repeat: Infinity, delay: 0.6 }}
         />
       </motion.a>
