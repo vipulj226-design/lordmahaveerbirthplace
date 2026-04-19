@@ -82,20 +82,20 @@ export default function FoundationDevelopment() {
                 {/* Combined Image + Content Box */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 w-full">
                   {/* Main Image - Left or Right based on index */}
-                  <div className={`w-full ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
+                  <div className={`w-full ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'} flex items-center justify-center bg-cream`}>
                     {block.image && (
                       <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="w-full h-auto overflow-hidden"
+                        className="w-full h-auto overflow-hidden flex items-center justify-center p-4"
                       >
                         <Image
                           src={block.image}
                           alt={block.heading || 'Foundation & Development'}
                           width={600}
                           height={600}
-                          className="w-full h-auto object-cover"
+                          className="w-full h-auto object-contain"
                         />
                       </motion.div>
                     )}

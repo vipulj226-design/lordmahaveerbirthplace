@@ -52,47 +52,101 @@ export default function WhatsAppChat() {
         )}
       </AnimatePresence>
 
-      {/* YouTube Button */}
-      <motion.a
-        href={youtubeUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        className="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full shadow-2xl transition-all duration-300 bg-red-600 hover:bg-red-700"
-        aria-label="YouTube Channel"
-      >
-        <svg
-          className="w-8 h-8 md:w-10 md:h-10 text-white"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-        </svg>
-      </motion.a>
-
-      {/* Main WhatsApp Button */}
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        onClick={() => setIsOpen(!isOpen)}
+      {/* YouTube Button with Tooltip */}
+      <motion.div
+        className="relative flex flex-col items-center"
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
-        className="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full shadow-2xl transition-all duration-300"
-        aria-label="WhatsApp Live Chat"
       >
-        {isOpen ? (
-          <X className="w-8 h-8 md:w-10 md:h-10 text-white" />
-        ) : (
-          <Image
-            src="https://static.wixstatic.com/media/53945f_35e6208606dd4874847f2da4e39392d5~mv2.png"
-            alt="WhatsApp Logo"
-            width={80}
-            height={80}
-            className="w-16 h-16 md:w-20 md:h-20 object-cover rounded-full"
+        <motion.a
+          href={youtubeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{ scale: 1.15, rotate: 5 }}
+          whileTap={{ scale: 0.95 }}
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full shadow-2xl transition-all duration-300 bg-red-600 hover:bg-red-700 relative"
+          aria-label="Subscribe our YouTube channel"
+        >
+          <svg
+            className="w-8 h-8 md:w-10 md:h-10 text-white"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+          </svg>
+          {/* Pulsing ring effect */}
+          <motion.div
+            className="absolute inset-0 rounded-full border-2 border-red-400"
+            animate={{ scale: [1, 1.3], opacity: [1, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
           />
-        )}
-      </motion.button>
+        </motion.a>
+        {/* YouTube Tooltip */}
+        <AnimatePresence>
+          {showTooltip && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              transition={{ duration: 0.2 }}
+              className="absolute -top-12 bg-red-600 text-white px-3 py-2 rounded-lg text-xs font-bold whitespace-nowrap shadow-lg"
+            >
+              Subscribe our youtube channel
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
+
+      {/* Main WhatsApp Button with Tooltip */}
+      <motion.div
+        className="relative flex flex-col items-center"
+        onMouseEnter={() => setShowTooltip(true)}
+        onMouseLeave={() => setShowTooltip(false)}
+      >
+        <motion.button
+          whileHover={{ scale: 1.15, rotate: -5 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => setIsOpen(!isOpen)}
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
+          className="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full shadow-2xl transition-all duration-300 relative"
+          aria-label="WhatsApp Live Chat"
+        >
+          {isOpen ? (
+            <X className="w-8 h-8 md:w-10 md:h-10 text-white" />
+          ) : (
+            <Image
+              src="https://static.wixstatic.com/media/53945f_35e6208606dd4874847f2da4e39392d5~mv2.png"
+              alt="WhatsApp Logo"
+              width={80}
+              height={80}
+              className="w-16 h-16 md:w-20 md:h-20 object-cover rounded-full"
+            />
+          )}
+          {/* Pulsing ring effect */}
+          <motion.div
+            className="absolute inset-0 rounded-full border-2 border-[#25D366]"
+            animate={{ scale: [1, 1.3], opacity: [1, 0] }}
+            transition={{ duration: 2.5, repeat: Infinity, delay: 0.3 }}
+          />
+        </motion.button>
+        {/* WhatsApp Tooltip */}
+        <AnimatePresence>
+          {showTooltip && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              transition={{ duration: 0.2 }}
+              className="absolute -top-12 bg-[#25D366] text-white px-3 py-2 rounded-lg text-xs font-bold whitespace-nowrap shadow-lg"
+            >
+              Live chat
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
     </div>
   );
 }
