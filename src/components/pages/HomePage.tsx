@@ -2247,14 +2247,13 @@ function ContactSection() {
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex flex-col items-center gap-4">
                 <span className="text-2xl">📞</span>
-                <div>
+                <div className="text-center">
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Phone/Mobile</p>
                   <div className="space-y-1">
-                    <a href="tel:+917544003396" className="font-semibold text-primary hover:text-gold transition-colors cursor-pointer">+91-7544003396</a>
-                    <br />
-                    <a href="tel:+919771682337" className="font-semibold text-primary hover:text-gold transition-colors cursor-pointer">+91-9771682337</a>
+                    <a href="tel:+917544003396" className="font-semibold text-primary hover:text-gold transition-colors cursor-pointer block">+91-7544003396</a>
+                    <a href="tel:+919771682337" className="font-semibold text-primary hover:text-gold transition-colors cursor-pointer block">+91-9771682337</a>
                   </div>
                 </div>
               </div>
@@ -2332,14 +2331,13 @@ function ContactSection() {
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex flex-col items-center gap-4">
                 <span className="text-2xl">📞</span>
-                <div>
+                <div className="text-center">
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Phone</p>
                   <div className="space-y-1">
-                    <a href="tel:+917982277419" className="text-maroon font-semibold hover:text-gold transition-colors cursor-pointer">+91-7982277419</a>
-                    <br />
-                    <a href="tel:+919873027779" className="text-maroon font-semibold hover:text-gold transition-colors cursor-pointer">+91-9873027779</a>
+                    <a href="tel:+917982277419" className="text-maroon font-semibold hover:text-gold transition-colors cursor-pointer block">+91-7982277419</a>
+                    <a href="tel:+919873027779" className="text-maroon font-semibold hover:text-gold transition-colors cursor-pointer block">+91-9873027779</a>
                   </div>
                 </div>
               </div>
