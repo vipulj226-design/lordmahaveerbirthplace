@@ -292,25 +292,48 @@ function HeroSection() {
     }
     @media (max-width: 768px) {
       #hero {
-        min-height: 80vh !important;
+        min-height: 85vh !important;
         height: auto !important;
-        padding-top: clamp(160px, 22vh, 200px) !important;
-        padding-bottom: clamp(16px, 2vh, 24px) !important;
-        gap: clamp(6px, 1.5vh, 12px) !important;
+        padding-top: clamp(140px, 20vh, 180px) !important;
+        padding-bottom: clamp(12px, 1.5vh, 20px) !important;
+        gap: clamp(4px, 1vh, 8px) !important;
       }
       #hero .hero-main-content {
         flex: 0 1 auto;
         min-height: auto;
         justify-content: center;
-        gap: clamp(6px, 1.5vh, 12px) !important;
+        gap: clamp(4px, 1vh, 8px) !important;
+      }
+      #hero h1 {
+        font-size: clamp(1.1rem, 3vw, 2.5rem) !important;
+        line-height: 1.05 !important;
+        margin-bottom: 0 !important;
+      }
+      #hero .hero-subtitle {
+        font-size: clamp(0.65rem, 1.8vw, 0.9rem) !important;
+        margin-bottom: clamp(2px, 0.8vh, 6px) !important;
+      }
+      #hero .hero-image {
+        max-width: clamp(260px, 90vw, 340px) !important;
+        margin-top: clamp(4px, 1vh, 8px) !important;
+        margin-bottom: 0 !important;
       }
       #hero .hero-cta {
         flex-shrink: 0;
-        margin-top: clamp(12px, 2vh, 16px) !important;
+        margin-top: clamp(8px, 1.2vh, 12px) !important;
+        padding-bottom: clamp(4px, 1vh, 8px) !important;
+      }
+      #hero .hero-cta a {
+        padding: clamp(10px, 1.8vw, 14px) clamp(16px, 3vw, 32px) !important;
+        font-size: clamp(0.65rem, 1.6vw, 0.9rem) !important;
       }
       #hero .hero-scroll {
         flex-shrink: 0;
-        margin-top: clamp(8px, 1.5vh, 12px) !important;
+        margin-top: clamp(6px, 1vh, 10px) !important;
+        padding: clamp(8px, 1.5vw, 12px) !important;
+      }
+      #hero .hero-scroll p {
+        font-size: clamp(0.6rem, 1.4vw, 0.75rem) !important;
       }
     }
   `;
@@ -362,14 +385,14 @@ function HeroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
-        style={{ gap: 'clamp(6px, 1.5vh, 14px)', minHeight: 'auto' }}
+        style={{ gap: 'clamp(4px, 1vh, 8px)', minHeight: 'auto' }}
       >
         {/* H1 Title with Gradient */}
         <motion.h1 
           className="font-heading font-black tracking-tight px-4 w-full"
           style={{
-            fontSize: 'clamp(1.25rem, 3.5vw, 3rem)',
-            lineHeight: '1.1',
+            fontSize: 'clamp(1.1rem, 3vw, 2.8rem)',
+            lineHeight: '1.05',
             backgroundImage: 'linear-gradient(to right, #C5A55A, #FDF6EC, #D4AF37)',
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
@@ -391,8 +414,8 @@ function HeroSection() {
 
         {/* Sub Text */}
         <motion.p 
-          className="font-paragraph tracking-[0.125em] uppercase text-xs sm:text-sm md:text-base w-full px-4"
-          style={{ color: 'rgba(253, 246, 236, 0.8)', marginBottom: '0px', minHeight: 'auto', order: 2 }}
+          className="hero-subtitle font-paragraph tracking-[0.125em] uppercase w-full px-4"
+          style={{ color: 'rgba(253, 246, 236, 0.8)', marginBottom: '0px', minHeight: 'auto', order: 2, fontSize: 'clamp(0.65rem, 1.8vw, 0.9rem)' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.8 }}
@@ -404,16 +427,17 @@ function HeroSection() {
 
         {/* Hero Image Box */}
         <motion.div 
-          className="mx-auto max-w-[320px] sm:max-w-[380px] md:max-w-[450px] w-full"
+          className="hero-image mx-auto w-full"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 1 }}
           style={{
+            maxWidth: 'clamp(260px, 90vw, 340px)',
             borderRadius: '12px',
             border: '3px solid #C5A55A',
             boxShadow: '0 0 30px rgba(197, 165, 90, 0.6)',
             overflow: 'hidden',
-            marginTop: 'clamp(8px, 2vh, 12px)',
+            marginTop: 'clamp(4px, 1vh, 8px)',
             marginBottom: '0px',
             order: 3,
             padding: 0,
