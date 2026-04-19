@@ -469,6 +469,49 @@ function HeroSection() {
         </motion.a>
       </motion.div>
 
+      {/* YouTube CTA Button */}
+      <motion.div 
+        className="hero-youtube-cta relative z-30 w-full flex justify-center px-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, delay: 1.3 }}
+        style={{ marginTop: 'clamp(8px, 1.5vh, 12px)', paddingBottom: 'clamp(8px, 2vh, 20px)' }}
+      >
+        <motion.a 
+          href="https://www.youtube.com/@lordmahaveerbirthplace"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block font-heading font-black tracking-widest uppercase"
+          style={{
+            backgroundColor: '#FF0000',
+            color: '#FFFFFF',
+            padding: 'clamp(12px, 2.5vw, 18px) clamp(20px, 4vw, 48px)',
+            borderRadius: '50px',
+            textDecoration: 'none',
+            fontSize: 'clamp(0.75rem, 2vw, 1.1rem)',
+            fontWeight: 900,
+            boxShadow: '0 12px 35px rgba(255, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
+            border: '3px solid #FF6B6B',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '10px',
+            whiteSpace: 'nowrap',
+            letterSpacing: '0.15em',
+            textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
+            maxWidth: 'clamp(180px, 85vw, 600px)',
+          }}
+          whileHover={{ 
+            y: -6, 
+            boxShadow: '0 20px 50px rgba(255, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
+            scale: 1.08,
+            backgroundColor: '#E60000'
+          }}
+          whileTap={{ scale: 0.98 }}
+        >
+          Click on Our YouTube Channel →
+        </motion.a>
+      </motion.div>
+
       {/* Scroll Down Indicator */}
       <motion.div 
         className="hero-scroll relative z-30 w-full flex flex-col items-center py-3 md:py-4 px-4"
