@@ -478,7 +478,7 @@ function HeroSection() {
         style={{ marginTop: 'clamp(8px, 1.5vh, 12px)', paddingBottom: 'clamp(8px, 2vh, 20px)' }}
       >
         <motion.a 
-          href="https://www.youtube.com/@lordmahaveerbirthplace"
+          href="https://youtube.com/@lordmahaveerbirthplaceofficial?si=anwKYoA5MkPfIGAC"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block font-heading font-black tracking-widest uppercase"
