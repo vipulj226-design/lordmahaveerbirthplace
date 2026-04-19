@@ -288,7 +288,7 @@ export default function GalleryPage() {
                                             className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer touch-manipulation active:shadow-xl p-0 border-0 bg-transparent"
                                             whileTap={{ scale: 0.95 }}
                                           >
-                                            <div className="aspect-square overflow-hidden bg-gray-200">
+                                            <div className="w-full aspect-square overflow-hidden bg-gray-200">
                                               {imageUrl ? (
                                                 <Image
                                                   src={imageUrl}
