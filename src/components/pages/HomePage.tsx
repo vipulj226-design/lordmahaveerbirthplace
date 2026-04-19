@@ -429,7 +429,7 @@ function HeroSection() {
         </motion.div>
       </motion.div>
 
-      {/* CTA Button - Fixed at bottom */}
+      {/* CTA Button - Above Scroll Down */}
       <motion.div 
         className="hero-cta relative z-30 w-full flex justify-center px-4"
         initial={{ opacity: 0, y: 20 }}
@@ -474,7 +474,7 @@ function HeroSection() {
         className="hero-scroll relative z-30 w-full flex flex-col items-center py-3 md:py-4 px-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2, delay: 1.6 }}
+        transition={{ duration: 1.2, delay: 1.4 }}
         style={{ 
           marginTop: 'clamp(12px, 2vh, 24px)',
           backgroundColor: 'rgba(197, 165, 90, 0.2)',
