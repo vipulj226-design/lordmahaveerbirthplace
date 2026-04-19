@@ -8,6 +8,16 @@ export default function WhatsAppChat() {
 
   return (
     <div className="fixed bottom-3 right-3 z-50 sm:bottom-4 sm:right-4 md:bottom-6 md:right-6 flex flex-col items-end gap-2 sm:gap-2.5">
+      {/* YouTube Label */}
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.3 }}
+        className="bg-red-600 text-white px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md sm:rounded-lg font-heading font-bold text-[10px] sm:text-xs uppercase tracking-wide shadow-md sm:shadow-lg shrink-0"
+      >
+        Our YouTube Channel
+      </motion.div>
+
       {/* YouTube Button */}
       <motion.a
         href={youtubeUrl}
@@ -17,11 +27,11 @@ export default function WhatsAppChat() {
         whileTap={{ scale: 0.95 }}
         animate={{ y: [0, -6, 0] }}
         transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-        className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full shadow-lg sm:shadow-xl transition-all duration-300 relative bg-red-600 hover:bg-red-700 shrink-0"
+        className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full shadow-lg sm:shadow-xl transition-all duration-300 relative bg-white hover:bg-gray-100 shrink-0"
         aria-label="YouTube Channel"
       >
         <Image
-          src="https://static.wixstatic.com/media/53945f_71ebdd7141d041e4be3d91d80d4578dd~mv2.png"
+          src="https://static.wixstatic.com/media/53945f_7c7c9c56aaa04ae6820fcd7ed2ce3a1f~mv2.png?originWidth=128&originHeight=128"
           alt="YouTube Logo"
           width={64}
           height={64}
