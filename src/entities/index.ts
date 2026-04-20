@@ -256,6 +256,29 @@ export interface SpiritualLeaders {
 
 
 /**
+ * Collection ID: transportationoptions
+ * Interface for TransportationOptions
+ */
+export interface TransportationOptions {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType text */
+  hubName?: string;
+  /** @wixFieldType text */
+  hubType?: string;
+  /** @wixFieldType number */
+  distanceKm?: number;
+  /** @wixFieldType number */
+  travelTimeMinutes?: number;
+  /** @wixFieldType text */
+  description?: string;
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  hubImage?: string;
+}
+
+
+/**
  * Collection ID: upcomingevents
  * Interface for UpcomingEvents
  */
