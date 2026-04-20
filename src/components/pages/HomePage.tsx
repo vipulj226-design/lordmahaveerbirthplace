@@ -108,6 +108,8 @@ export default function HomePage() {
       <GallerySection />
       {/* --- HOW TO REACH SECTION --- */}
       <HowToReachSection />
+      {/* --- DISTANCE GUIDE SECTION --- */}
+      <DistanceGuideSection />
       {/* --- CONTACT SECTION --- */}
       <ContactSection />
       {/* --- WHATSAPP CHAT BUTTON --- */}
