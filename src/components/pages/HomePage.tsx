@@ -2183,6 +2183,43 @@ function DistanceGuideSection() {
             width={1200}
           />
         </motion.div>
+
+        {/* Distance Data Table */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="overflow-x-auto"
+        >
+          <table className="w-full border-collapse">
+            <thead>
+              <tr className="bg-maroon text-cream">
+                <th className="border-2 border-maroon p-4 text-left font-heading font-bold uppercase tracking-wide">Location</th>
+                <th className="border-2 border-maroon p-4 text-left font-heading font-bold uppercase tracking-wide">Distance</th>
+                <th className="border-2 border-maroon p-4 text-left font-heading font-bold uppercase tracking-wide">Travel Time</th>
+                <th className="border-2 border-maroon p-4 text-left font-heading font-bold uppercase tracking-wide">Transport Mode</th>
+                <th className="border-2 border-maroon p-4 text-left font-heading font-bold uppercase tracking-wide">Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              {distanceData.map((item, index) => (
+                <tr 
+                  key={index}
+                  className={`${
+                    index % 2 === 0 ? 'bg-cream' : 'bg-gold/5'
+                  } hover:bg-gold/10 transition-colors duration-300`}
+                >
+                  <td className="border-2 border-maroon p-4 font-heading font-bold text-maroon">{item.location}</td>
+                  <td className="border-2 border-maroon p-4 font-paragraph text-maroon/80">{item.distance}</td>
+                  <td className="border-2 border-maroon p-4 font-paragraph text-maroon/80">{item.time}</td>
+                  <td className="border-2 border-maroon p-4 font-paragraph text-maroon/80">{item.transport}</td>
+                  <td className="border-2 border-maroon p-4 font-paragraph text-maroon/70 text-sm">{item.details}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </motion.div>
       </div>
     </section>
   );
