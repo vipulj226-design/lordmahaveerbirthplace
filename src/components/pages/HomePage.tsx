@@ -1841,9 +1841,9 @@ function HowToReachSection() {
       icon: "🚂",
       title: "By Train",
       details: [
-        "Nearest Railway Station: Patna Junction (35 km)",
-        "Well-connected to Delhi, Mumbai, Kolkata",
-        "Local transport available from station"
+        "Vaishali Railway Station (Basarh): ~10–12 km from Basokund — Nearest local station",
+        "Hajipur Junction: ~35–38 km — Main station with better connectivity to Patna, Delhi, etc.",
+        "Patna Junction: ~35 km — Major railway hub with connections to Delhi, Mumbai, Kolkata"
       ]
     },
     {
