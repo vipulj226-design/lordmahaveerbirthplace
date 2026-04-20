@@ -115,7 +115,7 @@ export default function HomePage() {
       {/* --- WHATSAPP CHAT BUTTON --- */}
       <WhatsAppChat />
       {/* --- FOOTER --- */}
-      <footer className="bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-20 pb-32 sm:pb-40 md:pb-48 relative z-10">
+      <footer className="bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-20">
         <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
           
           {/* Logo */}

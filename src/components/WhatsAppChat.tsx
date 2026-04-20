@@ -7,7 +7,7 @@ export default function WhatsAppChat() {
   const youtubeUrl = `https://www.youtube.com/@lordmahaveerbirthplace`;
 
   return (
-    <div className="fixed bottom-32 sm:bottom-40 md:bottom-48 right-3 z-50 sm:right-4 md:right-6 flex flex-col items-end gap-2 sm:gap-2.5">
+    <div className="fixed bottom-3 right-3 z-50 sm:bottom-4 sm:right-4 md:bottom-6 md:right-6 flex flex-col items-end gap-2 sm:gap-2.5">
       {/* Live Chat Text - Always Visible */}
       <motion.div
         initial={{ opacity: 0, x: 20 }}
