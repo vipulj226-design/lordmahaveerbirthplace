@@ -368,7 +368,7 @@ function HeroSection() {
         <motion.h1 
           className="font-heading font-black tracking-tight px-4 w-full"
           style={{
-            fontSize: 'clamp(1.25rem, 3.5vw, 3rem)',
+            fontSize: 'clamp(0.95rem, 2.5vw, 2.5rem)',
             lineHeight: '1.1',
             backgroundImage: 'linear-gradient(to right, #C5A55A, #FDF6EC, #D4AF37)',
             backgroundClip: 'text',
