@@ -288,14 +288,14 @@ export default function GalleryPage() {
                                             className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer touch-manipulation active:shadow-xl p-0 border-0 bg-transparent"
                                             whileTap={{ scale: 0.95 }}
                                           >
-                                            <div className="w-full aspect-square overflow-hidden bg-gray-200">
+                                            <div className="w-full aspect-square overflow-hidden bg-gray-200 flex items-center justify-center">
                                               {imageUrl ? (
                                                 <Image
                                                   src={imageUrl}
                                                   alt={item.caption || 'Gallery image'}
                                                   width={300}
                                                   height={300}
-                                                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 pointer-events-none"
+                                                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300 pointer-events-none"
                                                 />
                                               ) : (
                                                 <div className="w-full h-full bg-gray-300 flex items-center justify-center">
