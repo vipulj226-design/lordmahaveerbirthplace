@@ -1632,7 +1632,7 @@ function GallerySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="flex justify-center mb-12"
+              className="flex justify-center mb-6"
             >
               <a
                 href="/gallery"
