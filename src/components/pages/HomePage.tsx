@@ -435,7 +435,7 @@ function HeroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 1.2 }}
-        style={{ marginTop: 'clamp(8px, 1.5vh, 12px)', paddingBottom: 'clamp(8px, 2vh, 20px)' }}
+        style={{ marginTop: 'clamp(2px, 0.5vh, 4px)', paddingBottom: 'clamp(8px, 2vh, 20px)' }}
       >
         <motion.a 
           href="/gallery"
