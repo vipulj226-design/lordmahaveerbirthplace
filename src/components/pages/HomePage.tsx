@@ -1599,7 +1599,7 @@ function GallerySection() {
           <>
             {/* Gallery Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-              {allImages.slice(0, 6).map((image, index) => (
+              {allImages.map((image, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
