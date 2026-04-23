@@ -2276,7 +2276,7 @@ function ContactSection() {
                 <span className="text-2xl">🌐</span>
                 <div>
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Website</p>
-                  <a href="https://www.lordmahaveerbirthplace.com" target="_blank" rel="noopener noreferrer" className="text-maroon font-semibold hover:text-gold transition-colors cursor-pointer text-xs sm:text-sm">www.lordmahaveerbirthplace.com</a>
+                  <a href="https://www.lordmahaveerbirthplace.com" target="_blank" rel="noopener noreferrer" className="text-maroon font-semibold hover:text-gold transition-colors cursor-pointer text-sm sm:text-base md:text-lg">www.lordmahaveerbirthplace.com</a>
                 </div>
               </div>
             </div>
@@ -2361,7 +2361,7 @@ function ContactSection() {
                 <span className="text-2xl">🌐</span>
                 <div>
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Website</p>
-                  <a href="https://www.kundkundbharti.com" target="_blank" rel="noopener noreferrer" className="text-maroon font-semibold hover:text-gold transition-colors cursor-pointer text-xs sm:text-sm">www.kundkundbharti.com</a>
+                  <a href="https://www.kundkundbharti.com" target="_blank" rel="noopener noreferrer" className="text-maroon font-semibold hover:text-gold transition-colors cursor-pointer text-sm sm:text-base md:text-lg">www.kundkundbharti.com</a>
                 </div>
               </div>
             </div>
