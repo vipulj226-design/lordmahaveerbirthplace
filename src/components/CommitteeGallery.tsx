@@ -85,15 +85,15 @@ export default function CommitteeGallery() {
                 )}
 
                 <div className="p-6 pt-5">
-                  <h3 className="font-heading text-2xl md:text-xl font-bold text-maroon mb-2 uppercase tracking-wide text-center md:text-left">
+                  <h3 className="font-heading text-xl lg:text-2xl font-black text-maroon mb-3 uppercase tracking-wide text-center md:text-left leading-tight antialiased">
                     {member.name}
                   </h3>
-                  <p className="font-paragraph text-sm md:text-base text-gold font-semibold uppercase tracking-widest mb-3 text-center md:text-left">
+                  <p className="font-paragraph text-base lg:text-lg text-gold font-bold uppercase tracking-widest mb-4 text-center md:text-left antialiased">
                     {member.role}
                   </p>
 
                   {member.bio && (
-                    <p className="font-paragraph text-maroon/80 text-sm mb-4 leading-relaxed line-clamp-4">
+                    <p className="font-paragraph text-sm lg:text-base text-maroon/80 mb-4 leading-relaxed line-clamp-3 antialiased">
                       {member.bio}
                     </p>
                   )}
@@ -104,7 +104,7 @@ export default function CommitteeGallery() {
                       href={member.linkedInUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-maroon hover:text-gold transition-colors duration-200 font-paragraph font-semibold text-sm uppercase tracking-wide"
+                      className="inline-flex items-center gap-2 text-maroon hover:text-gold transition-colors duration-200 font-paragraph font-semibold text-sm lg:text-base uppercase tracking-wide antialiased"
                     >
                       <span>LinkedIn Profile</span>
                       <ExternalLink size={16} />
