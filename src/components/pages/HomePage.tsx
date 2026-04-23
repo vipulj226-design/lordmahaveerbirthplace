@@ -1637,10 +1637,10 @@ function GallerySection() {
                 style={{
                   backgroundImage: 'linear-gradient(to right, #D4AF37, #C5A55A)',
                   color: '#1a1a1a',
-                  padding: '12px 36px',
+                  padding: 'clamp(10px, 2vw, 14px) clamp(20px, 3vw, 32px)',
                   borderRadius: '50px',
                   textDecoration: 'none',
-                  fontSize: '0.95rem',
+                  fontSize: 'clamp(0.8rem, 1.5vw, 0.95rem)',
                   fontWeight: 700,
                   boxShadow: '0 8px 25px rgba(197, 165, 90, 0.4)',
                   border: '2px solid #C5A55A',
@@ -1648,6 +1648,8 @@ function GallerySection() {
                   alignItems: 'center',
                   gap: '8px',
                   transition: 'all 0.3s ease',
+                  maxWidth: '90vw',
+                  whiteSpace: 'nowrap',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-4px)';
