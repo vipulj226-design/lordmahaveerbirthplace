@@ -904,7 +904,7 @@ function BirthplaceAboutSection() {
                   <div className="relative aspect-[3/4] w-full overflow-hidden border-4 border-maroon bg-maroon">
                     <Image
                       src="https://static.wixstatic.com/media/53945f_87815bf91fcf4457a966444d95542575~mv2.jpg"
-                      className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                       originWidth={286}
                       originHeight={433} />
                     <div className="absolute inset-0 border border-gold/30 m-4 pointer-events-none" />
