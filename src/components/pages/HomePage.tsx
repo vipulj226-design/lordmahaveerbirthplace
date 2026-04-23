@@ -1637,10 +1637,10 @@ function GallerySection() {
                 style={{
                   backgroundImage: 'linear-gradient(to right, #D4AF37, #C5A55A)',
                   color: '#1a1a1a',
-                  padding: '16px 48px',
+                  padding: '12px 36px',
                   borderRadius: '50px',
                   textDecoration: 'none',
-                  fontSize: '1.1rem',
+                  fontSize: '0.95rem',
                   fontWeight: 700,
                   boxShadow: '0 8px 25px rgba(197, 165, 90, 0.4)',
                   border: '2px solid #C5A55A',
@@ -2271,7 +2271,7 @@ function ContactSection() {
                 <span className="text-2xl">🌐</span>
                 <div>
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Website</p>
-                  <a href="https://www.lordmahaveerbirthplace.com" target="_blank" rel="noopener noreferrer" className="text-maroon font-semibold hover:text-gold transition-colors cursor-pointer">www.lordmahaveerbirthplace.com</a>
+                  <a href="https://www.lordmahaveerbirthplace.com" target="_blank" rel="noopener noreferrer" className="text-maroon font-semibold hover:text-gold transition-colors cursor-pointer text-xs sm:text-sm">www.lordmahaveerbirthplace.com</a>
                 </div>
               </div>
             </div>
@@ -2356,7 +2356,7 @@ function ContactSection() {
                 <span className="text-2xl">🌐</span>
                 <div>
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Website</p>
-                  <a href="https://www.kundkundbharti.com" target="_blank" rel="noopener noreferrer" className="text-maroon font-semibold hover:text-gold transition-colors cursor-pointer">www.kundkundbharti.com</a>
+                  <a href="https://www.kundkundbharti.com" target="_blank" rel="noopener noreferrer" className="text-maroon font-semibold hover:text-gold transition-colors cursor-pointer text-xs sm:text-sm">www.kundkundbharti.com</a>
                 </div>
               </div>
             </div>
