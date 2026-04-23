@@ -1967,7 +1967,7 @@ function HowToReachSection() {
             {[
               { city: "Patna", distance: "35 km", time: "1 hour" },
               { city: "Delhi", distance: "1000 km", time: "18-20 hours" },
-              { city: "Kolkata", distance: "250 km", time: "5-6 hours" },
+              { city: "Kolkata", distance: "450 km", time: "8-9 hours" },
               { city: "Mumbai", distance: "1800 km", time: "28-30 hours" }
             ].map((item, index) => (
               <div key={index} className="text-center">
@@ -2135,7 +2135,7 @@ function DistanceGuideSection() {
     { location: "Arrah", distance: "130 km", time: "~3 hours", transport: "By Road", details: "District headquarters" },
     { location: "Gaya", distance: "150 km", time: "~3.5 hours", transport: "By Road", details: "Important pilgrimage destination" },
     { location: "Varanasi", distance: "150 km", time: "~3 hours", transport: "By Road", details: "Important pilgrimage destination" },
-    { location: "Kolkata", distance: "250 km", time: "5-6 hours", transport: "By Train/Road", details: "Train: 4-5 hours | Road: 5-6 hours" },
+    { location: "Kolkata", distance: "450 km", time: "8-9 hours", transport: "By Train/Road", details: "Train: 7-8 hours | Road: 8-9 hours" },
     { location: "Delhi", distance: "1000 km", time: "18-20 hours", transport: "By Air/Train", details: "Flight: 2.5 hours | Train: 16-18 hours" },
     { location: "Mumbai", distance: "1800 km", time: "28-30 hours", transport: "By Air/Train", details: "Flight: 3 hours | Train: 24-26 hours" },
     { location: "Kolhua (Ashoka Pillar)", distance: "8 km", time: "~15 minutes", transport: "By Road", details: "Famous archaeological site with Lion Pillar" }
@@ -2271,7 +2271,7 @@ function ContactSection() {
                 <span className="text-2xl">🌐</span>
                 <div>
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Website</p>
-                  <a href="https://lordmahaveerbirthplace.com" target="_blank" rel="noopener noreferrer" className="text-maroon font-semibold hover:text-gold transition-colors cursor-pointer">lordmahaveerbirthplace.com</a>
+                  <a href="https://www.lordmahaveerbirthplace.com" target="_blank" rel="noopener noreferrer" className="text-maroon font-semibold hover:text-gold transition-colors cursor-pointer">www.lordmahaveerbirthplace.com</a>
                 </div>
               </div>
             </div>
@@ -2356,7 +2356,7 @@ function ContactSection() {
                 <span className="text-2xl">🌐</span>
                 <div>
                   <p className="text-maroon/60 text-sm uppercase tracking-widest mb-1">Website</p>
-                  <a href="https://kundkundbharti.com" target="_blank" rel="noopener noreferrer" className="text-maroon font-semibold hover:text-gold transition-colors cursor-pointer">kundkundbharti.com</a>
+                  <a href="https://www.kundkundbharti.com" target="_blank" rel="noopener noreferrer" className="text-maroon font-semibold hover:text-gold transition-colors cursor-pointer">www.kundkundbharti.com</a>
                 </div>
               </div>
             </div>
