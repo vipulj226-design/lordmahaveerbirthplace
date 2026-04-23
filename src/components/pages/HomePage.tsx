@@ -1597,7 +1597,36 @@ function GallerySection() {
           </div>
         ) : allImages.length > 0 ? (
           <>
-            {/* View All Gallery Button - Positioned Higher */}
+            {/* Gallery Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              {allImages.slice(0, 6).map((image, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300"
+                >
+                  <div className="relative w-full h-64 overflow-hidden bg-gray-200">
+                    <Image
+                      src={image.src}
+                      alt={image.altText || image.caption || 'Gallery image'}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      width={400}
+                      height={300}
+                    />
+                  </div>
+                  {image.caption && (
+                    <div className="absolute inset-0 bg-gradient-to-t from-maroon/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                      <p className="font-paragraph text-cream text-sm">{image.caption}</p>
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+            </div>
+
+            {/* View All Gallery Button */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
