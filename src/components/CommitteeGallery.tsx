@@ -85,10 +85,10 @@ export default function CommitteeGallery() {
                 )}
 
                 <div className="p-6 pt-5">
-                  <h3 className="font-heading text-lg font-bold text-maroon mb-1 uppercase tracking-wide text-center md:text-left md:text-base">
+                  <h3 className="font-heading text-2xl md:text-xl font-bold text-maroon mb-2 uppercase tracking-wide text-center md:text-left">
                     {member.name}
                   </h3>
-                  <p className="font-paragraph text-xs md:text-sm text-gold font-semibold uppercase tracking-widest mb-3 text-center md:text-left">
+                  <p className="font-paragraph text-sm md:text-base text-gold font-semibold uppercase tracking-widest mb-3 text-center md:text-left">
                     {member.role}
                   </p>
 
