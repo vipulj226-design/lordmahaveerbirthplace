@@ -1452,7 +1452,7 @@ function DonateSection() {
                       Scan & Pay
                     </p>
                     <Image
-                      src="https://static.wixstatic.com/media/53945f_621a4a7978d445028339cddaf86e84fc~mv2.jpg"
+                      src="https://static.wixstatic.com/media/53945f_8e22fa8a49524fd89d519735f82950cb~mv2.jpg"
                       alt="SBI Vaishali Payment QR Code"
                       className="w-full h-auto object-contain border-2 border-gold rounded-lg"
                       width={300}
