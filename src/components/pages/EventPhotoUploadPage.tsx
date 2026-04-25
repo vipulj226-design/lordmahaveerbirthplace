@@ -190,6 +190,7 @@ export default function EventPhotoUploadPage() {
                 onClick={handleUpload}
                 disabled={isUploading || selectedFiles.length === 0}
                 whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 className={`w-full py-4 rounded-lg font-heading font-bold uppercase tracking-wide transition-all duration-300 flex items-center justify-center gap-2 ${
                   isUploading || selectedFiles.length === 0
                     ? 'bg-maroon/40 text-cream/60 cursor-not-allowed'
