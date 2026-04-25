@@ -1430,26 +1430,26 @@ function DonateSection() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white border-2 border-maroon p-6 hover:border-gold transition-all duration-300"
               >
-                <h4 className="font-heading text-lg font-bold text-maroon mb-4 uppercase tracking-wide">
+                <h4 className="font-heading text-xl md:text-2xl font-bold text-maroon mb-6 uppercase tracking-wide">
                   {bank.bankName}
                 </h4>
                 
-                <div className="space-y-3 font-paragraph text-sm">
+                <div className="space-y-4 font-paragraph text-sm md:text-base">
                   <div>
-                    <p className="text-maroon/60 text-xs uppercase tracking-widest mb-1">Branch</p>
-                    <p className="text-maroon font-semibold">{bank.branch}</p>
+                    <p className="text-maroon/60 text-xs md:text-sm uppercase tracking-widest mb-2">Branch</p>
+                    <p className="text-maroon font-semibold text-base md:text-lg">{bank.branch}</p>
                   </div>
                   <div>
-                    <p className="text-maroon/60 text-xs uppercase tracking-widest mb-1">Account Holder</p>
-                    <p className="text-maroon font-semibold">{bank.accountHolder}</p>
+                    <p className="text-maroon/60 text-xs md:text-sm uppercase tracking-widest mb-2">Account Holder</p>
+                    <p className="text-maroon font-semibold text-base md:text-lg">{bank.accountHolder}</p>
                   </div>
                   <div>
-                    <p className="text-maroon/60 text-xs uppercase tracking-widest mb-1">Account Number</p>
-                    <p className="text-maroon font-mono font-bold">{bank.accountNumber}</p>
+                    <p className="text-maroon/60 text-xs md:text-sm uppercase tracking-widest mb-2">Account Number</p>
+                    <p className="text-maroon font-mono font-bold text-base md:text-lg">{bank.accountNumber}</p>
                   </div>
                   <div>
-                    <p className="text-maroon/60 text-xs uppercase tracking-widest mb-1">IFSC Code</p>
-                    <p className="text-maroon font-mono font-bold">{bank.ifscCode}</p>
+                    <p className="text-maroon/60 text-xs md:text-sm uppercase tracking-widest mb-2">IFSC Code</p>
+                    <p className="text-maroon font-mono font-bold text-base md:text-lg">{bank.ifscCode}</p>
                   </div>
                 </div>
                 
