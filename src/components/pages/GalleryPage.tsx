@@ -254,7 +254,7 @@ export default function GalleryPage() {
                                     transition={{ duration: 0.3 }}
                                     className="overflow-hidden"
                                   >
-                                    <div className="mt-2 sm:mt-3 grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 md:gap-3 pl-2 sm:pl-4">
+                                    <div className="mt-2 sm:mt-3 grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 md:gap-3 pl-2 sm:pl-4 auto-rows-max">
                                       {groupedByYearAndEvent[year][eventName].map((item, photoIndex) => {
                                         // Get images from all available image fields
                                         const imageUrls: string[] = [];
@@ -295,7 +295,7 @@ export default function GalleryPage() {
                                                   alt={item.caption || 'Gallery image'}
                                                   width={300}
                                                   height={300}
-                                                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300 pointer-events-none"
+                                                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 pointer-events-none"
                                                 />
                                               ) : (
                                                 <div className="w-full h-full bg-gray-300 flex items-center justify-center">
