@@ -416,7 +416,13 @@ export default function GalleryPage() {
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
                   className="flex items-center justify-center w-full h-full"
                 >
-                  <Image src={allLightboxImages[currentImageIndex]} alt="Gallery image" fittingType="fit" className="max-w-full max-h-full border-4 border-gold" />
+                  <div className="w-full h-full max-w-[70vh] max-h-[70vh] aspect-square flex items-center justify-center border-4 border-gold rounded-lg bg-black/20">
+                    <Image 
+                      src={allLightboxImages[currentImageIndex]} 
+                      alt="Gallery image" 
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
                 </motion.div>
               </AnimatePresence>
             </div>
