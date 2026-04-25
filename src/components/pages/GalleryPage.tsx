@@ -286,7 +286,6 @@ export default function GalleryPage() {
                                             transition={{ delay: (photoIndex + imgIndex) * 0.03, duration: 0.2 }}
                                             onClick={() => openLightbox(imageUrls, imgIndex)}
                                             className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer touch-manipulation active:shadow-xl p-0 border-0 bg-transparent"
-                                            whileTap={{ scale: 0.95 }}
                                           >
                                             <div className="w-full aspect-square overflow-hidden bg-gray-200 flex items-center justify-center">
                                               {imageUrl ? (

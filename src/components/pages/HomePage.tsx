@@ -465,7 +465,6 @@ function HeroSection() {
             boxShadow: '0 20px 50px rgba(197, 165, 90, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.4)',
             scale: 1.08
           }}
-          whileTap={{ scale: 0.98 }}
         >
           Tap to View Events Gallery →
         </motion.a>
@@ -508,7 +507,6 @@ function HeroSection() {
             scale: 1.08,
             backgroundColor: '#4A0A13'
           }}
-          whileTap={{ scale: 0.98 }}
         >
           Click on Our YouTube Channel →
         </motion.a>
