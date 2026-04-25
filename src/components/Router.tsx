@@ -4,7 +4,6 @@ import { ScrollToTop } from '@/lib/scroll-to-top';
 import ErrorPage from '@/integrations/errorHandlers/ErrorPage';
 import HomePage from '@/components/pages/HomePage';
 import GalleryPage from '@/components/pages/GalleryPage';
-import PastEventDetailPage from '@/components/pages/PastEventDetailPage';
 import ScrollProgressBar from '@/components/ScrollProgressBar';
 
 // Layout component that includes ScrollToTop and ScrollProgressBar
@@ -36,13 +35,6 @@ const router = createBrowserRouter([
         element: <GalleryPage />,
         routeMetadata: {
           pageIdentifier: 'gallery',
-        },
-      },
-      {
-        path: "past-events/:id",
-        element: <PastEventDetailPage />,
-        routeMetadata: {
-          pageIdentifier: 'past-event-detail',
         },
       },
       {
