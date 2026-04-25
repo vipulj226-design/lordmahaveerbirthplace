@@ -322,7 +322,7 @@ function HeroSection() {
       <style>{heroMobileStyles}</style>
       <section 
         id="hero" 
-        className="relative w-full flex flex-col items-center justify-center overflow-hidden"
+        className="relative w-full flex flex-col items-center justify-between overflow-hidden"
         style={{
           background: 'linear-gradient(135deg, #6B0F1A, #3D0A10, #6B0F1A)',
           padding: 'clamp(16px, 3vw, 24px)',
