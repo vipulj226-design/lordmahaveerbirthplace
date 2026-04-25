@@ -327,13 +327,12 @@ function HeroSection() {
           background: 'linear-gradient(135deg, #6B0F1A, #3D0A10, #6B0F1A)',
           padding: 'clamp(16px, 3vw, 24px)',
           paddingTop: 'clamp(80px, 8vh, 120px)',
-          paddingBottom: 'clamp(16px, 2vh, 16px)',
+          paddingBottom: 'clamp(16px, 2vh, 24px)',
           display: 'flex',
           flexDirection: 'column',
           minHeight: '100vh',
-          height: '100vh',
           gap: 'clamp(4px, 1vh, 8px)',
-          overflow: 'hidden',
+          overflow: 'visible',
         }}
       >
       {/* Background Image Pseudo-element */}
