@@ -27,27 +27,6 @@ export interface CommitteeMembers {
 
 
 /**
- * Collection ID: eventyears
- * Interface for EventYears
- */
-export interface EventYears {
-  _id: string;
-  _createdDate?: Date;
-  _updatedDate?: Date;
-  /** @wixFieldType number */
-  year?: number;
-  /** @wixFieldType text */
-  title?: string;
-  /** @wixFieldType text */
-  description?: string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
-  coverImage?: string;
-  /** @wixFieldType boolean */
-  isActive?: boolean;
-}
-
-
-/**
  * Collection ID: foundationdevelopment
  * Interface for FoundationDevelopment
  */
@@ -118,29 +97,6 @@ export interface Gallery {
   dateAdded?: Date | string;
   /** @wixFieldType media_gallery */
   galleryNew?: any;
-}
-
-
-/**
- * Collection ID: gallerypageimages
- * Interface for GalleryPageImages
- */
-export interface GalleryPageImages {
-  _id: string;
-  _createdDate?: Date;
-  _updatedDate?: Date;
-  /** @wixFieldType text */
-  title?: string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
-  image?: string;
-  /** @wixFieldType text */
-  description?: string;
-  /** @wixFieldType text */
-  altText?: string;
-  /** @wixFieldType datetime */
-  dateAdded?: Date | string;
-  /** @wixFieldType text */
-  category?: string;
 }
 
 
