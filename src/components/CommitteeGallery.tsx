@@ -78,7 +78,7 @@ export default function CommitteeGallery() {
                     <Image
                       src={member.memberImage}
                       alt={member.name || 'Committee Member'}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover"
                       width={400}
                     />
                   </div>
