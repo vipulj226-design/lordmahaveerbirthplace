@@ -5,7 +5,6 @@ import { Image } from '@/components/ui/image';
 import { BaseCrudService } from '@/integrations';
 import { BirthplaceStatistics, SpiritualLeaders } from '@/entities';
 import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import FoundationDevelopment from '@/components/FoundationDevelopment';
 import CommitteeGallery from '@/components/CommitteeGallery';
 import WhatsAppChat from '@/components/WhatsAppChat';
@@ -113,10 +112,76 @@ export default function HomePage() {
       <DistanceGuideSection />
       {/* --- CONTACT SECTION --- */}
       <ContactSection />
-       {/* --- WHATSAPP CHAT BUTTON --- */}
-       <WhatsAppChat />
-       {/* --- FOOTER --- */}
-       <Footer />
+      {/* --- WHATSAPP CHAT BUTTON --- */}
+      <WhatsAppChat />
+      {/* --- FOOTER --- */}
+      <footer className="bg-gradient-to-r from-maroon via-[#1A0306] to-maroon text-cream py-20">
+        <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
+          
+          {/* Logo */}
+          <div className="text-center mb-16">
+            <Image
+              src="https://static.wixstatic.com/media/53945f_06a423b0a7fc4ff7a7488f7c493ec082~mv2.png#originWidth=588&originHeight=588"
+              className="w-24 h-24 mx-auto mb-6" />
+            <h3 className="font-heading text-4xl font-black text-gold mb-2 uppercase tracking-wider leading-tight">Lord Mahaveer Birthplace</h3>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex flex-wrap justify-center gap-8 mb-16">
+            <a href="https://wa.me/917544003396" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-paragraph text-cream hover:text-gold transition-colors">
+              <MessageCircle className="w-5 h-5" />
+              <span>WhatsApp</span>
+            </a>
+            <a href="mailto:info@lordmahaveerbirthplace.com" className="flex items-center gap-2 font-paragraph text-cream hover:text-gold transition-colors">
+              <span>✉️</span>
+              <span>Email</span>
+            </a>
+            <a href="https://lordmahaveerbirthplace.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-paragraph text-cream hover:text-gold transition-colors">
+              <span>🌐</span>
+              <span>Website</span>
+            </a>
+          </div>
+
+          {/* Navigation Links */}
+          <div className="flex flex-wrap justify-center gap-6 mb-16 text-center">
+            <span className="w-full font-paragraph text-gold text-sm uppercase tracking-wider mb-4">Quick links</span>
+            <a href="#hero" className="font-paragraph text-cream/80 hover:text-gold transition-colors text-sm uppercase tracking-wider">
+              Home
+            </a>
+            {['About', 'Blessings', 'Foundation', 'Committee', 'Donate', 'Gallery', 'Events', 'How to Reach', 'Contact'].map((link) => {
+              const href = link === 'How to Reach' ? '#how-to-reach' : `#${link.toLowerCase()}`;
+              return (
+                <a key={link} href={href} className="font-paragraph text-cream/80 hover:text-gold transition-colors text-sm uppercase tracking-wider">
+                  {link}
+                </a>
+              );
+            })}
+          </div>
+
+          {/* Organization Info */}
+          <div className="text-center border-t border-gold/20 pt-8 mb-8">
+            <p className="font-paragraph text-cream/80 mb-2">Bhagwan Mahavir Smarak Samiti | Basokund, Vaishali (Bihar)</p>
+          </div>
+
+          {/* Copyright */}
+          <div className="text-center border-t border-gold/20 pt-8">
+            <p className="font-paragraph text-xs text-cream/60 uppercase tracking-widest mb-4">© 2026 All rights reserved</p>
+            <p className="font-paragraph text-gold uppercase tracking-widest text-sm">
+              🌐 Website Designed & Managed by{' '}
+              <span className="text-gold2 text-lg font-black tracking-wider block md:inline-block md:ml-1">VIPUL JAIN</span>
+              {' '} | 💬 WhatsApp:{' '}
+              <a
+                href="https://wa.me/918470990283"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gold2 transition-colors underline"
+              >
+                8470990283
+              </a>
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
