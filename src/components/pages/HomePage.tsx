@@ -422,7 +422,7 @@ function HeroSection() {
           <Image 
             src={frontImage}
             alt="Sahastrakut Jinalaya"
-            className="w-full h-auto object-contain block"
+            className="w-full h-auto object-cover block"
             style={{ objectPosition: 'center 50%', aspectRatio: '16/9' }}
             width={800}
           />
@@ -1612,7 +1612,7 @@ function GallerySection() {
                     <Image
                       src={image.src}
                       alt={image.altText || image.caption || 'Gallery image'}
-                      className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       width={400}
                       height={300}
                     />
@@ -1760,7 +1760,7 @@ function UpcomingEventsSection() {
                     <Image
                       src={event.eventImage}
                       alt={event.eventName || 'Event'}
-                      className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                   </div>
