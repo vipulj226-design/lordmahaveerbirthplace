@@ -4,7 +4,7 @@ import { Gallery } from '@/entities';
 import { Image } from '@/components/ui/image';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight, Folder, Image as ImageIcon, X, ChevronLeft, ChevronRight as ChevronRightIcon, Home, Youtube } from 'lucide-react';
+import { ChevronRight, Folder, Image as ImageIcon, Home, Youtube } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface GroupedGallery {
@@ -19,10 +19,7 @@ export default function GalleryPage() {
   const [groupedByYearAndEvent, setGroupedByYearAndEvent] = useState<GroupedGallery>({});
   const [expandedYear, setExpandedYear] = useState<number | null>(null);
   const [expandedEvents, setExpandedEvents] = useState<Set<string>>(new Set());
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [allLightboxImages, setAllLightboxImages] = useState<string[]>([]);
-  const [imageDirection, setImageDirection] = useState<'left' | 'right'>('right');
+  // ... keep existing code (lightbox state removed)
 
   useEffect(() => {
     loadGalleryImages();
@@ -88,47 +85,7 @@ export default function GalleryPage() {
     setExpandedEvents(newExpandedEvents);
   };
 
-  const openLightbox = (images: string[], index: number) => {
-    setAllLightboxImages(images);
-    setCurrentImageIndex(index);
-    setLightboxOpen(true);
-  };
-
-  const closeLightbox = () => {
-    setLightboxOpen(false);
-  };
-
-  const nextImage = () => {
-    setImageDirection('left');
-    setCurrentImageIndex((prev) => (prev + 1) % allLightboxImages.length);
-  };
-
-  const prevImage = () => {
-    setImageDirection('right');
-    setCurrentImageIndex((prev) => (prev - 1 + allLightboxImages.length) % allLightboxImages.length);
-  };
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (!lightboxOpen) return;
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowRight') nextImage();
-      if (e.key === 'ArrowLeft') prevImage();
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [lightboxOpen, allLightboxImages.length]);
-
-  useEffect(() => {
-    if (lightboxOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [lightboxOpen]);
+  // ... keep existing code (lightbox functions removed)
 
   return (
     <>
@@ -279,14 +236,12 @@ export default function GalleryPage() {
                                         });
 
                                         return imageUrls.map((imageUrl, imgIndex) => (
-                                          <motion.button
+                                          <motion.div
                                             key={`${item._id}-${imgIndex}`}
                                             initial={{ opacity: 0, scale: 0.9 }}
                                             animate={{ opacity: 1, scale: 1 }}
                                             transition={{ delay: (photoIndex + imgIndex) * 0.03, duration: 0.2 }}
-                                            onClick={() => openLightbox(imageUrls, imgIndex)}
-                                            className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer touch-manipulation active:shadow-xl p-0 border-0 bg-transparent aspect-square"
-                                            whileTap={{ scale: 0.95 }}
+                                            className="relative overflow-hidden rounded-lg shadow-md p-0 bg-transparent aspect-square"
                                           >
                                             <div className="w-full h-full overflow-hidden bg-gray-200 flex items-center justify-center">
                                               {imageUrl ? (
@@ -295,7 +250,7 @@ export default function GalleryPage() {
                                                   alt={item.caption || 'Gallery image'}
                                                   width={300}
                                                   height={300}
-                                                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 pointer-events-none"
+                                                  className="w-full h-full object-cover pointer-events-none"
                                                 />
                                               ) : (
                                                 <div className="w-full h-full bg-gray-300 flex items-center justify-center">
@@ -304,8 +259,8 @@ export default function GalleryPage() {
                                               )}
                                             </div>
 
-                                            {/* Overlay with info */}
-                                            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex flex-col justify-end p-3 opacity-0 group-hover:opacity-100 group-active:opacity-100 group-active:bg-opacity-60">
+                                            {/* Info display */}
+                                            <div className="absolute inset-0 bg-black bg-opacity-0 flex flex-col justify-end p-3">
                                               {item.caption && (
                                                 <h3 className="font-heading text-white text-sm mb-1">
                                                   {item.caption}
@@ -317,7 +272,7 @@ export default function GalleryPage() {
                                                 </p>
                                               )}
                                             </div>
-                                          </motion.button>
+                                          </motion.div>
                                         ));
                                       })}
                                     </div>
@@ -383,67 +338,7 @@ export default function GalleryPage() {
         </div>
       </main>
 
-      {/* Lightbox */}
-      {lightboxOpen && allLightboxImages.length > 0 && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={closeLightbox}
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center p-4"
-          style={{
-            background: 'rgba(10, 2, 4, 0.92)',
-            backdropFilter: 'blur(6px)'
-          }}
-        >
-          <div className="relative w-full h-full flex flex-col items-center justify-center" onClick={(e) => e.stopPropagation()}>
-            {/* Close Button */}
-            <button
-              onClick={closeLightbox}
-              className="absolute top-4 right-4 z-10 w-10 h-10 md:w-12 md:h-12 bg-cream border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon active:bg-gold active:text-maroon transition-colors z-20 touch-manipulation text-maroon"
-            >
-              <X className="w-5 h-5 md:w-6 md:h-6" />
-            </button>
-
-            {/* Image Container */}
-            <div className="flex items-center justify-center w-full h-full max-h-[70vh] px-2 sm:px-4">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentImageIndex}
-                  initial={{ opacity: 0, x: imageDirection === 'left' ? 100 : -100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: imageDirection === 'left' ? -100 : 100 }}
-                  transition={{ duration: 0.3, ease: 'easeInOut' }}
-                  className="flex items-center justify-center w-full h-full"
-                >
-                  <div className="w-full max-w-[70vh] max-h-[70vh] flex items-center justify-center border-4 border-gold rounded-lg bg-black/20">
-                    <Image 
-                      src={allLightboxImages[currentImageIndex]} 
-                      alt="Gallery image" 
-                      className="w-full h-auto object-contain"
-                    />
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-
-            {/* Navigation Buttons */}
-            <button
-              onClick={prevImage}
-              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-cream border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon active:bg-gold active:text-maroon transition-colors z-20 touch-manipulation text-maroon"
-            >
-              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
-            </button>
-
-            <button
-              onClick={nextImage}
-              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-cream border-2 border-gold rounded-full flex items-center justify-center hover:bg-gold hover:text-maroon active:bg-gold active:text-maroon transition-colors z-20 touch-manipulation text-maroon"
-            >
-              <ChevronRightIcon className="w-5 h-5 md:w-6 md:h-6" />
-            </button>
-          </div>
-        </motion.div>
-      )}
+      {/* Lightbox removed - images are now non-clickable */}
     </>
   );
 }
