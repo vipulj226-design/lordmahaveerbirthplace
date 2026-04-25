@@ -62,7 +62,7 @@ export default function CommitteeGallery() {
             <p className="font-paragraph text-maroon/60">Loading committee members...</p>
           </div>
         ) : members.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {members.map((member, index) => (
               <motion.div
                 key={member._id}
@@ -74,26 +74,26 @@ export default function CommitteeGallery() {
               >
                 {/* Member Image */}
                 {member.memberImage && (
-                  <div className="relative w-full aspect-[3/4] sm:aspect-square overflow-hidden bg-maroon/10">
+                  <div className="relative w-full aspect-square overflow-hidden bg-maroon/10">
                     <Image
                       src={member.memberImage}
                       alt={member.name || 'Committee Member'}
                       className="w-full h-full object-cover"
-                      width={500}
+                      width={400}
                     />
                   </div>
                 )}
 
-                <div className="p-4 sm:p-6 pt-4 sm:pt-5">
-                  <h3 className="font-heading text-lg sm:text-xl lg:text-2xl font-black text-maroon mb-2 sm:mb-3 uppercase tracking-wide text-center sm:text-left leading-tight antialiased">
+                <div className="p-6 pt-5">
+                  <h3 className="font-heading text-xl lg:text-2xl font-black text-maroon mb-3 uppercase tracking-wide text-center md:text-left leading-tight antialiased">
                     {member.name}
                   </h3>
-                  <p className="font-paragraph text-sm sm:text-base lg:text-lg text-gold font-bold uppercase tracking-widest mb-3 sm:mb-4 text-center sm:text-left antialiased">
+                  <p className="font-paragraph text-base lg:text-lg text-gold font-bold uppercase tracking-widest mb-4 text-center md:text-left antialiased">
                     {member.role}
                   </p>
 
                   {member.bio && (
-                    <p className="font-paragraph text-xs sm:text-sm lg:text-base text-maroon/80 mb-3 sm:mb-4 leading-relaxed line-clamp-3 antialiased">
+                    <p className="font-paragraph text-sm lg:text-base text-maroon/80 mb-4 leading-relaxed line-clamp-3 antialiased">
                       {member.bio}
                     </p>
                   )}
@@ -104,7 +104,7 @@ export default function CommitteeGallery() {
                       href={member.linkedInUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-maroon hover:text-gold transition-colors duration-200 font-paragraph font-semibold text-xs sm:text-sm lg:text-base uppercase tracking-wide antialiased"
+                      className="inline-flex items-center gap-2 text-maroon hover:text-gold transition-colors duration-200 font-paragraph font-semibold text-sm lg:text-base uppercase tracking-wide antialiased"
                     >
                       <span>LinkedIn Profile</span>
                       <ExternalLink size={16} />
