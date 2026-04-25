@@ -1536,6 +1536,7 @@ function DonateSection() {
 function GallerySection() {
   const [allImages, setAllImages] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [selectedImage, setSelectedImage] = useState<any>(null);
 
   useEffect(() => {
     const fetchGallery = async () => {
@@ -1614,7 +1615,8 @@ function GallerySection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300"
+                  className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                  onClick={() => setSelectedImage(image)}
                 >
                   <div className="relative w-full h-64 overflow-hidden bg-gray-200">
                     <Image
@@ -1675,6 +1677,59 @@ function GallerySection() {
                 <ArrowRight className="w-5 h-5" />
               </a>
             </motion.div>
+
+            {/* Image Modal/Lightbox */}
+            {selectedImage && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setSelectedImage(null)}
+                className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+              >
+                <motion.div
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.9, opacity: 0 }}
+                  onClick={(e) => e.stopPropagation()}
+                  className="relative max-w-2xl w-full"
+                >
+                  {/* Square Image Container */}
+                  <div className="relative w-full aspect-square bg-maroon rounded-lg overflow-hidden border-4 border-gold shadow-2xl">
+                    <Image
+                      src={selectedImage.src}
+                      alt={selectedImage.altText || selectedImage.caption || 'Gallery image'}
+                      className="w-full h-full object-cover"
+                      width={800}
+                      height={800}
+                    />
+                  </div>
+
+                  {/* Image Caption */}
+                  {selectedImage.caption && (
+                    <div className="mt-6 text-center">
+                      <h3 className="font-heading text-2xl font-bold text-cream mb-2">
+                        {selectedImage.caption}
+                      </h3>
+                      {selectedImage.description && (
+                        <p className="font-paragraph text-cream/80">
+                          {selectedImage.description}
+                        </p>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Close Button */}
+                  <button
+                    onClick={() => setSelectedImage(null)}
+                    className="absolute top-4 right-4 bg-gold text-maroon rounded-full p-2 hover:bg-gold2 transition-colors z-10"
+                    aria-label="Close"
+                  >
+                    <X className="w-6 h-6" />
+                  </button>
+                </motion.div>
+              </motion.div>
+            )}
           </>
         ) : (
           <div className="text-center py-16">
