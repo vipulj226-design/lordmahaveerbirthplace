@@ -406,7 +406,7 @@ export default function GalleryPage() {
             </button>
 
             {/* Image Container */}
-            <div className="flex items-center justify-center w-full h-full max-h-[70vh]">
+            <div className="flex items-center justify-center w-full h-full max-h-[70vh] px-2 sm:px-4">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentImageIndex}
@@ -416,11 +416,11 @@ export default function GalleryPage() {
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
                   className="flex items-center justify-center w-full h-full"
                 >
-                  <div className="w-full h-full max-w-[70vh] max-h-[70vh] aspect-square flex items-center justify-center border-4 border-gold rounded-lg bg-black/20">
+                  <div className="w-full max-w-[70vh] max-h-[70vh] flex items-center justify-center border-4 border-gold rounded-lg bg-black/20">
                     <Image 
                       src={allLightboxImages[currentImageIndex]} 
                       alt="Gallery image" 
-                      className="w-full h-full object-contain"
+                      className="w-full h-auto object-contain"
                     />
                   </div>
                 </motion.div>
