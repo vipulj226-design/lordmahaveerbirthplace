@@ -18,10 +18,11 @@ export default function Footer() {
           </p>
           
           {/* Glowing Name */}
-          <h2 className="text-6xl md:text-7xl font-heading font-bold text-gold mb-6"
+          <h2 className="text-6xl md:text-7xl font-paragraph font-bold text-gold mb-6"
               style={{
                 textShadow: '0 0 30px rgba(197, 165, 90, 0.6), 0 0 60px rgba(197, 165, 90, 0.3)',
-                letterSpacing: '0.08em'
+                letterSpacing: '0.08em',
+                fontWeight: '700'
               }}>
             VIPUL JAIN
           </h2>
