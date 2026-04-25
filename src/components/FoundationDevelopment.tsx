@@ -138,8 +138,8 @@ export default function FoundationDevelopment() {
 
                 {/* Photo Gallery - 4 Photos from CMS - Full Width Below */}
                 {(block.galleryImage1 || block.galleryImage2 || block.galleryImage3 || block.galleryImage4) && (
-                  <div className="border-t-2 border-maroon/20 p-6 lg:p-10 bg-cream">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                  <div className="border-t-2 border-maroon/20 p-8 lg:p-12 bg-cream">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
                       {block.galleryImage1 && (
                         <motion.div
                           initial={{ opacity: 0, scale: 0.9 }}
@@ -150,8 +150,8 @@ export default function FoundationDevelopment() {
                           <Image
                             src={block.galleryImage1}
                             alt="Gallery photo 1"
-                            width={1200}
-                            height={900}
+                            width={1600}
+                            height={1200}
                             className="w-full h-auto"
                             fittingType="fit"
                           />
@@ -168,8 +168,8 @@ export default function FoundationDevelopment() {
                           <Image
                             src={block.galleryImage2}
                             alt="Gallery photo 2"
-                            width={1200}
-                            height={900}
+                            width={1600}
+                            height={1200}
                             className="w-full h-auto"
                             fittingType="fit"
                           />
@@ -186,8 +186,8 @@ export default function FoundationDevelopment() {
                           <Image
                             src={block.galleryImage3}
                             alt="Gallery photo 3"
-                            width={1200}
-                            height={900}
+                            width={1600}
+                            height={1200}
                             className="w-full h-auto"
                             fittingType="fit"
                           />
@@ -204,8 +204,8 @@ export default function FoundationDevelopment() {
                           <Image
                             src={block.galleryImage4}
                             alt="Gallery photo 4"
-                            width={1200}
-                            height={900}
+                            width={1600}
+                            height={1200}
                             className="w-full h-auto"
                             fittingType="fit"
                           />
