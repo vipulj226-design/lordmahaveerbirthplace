@@ -241,21 +241,35 @@ export default function GalleryPage() {
                                             initial={{ opacity: 0, scale: 0.9 }}
                                             animate={{ opacity: 1, scale: 1 }}
                                             transition={{ delay: (photoIndex + imgIndex) * 0.03, duration: 0.2 }}
-                                            className="relative overflow-hidden rounded-lg shadow-md p-0 bg-transparent aspect-square pointer-events-none"
+                                            className="relative overflow-hidden rounded-lg shadow-md p-0 bg-transparent aspect-square"
                                           >
-                                            <div className="w-full h-full overflow-hidden bg-gray-200 flex items-center justify-center pointer-events-none">
+                                            <div className="w-full h-full overflow-hidden bg-gray-200 flex items-center justify-center">
                                               {imageUrl ? (
                                                 <Image
                                                   src={imageUrl}
                                                   alt={item.caption || 'Gallery image'}
                                                   width={300}
                                                   height={300}
-                                                  className="w-full h-full object-cover pointer-events-none select-none"
+                                                  className="w-full h-full object-cover pointer-events-none"
                                                 />
                                               ) : (
-                                                <div className="w-full h-full bg-gray-300 flex items-center justify-center pointer-events-none">
-                                                  <ImageIcon className="w-8 h-8 text-gray-500 pointer-events-none" />
+                                                <div className="w-full h-full bg-gray-300 flex items-center justify-center">
+                                                  <ImageIcon className="w-8 h-8 text-gray-500" />
                                                 </div>
+                                              )}
+                                            </div>
+
+                                            {/* Info display */}
+                                            <div className="absolute inset-0 bg-black bg-opacity-0 flex flex-col justify-end p-3">
+                                              {item.caption && (
+                                                <h3 className="font-heading text-white text-sm mb-1">
+                                                  {item.caption}
+                                                </h3>
+                                              )}
+                                              {item.description && (
+                                                <p className="font-paragraph text-gray-100 text-xs line-clamp-2">
+                                                  {item.description}
+                                                </p>
                                               )}
                                             </div>
                                           </motion.div>
