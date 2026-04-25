@@ -516,34 +516,34 @@ function HeroSection() {
 
       {/* Scroll Down Indicator */}
       <motion.div 
-        className="hero-scroll relative z-30 w-full flex flex-col items-center px-4 mt-auto"
+        className="hero-scroll relative z-30 w-full flex flex-col items-center px-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 1.4 }}
         style={{ 
           marginTop: 'auto',
-          paddingBottom: 'clamp(16px, 3vh, 32px)',
-          backgroundColor: 'rgba(197, 165, 90, 0.25)',
-          borderRadius: '16px',
-          border: '2px solid rgba(197, 165, 90, 0.6)',
-          backdropFilter: 'blur(10px)',
-          padding: 'clamp(16px, 3vw, 24px)',
+          marginBottom: 'clamp(24px, 4vh, 48px)',
+          backgroundColor: 'rgba(197, 165, 90, 0.3)',
+          borderRadius: '20px',
+          border: '2px solid rgba(197, 165, 90, 0.8)',
+          backdropFilter: 'blur(12px)',
+          padding: 'clamp(20px, 4vw, 32px)',
           minHeight: 'auto'
         }}
       >
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-2"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+          className="flex flex-col items-center gap-3"
         >
-          <p className="font-paragraph text-base md:text-lg text-gold uppercase tracking-widest font-bold">
+          <p className="font-paragraph text-sm md:text-base text-gold uppercase tracking-widest font-bold">
             Scroll Down
           </p>
           <motion.div
-            animate={{ opacity: [0.6, 1, 0.6] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            animate={{ opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
           >
-            <ChevronDown className="w-7 h-7 md:w-9 md:h-9 text-gold" />
+            <ChevronDown className="w-8 h-8 md:w-10 md:h-10 text-gold" />
           </motion.div>
         </motion.div>
       </motion.div>
