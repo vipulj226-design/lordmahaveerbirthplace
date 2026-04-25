@@ -295,7 +295,7 @@ export default function GalleryPage() {
                                                   alt={item.caption || 'Gallery image'}
                                                   width={300}
                                                   height={300}
-                                                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300 pointer-events-none"
+                                                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 pointer-events-none"
                                                 />
                                               ) : (
                                                 <div className="w-full h-full bg-gray-300 flex items-center justify-center">
