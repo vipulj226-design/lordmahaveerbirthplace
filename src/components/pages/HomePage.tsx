@@ -2158,8 +2158,8 @@ function DistanceGuideSection() {
     <section id="distance-guide" className="relative py-4 md:py-12 bg-cream overflow-hidden border-b-[3px] border-gold">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         
-        {/* Section Header */}
-        <div className="mb-12 md:mb-24 relative">
+        {/* Section Header - Centered */}
+        <div className="mb-12 md:mb-24 relative text-center flex flex-col items-center">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -2181,21 +2181,23 @@ function DistanceGuideSection() {
           <div className="absolute -top-12 -right-12 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-0" />
         </div>
 
-        {/* Distance Map Image */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16 rounded-lg overflow-hidden border-4 border-maroon shadow-xl max-w-3xl"
-        >
-          <Image
-            src="https://static.wixstatic.com/media/53945f_4237a21aefa34d238d831c66996d5766~mv2.png"
-            alt="Distance Guide Map - Bhagwan Mahavir Janmbhumi Basokund, Vaishali"
-            className="w-full h-auto object-contain"
-            width={800}
-          />
-        </motion.div>
+        {/* Distance Map Image - Centered */}
+        <div className="flex justify-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16 rounded-lg overflow-hidden border-4 border-maroon shadow-xl max-w-3xl"
+          >
+            <Image
+              src="https://static.wixstatic.com/media/53945f_4237a21aefa34d238d831c66996d5766~mv2.png"
+              alt="Distance Guide Map - Bhagwan Mahavir Janmbhumi Basokund, Vaishali"
+              className="w-full h-auto object-contain"
+              width={800}
+            />
+          </motion.div>
+        </div>
       </div>
     </section>
   );
