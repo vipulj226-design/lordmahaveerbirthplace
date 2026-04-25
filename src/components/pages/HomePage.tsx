@@ -437,7 +437,7 @@ function HeroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 1.2 }}
-        style={{ marginTop: 'clamp(2px, 0.5vh, 4px)', paddingBottom: 'clamp(8px, 2vh, 20px)' }}
+        style={{ marginTop: 'clamp(2px, 0.5vh, 4px)', paddingBottom: 'clamp(4px, 1vh, 8px)' }}
       >
         <motion.a 
           href="/gallery"
@@ -445,20 +445,20 @@ function HeroSection() {
           style={{
             backgroundImage: 'linear-gradient(135deg, #D4AF37 0%, #FFE680 50%, #C5A55A 100%)',
             color: '#1a1a1a',
-            padding: 'clamp(12px, 2.5vw, 18px) clamp(20px, 4vw, 48px)',
+            padding: 'clamp(10px, 2vw, 14px) clamp(16px, 3vw, 32px)',
             borderRadius: '50px',
             textDecoration: 'none',
-            fontSize: 'clamp(0.75rem, 2vw, 1.1rem)',
+            fontSize: 'clamp(0.7rem, 1.5vw, 0.9rem)',
             fontWeight: 900,
             boxShadow: '0 12px 35px rgba(197, 165, 90, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
             border: '3px solid #FFE680',
             display: 'inline-flex',
             alignItems: 'center',
-            gap: '10px',
+            gap: '8px',
             whiteSpace: 'nowrap',
-            letterSpacing: '0.15em',
+            letterSpacing: '0.12em',
             textShadow: '0 2px 4px rgba(26, 26, 26, 0.2)',
-            maxWidth: 'clamp(180px, 85vw, 600px)',
+            maxWidth: 'clamp(160px, 75vw, 450px)',
           }}
           whileHover={{ 
             y: -6, 
@@ -467,7 +467,7 @@ function HeroSection() {
           }}
           whileTap={{ scale: 0.98 }}
         >
-          Tap to View Events Gallery →
+          View Events Gallery →
         </motion.a>
       </motion.div>
 
@@ -477,7 +477,7 @@ function HeroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 1.3 }}
-        style={{ marginTop: 'clamp(8px, 1.5vh, 12px)', paddingBottom: 'clamp(8px, 2vh, 20px)' }}
+        style={{ marginTop: 'clamp(4px, 1vh, 8px)', paddingBottom: 'clamp(8px, 1.5vh, 16px)' }}
       >
         <motion.a 
           href="https://youtube.com/@lordmahaveerbirthplaceofficial?si=anwKYoA5MkPfIGAC"
@@ -487,20 +487,20 @@ function HeroSection() {
           style={{
             backgroundColor: '#6B0F1A',
             color: '#FFFFFF',
-            padding: 'clamp(12px, 2.5vw, 18px) clamp(20px, 4vw, 48px)',
+            padding: 'clamp(10px, 2vw, 14px) clamp(16px, 3vw, 32px)',
             borderRadius: '50px',
             textDecoration: 'none',
-            fontSize: 'clamp(0.75rem, 2vw, 1.1rem)',
+            fontSize: 'clamp(0.7rem, 1.5vw, 0.9rem)',
             fontWeight: 900,
             boxShadow: '0 12px 35px rgba(107, 15, 26, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
             border: '3px solid #8B1538',
             display: 'inline-flex',
             alignItems: 'center',
-            gap: '10px',
+            gap: '8px',
             whiteSpace: 'nowrap',
-            letterSpacing: '0.15em',
+            letterSpacing: '0.12em',
             textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
-            maxWidth: 'clamp(180px, 85vw, 600px)',
+            maxWidth: 'clamp(160px, 75vw, 450px)',
           }}
           whileHover={{ 
             y: -6, 
@@ -510,7 +510,7 @@ function HeroSection() {
           }}
           whileTap={{ scale: 0.98 }}
         >
-          Click on Our YouTube Channel →
+          YouTube Channel →
         </motion.a>
       </motion.div>
 
