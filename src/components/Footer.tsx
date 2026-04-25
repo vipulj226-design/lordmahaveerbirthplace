@@ -3,6 +3,16 @@ import { MessageCircle, Zap, Award, Clock, CheckCircle } from 'lucide-react';
 export default function Footer() {
   return (
     <footer className="w-full bg-gradient-to-r from-maroon via-gray-900 to-black py-16 px-4">
+      <style>{`
+        @keyframes goldGlow {
+          0%, 100% { filter: drop-shadow(0 0 8px rgba(197, 165, 90, 0.4)); }
+          50% { filter: drop-shadow(0 0 16px rgba(197, 165, 90, 0.6)); }
+        }
+        .glow-text {
+          animation: goldGlow 3s ease-in-out infinite;
+        }
+      `}</style>
+      
       <div className="max-w-6xl mx-auto">
         {/* Top Divider */}
         <div className="flex items-center justify-center gap-4 mb-12">
@@ -18,11 +28,10 @@ export default function Footer() {
           </p>
           
           {/* Glowing Name */}
-          <h2 className="text-6xl md:text-7xl font-paragraph font-bold text-gold mb-6"
+          <h2 className="glow-text text-6xl md:text-7xl font-paragraph font-bold text-gold mb-6"
               style={{
-                textShadow: '0 0 30px rgba(197, 165, 90, 0.6), 0 0 60px rgba(197, 165, 90, 0.3)',
                 letterSpacing: '0.08em',
-                fontWeight: '700'
+                fontWeight: '900'
               }}>
             VIPUL JAIN
           </h2>
@@ -37,9 +46,9 @@ export default function Footer() {
 
         {/* WhatsApp Contact Bar */}
         <div className="flex justify-center mb-12">
-          <div className="bg-gradient-to-r from-green-600 to-green-500 rounded-full px-6 py-3 flex items-center gap-3 shadow-lg"
+          <div className="bg-gradient-to-r from-green-600 to-green-500 rounded-full px-6 py-3 flex items-center gap-3"
                style={{
-                 boxShadow: '0 0 20px rgba(34, 197, 94, 0.4)'
+                 filter: 'drop-shadow(0 0 12px rgba(34, 197, 94, 0.5))'
                }}>
             <MessageCircle size={20} className="text-white" />
             <span className="text-white font-paragraph font-semibold tracking-wide">
@@ -52,7 +61,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-8">
           {/* Professional Design */}
           <div className="flex flex-col items-center text-center">
-            <div className="mb-3 p-3 rounded-full bg-gold/10 border border-gold/30">
+            <div className="mb-3 p-3 rounded-full bg-gold/10 border border-gold/30 hover:bg-gold/20 transition-colors">
               <Award size={24} className="text-gold" />
             </div>
             <p className="text-gold text-sm font-paragraph font-semibold uppercase tracking-wide">
@@ -62,7 +71,7 @@ export default function Footer() {
 
           {/* Fast Delivery */}
           <div className="flex flex-col items-center text-center">
-            <div className="mb-3 p-3 rounded-full bg-gold/10 border border-gold/30">
+            <div className="mb-3 p-3 rounded-full bg-gold/10 border border-gold/30 hover:bg-gold/20 transition-colors">
               <Zap size={24} className="text-gold" />
             </div>
             <p className="text-gold text-sm font-paragraph font-semibold uppercase tracking-wide">
@@ -72,7 +81,7 @@ export default function Footer() {
 
           {/* Trusted Service */}
           <div className="flex flex-col items-center text-center">
-            <div className="mb-3 p-3 rounded-full bg-gold/10 border border-gold/30">
+            <div className="mb-3 p-3 rounded-full bg-gold/10 border border-gold/30 hover:bg-gold/20 transition-colors">
               <CheckCircle size={24} className="text-gold" />
             </div>
             <p className="text-gold text-sm font-paragraph font-semibold uppercase tracking-wide">
@@ -82,7 +91,7 @@ export default function Footer() {
 
           {/* 24/7 Support */}
           <div className="flex flex-col items-center text-center">
-            <div className="mb-3 p-3 rounded-full bg-gold/10 border border-gold/30">
+            <div className="mb-3 p-3 rounded-full bg-gold/10 border border-gold/30 hover:bg-gold/20 transition-colors">
               <Clock size={24} className="text-gold" />
             </div>
             <p className="text-gold text-sm font-paragraph font-semibold uppercase tracking-wide">
