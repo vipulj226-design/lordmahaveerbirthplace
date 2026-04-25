@@ -138,21 +138,21 @@ export default function FoundationDevelopment() {
 
                 {/* Photo Gallery - 4 Photos from CMS - Full Width Below */}
                 {(block.galleryImage1 || block.galleryImage2 || block.galleryImage3 || block.galleryImage4) && (
-                  <div className="border-t-2 border-maroon/20 p-4 sm:p-6 md:p-8 lg:p-12 bg-cream">
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 md:gap-3">
+                  <div className="border-t-2 border-maroon/20 p-6 lg:p-10 bg-cream">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                       {block.galleryImage1 && (
                         <motion.div
                           initial={{ opacity: 0, scale: 0.9 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
-                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300 bg-cream aspect-square"
+                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300 bg-cream flex items-center justify-center"
                         >
                           <Image
                             src={block.galleryImage1}
                             alt="Gallery photo 1"
-                            width={300}
-                            height={300}
-                            className="w-full h-full object-contain"
+                            width={1000}
+                            height={800}
+                            className="w-full h-auto object-contain"
                           />
                         </motion.div>
                       )}
@@ -162,14 +162,14 @@ export default function FoundationDevelopment() {
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
                           transition={{ delay: 0.1 }}
-                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300 bg-cream aspect-square"
+                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300 bg-cream flex items-center justify-center"
                         >
                           <Image
                             src={block.galleryImage2}
                             alt="Gallery photo 2"
-                            width={300}
-                            height={300}
-                            className="w-full h-full object-contain"
+                            width={1000}
+                            height={800}
+                            className="w-full h-auto object-contain"
                           />
                         </motion.div>
                       )}
@@ -179,14 +179,14 @@ export default function FoundationDevelopment() {
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
                           transition={{ delay: 0.2 }}
-                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300 bg-cream aspect-square"
+                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300 bg-cream flex items-center justify-center"
                         >
                           <Image
                             src={block.galleryImage3}
                             alt="Gallery photo 3"
-                            width={300}
-                            height={300}
-                            className="w-full h-full object-contain"
+                            width={1000}
+                            height={800}
+                            className="w-full h-auto object-contain"
                           />
                         </motion.div>
                       )}
@@ -196,14 +196,14 @@ export default function FoundationDevelopment() {
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
                           transition={{ delay: 0.3 }}
-                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300 bg-cream aspect-square"
+                          className="rounded-lg overflow-hidden border-2 border-gold/40 hover:border-gold transition-colors duration-300 bg-cream flex items-center justify-center"
                         >
                           <Image
                             src={block.galleryImage4}
                             alt="Gallery photo 4"
-                            width={300}
-                            height={300}
-                            className="w-full h-full object-contain"
+                            width={1000}
+                            height={800}
+                            className="w-full h-auto object-contain"
                           />
                         </motion.div>
                       )}
