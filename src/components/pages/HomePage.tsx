@@ -713,15 +713,15 @@ function BirthplaceAboutSection() {
               <h4 className="font-heading text-xl font-bold text-maroon mb-4 uppercase tracking-wide">
                 📚 Hermann Jacobi & Sacred Books
               </h4>
-              <p className="font-paragraph text-maroon/80 leading-relaxed mb-3 text-sm">
+              <p className="font-paragraph text-maroon/80 leading-relaxed mb-3 text-base md:text-lg">
                 In the "Sacred Books of the East" (Volumes 22 & 45), Hermann Jacobi, one of the greatest authorities on Jainism, states:
               </p>
               <div className="bg-gold/10 border-l-4 border-gold p-4 mb-3">
-                <p className="font-paragraph italic text-maroon/90 leading-relaxed text-xs">
+                <p className="font-paragraph italic text-maroon/90 leading-relaxed text-sm md:text-base">
                   "The Jainas, both Swetambars and Digambars, believe that Mahavira was the son of King Siddhartha of Kundapur or Kundagrama. Kundagrama is called in the Acharanga Sutra as Samnivesa, a term which the commentator interprets as denoting an encampment place of caravans or processions."
                 </p>
               </div>
-              <p className="font-paragraph text-maroon/80 leading-relaxed text-sm">
+              <p className="font-paragraph text-maroon/80 leading-relaxed text-base md:text-lg">
                 Mahavira was born in Kundagrama near Vaishali (Basarha in Hajipur sub-division of Muzaffarpur district). Kundagrama is known as Basokund today.
               </p>
             </motion.div>
@@ -737,20 +737,20 @@ function BirthplaceAboutSection() {
               <h4 className="font-heading text-xl font-bold text-maroon mb-4 uppercase tracking-wide">
                 🔍 Excavated Seals & Inscriptions
               </h4>
-              <p className="font-paragraph text-maroon/80 leading-relaxed mb-3 text-sm">
+              <p className="font-paragraph text-maroon/80 leading-relaxed mb-3 text-base md:text-lg">
                 During excavation at Vaishali (1903-04 by Dr. T. Bloch), archaeologists found 12-15 coins with engravings:
               </p>
               <ul className="space-y-2 mb-3">
                 <li className="flex gap-3">
                   <span className="text-gold font-bold">•</span>
-                  <p className="font-paragraph text-maroon/80 text-xs">Vaishalyaddhisthanadhikaran</p>
+                  <p className="font-paragraph text-maroon/80 text-sm md:text-base">Vaishalyaddhisthanadhikaran</p>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-gold font-bold">•</span>
-                  <p className="font-paragraph text-maroon/80 text-xs">Vaishali Nam Kunde-Kumarmattyadhikaran(sya)</p>
+                  <p className="font-paragraph text-maroon/80 text-sm md:text-base">Vaishali Nam Kunde-Kumarmattyadhikaran(sya)</p>
                 </li>
               </ul>
-              <p className="font-paragraph text-maroon/80 leading-relaxed text-sm">
+              <p className="font-paragraph text-maroon/80 leading-relaxed text-base md:text-lg">
                 A special seal in Brahmi script reads: "Vaishali Namakunde Kumaramatyadhikaran(sya)" — proving Prince Vardhman held the position of 'Kumaramatya' (Prime Minister).
               </p>
             </motion.div>
@@ -766,14 +766,14 @@ function BirthplaceAboutSection() {
               <h4 className="font-heading text-xl font-bold text-maroon mb-4 uppercase tracking-wide">
                 🏛️ Bihar Government Recognition
               </h4>
-              <p className="font-paragraph text-maroon/80 leading-relaxed mb-3 text-sm">
+              <p className="font-paragraph text-maroon/80 leading-relaxed mb-3 text-base md:text-lg">
                 The tourism department of Bihar Government published a book 'Jain Circuit' in 2003, in which Basokund in Vaishali is officially mentioned as the birthplace of Lord Mahavir.
               </p>
               <div className="bg-gold/10 border-l-4 border-gold p-3">
-                <p className="font-heading font-bold text-maroon text-xs uppercase tracking-widest">
+                <p className="font-heading font-bold text-maroon text-xs md:text-sm uppercase tracking-widest">
                   Official Recognition
                 </p>
-                <p className="font-paragraph text-maroon/80 mt-1 text-xs">
+                <p className="font-paragraph text-maroon/80 mt-1 text-sm md:text-base">
                   Basokund, Vaishali — Birthplace of Lord Mahavira (Jain Circuit, 2003)
                 </p>
               </div>
@@ -790,29 +790,29 @@ function BirthplaceAboutSection() {
               <h4 className="font-heading text-xl font-bold text-maroon mb-4 uppercase tracking-wide">
                 🦁 Ashoka Pillar & Archaeological Finds
               </h4>
-              <p className="font-paragraph text-maroon/80 leading-relaxed mb-3 text-sm">
+              <p className="font-paragraph text-maroon/80 leading-relaxed mb-3 text-base md:text-lg">
                 After the Deekshoupwas, Lord Mahavir ate for the first time (Parna) at Koolgram (now Kolhua). There is a stone pillar with a Lion called the Ashok Stambh.
               </p>
-              <p className="font-paragraph text-maroon/80 leading-relaxed mb-4 text-sm">
+              <p className="font-paragraph text-maroon/80 leading-relaxed mb-4 text-base md:text-lg">
                 The symbol of Lord Mahavir is also a 'Lion'. His ancestors reigned here. This pillar was made by Vajjio & Lichhivi as a memorial to Vardhman Mahavir.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="bg-gold/5 p-4 rounded-lg border border-gold/20">
-                  <p className="font-heading font-bold text-maroon uppercase text-xs tracking-widest mb-2">Two Bulls</p>
-                  <p className="font-paragraph text-maroon/80 text-xs leading-relaxed">
+                  <p className="font-heading font-bold text-maroon uppercase text-xs md:text-sm tracking-widest mb-2">Two Bulls</p>
+                  <p className="font-paragraph text-maroon/80 text-sm md:text-base leading-relaxed">
                     Symbols of religion, charity, and prosperity recovered during excavation at Raja Vishal ka Garh
                   </p>
                 </div>
                 <div className="bg-gold/5 p-4 rounded-lg border border-gold/20">
-                  <p className="font-heading font-bold text-maroon uppercase text-xs tracking-widest mb-2">Gold Ear-Ornament</p>
-                  <p className="font-paragraph text-maroon/80 text-xs leading-relaxed">
+                  <p className="font-heading font-bold text-maroon uppercase text-xs md:text-sm tracking-widest mb-2">Gold Ear-Ornament</p>
+                  <p className="font-paragraph text-maroon/80 text-sm md:text-base leading-relaxed">
                     Kundal belonging to King Chetak's family, worn by Lord Mahavir in youth
                   </p>
                 </div>
                 <div className="bg-gold/5 p-4 rounded-lg border border-gold/20">
-                  <p className="font-heading font-bold text-maroon uppercase text-xs tracking-widest mb-2">Kundalpur</p>
-                  <p className="font-paragraph text-maroon/80 text-xs leading-relaxed">
+                  <p className="font-heading font-bold text-maroon uppercase text-xs md:text-sm tracking-widest mb-2">Kundalpur</p>
+                  <p className="font-paragraph text-maroon/80 text-sm md:text-base leading-relaxed">
                     Named after the sacred ornament worn by Lord Mahavira
                   </p>
                 </div>
