@@ -4,7 +4,7 @@ import { Gallery } from '@/entities';
 import { Image } from '@/components/ui/image';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight, Folder, Image as ImageIcon, Home, Youtube } from 'lucide-react';
+import { ChevronRight, Folder, Image as ImageIcon, Home, Youtube, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface GroupedGallery {
@@ -19,7 +19,7 @@ export default function GalleryPage() {
   const [groupedByYearAndEvent, setGroupedByYearAndEvent] = useState<GroupedGallery>({});
   const [expandedYear, setExpandedYear] = useState<number | null>(null);
   const [expandedEvents, setExpandedEvents] = useState<Set<string>>(new Set());
-  // ... keep existing code (lightbox state removed)
+  const [selectedImage, setSelectedImage] = useState<any>(null);
 
   useEffect(() => {
     loadGalleryImages();
@@ -84,8 +84,6 @@ export default function GalleryPage() {
     }
     setExpandedEvents(newExpandedEvents);
   };
-
-  // ... keep existing code (lightbox functions removed)
 
   return (
     <>
@@ -241,7 +239,8 @@ export default function GalleryPage() {
                                             initial={{ opacity: 0, scale: 0.9 }}
                                             animate={{ opacity: 1, scale: 1 }}
                                             transition={{ delay: (photoIndex + imgIndex) * 0.03, duration: 0.2 }}
-                                            className="relative overflow-hidden rounded-lg shadow-md p-0 bg-transparent aspect-square"
+                                            className="relative overflow-hidden rounded-lg shadow-md p-0 bg-transparent aspect-square cursor-pointer"
+                                            onClick={() => setSelectedImage({ src: imageUrl, caption: item.caption, description: item.description, altText: item.caption || 'Gallery image' })}
                                           >
                                             <div className="w-full h-full overflow-hidden bg-gray-200 flex items-center justify-center">
                                               {imageUrl ? (
@@ -250,7 +249,7 @@ export default function GalleryPage() {
                                                   alt={item.caption || 'Gallery image'}
                                                   width={300}
                                                   height={300}
-                                                  className="w-full h-full object-cover pointer-events-none"
+                                                  className="w-full h-full object-cover pointer-events-none hover:scale-110 transition-transform duration-300"
                                                 />
                                               ) : (
                                                 <div className="w-full h-full bg-gray-300 flex items-center justify-center">
@@ -338,7 +337,58 @@ export default function GalleryPage() {
         </div>
       </main>
 
-      {/* Lightbox removed - images are now non-clickable */}
+      {/* Lightbox Modal */}
+      {selectedImage && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setSelectedImage(null)}
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+        >
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            onClick={(e) => e.stopPropagation()}
+            className="relative max-w-2xl w-full"
+          >
+            {/* Square Image Container */}
+            <div className="relative w-full aspect-square bg-maroon rounded-lg overflow-hidden border-4 border-gold shadow-2xl">
+              <Image
+                src={selectedImage.src}
+                alt={selectedImage.altText || selectedImage.caption || 'Gallery image'}
+                className="w-full h-full object-cover"
+                width={800}
+                height={800}
+              />
+            </div>
+
+            {/* Image Caption */}
+            {selectedImage.caption && (
+              <div className="mt-6 text-center">
+                <h3 className="font-heading text-2xl font-bold text-cream mb-2">
+                  {selectedImage.caption}
+                </h3>
+                {selectedImage.description && (
+                  <p className="font-paragraph text-cream/80">
+                    {selectedImage.description}
+                  </p>
+                )}
+              </div>
+            )}
+
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 bg-gold text-maroon rounded-full p-2 hover:bg-gold2 transition-colors z-10"
+              aria-label="Close"
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </motion.div>
+        </motion.div>
+      )}
     </>
   );
 }
