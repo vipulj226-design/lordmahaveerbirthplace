@@ -1608,13 +1608,13 @@ function GallerySection() {
                   transition={{ delay: index * 0.1 }}
                   className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300"
                 >
-                  <div className="relative w-full h-64 overflow-hidden bg-gray-200">
+                  <div className="relative w-full h-80 sm:h-96 md:h-[500px] overflow-hidden bg-gray-200">
                     <Image
                       src={image.src}
                       alt={image.altText || image.caption || 'Gallery image'}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      width={400}
-                      height={300}
+                      width={600}
+                      height={500}
                     />
                   </div>
                   {image.caption && (
