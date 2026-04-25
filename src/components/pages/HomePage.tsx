@@ -454,11 +454,13 @@ function HeroSection() {
             border: '3px solid #FFE680',
             display: 'inline-flex',
             alignItems: 'center',
+            justifyContent: 'center',
             gap: '8px',
             whiteSpace: 'nowrap',
             letterSpacing: '0.12em',
             textShadow: '0 2px 4px rgba(26, 26, 26, 0.2)',
-            maxWidth: 'clamp(160px, 75vw, 450px)',
+            width: '100%',
+            maxWidth: 'clamp(320px, 100%, 450px)',
           }}
           whileHover={{ 
             y: -6, 
@@ -496,11 +498,13 @@ function HeroSection() {
             border: '3px solid #8B1538',
             display: 'inline-flex',
             alignItems: 'center',
+            justifyContent: 'center',
             gap: '8px',
             whiteSpace: 'nowrap',
             letterSpacing: '0.12em',
             textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
-            maxWidth: 'clamp(160px, 75vw, 450px)',
+            width: '100%',
+            maxWidth: 'clamp(320px, 100%, 450px)',
           }}
           whileHover={{ 
             y: -6, 
