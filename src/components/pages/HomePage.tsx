@@ -327,12 +327,13 @@ function HeroSection() {
           background: 'linear-gradient(135deg, #6B0F1A, #3D0A10, #6B0F1A)',
           padding: 'clamp(16px, 3vw, 24px)',
           paddingTop: 'clamp(80px, 8vh, 120px)',
-          paddingBottom: 'clamp(16px, 3vw, 24px)',
+          paddingBottom: 'clamp(16px, 2vh, 16px)',
           display: 'flex',
           flexDirection: 'column',
           minHeight: '100vh',
-          height: 'auto',
-          gap: 'clamp(8px, 1.5vh, 16px)',
+          height: '100vh',
+          gap: 'clamp(4px, 1vh, 8px)',
+          overflow: 'hidden',
         }}
       >
       {/* Background Image Pseudo-element */}
@@ -516,32 +517,34 @@ function HeroSection() {
 
       {/* Scroll Down Indicator */}
       <motion.div 
-        className="hero-scroll relative z-30 w-full flex flex-col items-center py-3 md:py-4 px-4"
+        className="hero-scroll relative z-30 w-full flex flex-col items-center px-4 mt-auto"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 1.4 }}
         style={{ 
-          marginTop: 'clamp(12px, 2vh, 24px)',
-          backgroundColor: 'rgba(197, 165, 90, 0.2)',
+          marginTop: 'auto',
+          paddingBottom: 'clamp(16px, 3vh, 32px)',
+          backgroundColor: 'rgba(197, 165, 90, 0.25)',
           borderRadius: '16px',
-          border: '2px solid rgba(197, 165, 90, 0.5)',
+          border: '2px solid rgba(197, 165, 90, 0.6)',
           backdropFilter: 'blur(10px)',
-          padding: 'clamp(12px, 3vw, 20px)'
+          padding: 'clamp(16px, 3vw, 24px)',
+          minHeight: 'auto'
         }}
       >
         <motion.div
-          animate={{ y: [0, 6, 0] }}
+          animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="flex flex-col items-center gap-2"
         >
-          <p className="font-paragraph text-sm md:text-lg text-gold uppercase tracking-widest font-bold">
+          <p className="font-paragraph text-base md:text-lg text-gold uppercase tracking-widest font-bold">
             Scroll Down
           </p>
           <motion.div
-            animate={{ opacity: [0.5, 1, 0.5] }}
+            animate={{ opacity: [0.6, 1, 0.6] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
-            <ChevronDown className="w-6 h-6 md:w-8 md:h-8 text-gold" />
+            <ChevronDown className="w-7 h-7 md:w-9 md:h-9 text-gold" />
           </motion.div>
         </motion.div>
       </motion.div>
