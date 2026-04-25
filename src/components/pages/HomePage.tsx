@@ -2187,13 +2187,13 @@ function DistanceGuideSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16 rounded-lg overflow-hidden border-4 border-maroon shadow-xl"
+          className="mb-16 rounded-lg overflow-hidden border-4 border-maroon shadow-xl max-w-3xl"
         >
           <Image
             src="https://static.wixstatic.com/media/53945f_4237a21aefa34d238d831c66996d5766~mv2.png"
             alt="Distance Guide Map - Bhagwan Mahavir Janmbhumi Basokund, Vaishali"
             className="w-full h-auto object-contain"
-            width={1200}
+            width={800}
           />
         </motion.div>
       </div>
