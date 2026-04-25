@@ -1369,7 +1369,7 @@ function DonateSection() {
     <section id="donate" className="relative py-4 md:py-8 bg-cream overflow-hidden border-b-[3px] border-gold">
       <div className="w-full max-w-[120rem] mx-auto px-6 lg:px-12">
         {/* Section Header */}
-        <div className="mb-8 md:mb-24 relative">
+        <div className="mb-6 md:mb-12 relative">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
