@@ -254,7 +254,7 @@ export default function GalleryPage() {
                                     transition={{ duration: 0.3 }}
                                     className="overflow-hidden"
                                   >
-                                    <div className="mt-2 sm:mt-3 grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 md:gap-3 pl-2 sm:pl-4 auto-rows-max">
+                                    <div className="mt-2 sm:mt-3 grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 md:gap-3 pl-2 sm:pl-4">
                                       {groupedByYearAndEvent[year][eventName].map((item, photoIndex) => {
                                         // Get images from all available image fields
                                         const imageUrls: string[] = [];
@@ -285,17 +285,17 @@ export default function GalleryPage() {
                                             animate={{ opacity: 1, scale: 1 }}
                                             transition={{ delay: (photoIndex + imgIndex) * 0.03, duration: 0.2 }}
                                             onClick={() => openLightbox(imageUrls, imgIndex)}
-                                            className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer touch-manipulation active:shadow-xl p-0 border-0 bg-transparent"
+                                            className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer touch-manipulation active:shadow-xl p-0 border-0 bg-transparent aspect-square"
                                             whileTap={{ scale: 0.95 }}
                                           >
-                                            <div className="w-full aspect-square overflow-hidden bg-gray-200 flex items-center justify-center">
+                                            <div className="w-full h-full overflow-hidden bg-gray-200 flex items-center justify-center">
                                               {imageUrl ? (
                                                 <Image
                                                   src={imageUrl}
                                                   alt={item.caption || 'Gallery image'}
                                                   width={300}
                                                   height={300}
-                                                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 pointer-events-none"
+                                                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300 pointer-events-none"
                                                 />
                                               ) : (
                                                 <div className="w-full h-full bg-gray-300 flex items-center justify-center">
